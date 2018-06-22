@@ -1,0 +1,6 @@
+framework module Pods_FSPO_Viper {
+  umbrella header "Pods-FSPO-Viper-umbrella.h"
+
+  export *
+  module * { export * }
+}

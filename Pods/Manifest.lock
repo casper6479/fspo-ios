@@ -1,0 +1,20 @@
+PODS:
+  - Alamofire (4.7.2)
+  - SwiftLint (0.25.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - SwiftLint
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
+
+PODFILE CHECKSUM: c18ae63be9b63f4caf0e2566f92534fc77a4190a
+
+COCOAPODS: 1.5.0
