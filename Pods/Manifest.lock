@@ -1,20 +1,28 @@
 PODS:
   - Alamofire (4.7.2)
+  - FPSCounter (2.1.0)
+  - LayoutKit (8.0.1)
   - SwiftLint (0.25.1)
 
 DEPENDENCIES:
   - Alamofire
+  - FPSCounter
+  - LayoutKit
   - SwiftLint
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - FPSCounter
+    - LayoutKit
     - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  FPSCounter: c0fac1110b723872ab960c929ad672fd956e6a4e
+  LayoutKit: dab1c2eea7a0bf9d8d755a8a793f87a929768455
   SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
 
-PODFILE CHECKSUM: c18ae63be9b63f4caf0e2566f92534fc77a4190a
+PODFILE CHECKSUM: e1737ea9f3bfe479eb7f5db977e2d3206c906ca4
 
 COCOAPODS: 1.5.0

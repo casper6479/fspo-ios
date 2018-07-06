@@ -10,23 +10,23 @@
 
 import Foundation
 
-//MARK: Wireframe -
+// MARK: Wireframe -
 protocol MessagesWireframeProtocol: class {
 
 }
-//MARK: Presenter -
+// MARK: Presenter -
 protocol MessagesPresenterProtocol: class {
 
 }
 
-//MARK: Interactor -
+// MARK: Interactor -
 protocol MessagesInteractorProtocol: class {
 
-  var presenter: MessagesPresenterProtocol?  { get set }
+  var presenter: MessagesPresenterProtocol? { get set }
 }
 
-//MARK: View -
+// MARK: View -
 protocol MessagesViewProtocol: class {
 
-  var presenter: MessagesPresenterProtocol?  { get set }
+  var presenter: MessagesPresenterProtocol? { get set }
 }

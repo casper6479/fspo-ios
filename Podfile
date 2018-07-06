@@ -8,4 +8,6 @@ target 'FSPO-Viper' do
   # Pods for FSPO-Viper
 	pod 'SwiftLint'
 	pod 'Alamofire'
+	pod 'LayoutKit'
+	pod 'FPSCounter'
 end

@@ -8,29 +8,105 @@
 
 /* Begin PBXBuildFile section */
 		3B1CD936D4C769238CDCD92B /* Pods_FSPO_Viper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A708E70CE564AC7313194980 /* Pods_FSPO_Viper.framework */; };
+		4621CE9320EFAB8200B17323 /* MessagesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621CE8D20EFAB8200B17323 /* MessagesPresenter.swift */; };
+		4621CE9420EFAB8200B17323 /* MessagesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621CE8E20EFAB8200B17323 /* MessagesRouter.swift */; };
+		4621CE9520EFAB8200B17323 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621CE8F20EFAB8200B17323 /* MessagesViewController.swift */; };
+		4621CE9620EFAB8200B17323 /* MessagesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621CE9020EFAB8200B17323 /* MessagesProtocols.swift */; };
+		4621CE9720EFAB8200B17323 /* MessagesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621CE9120EFAB8200B17323 /* MessagesInteractor.swift */; };
+		4621CEA320EFABBE00B17323 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621CE9D20EFABBE00B17323 /* ProfilePresenter.swift */; };
+		4621CEA420EFABBE00B17323 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621CE9E20EFABBE00B17323 /* ProfileRouter.swift */; };
+		4621CEA520EFABBE00B17323 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621CE9F20EFABBE00B17323 /* ProfileViewController.swift */; };
+		4621CEA620EFABBE00B17323 /* ProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621CEA020EFABBE00B17323 /* ProfileProtocols.swift */; };
+		4621CEA720EFABBE00B17323 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621CEA120EFABBE00B17323 /* ProfileInteractor.swift */; };
+		4621CEAF20EFABC700B17323 /* JournalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621CEA920EFABC700B17323 /* JournalPresenter.swift */; };
+		4621CEB020EFABC700B17323 /* JournalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621CEAA20EFABC700B17323 /* JournalRouter.swift */; };
+		4621CEB120EFABC700B17323 /* JournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621CEAB20EFABC700B17323 /* JournalViewController.swift */; };
+		4621CEB220EFABC700B17323 /* JournalProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621CEAC20EFABC700B17323 /* JournalProtocols.swift */; };
+		4621CEB320EFABC700B17323 /* JournalInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621CEAD20EFABC700B17323 /* JournalInteractor.swift */; };
+		4621CEBB20EFABD700B17323 /* SchedulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621CEB520EFABD700B17323 /* SchedulePresenter.swift */; };
+		4621CEBC20EFABD700B17323 /* ScheduleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621CEB620EFABD700B17323 /* ScheduleRouter.swift */; };
+		4621CEBD20EFABD700B17323 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621CEB720EFABD700B17323 /* ScheduleViewController.swift */; };
+		4621CEBE20EFABD700B17323 /* ScheduleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621CEB820EFABD700B17323 /* ScheduleProtocols.swift */; };
+		4621CEBF20EFABD700B17323 /* ScheduleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621CEB920EFABD700B17323 /* ScheduleInteractor.swift */; };
+		4621CEC220EFB08000B17323 /* NewsPostLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621CEC120EFB08000B17323 /* NewsPostLayout.swift */; };
+		4621CEC620F01D9D00B17323 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621CEC520F01D9D00B17323 /* Font.swift */; };
+		4621CEC920F01E4400B17323 /* ALSSchlangesans.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4621CEC720F01E4400B17323 /* ALSSchlangesans.otf */; };
+		4621CECA20F01E4400B17323 /* ALSSchlangesans-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4621CEC820F01E4400B17323 /* ALSSchlangesans-Bold.otf */; };
+		466CDF4E20EF72F700A86701 /* NewsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466CDF4820EF72F700A86701 /* NewsPresenter.swift */; };
+		466CDF4F20EF72F700A86701 /* NewsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466CDF4920EF72F700A86701 /* NewsRouter.swift */; };
+		466CDF5020EF72F700A86701 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466CDF4A20EF72F700A86701 /* NewsViewController.swift */; };
+		466CDF5120EF72F700A86701 /* NewsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466CDF4B20EF72F700A86701 /* NewsProtocols.swift */; };
+		466CDF5220EF72F700A86701 /* NewsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466CDF4C20EF72F700A86701 /* NewsInteractor.swift */; };
+		466CDF5520EF779D00A86701 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466CDF5420EF779C00A86701 /* Constants.swift */; };
+		466CDF5720EF7B3400A86701 /* JSONDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466CDF5620EF7B3400A86701 /* JSONDecoding.swift */; };
+		466CDF6420EF9D8700A86701 /* ProfileCardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466CDF5B20EF9D8600A86701 /* ProfileCardLayout.swift */; };
+		466CDF6520EF9D8700A86701 /* MiniProfileLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466CDF5C20EF9D8600A86701 /* MiniProfileLayout.swift */; };
+		466CDF6620EF9D8700A86701 /* FeedItemLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466CDF5D20EF9D8700A86701 /* FeedItemLayout.swift */; };
+		466CDF6720EF9D8700A86701 /* SkillsCardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466CDF5E20EF9D8700A86701 /* SkillsCardLayout.swift */; };
+		466CDF6820EF9D8700A86701 /* DividerStackLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466CDF5F20EF9D8700A86701 /* DividerStackLayout.swift */; };
+		466CDF6920EF9D8700A86701 /* HelloWorldLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466CDF6020EF9D8700A86701 /* HelloWorldLayout.swift */; };
+		466CDF6A20EF9D8700A86701 /* CircleImagePileLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466CDF6120EF9D8700A86701 /* CircleImagePileLayout.swift */; };
+		466CDF6B20EF9D8700A86701 /* FixedWidthCellCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466CDF6220EF9D8700A86701 /* FixedWidthCellCollectionViewLayout.swift */; };
+		466CDF6C20EF9D8700A86701 /* HelloWorldAutoLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466CDF6320EF9D8700A86701 /* HelloWorldAutoLayoutView.swift */; };
+		466CDF6E20EFA4DB00A86701 /* TabBarBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466CDF6D20EFA4DB00A86701 /* TabBarBuilder.swift */; };
+		46A9F99C20F02C27008E2653 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9F99B20F02C27008E2653 /* Color.swift */; };
+		46A9F99E20F030B2008E2653 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9F99D20F030B2008E2653 /* DateFormatter.swift */; };
+		46A9F9A220F033AB008E2653 /* JournalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9F9A120F033AB008E2653 /* JournalLayout.swift */; };
 		46C1561C20DBB2D700F2BA79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C1561B20DBB2D700F2BA79 /* AppDelegate.swift */; };
-		46C1561E20DBB2D700F2BA79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C1561D20DBB2D700F2BA79 /* ViewController.swift */; };
-		46C1562120DBB2D700F2BA79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C1561F20DBB2D700F2BA79 /* Main.storyboard */; };
 		46C1562320DBB2D800F2BA79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46C1562220DBB2D800F2BA79 /* Assets.xcassets */; };
 		46C1562620DBB2D800F2BA79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C1562420DBB2D800F2BA79 /* LaunchScreen.storyboard */; };
-		46C1563520DBB5EE00F2BA79 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C1563420DBB5EE00F2BA79 /* Protocols.swift */; };
-		46C1563720DBB63F00F2BA79 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C1563620DBB63F00F2BA79 /* NewsModel.swift */; };
-		46C1563B20DBB86800F2BA79 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C1563A20DBB86800F2BA79 /* Router.swift */; };
-		46C1563D20DBB89C00F2BA79 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C1563C20DBB89C00F2BA79 /* NewsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4621CE8D20EFAB8200B17323 /* MessagesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesPresenter.swift; sourceTree = "<group>"; };
+		4621CE8E20EFAB8200B17323 /* MessagesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesRouter.swift; sourceTree = "<group>"; };
+		4621CE8F20EFAB8200B17323 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		4621CE9020EFAB8200B17323 /* MessagesProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesProtocols.swift; sourceTree = "<group>"; };
+		4621CE9120EFAB8200B17323 /* MessagesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesInteractor.swift; sourceTree = "<group>"; };
+		4621CE9D20EFABBE00B17323 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		4621CE9E20EFABBE00B17323 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
+		4621CE9F20EFABBE00B17323 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		4621CEA020EFABBE00B17323 /* ProfileProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProtocols.swift; sourceTree = "<group>"; };
+		4621CEA120EFABBE00B17323 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
+		4621CEA920EFABC700B17323 /* JournalPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalPresenter.swift; sourceTree = "<group>"; };
+		4621CEAA20EFABC700B17323 /* JournalRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalRouter.swift; sourceTree = "<group>"; };
+		4621CEAB20EFABC700B17323 /* JournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewController.swift; sourceTree = "<group>"; };
+		4621CEAC20EFABC700B17323 /* JournalProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalProtocols.swift; sourceTree = "<group>"; };
+		4621CEAD20EFABC700B17323 /* JournalInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalInteractor.swift; sourceTree = "<group>"; };
+		4621CEB520EFABD700B17323 /* SchedulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePresenter.swift; sourceTree = "<group>"; };
+		4621CEB620EFABD700B17323 /* ScheduleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRouter.swift; sourceTree = "<group>"; };
+		4621CEB720EFABD700B17323 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		4621CEB820EFABD700B17323 /* ScheduleProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleProtocols.swift; sourceTree = "<group>"; };
+		4621CEB920EFABD700B17323 /* ScheduleInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleInteractor.swift; sourceTree = "<group>"; };
+		4621CEC120EFB08000B17323 /* NewsPostLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPostLayout.swift; sourceTree = "<group>"; };
+		4621CEC520F01D9D00B17323 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		4621CEC720F01E4400B17323 /* ALSSchlangesans.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ALSSchlangesans.otf; sourceTree = "<group>"; };
+		4621CEC820F01E4400B17323 /* ALSSchlangesans-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ALSSchlangesans-Bold.otf"; sourceTree = "<group>"; };
+		466CDF4820EF72F700A86701 /* NewsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPresenter.swift; sourceTree = "<group>"; };
+		466CDF4920EF72F700A86701 /* NewsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRouter.swift; sourceTree = "<group>"; };
+		466CDF4A20EF72F700A86701 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		466CDF4B20EF72F700A86701 /* NewsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsProtocols.swift; sourceTree = "<group>"; };
+		466CDF4C20EF72F700A86701 /* NewsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsInteractor.swift; sourceTree = "<group>"; };
+		466CDF5420EF779C00A86701 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		466CDF5620EF7B3400A86701 /* JSONDecoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoding.swift; sourceTree = "<group>"; };
+		466CDF5B20EF9D8600A86701 /* ProfileCardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCardLayout.swift; sourceTree = "<group>"; };
+		466CDF5C20EF9D8600A86701 /* MiniProfileLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniProfileLayout.swift; sourceTree = "<group>"; };
+		466CDF5D20EF9D8700A86701 /* FeedItemLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItemLayout.swift; sourceTree = "<group>"; };
+		466CDF5E20EF9D8700A86701 /* SkillsCardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillsCardLayout.swift; sourceTree = "<group>"; };
+		466CDF5F20EF9D8700A86701 /* DividerStackLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DividerStackLayout.swift; sourceTree = "<group>"; };
+		466CDF6020EF9D8700A86701 /* HelloWorldLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelloWorldLayout.swift; sourceTree = "<group>"; };
+		466CDF6120EF9D8700A86701 /* CircleImagePileLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImagePileLayout.swift; sourceTree = "<group>"; };
+		466CDF6220EF9D8700A86701 /* FixedWidthCellCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixedWidthCellCollectionViewLayout.swift; sourceTree = "<group>"; };
+		466CDF6320EF9D8700A86701 /* HelloWorldAutoLayoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelloWorldAutoLayoutView.swift; sourceTree = "<group>"; };
+		466CDF6D20EFA4DB00A86701 /* TabBarBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarBuilder.swift; sourceTree = "<group>"; };
+		46A9F99B20F02C27008E2653 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		46A9F99D20F030B2008E2653 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		46A9F9A120F033AB008E2653 /* JournalLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalLayout.swift; sourceTree = "<group>"; };
 		46C1561820DBB2D700F2BA79 /* FSPO-Viper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FSPO-Viper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46C1561B20DBB2D700F2BA79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		46C1561D20DBB2D700F2BA79 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		46C1562020DBB2D700F2BA79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		46C1562220DBB2D800F2BA79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46C1562520DBB2D800F2BA79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46C1562720DBB2D800F2BA79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		46C1563420DBB5EE00F2BA79 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
-		46C1563620DBB63F00F2BA79 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
-		46C1563A20DBB86800F2BA79 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		46C1563C20DBB89C00F2BA79 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		A708E70CE564AC7313194980 /* Pods_FSPO_Viper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FSPO_Viper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C496B420B19573C0E000D13B /* Pods-FSPO-Viper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSPO-Viper.release.xcconfig"; path = "Pods/Target Support Files/Pods-FSPO-Viper/Pods-FSPO-Viper.release.xcconfig"; sourceTree = "<group>"; };
 		DC649CFBB2E0B29D669ACD1A /* Pods-FSPO-Viper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSPO-Viper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FSPO-Viper/Pods-FSPO-Viper.debug.xcconfig"; sourceTree = "<group>"; };
@@ -48,6 +124,133 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4621CE9920EFAB8A00B17323 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				4621CE8D20EFAB8200B17323 /* MessagesPresenter.swift */,
+				4621CE8E20EFAB8200B17323 /* MessagesRouter.swift */,
+				4621CE8F20EFAB8200B17323 /* MessagesViewController.swift */,
+				4621CE9020EFAB8200B17323 /* MessagesProtocols.swift */,
+				4621CE9120EFAB8200B17323 /* MessagesInteractor.swift */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		4621CE9A20EFAB8F00B17323 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				4621CE9D20EFABBE00B17323 /* ProfilePresenter.swift */,
+				4621CE9E20EFABBE00B17323 /* ProfileRouter.swift */,
+				4621CE9F20EFABBE00B17323 /* ProfileViewController.swift */,
+				4621CEA020EFABBE00B17323 /* ProfileProtocols.swift */,
+				4621CEA120EFABBE00B17323 /* ProfileInteractor.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		4621CE9B20EFAB9600B17323 /* Journal */ = {
+			isa = PBXGroup;
+			children = (
+				4621CEA920EFABC700B17323 /* JournalPresenter.swift */,
+				4621CEAA20EFABC700B17323 /* JournalRouter.swift */,
+				4621CEAB20EFABC700B17323 /* JournalViewController.swift */,
+				4621CEAC20EFABC700B17323 /* JournalProtocols.swift */,
+				4621CEAD20EFABC700B17323 /* JournalInteractor.swift */,
+			);
+			path = Journal;
+			sourceTree = "<group>";
+		};
+		4621CE9C20EFAB9A00B17323 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				4621CEB520EFABD700B17323 /* SchedulePresenter.swift */,
+				4621CEB620EFABD700B17323 /* ScheduleRouter.swift */,
+				4621CEB720EFABD700B17323 /* ScheduleViewController.swift */,
+				4621CEB820EFABD700B17323 /* ScheduleProtocols.swift */,
+				4621CEB920EFABD700B17323 /* ScheduleInteractor.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		4621CEC320F01D6300B17323 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				46A9F9A020F03316008E2653 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4621CEC420F01D7F00B17323 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				466CDF5420EF779C00A86701 /* Constants.swift */,
+				4621CEC520F01D9D00B17323 /* Font.swift */,
+				466CDF5620EF7B3400A86701 /* JSONDecoding.swift */,
+				466CDF6D20EFA4DB00A86701 /* TabBarBuilder.swift */,
+				46A9F99B20F02C27008E2653 /* Color.swift */,
+				46A9F99D20F030B2008E2653 /* DateFormatter.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		466CDF3220EF701500A86701 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				4621CE9C20EFAB9A00B17323 /* Schedule */,
+				4621CE9B20EFAB9600B17323 /* Journal */,
+				4621CE9A20EFAB8F00B17323 /* Profile */,
+				4621CE9920EFAB8A00B17323 /* Messages */,
+				466CDF3320EF703400A86701 /* News */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		466CDF3320EF703400A86701 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				466CDF4820EF72F700A86701 /* NewsPresenter.swift */,
+				466CDF4920EF72F700A86701 /* NewsRouter.swift */,
+				466CDF4A20EF72F700A86701 /* NewsViewController.swift */,
+				466CDF4B20EF72F700A86701 /* NewsProtocols.swift */,
+				466CDF4C20EF72F700A86701 /* NewsInteractor.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		466CDF5A20EF9D7100A86701 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				4621CEC120EFB08000B17323 /* NewsPostLayout.swift */,
+				46A9F9A120F033AB008E2653 /* JournalLayout.swift */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
+		46A9F99F20F032F8008E2653 /* LayoutExamples */ = {
+			isa = PBXGroup;
+			children = (
+				466CDF6120EF9D8700A86701 /* CircleImagePileLayout.swift */,
+				466CDF5F20EF9D8700A86701 /* DividerStackLayout.swift */,
+				466CDF5D20EF9D8700A86701 /* FeedItemLayout.swift */,
+				466CDF6220EF9D8700A86701 /* FixedWidthCellCollectionViewLayout.swift */,
+				466CDF6320EF9D8700A86701 /* HelloWorldAutoLayoutView.swift */,
+				466CDF6020EF9D8700A86701 /* HelloWorldLayout.swift */,
+				466CDF5C20EF9D8600A86701 /* MiniProfileLayout.swift */,
+				466CDF5B20EF9D8600A86701 /* ProfileCardLayout.swift */,
+				466CDF5E20EF9D8700A86701 /* SkillsCardLayout.swift */,
+			);
+			path = LayoutExamples;
+			sourceTree = "<group>";
+		};
+		46A9F9A020F03316008E2653 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4621CEC820F01E4400B17323 /* ALSSchlangesans-Bold.otf */,
+				4621CEC720F01E4400B17323 /* ALSSchlangesans.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		46C1560F20DBB2D700F2BA79 = {
 			isa = PBXGroup;
 			children = (
@@ -69,74 +272,17 @@
 		46C1561A20DBB2D700F2BA79 /* FSPO-Viper */ = {
 			isa = PBXGroup;
 			children = (
-				46C1562D20DBB32700F2BA79 /* Modules */,
+				46A9F99F20F032F8008E2653 /* LayoutExamples */,
+				4621CEC420F01D7F00B17323 /* Helpers */,
+				4621CEC320F01D6300B17323 /* Resources */,
+				466CDF5A20EF9D7100A86701 /* Layouts */,
+				466CDF3220EF701500A86701 /* Modules */,
 				46C1561B20DBB2D700F2BA79 /* AppDelegate.swift */,
-				46C1561F20DBB2D700F2BA79 /* Main.storyboard */,
-				46C1561D20DBB2D700F2BA79 /* ViewController.swift */,
 				46C1562220DBB2D800F2BA79 /* Assets.xcassets */,
 				46C1562420DBB2D800F2BA79 /* LaunchScreen.storyboard */,
 				46C1562720DBB2D800F2BA79 /* Info.plist */,
 			);
 			path = "FSPO-Viper";
-			sourceTree = "<group>";
-		};
-		46C1562D20DBB32700F2BA79 /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				46C1563220DBB35100F2BA79 /* View */,
-				46C1563120DBB34E00F2BA79 /* Interactor */,
-				46C1563020DBB34C00F2BA79 /* Presenter */,
-				46C1562F20DBB34800F2BA79 /* Entity */,
-				46C1562E20DBB33E00F2BA79 /* Router */,
-				46C1563320DBB37100F2BA79 /* Protocols */,
-			);
-			path = Modules;
-			sourceTree = "<group>";
-		};
-		46C1562E20DBB33E00F2BA79 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				46C1563A20DBB86800F2BA79 /* Router.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		46C1562F20DBB34800F2BA79 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				46C1563620DBB63F00F2BA79 /* NewsModel.swift */,
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		46C1563020DBB34C00F2BA79 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		46C1563120DBB34E00F2BA79 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		46C1563220DBB35100F2BA79 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				46C1563C20DBB89C00F2BA79 /* NewsViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		46C1563320DBB37100F2BA79 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				46C1563420DBB5EE00F2BA79 /* Protocols.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		60A0FF66EF3E5B7914BD06B8 /* Frameworks */ = {
@@ -217,9 +363,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4621CECA20F01E4400B17323 /* ALSSchlangesans-Bold.otf in Resources */,
+				4621CEC920F01E4400B17323 /* ALSSchlangesans.otf in Resources */,
 				46C1562620DBB2D800F2BA79 /* LaunchScreen.storyboard in Resources */,
 				46C1562320DBB2D800F2BA79 /* Assets.xcassets in Resources */,
-				46C1562120DBB2D700F2BA79 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,10 +381,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FSPO-Viper/Pods-FSPO-Viper-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FPSCounter/FPSCounter.framework",
+				"${BUILT_PRODUCTS_DIR}/LayoutKit/LayoutKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FPSCounter.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LayoutKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -283,26 +434,55 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46C1563520DBB5EE00F2BA79 /* Protocols.swift in Sources */,
-				46C1563720DBB63F00F2BA79 /* NewsModel.swift in Sources */,
-				46C1563B20DBB86800F2BA79 /* Router.swift in Sources */,
-				46C1563D20DBB89C00F2BA79 /* NewsViewController.swift in Sources */,
-				46C1561E20DBB2D700F2BA79 /* ViewController.swift in Sources */,
 				46C1561C20DBB2D700F2BA79 /* AppDelegate.swift in Sources */,
+				4621CEAF20EFABC700B17323 /* JournalPresenter.swift in Sources */,
+				466CDF5020EF72F700A86701 /* NewsViewController.swift in Sources */,
+				4621CEBD20EFABD700B17323 /* ScheduleViewController.swift in Sources */,
+				4621CEA320EFABBE00B17323 /* ProfilePresenter.swift in Sources */,
+				466CDF6520EF9D8700A86701 /* MiniProfileLayout.swift in Sources */,
+				466CDF6920EF9D8700A86701 /* HelloWorldLayout.swift in Sources */,
+				466CDF4F20EF72F700A86701 /* NewsRouter.swift in Sources */,
+				4621CEA720EFABBE00B17323 /* ProfileInteractor.swift in Sources */,
+				46A9F9A220F033AB008E2653 /* JournalLayout.swift in Sources */,
+				466CDF6C20EF9D8700A86701 /* HelloWorldAutoLayoutView.swift in Sources */,
+				466CDF6420EF9D8700A86701 /* ProfileCardLayout.swift in Sources */,
+				4621CEB120EFABC700B17323 /* JournalViewController.swift in Sources */,
+				4621CEC620F01D9D00B17323 /* Font.swift in Sources */,
+				466CDF6E20EFA4DB00A86701 /* TabBarBuilder.swift in Sources */,
+				4621CEBE20EFABD700B17323 /* ScheduleProtocols.swift in Sources */,
+				466CDF4E20EF72F700A86701 /* NewsPresenter.swift in Sources */,
+				4621CEA520EFABBE00B17323 /* ProfileViewController.swift in Sources */,
+				466CDF6820EF9D8700A86701 /* DividerStackLayout.swift in Sources */,
+				466CDF6B20EF9D8700A86701 /* FixedWidthCellCollectionViewLayout.swift in Sources */,
+				4621CEA620EFABBE00B17323 /* ProfileProtocols.swift in Sources */,
+				46A9F99C20F02C27008E2653 /* Color.swift in Sources */,
+				4621CEBB20EFABD700B17323 /* SchedulePresenter.swift in Sources */,
+				4621CEC220EFB08000B17323 /* NewsPostLayout.swift in Sources */,
+				4621CEB220EFABC700B17323 /* JournalProtocols.swift in Sources */,
+				466CDF5720EF7B3400A86701 /* JSONDecoding.swift in Sources */,
+				4621CE9320EFAB8200B17323 /* MessagesPresenter.swift in Sources */,
+				4621CEBF20EFABD700B17323 /* ScheduleInteractor.swift in Sources */,
+				466CDF6720EF9D8700A86701 /* SkillsCardLayout.swift in Sources */,
+				4621CE9720EFAB8200B17323 /* MessagesInteractor.swift in Sources */,
+				4621CEB320EFABC700B17323 /* JournalInteractor.swift in Sources */,
+				466CDF6620EF9D8700A86701 /* FeedItemLayout.swift in Sources */,
+				4621CE9520EFAB8200B17323 /* MessagesViewController.swift in Sources */,
+				466CDF5520EF779D00A86701 /* Constants.swift in Sources */,
+				4621CEA420EFABBE00B17323 /* ProfileRouter.swift in Sources */,
+				4621CEBC20EFABD700B17323 /* ScheduleRouter.swift in Sources */,
+				4621CE9420EFAB8200B17323 /* MessagesRouter.swift in Sources */,
+				466CDF6A20EF9D8700A86701 /* CircleImagePileLayout.swift in Sources */,
+				46A9F99E20F030B2008E2653 /* DateFormatter.swift in Sources */,
+				4621CEB020EFABC700B17323 /* JournalRouter.swift in Sources */,
+				4621CE9620EFAB8200B17323 /* MessagesProtocols.swift in Sources */,
+				466CDF5120EF72F700A86701 /* NewsProtocols.swift in Sources */,
+				466CDF5220EF72F700A86701 /* NewsInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		46C1561F20DBB2D700F2BA79 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				46C1562020DBB2D700F2BA79 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		46C1562420DBB2D800F2BA79 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

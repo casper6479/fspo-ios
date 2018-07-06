@@ -12,23 +12,24 @@ import UIKit
 extension UITabBarController {
     func buildStudentsTabBar() -> UITabBarController {
         let News = NewsRouter.createModule()
+        News.title = "Изменения в расписании"
         News.tabBarItem = UITabBarItem(title: "Новости", image: UIImage(), selectedImage: UIImage())
-        News.title = "Новости"
         let Journal = JournalRouter.createModule()
-        Journal.tabBarItem = UITabBarItem(title: "Журнал", image: UIImage(), selectedImage: UIImage())
         Journal.title = "Журнал"
+        Journal.tabBarItem = UITabBarItem(title: "Журнал", image: UIImage(), selectedImage: UIImage())
         let Messages = MessagesRouter.createModule()
-        Messages.tabBarItem = UITabBarItem(title: "Сообщения", image: UIImage(), selectedImage: UIImage())
         Messages.title = "Сообщения"
+        Messages.tabBarItem = UITabBarItem(title: "Сообщения", image: UIImage(), selectedImage: UIImage())
         let Schedule = ScheduleRouter.createModule()
-        Schedule.tabBarItem = UITabBarItem(title: "Расписание", image: UIImage(), selectedImage: UIImage())
         Schedule.title = "Расписание"
+        Schedule.tabBarItem = UITabBarItem(title: "Расписание", image: UIImage(), selectedImage: UIImage())
         let Profile = ProfileRouter.createModule()
-        Profile.tabBarItem = UITabBarItem(title: "Профиль", image: UIImage(), selectedImage: UIImage())
         Profile.title = "Профиль"
+        Profile.tabBarItem = UITabBarItem(title: "Профиль", image: UIImage(), selectedImage: UIImage())
         let tabBarController = UITabBarController()
         let controllers = [News, Journal, Messages, Schedule, Profile]
-        tabBarController.viewControllers = controllers.map { UINavigationController(rootViewController: $0)}
+        let navigationControllers = controllers.map {UINavigationController(rootViewController: $0)}
+        tabBarController.viewControllers = navigationControllers
         return tabBarController
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FPSCounter
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = UITabBarController().buildStudentsTabBar()
+        window?.makeKeyAndVisible()
+        FPSCounter.showInStatusBar(UIApplication.shared)
+        FPSCounter().startTracking()
+        UINavigationBar.appearance().barTintColor = UIColor.ITMOBlue
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         return true
     }
 

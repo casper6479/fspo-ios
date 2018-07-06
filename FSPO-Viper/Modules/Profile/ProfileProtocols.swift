@@ -10,23 +10,23 @@
 
 import Foundation
 
-//MARK: Wireframe -
+// MARK: Wireframe -
 protocol ProfileWireframeProtocol: class {
 
 }
-//MARK: Presenter -
+// MARK: Presenter -
 protocol ProfilePresenterProtocol: class {
 
 }
 
-//MARK: Interactor -
+// MARK: Interactor -
 protocol ProfileInteractorProtocol: class {
 
-  var presenter: ProfilePresenterProtocol?  { get set }
+  var presenter: ProfilePresenterProtocol? { get set }
 }
 
-//MARK: View -
+// MARK: View -
 protocol ProfileViewProtocol: class {
 
-  var presenter: ProfilePresenterProtocol?  { get set }
+  var presenter: ProfilePresenterProtocol? { get set }
 }

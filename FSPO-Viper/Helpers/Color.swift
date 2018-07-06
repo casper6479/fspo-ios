@@ -7,3 +7,8 @@
 //
 
 import Foundation
+import UIKit
+
+extension UIColor {
+    static let ITMOBlue = UIColor(red: 25/255, green: 70/255, blue: 186/255, alpha: 1)
+}

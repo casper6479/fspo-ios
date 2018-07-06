@@ -7,3 +7,9 @@
 //
 
 import Foundation
+import UIKit
+
+extension UIFont {
+    static let ITMOFont = UIFont.init(name: "ALSSchlangesans", size: 15)
+    static let ITMOFontBold = UIFont.init(name: "ALSSchlangesans-Bold", size: 15)
+}

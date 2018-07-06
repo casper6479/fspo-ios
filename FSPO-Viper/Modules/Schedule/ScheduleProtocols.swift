@@ -10,23 +10,23 @@
 
 import Foundation
 
-//MARK: Wireframe -
+// MARK: Wireframe -
 protocol ScheduleWireframeProtocol: class {
 
 }
-//MARK: Presenter -
+// MARK: Presenter -
 protocol SchedulePresenterProtocol: class {
 
 }
 
-//MARK: Interactor -
+// MARK: Interactor -
 protocol ScheduleInteractorProtocol: class {
 
-  var presenter: SchedulePresenterProtocol?  { get set }
+  var presenter: SchedulePresenterProtocol? { get set }
 }
 
-//MARK: View -
+// MARK: View -
 protocol ScheduleViewProtocol: class {
 
-  var presenter: SchedulePresenterProtocol?  { get set }
+  var presenter: SchedulePresenterProtocol? { get set }
 }

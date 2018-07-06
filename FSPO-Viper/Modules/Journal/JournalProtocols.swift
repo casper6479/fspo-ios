@@ -10,23 +10,23 @@
 
 import Foundation
 
-//MARK: Wireframe -
+// MARK: Wireframe -
 protocol JournalWireframeProtocol: class {
 
 }
-//MARK: Presenter -
+// MARK: Presenter -
 protocol JournalPresenterProtocol: class {
 
 }
 
-//MARK: Interactor -
+// MARK: Interactor -
 protocol JournalInteractorProtocol: class {
 
-  var presenter: JournalPresenterProtocol?  { get set }
+  var presenter: JournalPresenterProtocol? { get set }
 }
 
-//MARK: View -
+// MARK: View -
 protocol JournalViewProtocol: class {
 
-  var presenter: JournalPresenterProtocol?  { get set }
+  var presenter: JournalPresenterProtocol? { get set }
 }
