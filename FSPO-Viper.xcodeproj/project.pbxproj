@@ -52,6 +52,7 @@
 		46A9F99C20F02C27008E2653 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9F99B20F02C27008E2653 /* Color.swift */; };
 		46A9F99E20F030B2008E2653 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9F99D20F030B2008E2653 /* DateFormatter.swift */; };
 		46A9F9A220F033AB008E2653 /* JournalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9F9A120F033AB008E2653 /* JournalLayout.swift */; };
+		46A9F9A420F03FC2008E2653 /* StringSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9F9A320F03FC2008E2653 /* StringSize.swift */; };
 		46C1561C20DBB2D700F2BA79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C1561B20DBB2D700F2BA79 /* AppDelegate.swift */; };
 		46C1562320DBB2D800F2BA79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46C1562220DBB2D800F2BA79 /* Assets.xcassets */; };
 		46C1562620DBB2D800F2BA79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C1562420DBB2D800F2BA79 /* LaunchScreen.storyboard */; };
@@ -102,6 +103,7 @@
 		46A9F99B20F02C27008E2653 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		46A9F99D20F030B2008E2653 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		46A9F9A120F033AB008E2653 /* JournalLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalLayout.swift; sourceTree = "<group>"; };
+		46A9F9A320F03FC2008E2653 /* StringSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringSize.swift; sourceTree = "<group>"; };
 		46C1561820DBB2D700F2BA79 /* FSPO-Viper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FSPO-Viper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46C1561B20DBB2D700F2BA79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46C1562220DBB2D800F2BA79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				466CDF6D20EFA4DB00A86701 /* TabBarBuilder.swift */,
 				46A9F99B20F02C27008E2653 /* Color.swift */,
 				46A9F99D20F030B2008E2653 /* DateFormatter.swift */,
+				46A9F9A320F03FC2008E2653 /* StringSize.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				466CDF6920EF9D8700A86701 /* HelloWorldLayout.swift in Sources */,
 				466CDF4F20EF72F700A86701 /* NewsRouter.swift in Sources */,
 				4621CEA720EFABBE00B17323 /* ProfileInteractor.swift in Sources */,
+				46A9F9A420F03FC2008E2653 /* StringSize.swift in Sources */,
 				46A9F9A220F033AB008E2653 /* JournalLayout.swift in Sources */,
 				466CDF6C20EF9D8700A86701 /* HelloWorldAutoLayoutView.swift in Sources */,
 				466CDF6420EF9D8700A86701 /* ProfileCardLayout.swift in Sources */,

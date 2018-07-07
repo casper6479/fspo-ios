@@ -10,18 +10,25 @@ import LayoutKit
 
 open class NewsPostLayout: InsetLayout<View> {
     public init(body: String, time: String) {
-        let bodyLayout = LabelLayout(text: body, font: (UIFont.ITMOFont?.withSize(17))!)
+        let bodyLayout = LabelLayout(
+            text: body,
+            font: (UIFont.ITMOFont?.withSize(17))!,
+            config: { label in
+                label.preferredMaxLayoutWidth = UIScreen.main.bounds.width - 32
+            })
         let timeLayout = LabelLayout(
             text: time,
             font: UIFont.ITMOFont!,
             config: { label in
                 label.textColor = .gray
+                label.preferredMaxLayoutWidth = UIScreen.main.bounds.width - 32
             })
         let authorLayout = LabelLayout(
             text: "Завилейская Анастасия",
             font: (UIFont.ITMOFont?.withSize(17))!,
             config: { label in
                 label.textColor = UIColor.ITMOBlue
+                label.preferredMaxLayoutWidth = UIScreen.main.bounds.width - 32
             })
         super.init(
             insets: UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0),

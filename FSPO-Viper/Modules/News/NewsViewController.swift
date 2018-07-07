@@ -10,9 +10,12 @@ import UIKit
 import LayoutKit
 
 class NewsViewController: UIViewController, NewsViewProtocol {
+    var dataSource = [JSONDecoding.NewsApi.News]()
+    static var publicDS = [JSONDecoding.NewsApi.News]()
     func showNews(source: [JSONDecoding.NewsApi.News]) {
-        arr = source
-        self.layoutFeed(width: tableView.frame.width, synchronous: false)
+        dataSource = source
+        NewsViewController.publicDS = source
+        self.reloadTableView(width: tableView.frame.width, synchronous: false)
     }
 	var presenter: NewsPresenterProtocol?
     private var reloadableViewLayoutAdapter: ReloadableViewLayoutAdapter!
@@ -29,22 +32,21 @@ class NewsViewController: UIViewController, NewsViewProtocol {
         tableView.backgroundColor = UIColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1)
         view.addSubview(tableView)
     }
-    private var cachedFeedItems: [Layout]?
-    var arr = [JSONDecoding.NewsApi.News]()
-    func getFeedItems() -> [Layout] {
+    func getNewsRows() -> [Layout] {
         var layouts = [Layout]()
-        for item in arr {
+        for item in dataSource {
             layouts.append(NewsPostLayout(body: item.text, time: DateToString().formatDate(item.ndatetime)))
         }
         return layouts
     }
-    private func layoutFeed(width: CGFloat, synchronous: Bool) {
+    private func reloadTableView(width: CGFloat, synchronous: Bool) {
         reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
-            return [Section(header: nil, items: self?.getFeedItems() ?? [], footer: nil)]
+            return [Section(header: nil, items: self?.getNewsRows() ?? [], footer: nil)]
         })
     }
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        layoutFeed(width: size.width, synchronous: true)
+}
+extension NewsReloadableViewLayoutAdapter {
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return NewsViewController.publicDS[indexPath.row].text.height(withConstrainedWidth: UIScreen.main.bounds.width, font: (UIFont.ITMOFont?.withSize(17))!) + 74
     }
 }

@@ -21,20 +21,7 @@ class NewsInteractor: NewsInteractorProtocol {
             let result = response.data
             do {
                 let res = try JSONDecoder().decode(JSONDecoding.NewsApi.self, from: result!)
-//                NewsViewController().arr = res.news
-//                NewsViewController.reloadTable()
                 self.presenter?.updateData(data: res.news)
-                print(res.count_n)
-                /*for i in res.news {
-                    self.arr.append(i)
-                }
-                self.all = res.count_n*/
-                DispatchQueue.main.async {
-//                    self.tableView.reloadData()
-                    UIView.animate(withDuration: 0.3, animations: {
-//                        self.tableView.alpha = 1
-                    })
-                }
             } catch {
                 print(error)
             }
