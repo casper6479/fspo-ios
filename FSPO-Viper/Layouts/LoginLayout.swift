@@ -9,7 +9,11 @@
 import Foundation
 import LayoutKit
 
-open class LoginLayout: InsetLayout<View> {
+private let JournalVC = JournalViewController()
+
+open class LoginLayout: InsetLayout<UIView> {
+    static var loginTextField = UITextField()
+    static var passwordTextField = UITextField()
     public init() {
         let itmoLogo =  SizeLayout<UIImageView>(
             size: CGSize(width: 200, height: 150),
@@ -54,9 +58,11 @@ open class LoginLayout: InsetLayout<View> {
                 textfield.autocorrectionType = .no
                 textfield.returnKeyType = .next
                 textfield.clearButtonMode = .whileEditing
+                textfield.delegate = JournalVC
                 if #available(iOS 11.0, *) {
                     textfield.textContentType = .username
                 }
+                LoginLayout.loginTextField = textfield
         })
         let passwordField = SizeLayout<UITextField>(
             size: CGSize(width: UIScreen.main.bounds.width - 128, height: 30),
@@ -69,9 +75,11 @@ open class LoginLayout: InsetLayout<View> {
                 textfield.returnKeyType = .done
                 textfield.clearButtonMode = .whileEditing
                 textfield.isSecureTextEntry = true
+                textfield.delegate = JournalVC
                 if #available(iOS 11.0, *) {
                     textfield.textContentType = .password
                 }
+                LoginLayout.passwordTextField = textfield
         })
         var safeHeight: CGFloat = 0
         if #available(iOS 11, *) {
@@ -96,7 +104,8 @@ open class LoginLayout: InsetLayout<View> {
         super.init(
             insets: UIEdgeInsets(top: 0, left: 0, bottom: 24, right: 0),
             alignment: .bottomCenter,
-            sublayout: StackLayout(axis: .vertical, spacing: 0, alignment: .center, sublayouts: [topContainer, centerContainer, bottomContainer])
-        )
+            sublayout: StackLayout(axis: .vertical, spacing: 0, alignment: .center, sublayouts: [topContainer, centerContainer, bottomContainer]),
+            config: { view in
+        })
     }
 }

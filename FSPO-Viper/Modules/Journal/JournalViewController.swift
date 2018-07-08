@@ -10,7 +10,7 @@
 
 import UIKit
 
-class JournalViewController: UIViewController, JournalViewProtocol {
+class JournalViewController: UIViewController, JournalViewProtocol, UITextFieldDelegate {
 
 	var presenter: JournalPresenterProtocol?
 
@@ -31,5 +31,12 @@ class JournalViewController: UIViewController, JournalViewProtocol {
             })
         }
     }
-
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if LoginLayout.loginTextField == textField {
+            LoginLayout.passwordTextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
 }

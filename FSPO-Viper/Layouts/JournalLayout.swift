@@ -11,58 +11,9 @@ import LayoutKit
 
 open class JournalLayout: InsetLayout<View> {
     public init(dolgs: String, percent: String, score: String) {
-        let byDate = SizeLayout(
-            size: CGSize(width: 127, height: 40),
-            sublayout: ButtonLayout(
-                type: .custom,
-                title: "По дате",
-                alignment: .center,
-                config: { button in
-                    button.backgroundColor = UIColor.ITMOBlue
-                    button.setTitleColor(.white, for: .normal)
-                    button.setTitleColor(.lightGray, for: .highlighted)
-                    button.titleLabel?.font = UIFont.ITMOFontBold?.withSize(17)
-                }),
-            config: { view in
-                view.backgroundColor = UIColor.ITMOBlue
-                view.layer.cornerRadius = 20
-                view.layer.masksToBounds = true
-        })
-        let bySubject = SizeLayout(
-            size: CGSize(width: 127, height: 40),
-            sublayout: ButtonLayout(
-                type: .custom,
-                title: "По предметам",
-                alignment: .center,
-                config: { button in
-                    button.backgroundColor = UIColor.ITMOBlue
-                    button.setTitleColor(.white, for: .normal)
-                    button.setTitleColor(.lightGray, for: .highlighted)
-                    button.titleLabel?.font = UIFont.ITMOFontBold?.withSize(17)
-                }),
-            config: { view in
-                view.backgroundColor = UIColor.ITMOBlue
-                view.layer.cornerRadius = 20
-                view.layer.masksToBounds = true
-        })
-        let more = SizeLayout(
-            size: CGSize(width: 100, height: 29),
-            alignment: .center,
-            sublayout: ButtonLayout(
-                type: .custom,
-                title: "Подробнее",
-                alignment: .center,
-                config: { button in
-                    button.backgroundColor = UIColor.ITMOBlue
-                    button.setTitleColor(.white, for: .normal)
-                    button.setTitleColor(.lightGray, for: .highlighted)
-                    button.titleLabel?.font = UIFont.ITMOFontBold?.withSize(17)
-            }),
-            config: { view in
-                view.backgroundColor = UIColor.ITMOBlue
-                view.layer.cornerRadius = 29/2
-                view.layer.masksToBounds = true
-        })
+        let byDate = Button().createButton(title: "По дате", width: 127, height: 40)
+        let bySubject = Button().createButton(title: "По предметам", width: 127, height: 40)
+        let more = Button().createButton(title: "Подробнее", width: 100, height: 29)
         let avgScoreLabel = LabelLayout(text: "3.5", font: UIFont.ITMOFontBold!.withSize(24), alignment: .center)
         let avgScorePlaceholder = LabelLayout(text: "Средний балл", font: UIFont.ITMOFont!, alignment: .center)
         let avgScoreStack = StackLayout(axis: .vertical, spacing: 8, sublayouts: [avgScorePlaceholder, avgScoreLabel])

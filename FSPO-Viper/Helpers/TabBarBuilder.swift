@@ -30,6 +30,7 @@ extension UITabBarController {
         let controllers = [News, Journal, Messages, Schedule, Profile]
         let navigationControllers = controllers.map {UINavigationController(rootViewController: $0)}
         tabBarController.viewControllers = navigationControllers
+        tabBarController.tabBar.backgroundColor = .white
         return tabBarController
     }
 }
