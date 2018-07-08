@@ -16,6 +16,20 @@ class JournalViewController: UIViewController, JournalViewProtocol {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.white
+        edgesForExtendedLayout = UIRectEdge()
+        let width = view.bounds.width
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
+            let journalLayout = JournalLayout(
+                dolgs: "",
+                percent: "",
+                score: ""
+            )
+            let arrangement = journalLayout.arrangement(width: width)
+            DispatchQueue.main.async(execute: {
+                arrangement.makeViews(in: self.view)
+            })
+        }
     }
 
 }

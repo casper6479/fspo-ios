@@ -29,7 +29,7 @@ class NewsViewController: UIViewController, NewsViewProtocol {
         tableView.dataSource = reloadableViewLayoutAdapter
         tableView.delegate = reloadableViewLayoutAdapter
         tableView.separatorColor = .clear
-        tableView.backgroundColor = UIColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1)
+        tableView.backgroundColor = UIColor.backgroundGray
         view.addSubview(tableView)
     }
     func getNewsRows() -> [Layout] {

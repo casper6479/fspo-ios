@@ -16,6 +16,16 @@ class ProfileViewController: UIViewController, ProfileViewProtocol {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.white
+        edgesForExtendedLayout = UIRectEdge()
+        let width = view.bounds.width
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
+            let journalLayout = LoginLayout()
+            let arrangement = journalLayout.arrangement(width: width)
+            DispatchQueue.main.async(execute: {
+                arrangement.makeViews(in: self.view)
+            })
+        }
     }
 
 }

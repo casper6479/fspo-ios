@@ -19,12 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = UITabBarController().buildStudentsTabBar()
         window?.makeKeyAndVisible()
-        FPSCounter.showInStatusBar(UIApplication.shared)
-        FPSCounter().startTracking()
+        /*FPSCounter.showInStatusBar(UIApplication.shared)
+        FPSCounter().startTracking()*/
         UINavigationBar.appearance().barTintColor = UIColor.ITMOBlue
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.backgroundColor: UIColor.ITMOBlue]
         return true
     }
 

@@ -14,6 +14,7 @@ open class NewsPostLayout: InsetLayout<View> {
             text: body,
             font: (UIFont.ITMOFont?.withSize(17))!,
             config: { label in
+                label.backgroundColor = .white
                 label.preferredMaxLayoutWidth = UIScreen.main.bounds.width - 32
             })
         let timeLayout = LabelLayout(
@@ -21,6 +22,7 @@ open class NewsPostLayout: InsetLayout<View> {
             font: UIFont.ITMOFont!,
             config: { label in
                 label.textColor = .gray
+                label.backgroundColor = .white
                 label.preferredMaxLayoutWidth = UIScreen.main.bounds.width - 32
             })
         let authorLayout = LabelLayout(
@@ -28,6 +30,7 @@ open class NewsPostLayout: InsetLayout<View> {
             font: (UIFont.ITMOFont?.withSize(17))!,
             config: { label in
                 label.textColor = UIColor.ITMOBlue
+                label.backgroundColor = .white
                 label.preferredMaxLayoutWidth = UIScreen.main.bounds.width - 32
             })
         super.init(
@@ -47,7 +50,7 @@ open class NewsPostLayout: InsetLayout<View> {
                     view.backgroundColor = .white
                 }),
             config: { view in
-                view.backgroundColor = UIColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1)
+                view.backgroundColor = UIColor.backgroundGray
             })
     }
 }
