@@ -36,6 +36,7 @@ class JournalViewController: UIViewController, JournalViewProtocol, UITextFieldD
             LoginLayout.passwordTextField.becomeFirstResponder()
         } else {
             textField.resignFirstResponder()
+            print(textField)
         }
         return true
     }
