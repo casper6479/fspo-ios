@@ -9,13 +9,40 @@
 //
 
 import UIKit
+import LayoutKit
 
 class MessagesViewController: UIViewController, MessagesViewProtocol {
 
 	var presenter: MessagesPresenterProtocol?
-
+    private var reloadableViewLayoutAdapter: ReloadableViewLayoutAdapter!
+    private var tableView: UITableView!
 	override func viewDidLoad() {
         super.viewDidLoad()
+        tableView = UITableView(frame: view.bounds, style: .grouped)
+        tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        reloadableViewLayoutAdapter = MessagesReloadableViewLayoutAdapter(reloadableView: tableView)
+        tableView.dataSource = reloadableViewLayoutAdapter
+        tableView.delegate = reloadableViewLayoutAdapter
+        tableView.separatorColor = .clear
+        tableView.backgroundColor = UIColor.backgroundGray
+        view.addSubview(tableView)
+        reloadTableView(width: tableView.frame.width, synchronous: false)
     }
-
+    func getNewsRows() -> [Layout] {
+        var layouts = [Layout]()
+        layouts.append(MessagesLayout(name: "Very Long Name, That Causes Some Layout Problems", lastMessage: "And Very Very Long Lorem, Because I Need To See Layout Problems", photo: UIImage(named: "logo")!, date: "13:01"))
+        layouts.append(MessagesLayout(name: "Test Tested Sucessful", lastMessage: "SomeTextHereAndItHaveNoSpacesLolLetsSeeWhatIsGoingOnHere", photo: UIImage(named: "test")!, date: "Not Today"))
+        layouts.append(MessagesLayout(name: "Very Very Long Lorem, Because I Need To See Layout Problems", lastMessage: "llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll", photo: UIImage(named: "logo")!, date: "12:10"))
+        layouts.append(MessagesLayout(name: "Test Tested Sucessful", lastMessage: "asdkdskfkdsksdf", photo: UIImage(named: "logo")!, date: "13:37"))
+        layouts.append(MessagesLayout(name: "Name", lastMessage: "sdkfasgl;djsg;ldskfjgdlgjdflkgjdflgkjdfglkdjgldkgjdlfkgjdlfgkjdflgkjdfglkdfjgdlkfgj", photo: UIImage(named: "logo")!, date: "13:37"))
+        layouts.append(MessagesLayout(name: "Че случилось со временем?", lastMessage: "Че случилось со временем?", photo: UIImage(named: "logo")!, date: "13:37"))
+        layouts.append(MessagesLayout(name: " ", lastMessage: "", photo: UIImage(named: "logo")!, date: "13:37"))
+        layouts.append(MessagesLayout(name: "Andre", lastMessage: "Hí", photo: UIImage(named: "logo")!, date: "13:37"))
+        return layouts
+    }
+    private func reloadTableView(width: CGFloat, synchronous: Bool) {
+        reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
+            return [Section(header: nil, items: self?.getNewsRows() ?? [], footer: nil)]
+        })
+    }
 }

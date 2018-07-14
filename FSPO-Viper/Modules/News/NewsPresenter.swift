@@ -25,4 +25,7 @@ class NewsPresenter: NewsPresenterProtocol {
     func updateData(data: [JSONDecoding.NewsApi.News]) {
         view?.showNews(source: data)
     }
+    func updateFailed(alertController: UIAlertController) {
+        view?.showError(alert: alertController)
+    }
 }

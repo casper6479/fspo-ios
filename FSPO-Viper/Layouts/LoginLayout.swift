@@ -36,7 +36,7 @@ open class LoginLayout: InsetLayout<UIView> {
             }),
             config: { view in
                 view.backgroundColor = UIColor.ITMOBlue
-                view.layer.cornerRadius = 20
+                view.layer.cornerRadius = view.frame.height / 2
                 view.layer.masksToBounds = true
         })
         let scheduleButton = ButtonLayout(
@@ -49,15 +49,20 @@ open class LoginLayout: InsetLayout<UIView> {
                 button.titleLabel?.font = UIFont.ITMOFontBold?.withSize(17)
         })
         let loginField = SizeLayout<UITextField>(
-            size: CGSize(width: UIScreen.main.bounds.width - 128, height: 30),
+            size: CGSize(width: UIScreen.main.bounds.width - 128, height: 40),
             config: { textfield in
                 textfield.placeholder = "Логин"
                 textfield.font = UIFont.ITMOFontBold
+                textfield.leftViewMode = .always
+                textfield.rightViewMode = .always
+                textfield.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: 0))
+                textfield.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: 0))
                 textfield.textAlignment = .center
-                textfield.borderStyle = .roundedRect
+                textfield.layer.cornerRadius = textfield.frame.height / 2
+                textfield.layer.borderColor = UIColor.ITMOBlue.cgColor
+                textfield.layer.borderWidth = 1
                 textfield.autocorrectionType = .no
                 textfield.returnKeyType = .next
-                textfield.clearButtonMode = .whileEditing
                 textfield.delegate = JournalVC
                 if #available(iOS 11.0, *) {
                     textfield.textContentType = .username
@@ -65,15 +70,20 @@ open class LoginLayout: InsetLayout<UIView> {
                 LoginLayout.loginTextField = textfield
         })
         let passwordField = SizeLayout<UITextField>(
-            size: CGSize(width: UIScreen.main.bounds.width - 128, height: 30),
+            size: CGSize(width: UIScreen.main.bounds.width - 128, height: 40),
             config: { textfield in
                 textfield.placeholder = "Пароль"
                 textfield.font = UIFont.ITMOFontBold
+                textfield.leftViewMode = .always
+                textfield.rightViewMode = .always
+                textfield.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: 0))
+                textfield.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: 0))
                 textfield.textAlignment = .center
-                textfield.borderStyle = .roundedRect
+                textfield.layer.cornerRadius = textfield.frame.height / 2
+                textfield.layer.borderColor = UIColor.ITMOBlue.cgColor
+                textfield.layer.borderWidth = 1
                 textfield.autocorrectionType = .no
                 textfield.returnKeyType = .done
-                textfield.clearButtonMode = .whileEditing
                 textfield.isSecureTextEntry = true
                 textfield.delegate = JournalVC
                 if #available(iOS 11.0, *) {
@@ -93,19 +103,18 @@ open class LoginLayout: InsetLayout<UIView> {
             sublayout: itmoLogo
         )
         let centerContainer = SizeLayout(
-            size: CGSize(width: UIScreen.main.bounds.width, height: safeHeight / 3),
+            size: CGSize(width: UIScreen.main.bounds.width, height: safeHeight / 3 + 50),
             alignment: .center,
             sublayout: StackLayout(axis: .vertical, spacing: 16, alignment: .center, sublayouts: [loginField, passwordField, loginButton])
         )
         let bottomContainer = SizeLayout(
-            size: CGSize(width: UIScreen.main.bounds.width, height: safeHeight / 3),
+            size: CGSize(width: UIScreen.main.bounds.width, height: safeHeight / 3 - 50),
             sublayout: scheduleButton
         )
         super.init(
             insets: UIEdgeInsets(top: 0, left: 0, bottom: 24, right: 0),
             alignment: .bottomCenter,
-            sublayout: StackLayout(axis: .vertical, spacing: 0, alignment: .center, sublayouts: [topContainer, centerContainer, bottomContainer]),
-            config: { view in
-        })
+            sublayout: StackLayout(axis: .vertical, spacing: 0, alignment: .center, sublayouts: [topContainer, centerContainer, bottomContainer])
+        )
     }
 }

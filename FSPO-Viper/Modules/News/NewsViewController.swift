@@ -17,6 +17,9 @@ class NewsViewController: UIViewController, NewsViewProtocol {
         NewsViewController.publicDS = source
         self.reloadTableView(width: tableView.frame.width, synchronous: false)
     }
+    func showError(alert: UIAlertController) {
+        present(alert, animated: true, completion: nil)
+    }
 	var presenter: NewsPresenterProtocol?
     private var reloadableViewLayoutAdapter: ReloadableViewLayoutAdapter!
     private var tableView: UITableView!
@@ -44,6 +47,16 @@ class NewsViewController: UIViewController, NewsViewProtocol {
             return [Section(header: nil, items: self?.getNewsRows() ?? [], footer: nil)]
         })
     }
+    /*override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        if UIDevice.current.orientation.isLandscape {
+            print("Landscape")
+            self.reloadTableView(width: tableView.frame.height, synchronous: false)
+        } else {
+            print("Portrait")
+            self.reloadTableView(width: tableView.frame.width, synchronous: false)
+        }
+    }*/
 }
 extension NewsReloadableViewLayoutAdapter {
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -10,10 +10,10 @@ import Foundation
 import LayoutKit
 
 class Button {
-    func createButton(title: String, width: CGFloat, height: CGFloat) -> SizeLayout<UIButton> {
+    func createButton(title: String, width: CGFloat, height: CGFloat, alignment: Alignment) -> SizeLayout<UIButton> {
         let button = SizeLayout<UIButton>(
             size: CGSize(width: width, height: height),
-            alignment: .center,
+            alignment: alignment,
             config: { button in
                 button.setTitle(title, for: .normal)
                 button.backgroundColor = UIColor.ITMOBlue

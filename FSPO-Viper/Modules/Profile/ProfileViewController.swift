@@ -14,7 +14,7 @@ class ProfileViewController: UIViewController, ProfileViewProtocol {
 
 	var presenter: ProfilePresenterProtocol?
 
-	override func viewDidLoad() {
+	/*override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         edgesForExtendedLayout = UIRectEdge()
@@ -26,6 +26,18 @@ class ProfileViewController: UIViewController, ProfileViewProtocol {
                 arrangement.makeViews(in: self.view)
             })
         }
+    }*/
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = UIColor.white
+        edgesForExtendedLayout = UIRectEdge()
+        let width = view.bounds.width
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
+            let profileLayout = ProfileLayout(firstname: "Николай", lastname: "Борисов", middlename: "Викторович", email: "copr@vk.com", phone: "8-800-555-35-35", birthday: "01.01.2001", nationality: "RU", school: "9 Классов", segrys: "Обучался(лась) в сегрисе", photo: UIImage(named: "test")!)
+            let arrangement = profileLayout.arrangement(width: width)
+            DispatchQueue.main.async(execute: {
+                arrangement.makeViews(in: self.view)
+            })
+        }
     }
-
 }

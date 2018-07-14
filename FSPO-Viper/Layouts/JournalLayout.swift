@@ -11,9 +11,9 @@ import LayoutKit
 
 open class JournalLayout: InsetLayout<View> {
     public init(dolgs: String, percent: String, score: String) {
-        let byDate = Button().createButton(title: "По дате", width: 127, height: 40)
-        let bySubject = Button().createButton(title: "По предметам", width: 127, height: 40)
-        let more = Button().createButton(title: "Подробнее", width: 100, height: 29)
+        let byDate = Button().createButton(title: "По дате", width: 127, height: 40, alignment: .center)
+        let bySubject = Button().createButton(title: "По предметам", width: 127, height: 40, alignment: .center)
+        let more = Button().createButton(title: "Подробнее", width: 100, height: 29, alignment: .center)
         let avgScoreLabel = LabelLayout(text: "3.5", font: UIFont.ITMOFontBold!.withSize(24), alignment: .center)
         let avgScorePlaceholder = LabelLayout(text: "Средний балл", font: UIFont.ITMOFont!, alignment: .center)
         let avgScoreStack = StackLayout(axis: .vertical, spacing: 8, sublayouts: [avgScorePlaceholder, avgScoreLabel])
@@ -25,23 +25,36 @@ open class JournalLayout: InsetLayout<View> {
         let precenseStack = StackLayout(axis: .vertical, spacing: 8, sublayouts: [precensePlaceholder, precenseLabel])
         let horizontalStack = StackLayout(axis: .horizontal,
                                           distribution: .fillEqualSize,
+                                          alignment: .bottomCenter,
                                           sublayouts: [avgScoreStack, dolgsStack, precenseStack])
+        let topBorder = SizeLayout(
+            size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 3 / 2 + 12),
+            sublayout: horizontalStack
+        )
+        let botBorder = SizeLayout(
+            size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 3 / 2),
+            sublayout: more
+        )
         let border = SizeLayout<UIView>(
             width: UIScreen.main.bounds.width,
             height: UIScreen.main.bounds.height / 3,
             alignment: .center,
             sublayout: InsetLayout(
-                insets: UIEdgeInsets(top: 32, left: 0, bottom: 32, right: 0),
+                insets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                 sublayout: StackLayout(
                     axis: .vertical,
-                    spacing: UIScreen.main.bounds.height / 20,
-                    alignment: .bottomCenter,
-                    sublayouts: [horizontalStack, more])),
+                    spacing: 0,
+                    sublayouts: [topBorder, botBorder])),
             config: { view in
                 view.layer.cornerRadius = 20
                 view.layer.masksToBounds = true
                 view.backgroundColor = UIColor.backgroundGray
         })
+        /*StackLayout(
+            axis: .vertical,
+            spacing: UIScreen.main.bounds.height / 20,
+            alignment: .bottomCenter,
+            sublayouts: [horizontalStack, more])*/
         super.init(
             insets: UIEdgeInsets(top: 16, left: 8, bottom: 8, right: 8),
             sublayout: StackLayout(

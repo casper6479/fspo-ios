@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 // MARK: Wireframe
 protocol NewsWireframeProtocol: class {
 }
@@ -15,6 +15,7 @@ protocol NewsWireframeProtocol: class {
 protocol NewsPresenterProtocol: class {
     func updateView()
     func updateData(data: [JSONDecoding.NewsApi.News])
+    func updateFailed(alertController: UIAlertController)
 }
 // MARK: Interactor
 protocol NewsInteractorProtocol: class {
@@ -25,4 +26,5 @@ protocol NewsInteractorProtocol: class {
 protocol NewsViewProtocol: class {
     var presenter: NewsPresenterProtocol? { get set }
     func showNews(source: [JSONDecoding.NewsApi.News])
+    func showError(alert: UIAlertController)
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3B1CD936D4C769238CDCD92B /* Pods_FSPO_Viper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A708E70CE564AC7313194980 /* Pods_FSPO_Viper.framework */; };
+		461FDAA720FA1AA30081C678 /* MessagesLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461FDAA620FA1AA30081C678 /* MessagesLayout.swift */; };
+		461FDAAA20FA713A0081C678 /* ProfileLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461FDAA820FA70530081C678 /* ProfileLayout.swift */; };
 		4621CE9320EFAB8200B17323 /* MessagesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621CE8D20EFAB8200B17323 /* MessagesPresenter.swift */; };
 		4621CE9420EFAB8200B17323 /* MessagesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621CE8E20EFAB8200B17323 /* MessagesRouter.swift */; };
 		4621CE9520EFAB8200B17323 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621CE8F20EFAB8200B17323 /* MessagesViewController.swift */; };
@@ -69,6 +71,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		461FDAA620FA1AA30081C678 /* MessagesLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesLayout.swift; sourceTree = "<group>"; };
+		461FDAA820FA70530081C678 /* ProfileLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLayout.swift; sourceTree = "<group>"; };
 		4621CE8D20EFAB8200B17323 /* MessagesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesPresenter.swift; sourceTree = "<group>"; };
 		4621CE8E20EFAB8200B17323 /* MessagesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesRouter.swift; sourceTree = "<group>"; };
 		4621CE8F20EFAB8200B17323 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
@@ -251,6 +255,8 @@
 				4621CEC120EFB08000B17323 /* NewsPostLayout.swift */,
 				46A9F9A120F033AB008E2653 /* JournalLayout.swift */,
 				46A9F9A520F172B1008E2653 /* LoginLayout.swift */,
+				461FDAA620FA1AA30081C678 /* MessagesLayout.swift */,
+				461FDAA820FA70530081C678 /* ProfileLayout.swift */,
 			);
 			path = Layouts;
 			sourceTree = "<group>";
@@ -524,9 +530,11 @@
 				466CDF6720EF9D8700A86701 /* SkillsCardLayout.swift in Sources */,
 				4621CE9720EFAB8200B17323 /* MessagesInteractor.swift in Sources */,
 				4621CEB320EFABC700B17323 /* JournalInteractor.swift in Sources */,
+				461FDAA720FA1AA30081C678 /* MessagesLayout.swift in Sources */,
 				466CDF6620EF9D8700A86701 /* FeedItemLayout.swift in Sources */,
 				4621CE9520EFAB8200B17323 /* MessagesViewController.swift in Sources */,
 				466CDF5520EF779D00A86701 /* Constants.swift in Sources */,
+				461FDAAA20FA713A0081C678 /* ProfileLayout.swift in Sources */,
 				4621CEA420EFABBE00B17323 /* ProfileRouter.swift in Sources */,
 				4621CEBC20EFABD700B17323 /* ScheduleRouter.swift in Sources */,
 				4621CE9420EFAB8200B17323 /* MessagesRouter.swift in Sources */,
