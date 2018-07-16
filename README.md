@@ -9,7 +9,9 @@ Everything written according to the SwiftLint.
 
 # Now Available:
 - News Module (99% done)
+- Messages Module (Interface 99% done, api requests 0% done)
 - Journal-Home Module (Inferace 99% done, api requests 0% done)
+- Profile Module (Inferace 99% done, api requests 0% done)
 - Login Module (Inferace 80% done, api requests 0% done)
 
 # TODO:
