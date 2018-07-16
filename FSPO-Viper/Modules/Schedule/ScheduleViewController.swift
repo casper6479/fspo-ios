@@ -11,11 +11,32 @@
 import UIKit
 
 class ScheduleViewController: UIViewController, ScheduleViewProtocol {
-
+    private var scrollView: UIScrollView!
 	var presenter: SchedulePresenterProtocol?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
+        scrollView = UIScrollView(frame: view.bounds)
+        scrollView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        scrollView.isPagingEnabled = true
+        view.addSubview(scrollView)
+        let tableView = UITableView(frame: view.bounds, style: .plain)
+        tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(tableView)
+        self.layoutFeed(width: self.view.bounds.width)
+    }
+    private func layoutFeed(width: CGFloat) {
+        _ = CFAbsoluteTimeGetCurrent()
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
+            let scheduleLayout = ScheduleLayout()
+            let arrangement = scheduleLayout.arrangement(width: width * 3)
+            DispatchQueue.main.async(execute: {
+                self.scrollView.contentSize = arrangement.frame.size
+                arrangement.makeViews(in: self.scrollView)
+                _ = CFAbsoluteTimeGetCurrent()
+            })
+        }
     }
 
 }
