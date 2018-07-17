@@ -1,3 +1,4 @@
+На время проектирования интерфейса VIPER не совсем правильно будет соблюдаться - для скорости.
 # ITMO FSPO App
 An official ITMO FSPO iOS Application.
 
