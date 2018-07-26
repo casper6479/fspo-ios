@@ -14,19 +14,6 @@ class ProfileViewController: UIViewController, ProfileViewProtocol {
 
 	var presenter: ProfilePresenterProtocol?
 
-	/*override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = UIColor.white
-        edgesForExtendedLayout = UIRectEdge()
-        let width = view.bounds.width
-        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
-            let journalLayout = LoginLayout()
-            let arrangement = journalLayout.arrangement(width: width)
-            DispatchQueue.main.async(execute: {
-                arrangement.makeViews(in: self.view)
-            })
-        }
-    }*/
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
@@ -39,5 +26,12 @@ class ProfileViewController: UIViewController, ProfileViewProtocol {
                 arrangement.makeViews(in: self.view)
             })
         }
+        let settingButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        settingButton.setTitle("=", for: .normal)
+        settingButton.addTarget(self, action: #selector(settingUpInside), for: .touchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: settingButton)
+    }
+    @objc func settingUpInside() {
+        navigationController?.show(SettingsRouter.createModule(), sender: self)
     }
 }

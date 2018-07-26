@@ -66,6 +66,13 @@
 		46A9F9BA20F2AA43008E2653 /* UIControl + Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9F9B920F2AA43008E2653 /* UIControl + Handler.swift */; };
 		46A9F9BC20F2AB91008E2653 /* CocoaTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9F9BB20F2AB91008E2653 /* CocoaTarget.swift */; };
 		46A9F9C120F2BA7F008E2653 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9F9C020F2BA7F008E2653 /* Button.swift */; };
+		46B6D4C1210A44CD00D83287 /* ToastExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6D4C0210A44CD00D83287 /* ToastExtension.swift */; };
+		46B6D4C3210A4EEF00D83287 /* KeychainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6D4C2210A4EEF00D83287 /* KeychainController.swift */; };
+		46B6D4CA210A5A3F00D83287 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6D4C4210A5A3F00D83287 /* SettingsPresenter.swift */; };
+		46B6D4CB210A5A3F00D83287 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6D4C5210A5A3F00D83287 /* SettingsRouter.swift */; };
+		46B6D4CC210A5A3F00D83287 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6D4C6210A5A3F00D83287 /* SettingsViewController.swift */; };
+		46B6D4CD210A5A3F00D83287 /* SettingsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6D4C7210A5A3F00D83287 /* SettingsProtocols.swift */; };
+		46B6D4CE210A5A3F00D83287 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6D4C8210A5A3F00D83287 /* SettingsInteractor.swift */; };
 		46C1561C20DBB2D700F2BA79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C1561B20DBB2D700F2BA79 /* AppDelegate.swift */; };
 		46C1562320DBB2D800F2BA79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46C1562220DBB2D800F2BA79 /* Assets.xcassets */; };
 		46C1562620DBB2D800F2BA79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C1562420DBB2D800F2BA79 /* LaunchScreen.storyboard */; };
@@ -134,6 +141,13 @@
 		46A9F9B920F2AA43008E2653 /* UIControl + Handler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl + Handler.swift"; sourceTree = "<group>"; };
 		46A9F9BB20F2AB91008E2653 /* CocoaTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoaTarget.swift; sourceTree = "<group>"; };
 		46A9F9C020F2BA7F008E2653 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		46B6D4C0210A44CD00D83287 /* ToastExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastExtension.swift; sourceTree = "<group>"; };
+		46B6D4C2210A4EEF00D83287 /* KeychainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainController.swift; sourceTree = "<group>"; };
+		46B6D4C4210A5A3F00D83287 /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		46B6D4C5210A5A3F00D83287 /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
+		46B6D4C6210A5A3F00D83287 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		46B6D4C7210A5A3F00D83287 /* SettingsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsProtocols.swift; sourceTree = "<group>"; };
+		46B6D4C8210A5A3F00D83287 /* SettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
 		46C1561820DBB2D700F2BA79 /* FSPO-Viper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FSPO-Viper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46C1561B20DBB2D700F2BA79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46C1562220DBB2D800F2BA79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -161,6 +175,7 @@
 		4621CE9920EFAB8A00B17323 /* Messages */ = {
 			isa = PBXGroup;
 			children = (
+				461FDAA620FA1AA30081C678 /* MessagesLayout.swift */,
 				4621CE8D20EFAB8200B17323 /* MessagesPresenter.swift */,
 				4621CE8E20EFAB8200B17323 /* MessagesRouter.swift */,
 				4621CE8F20EFAB8200B17323 /* MessagesViewController.swift */,
@@ -173,6 +188,7 @@
 		4621CE9A20EFAB8F00B17323 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				461FDAA820FA70530081C678 /* ProfileLayout.swift */,
 				4621CE9D20EFABBE00B17323 /* ProfilePresenter.swift */,
 				4621CE9E20EFABBE00B17323 /* ProfileRouter.swift */,
 				4621CE9F20EFABBE00B17323 /* ProfileViewController.swift */,
@@ -185,6 +201,7 @@
 		4621CE9B20EFAB9600B17323 /* Journal */ = {
 			isa = PBXGroup;
 			children = (
+				46A9F9A120F033AB008E2653 /* JournalLayout.swift */,
 				4621CEA920EFABC700B17323 /* JournalPresenter.swift */,
 				4621CEAA20EFABC700B17323 /* JournalRouter.swift */,
 				4621CEAB20EFABC700B17323 /* JournalViewController.swift */,
@@ -202,6 +219,8 @@
 				4621CEB720EFABD700B17323 /* ScheduleViewController.swift */,
 				4621CEB820EFABD700B17323 /* ScheduleProtocols.swift */,
 				4621CEB920EFABD700B17323 /* ScheduleInteractor.swift */,
+				461FDAAB20FAA0A60081C678 /* ScheduleLayout.swift */,
+				46639AF720FBEAD900F4616B /* Schedule Layouts */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -227,6 +246,8 @@
 				46A9F9B620F29B3F008E2653 /* ReuseIDs.swift */,
 				46A9F9B920F2AA43008E2653 /* UIControl + Handler.swift */,
 				46A9F9BB20F2AB91008E2653 /* CocoaTarget.swift */,
+				46B6D4C0210A44CD00D83287 /* ToastExtension.swift */,
+				46B6D4C2210A4EEF00D83287 /* KeychainController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -244,6 +265,7 @@
 		466CDF3220EF701500A86701 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				46B6D4D0210A5A4800D83287 /* Settings */,
 				46A9F9B320F17452008E2653 /* Login */,
 				4621CE9C20EFAB9A00B17323 /* Schedule */,
 				4621CE9B20EFAB9600B17323 /* Journal */,
@@ -262,23 +284,9 @@
 				466CDF4A20EF72F700A86701 /* NewsViewController.swift */,
 				466CDF4B20EF72F700A86701 /* NewsProtocols.swift */,
 				466CDF4C20EF72F700A86701 /* NewsInteractor.swift */,
+				4621CEC120EFB08000B17323 /* NewsPostLayout.swift */,
 			);
 			path = News;
-			sourceTree = "<group>";
-		};
-		466CDF5A20EF9D7100A86701 /* Layouts */ = {
-			isa = PBXGroup;
-			children = (
-				46639AF720FBEAD900F4616B /* Schedule Layouts */,
-				46A9F9A120F033AB008E2653 /* JournalLayout.swift */,
-				46A9F9A520F172B1008E2653 /* LoginLayout.swift */,
-				461FDAA620FA1AA30081C678 /* MessagesLayout.swift */,
-				4621CEC120EFB08000B17323 /* NewsPostLayout.swift */,
-				461FDAA820FA70530081C678 /* ProfileLayout.swift */,
-				461FDAAB20FAA0A60081C678 /* ScheduleLayout.swift */,
-				46A9F9BF20F2BA6C008E2653 /* UI Components */,
-			);
-			path = Layouts;
 			sourceTree = "<group>";
 		};
 		46A9F99F20F032F8008E2653 /* LayoutExamples */ = {
@@ -309,6 +317,7 @@
 		46A9F9B320F17452008E2653 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				46A9F9A520F172B1008E2653 /* LoginLayout.swift */,
 				46A9F9A720F1744C008E2653 /* LoginPresenter.swift */,
 				46A9F9A820F1744C008E2653 /* LoginRouter.swift */,
 				46A9F9A920F1744C008E2653 /* LoginViewController.swift */,
@@ -324,6 +333,18 @@
 				46A9F9C020F2BA7F008E2653 /* Button.swift */,
 			);
 			path = "UI Components";
+			sourceTree = "<group>";
+		};
+		46B6D4D0210A5A4800D83287 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				46B6D4C4210A5A3F00D83287 /* SettingsPresenter.swift */,
+				46B6D4C5210A5A3F00D83287 /* SettingsRouter.swift */,
+				46B6D4C6210A5A3F00D83287 /* SettingsViewController.swift */,
+				46B6D4C7210A5A3F00D83287 /* SettingsProtocols.swift */,
+				46B6D4C8210A5A3F00D83287 /* SettingsInteractor.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		46C1560F20DBB2D700F2BA79 = {
@@ -349,8 +370,8 @@
 			children = (
 				46A9F99F20F032F8008E2653 /* LayoutExamples */,
 				4621CEC420F01D7F00B17323 /* Helpers */,
+				46A9F9BF20F2BA6C008E2653 /* UI Components */,
 				4621CEC320F01D6300B17323 /* Resources */,
-				466CDF5A20EF9D7100A86701 /* Layouts */,
 				466CDF3220EF701500A86701 /* Modules */,
 				46C1561B20DBB2D700F2BA79 /* AppDelegate.swift */,
 				46C1562220DBB2D800F2BA79 /* Assets.xcassets */,
@@ -457,12 +478,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-FSPO-Viper/Pods-FSPO-Viper-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FPSCounter/FPSCounter.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/LayoutKit/LayoutKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FPSCounter.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LayoutKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,6 +533,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46C1561C20DBB2D700F2BA79 /* AppDelegate.swift in Sources */,
+				46B6D4CB210A5A3F00D83287 /* SettingsRouter.swift in Sources */,
 				46A9F9BA20F2AA43008E2653 /* UIControl + Handler.swift in Sources */,
 				4621CEAF20EFABC700B17323 /* JournalPresenter.swift in Sources */,
 				46A9F9BC20F2AB91008E2653 /* CocoaTarget.swift in Sources */,
@@ -523,6 +547,8 @@
 				46A9F9C120F2BA7F008E2653 /* Button.swift in Sources */,
 				466CDF4F20EF72F700A86701 /* NewsRouter.swift in Sources */,
 				4621CEA720EFABBE00B17323 /* ProfileInteractor.swift in Sources */,
+				46B6D4C1210A44CD00D83287 /* ToastExtension.swift in Sources */,
+				46B6D4CD210A5A3F00D83287 /* SettingsProtocols.swift in Sources */,
 				46DF962820FC928700C4D901 /* TeachersListLayout.swift in Sources */,
 				46A9F9A420F03FC2008E2653 /* StringSize.swift in Sources */,
 				46A9F9A220F033AB008E2653 /* JournalLayout.swift in Sources */,
@@ -530,6 +556,7 @@
 				466CDF6C20EF9D8700A86701 /* HelloWorldAutoLayoutView.swift in Sources */,
 				466CDF6420EF9D8700A86701 /* ProfileCardLayout.swift in Sources */,
 				4621CEB120EFABC700B17323 /* JournalViewController.swift in Sources */,
+				46B6D4CC210A5A3F00D83287 /* SettingsViewController.swift in Sources */,
 				46A9F9AE20F1744C008E2653 /* LoginRouter.swift in Sources */,
 				4621CEC620F01D9D00B17323 /* Font.swift in Sources */,
 				466CDF6E20EFA4DB00A86701 /* TabBarBuilder.swift in Sources */,
@@ -549,6 +576,7 @@
 				46A9F9A620F172B1008E2653 /* LoginLayout.swift in Sources */,
 				4621CE9320EFAB8200B17323 /* MessagesPresenter.swift in Sources */,
 				4621CEBF20EFABD700B17323 /* ScheduleInteractor.swift in Sources */,
+				46B6D4CA210A5A3F00D83287 /* SettingsPresenter.swift in Sources */,
 				466CDF6720EF9D8700A86701 /* SkillsCardLayout.swift in Sources */,
 				4621CE9720EFAB8200B17323 /* MessagesInteractor.swift in Sources */,
 				4621CEB320EFABC700B17323 /* JournalInteractor.swift in Sources */,
@@ -557,12 +585,14 @@
 				4621CE9520EFAB8200B17323 /* MessagesViewController.swift in Sources */,
 				466CDF5520EF779D00A86701 /* Constants.swift in Sources */,
 				461FDAAA20FA713A0081C678 /* ProfileLayout.swift in Sources */,
+				46B6D4CE210A5A3F00D83287 /* SettingsInteractor.swift in Sources */,
 				4621CEA420EFABBE00B17323 /* ProfileRouter.swift in Sources */,
 				4621CEBC20EFABD700B17323 /* ScheduleRouter.swift in Sources */,
 				4621CE9420EFAB8200B17323 /* MessagesRouter.swift in Sources */,
 				466CDF6A20EF9D8700A86701 /* CircleImagePileLayout.swift in Sources */,
 				46A9F9B020F1744C008E2653 /* LoginProtocols.swift in Sources */,
 				46A9F99E20F030B2008E2653 /* DateFormatter.swift in Sources */,
+				46B6D4C3210A4EEF00D83287 /* KeychainController.swift in Sources */,
 				4621CEB020EFABC700B17323 /* JournalRouter.swift in Sources */,
 				461FDAAC20FAA0A60081C678 /* ScheduleLayout.swift in Sources */,
 				4621CE9620EFAB8200B17323 /* MessagesProtocols.swift in Sources */,

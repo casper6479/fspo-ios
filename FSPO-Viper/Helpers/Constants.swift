@@ -9,6 +9,10 @@
 import Foundation
 
 class Constants {
+    public static let KeychainService = "com.casper6479.FSPO-Viper"
     public static let NewsURL = "https://ifspo.ifmo.ru/api/news"
+    public static let AuthURL = "https://ifspo.ifmo.ru/api/authorization"
     public static let AppKey = "c78bf5636f9cf36763b511184c572e8f9341cb07"
+    public static let RolesURL = "https://ifspo.ifmo.ru/api/roles"
+    public static let StudentHistoryURL = "https://ifspo.ifmo.ru/api/studentHistory"
 }

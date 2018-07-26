@@ -22,22 +22,37 @@ open class LoginLayout: InsetLayout<UIView> {
                 imageView.image = UIImage(named: "logo")
                 imageView.contentMode = .scaleAspectFit
         })
-        let loginButton = SizeLayout(
+//        let loginButton = SizeLayout(
+//            size: CGSize(width: 80, height: 40),
+//            sublayout: ButtonLayout(
+//                type: .custom,
+//                title: "Вход",
+//                alignment: .center,
+//                config: { button in
+//                    button.backgroundColor = UIColor.ITMOBlue
+//                    button.setTitleColor(.white, for: .normal)
+//                    button.setTitleColor(.lightGray, for: .highlighted)
+//                    button.titleLabel?.font = UIFont.ITMOFontBold?.withSize(17)
+//            }),
+//            config: { view in
+//                view.backgroundColor = UIColor.ITMOBlue
+//                view.layer.cornerRadius = view.frame.height / 2
+//                view.layer.masksToBounds = true
+//        })
+
+        let loginButton = SizeLayout<UIButton>(
             size: CGSize(width: 80, height: 40),
-            sublayout: ButtonLayout(
-                type: .custom,
-                title: "Вход",
-                alignment: .center,
-                config: { button in
-                    button.backgroundColor = UIColor.ITMOBlue
-                    button.setTitleColor(.white, for: .normal)
-                    button.setTitleColor(.lightGray, for: .highlighted)
-                    button.titleLabel?.font = UIFont.ITMOFontBold?.withSize(17)
-            }),
-            config: { view in
-                view.backgroundColor = UIColor.ITMOBlue
-                view.layer.cornerRadius = view.frame.height / 2
-                view.layer.masksToBounds = true
+            alignment: .center,
+            config: { button in
+                button.setTitle("Вход", for: .normal)
+                button.backgroundColor = UIColor.ITMOBlue
+                button.setTitleColor(.white, for: .normal)
+                button.setTitleColor(UIColor.white.withAlphaComponent(0.5), for: .highlighted)
+                button.titleLabel?.font = UIFont.ITMOFontBold?.withSize(17)
+                button.layer.cornerRadius = button.frame.height / 2
+                button.layer.masksToBounds = true
+                button.applyStyle()
+                button.addTarget(LoginViewController(), action: #selector(LoginViewController().loginUpInside), for: .touchUpInside)
         })
         let scheduleButton = ButtonLayout(
             type: .custom,
@@ -64,6 +79,7 @@ open class LoginLayout: InsetLayout<UIView> {
                 textfield.autocorrectionType = .no
                 textfield.returnKeyType = .next
                 textfield.delegate = JournalVC
+                textfield.autocapitalizationType = .none
                 if #available(iOS 11.0, *) {
                     textfield.textContentType = .username
                 }

@@ -31,12 +31,4 @@ class JournalViewController: UIViewController, JournalViewProtocol, UITextFieldD
             })
         }
     }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if LoginLayout.loginTextField == textField {
-            LoginLayout.passwordTextField.becomeFirstResponder()
-        } else {
-            textField.resignFirstResponder()
-        }
-        return true
-    }
 }

@@ -10,4 +10,5 @@ target 'FSPO-Viper' do
 	pod 'Alamofire'
 	pod 'LayoutKit'
 	pod 'FPSCounter'
+	pod 'KeychainAccess'
 end

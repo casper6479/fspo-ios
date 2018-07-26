@@ -17,4 +17,19 @@ class JSONDecoding {
             let ndatetime: String
         }
     }
+    struct AuthApi: Decodable {
+        let token: String
+        let user_id: Int
+    }
+    struct ApiError: Decodable {
+        let result: String
+        let error_code: Int
+    }
+    /*struct studentHistoryAPI: Decodable {
+        let groups: [groups]
+    }
+    struct groups: Decodable {
+        let group_id: String
+        let name: String
+    }*/
 }

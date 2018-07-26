@@ -26,7 +26,7 @@ class NewsViewController: UIViewController, NewsViewProtocol {
 	override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.updateView()
-        tableView = UITableView(frame: view.bounds, style: .grouped)
+        tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         reloadableViewLayoutAdapter = NewsReloadableViewLayoutAdapter(reloadableView: tableView)
         tableView.dataSource = reloadableViewLayoutAdapter

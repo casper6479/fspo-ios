@@ -18,7 +18,7 @@ class MessagesViewController: UIViewController, MessagesViewProtocol {
     private var tableView: UITableView!
 	override func viewDidLoad() {
         super.viewDidLoad()
-        tableView = UITableView(frame: view.bounds, style: .grouped)
+        tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         reloadableViewLayoutAdapter = MessagesReloadableViewLayoutAdapter(reloadableView: tableView)
         tableView.dataSource = reloadableViewLayoutAdapter

@@ -17,7 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UITabBarController().buildStudentsTabBar()
+        if keychain["token"] != nil {
+            window?.rootViewController = UITabBarController().buildStudentsTabBar()
+        } else {
+            window?.rootViewController = UINavigationController.init(rootViewController: LoginRouter.createModule())
+        }
         window?.makeKeyAndVisible()
         /*FPSCounter.showInStatusBar(UIApplication.shared)
         FPSCounter().startTracking()*/
