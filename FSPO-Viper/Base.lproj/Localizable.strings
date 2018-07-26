@@ -25,3 +25,5 @@
 "Изменения в расписании" = "Schedule changes";
 "Журнал" = "Journal";
 "Сообщения" = "Messages";
+"Сегодня в " = "Today at ";
+"Вчера в " = "Yesterday at ";

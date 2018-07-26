@@ -21,15 +21,15 @@ class DateToString {
         let date: Date? = dateFormatterGet.date(from: dateString)
         if calendar.isDateInToday(date!) {
             dateFormatter.dateFormat = "HH:mm"
-            finalString = "Сегодня в \(dateFormatter.string(from: date!))"
+            finalString = NSLocalizedString("Сегодня в ", comment: "")+"\(dateFormatter.string(from: date!))"
         } else if calendar.isDateInYesterday(date!) {
             dateFormatter.dateFormat = "HH:mm"
-            finalString = "Вчера в \(dateFormatter.string(from: date!))"
+            finalString = NSLocalizedString("Вчера в ", comment: "")+"\(dateFormatter.string(from: date!))"
         } else {
             if Calendar.current.component(.year, from: date!) == Calendar.current.component(.year, from: Date()) {
-                dateFormatter.dateFormat = "d MMMM в HH:mm"
+                dateFormatter.dateFormat = "d MMMM HH:mm"
             } else {
-                dateFormatter.dateFormat = "dd.MM.yy в HH:mm"
+                dateFormatter.dateFormat = "dd.MM.yy HH:mm"
             }
             finalString = dateFormatter.string(from: date!)
         }
