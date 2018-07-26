@@ -8,6 +8,7 @@
 
 import UIKit
 import FPSCounter
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = UINavigationController.init(rootViewController: LoginRouter.createModule())
         }
         window?.makeKeyAndVisible()
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = false
+        IQKeyboardManager.shared.keyboardDistanceFromTextField = 5
         /*FPSCounter.showInStatusBar(UIApplication.shared)
         FPSCounter().startTracking()*/
         UINavigationBar.appearance().barTintColor = UIColor.ITMOBlue

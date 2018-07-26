@@ -37,7 +37,6 @@ class LoginViewController: UIViewController, LoginViewProtocol {
             let result = response.data
             do {
                 let res = try JSONDecoder().decode(JSONDecoding.AuthApi.self, from: result!)
-                print(res)
                 self.present(UITabBarController().buildStudentsTabBar(), animated: true) // MARK: temp
                 keychain["token"] = res.token
                 UserDefaults.standard.set(res.user_id, forKey: "user_id")
@@ -106,5 +105,15 @@ class LoginViewController: UIViewController, LoginViewProtocol {
                 print("xz")
             }
         }
+    }
+    @objc func returnKeyPressed(sender: UITextField) {
+        if sender == LoginLayout.loginTextField {
+            LoginLayout.passwordTextField.becomeFirstResponder()
+        } else {
+            sender.resignFirstResponder()
+        }
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }

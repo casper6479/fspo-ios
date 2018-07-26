@@ -11,4 +11,5 @@ target 'FSPO-Viper' do
 	pod 'LayoutKit'
 	pod 'FPSCounter'
 	pod 'KeychainAccess'
+	pod 'IQKeyboardManagerSwift'
 end

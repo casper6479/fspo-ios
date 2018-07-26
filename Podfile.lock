@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.7.2)
   - FPSCounter (2.1.0)
+  - IQKeyboardManagerSwift (6.0.4)
   - KeychainAccess (3.1.1)
   - LayoutKit (8.0.1)
   - SwiftLint (0.25.1)
@@ -8,6 +9,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - FPSCounter
+  - IQKeyboardManagerSwift
   - KeychainAccess
   - LayoutKit
   - SwiftLint
@@ -16,6 +18,7 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - FPSCounter
+    - IQKeyboardManagerSwift
     - KeychainAccess
     - LayoutKit
     - SwiftLint
@@ -23,10 +26,11 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   FPSCounter: c0fac1110b723872ab960c929ad672fd956e6a4e
+  IQKeyboardManagerSwift: 36dbe324b4f9793f5f41ba5227f3e7c76dfefd50
   KeychainAccess: 7bd430028059754a3debab3cfc0bd1fc7fb85df3
   LayoutKit: dab1c2eea7a0bf9d8d755a8a793f87a929768455
   SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
 
-PODFILE CHECKSUM: 69a731bbccc77439e52a090658bb0653d53101d6
+PODFILE CHECKSUM: f63d9a7275148b3f0f110cc36f58c7f978792d1b
 
 COCOAPODS: 1.5.0

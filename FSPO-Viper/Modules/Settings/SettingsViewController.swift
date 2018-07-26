@@ -17,7 +17,6 @@ class SettingsViewController: UIViewController, SettingsViewProtocol, UITableVie
 	override func viewDidLoad() {
         super.viewDidLoad()
         tableView = UITableView(frame: view.bounds, style: .grouped)
-//        tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         tableView.delegate = self
         tableView.dataSource = self
         view.addSubview(tableView)

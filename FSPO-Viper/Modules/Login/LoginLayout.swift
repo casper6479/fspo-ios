@@ -80,6 +80,7 @@ open class LoginLayout: InsetLayout<UIView> {
                 textfield.returnKeyType = .next
                 textfield.delegate = JournalVC
                 textfield.autocapitalizationType = .none
+                textfield.addTarget(LoginViewController(), action: #selector(LoginViewController().returnKeyPressed), for: .primaryActionTriggered)
                 if #available(iOS 11.0, *) {
                     textfield.textContentType = .username
                 }
@@ -102,6 +103,7 @@ open class LoginLayout: InsetLayout<UIView> {
                 textfield.returnKeyType = .done
                 textfield.isSecureTextEntry = true
                 textfield.delegate = JournalVC
+                textfield.addTarget(LoginViewController(), action: #selector(LoginViewController().returnKeyPressed), for: .primaryActionTriggered)
                 if #available(iOS 11.0, *) {
                     textfield.textContentType = .password
                 }
