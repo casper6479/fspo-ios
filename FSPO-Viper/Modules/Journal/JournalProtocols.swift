@@ -16,12 +16,13 @@ protocol JournalWireframeProtocol: class {
 }
 // MARK: Presenter -
 protocol JournalPresenterProtocol: class {
-
+    func updateView()
+    func journalFetched(dolgs: String, percent: String, score: String)
 }
 
 // MARK: Interactor -
 protocol JournalInteractorProtocol: class {
-
+  func fetchJournal()
   var presenter: JournalPresenterProtocol? { get set }
 }
 
@@ -29,4 +30,5 @@ protocol JournalInteractorProtocol: class {
 protocol JournalViewProtocol: class {
 
   var presenter: JournalPresenterProtocol? { get set }
+  func setupView(dolgs: String, percent: String, score: String)
 }

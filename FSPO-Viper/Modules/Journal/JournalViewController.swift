@@ -18,12 +18,15 @@ class JournalViewController: UIViewController, JournalViewProtocol, UITextFieldD
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         edgesForExtendedLayout = UIRectEdge()
+        presenter?.updateView()
+    }
+    func setupView(dolgs: String, percent: String, score: String) {
         let width = view.bounds.width
         DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
             let journalLayout = JournalLayout(
-                dolgs: "",
-                percent: "",
-                score: ""
+                dolgs: dolgs,
+                percent: percent,
+                score: score
             )
             let arrangement = journalLayout.arrangement(width: width)
             DispatchQueue.main.async(execute: {

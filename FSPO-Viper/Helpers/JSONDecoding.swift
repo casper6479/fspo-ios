@@ -25,6 +25,11 @@ class JSONDecoding {
         let result: String
         let error_code: Int
     }
+    struct JournalApi: Decodable {
+        let avg_score: Double
+        let debts: Int
+        let visits: Int
+    }
     /*struct studentHistoryAPI: Decodable {
         let groups: [groups]
     }

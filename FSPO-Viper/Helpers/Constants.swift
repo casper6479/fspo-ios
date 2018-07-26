@@ -15,4 +15,5 @@ class Constants {
     public static let AppKey = "c78bf5636f9cf36763b511184c572e8f9341cb07"
     public static let RolesURL = "https://ifspo.ifmo.ru/api/roles"
     public static let StudentHistoryURL = "https://ifspo.ifmo.ru/api/studentHistory"
+    public static let JournalURL = "https://ifspo.ifmo.ru/api/eduInfo"
 }

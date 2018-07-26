@@ -21,5 +21,10 @@ class JournalPresenter: JournalPresenterProtocol {
         self.interactor = interactor
         self.router = router
     }
-
+    func updateView() {
+        interactor?.fetchJournal()
+    }
+    func journalFetched(dolgs: String, percent: String, score: String) {
+        view?.setupView(dolgs: dolgs, percent: percent, score: score)
+    }
 }

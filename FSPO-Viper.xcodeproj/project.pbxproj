@@ -204,12 +204,12 @@
 		4621CE9B20EFAB9600B17323 /* Journal */ = {
 			isa = PBXGroup;
 			children = (
+				4621CEAD20EFABC700B17323 /* JournalInteractor.swift */,
 				46A9F9A120F033AB008E2653 /* JournalLayout.swift */,
 				4621CEA920EFABC700B17323 /* JournalPresenter.swift */,
+				4621CEAC20EFABC700B17323 /* JournalProtocols.swift */,
 				4621CEAA20EFABC700B17323 /* JournalRouter.swift */,
 				4621CEAB20EFABC700B17323 /* JournalViewController.swift */,
-				4621CEAC20EFABC700B17323 /* JournalProtocols.swift */,
-				4621CEAD20EFABC700B17323 /* JournalInteractor.swift */,
 			);
 			path = Journal;
 			sourceTree = "<group>";
