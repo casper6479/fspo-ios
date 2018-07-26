@@ -68,7 +68,7 @@ open class ProfileLayout: InsetLayout<View> {
         })
         let namesStackLayout = StackLayout(axis: .vertical, spacing: 8, alignment: .center, sublayouts: [lastnameLabel, firstnameLabel, middlenameLabel])
         let nameAvatarLayout = StackLayout(axis: .horizontal, sublayouts: [photoLayout, namesStackLayout])
-        let bottomButton = Button().createButton(title: "Родители", width: UIScreen.main.bounds.width - 32, height: 40, alignment: .bottomCenter)
+        let bottomButton = Button().createButton(title: NSLocalizedString("Родители", comment: ""), width: UIScreen.main.bounds.width - 32, height: 40, alignment: .bottomCenter)
         var safeHeight: CGFloat = 0
         if #available(iOS 11, *) {
             DispatchQueue.main.sync {

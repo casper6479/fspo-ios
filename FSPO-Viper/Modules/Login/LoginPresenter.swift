@@ -21,5 +21,10 @@ class LoginPresenter: LoginPresenterProtocol {
         self.interactor = interactor
         self.router = router
     }
-
+    func loginUser() {
+        interactor?.login()
+    }
+    func userLoggedIn() {
+        view?.presentTabBar()
+    }
 }

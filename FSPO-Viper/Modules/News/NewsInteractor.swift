@@ -23,8 +23,8 @@ class NewsInteractor: NewsInteractorProtocol {
                 let res = try JSONDecoder().decode(JSONDecoding.NewsApi.self, from: result!)
                 self.presenter?.updateData(data: res.news)
             } catch {
-                let alert = UIAlertController(title: "Ошибка при получении данных", message: error.localizedDescription, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Повторить", style: UIAlertActionStyle.default, handler: {_ in
+                let alert = UIAlertController(title: NSLocalizedString("Ошибка при получении данных", comment: ""), message: error.localizedDescription, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("Повторить", comment: ""), style: UIAlertActionStyle.default, handler: {_ in
                     self.fetchNews()
                 }))
                 alert.addAction(UIAlertAction(title: "ОК", style: UIAlertActionStyle.default, handler: nil))

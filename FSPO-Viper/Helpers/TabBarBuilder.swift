@@ -12,20 +12,20 @@ import UIKit
 extension UITabBarController {
     func buildStudentsTabBar() -> UITabBarController {
         let News = NewsRouter.createModule()
-        News.title = "Изменения в расписании"
-        News.tabBarItem = UITabBarItem(title: "Новости", image: UIImage(), selectedImage: UIImage())
+        News.title = NSLocalizedString("Изменения в расписании", comment: "")
+        News.tabBarItem = UITabBarItem(title: NSLocalizedString("Новости", comment: ""), image: UIImage(), selectedImage: UIImage())
         let Journal = JournalRouter.createModule()
-        Journal.title = "Журнал"
-        Journal.tabBarItem = UITabBarItem(title: "Журнал", image: UIImage(), selectedImage: UIImage())
+        Journal.title = NSLocalizedString("Журнал", comment: "")
+        Journal.tabBarItem = UITabBarItem(title: NSLocalizedString("Журнал", comment: ""), image: UIImage(), selectedImage: UIImage())
         let Messages = MessagesRouter.createModule()
-        Messages.title = "Сообщения"
-        Messages.tabBarItem = UITabBarItem(title: "Сообщения", image: UIImage(), selectedImage: UIImage())
+        Messages.title = NSLocalizedString("Сообщения", comment: "")
+        Messages.tabBarItem = UITabBarItem(title: NSLocalizedString("Сообщения", comment: ""), image: UIImage(), selectedImage: UIImage())
         let Schedule = ScheduleRouter.createModule()
-        Schedule.title = "Расписание"
-        Schedule.tabBarItem = UITabBarItem(title: "Расписание", image: UIImage(), selectedImage: UIImage())
+        Schedule.title = NSLocalizedString("Расписание", comment: "")
+        Schedule.tabBarItem = UITabBarItem(title: NSLocalizedString("Расписание", comment: ""), image: UIImage(), selectedImage: UIImage())
         let Profile = ProfileRouter.createModule()
-        Profile.title = "Профиль"
-        Profile.tabBarItem = UITabBarItem(title: "Профиль", image: UIImage(), selectedImage: UIImage())
+        Profile.title = NSLocalizedString("Профиль", comment: "")
+        Profile.tabBarItem = UITabBarItem(title: NSLocalizedString("Профиль", comment: ""), image: UIImage(), selectedImage: UIImage())
         let tabBarController = UITabBarController()
         let controllers = [News, Journal, Messages, Schedule, Profile]
         let navigationControllers = controllers.map {UINavigationController(rootViewController: $0)}

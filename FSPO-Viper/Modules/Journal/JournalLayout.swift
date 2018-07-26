@@ -11,17 +11,17 @@ import LayoutKit
 
 open class JournalLayout: InsetLayout<View> {
     public init(dolgs: String, percent: String, score: String) {
-        let byDate = Button().createButton(title: "По дате", width: 127, height: 40, alignment: .center)
-        let bySubject = Button().createButton(title: "По предметам", width: 127, height: 40, alignment: .center)
-        let more = Button().createButton(title: "Подробнее", width: 100, height: 29, alignment: .center)
+        let byDate = Button().createButton(title: NSLocalizedString("По дате", comment: ""), width: 127, height: 40, alignment: .center)
+        let bySubject = Button().createButton(title: NSLocalizedString("По предметам", comment: ""), width: 127, height: 40, alignment: .center)
+        let more = Button().createButton(title: NSLocalizedString("Подробнее", comment: ""), width: 100, height: 29, alignment: .center)
         let avgScoreLabel = LabelLayout(text: "3.5", font: UIFont.ITMOFontBold!.withSize(24), alignment: .center)
-        let avgScorePlaceholder = LabelLayout(text: "Средний балл", font: UIFont.ITMOFont!, alignment: .center)
+        let avgScorePlaceholder = LabelLayout(text: NSLocalizedString("Средний балл", comment: ""), font: UIFont.ITMOFont!, alignment: .center)
         let avgScoreStack = StackLayout(axis: .vertical, spacing: 8, sublayouts: [avgScorePlaceholder, avgScoreLabel])
         let dolgsLabel = LabelLayout(text: "1", font: UIFont.ITMOFontBold!.withSize(24), alignment: .center)
-        let dolgsPlaceholder = LabelLayout(text: "Долгов", font: UIFont.ITMOFont!, alignment: .center)
+        let dolgsPlaceholder = LabelLayout(text: NSLocalizedString("Долгов", comment: ""), font: UIFont.ITMOFont!, alignment: .center)
         let dolgsStack = StackLayout(axis: .vertical, spacing: 8, sublayouts: [dolgsPlaceholder, dolgsLabel])
         let precenseLabel = LabelLayout(text: "95%", font: UIFont.ITMOFontBold!.withSize(24), alignment: .center)
-        let precensePlaceholder = LabelLayout(text: "Посещения", font: UIFont.ITMOFont!, alignment: .center)
+        let precensePlaceholder = LabelLayout(text: NSLocalizedString("Посещения", comment: ""), font: UIFont.ITMOFont!, alignment: .center)
         let precenseStack = StackLayout(axis: .vertical, spacing: 8, sublayouts: [precensePlaceholder, precenseLabel])
         let horizontalStack = StackLayout(axis: .horizontal,
                                           distribution: .fillEqualSize,

@@ -15,9 +15,9 @@ class DateToString {
         var finalString = ""
         let dateFormatterGet = DateFormatter()
         dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        dateFormatterGet.locale = Locale(identifier: "ru_RU")
+        dateFormatterGet.locale = Locale(identifier: "en_US")
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "ru_RU")
+        dateFormatter.locale = Locale.current
         let date: Date? = dateFormatterGet.date(from: dateString)
         if calendar.isDateInToday(date!) {
             dateFormatter.dateFormat = "HH:mm"

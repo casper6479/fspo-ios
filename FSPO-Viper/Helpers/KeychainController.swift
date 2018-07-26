@@ -10,3 +10,4 @@ import Foundation
 import KeychainAccess
 
 let keychain = Keychain(service: Constants.KeychainService)
+//let keychain = Keychain(server: "https://ifspo.ifmo.ru", protocolType: .https)

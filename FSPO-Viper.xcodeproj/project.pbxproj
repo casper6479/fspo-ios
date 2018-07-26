@@ -73,6 +73,7 @@
 		46B6D4CC210A5A3F00D83287 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6D4C6210A5A3F00D83287 /* SettingsViewController.swift */; };
 		46B6D4CD210A5A3F00D83287 /* SettingsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6D4C7210A5A3F00D83287 /* SettingsProtocols.swift */; };
 		46B6D4CE210A5A3F00D83287 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6D4C8210A5A3F00D83287 /* SettingsInteractor.swift */; };
+		46B6D4E3210A75D800D83287 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 46B6D4E5210A75D800D83287 /* Localizable.strings */; };
 		46C1561C20DBB2D700F2BA79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C1561B20DBB2D700F2BA79 /* AppDelegate.swift */; };
 		46C1562320DBB2D800F2BA79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46C1562220DBB2D800F2BA79 /* Assets.xcassets */; };
 		46C1562620DBB2D800F2BA79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C1562420DBB2D800F2BA79 /* LaunchScreen.storyboard */; };
@@ -148,6 +149,8 @@
 		46B6D4C6210A5A3F00D83287 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		46B6D4C7210A5A3F00D83287 /* SettingsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsProtocols.swift; sourceTree = "<group>"; };
 		46B6D4C8210A5A3F00D83287 /* SettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
+		46B6D4E6210A75DC00D83287 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		46B6D4E7210A764E00D83287 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		46C1561820DBB2D700F2BA79 /* FSPO-Viper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FSPO-Viper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46C1561B20DBB2D700F2BA79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46C1562220DBB2D800F2BA79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -317,12 +320,12 @@
 		46A9F9B320F17452008E2653 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				46A9F9AB20F1744C008E2653 /* LoginInteractor.swift */,
 				46A9F9A520F172B1008E2653 /* LoginLayout.swift */,
 				46A9F9A720F1744C008E2653 /* LoginPresenter.swift */,
+				46A9F9AA20F1744C008E2653 /* LoginProtocols.swift */,
 				46A9F9A820F1744C008E2653 /* LoginRouter.swift */,
 				46A9F9A920F1744C008E2653 /* LoginViewController.swift */,
-				46A9F9AA20F1744C008E2653 /* LoginProtocols.swift */,
-				46A9F9AB20F1744C008E2653 /* LoginInteractor.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				46C1562220DBB2D800F2BA79 /* Assets.xcassets */,
 				46C1562420DBB2D800F2BA79 /* LaunchScreen.storyboard */,
 				46C1562720DBB2D800F2BA79 /* Info.plist */,
+				46B6D4E5210A75D800D83287 /* Localizable.strings */,
 			);
 			path = "FSPO-Viper";
 			sourceTree = "<group>";
@@ -459,6 +463,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46B6D4E3210A75D800D83287 /* Localizable.strings in Resources */,
 				4621CECA20F01E4400B17323 /* ALSSchlangesans-Bold.otf in Resources */,
 				4621CEC920F01E4400B17323 /* ALSSchlangesans.otf in Resources */,
 				46C1562620DBB2D800F2BA79 /* LaunchScreen.storyboard in Resources */,
@@ -607,6 +612,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		46B6D4E5210A75D800D83287 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				46B6D4E6210A75DC00D83287 /* ru */,
+				46B6D4E7210A764E00D83287 /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		46C1562420DBB2D800F2BA79 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -622,6 +636,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -682,6 +697,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -741,7 +757,10 @@
 				DEVELOPMENT_TEAM = PCHAWD2XTV;
 				INFOPLIST_FILE = "FSPO-Viper/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.casper6479.FSPO-Viper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -758,7 +777,10 @@
 				DEVELOPMENT_TEAM = PCHAWD2XTV;
 				INFOPLIST_FILE = "FSPO-Viper/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.casper6479.FSPO-Viper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

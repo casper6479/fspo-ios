@@ -16,17 +16,20 @@ protocol LoginWireframeProtocol: class {
 }
 // MARK: Presenter -
 protocol LoginPresenterProtocol: class {
-
+    func loginUser()
+    func userLoggedIn()
 }
 
 // MARK: Interactor -
 protocol LoginInteractorProtocol: class {
 
   var presenter: LoginPresenterProtocol? { get set }
+  func login()
 }
 
 // MARK: View -
 protocol LoginViewProtocol: class {
 
   var presenter: LoginPresenterProtocol? { get set }
+  func presentTabBar()
 }

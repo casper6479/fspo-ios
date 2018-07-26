@@ -44,7 +44,7 @@ open class LoginLayout: InsetLayout<UIView> {
             size: CGSize(width: 80, height: 40),
             alignment: .center,
             config: { button in
-                button.setTitle("Вход", for: .normal)
+                button.setTitle(NSLocalizedString("Вход", comment: ""), for: .normal)
                 button.backgroundColor = UIColor.ITMOBlue
                 button.setTitleColor(.white, for: .normal)
                 button.setTitleColor(UIColor.white.withAlphaComponent(0.5), for: .highlighted)
@@ -56,7 +56,7 @@ open class LoginLayout: InsetLayout<UIView> {
         })
         let scheduleButton = ButtonLayout(
             type: .custom,
-            title: "Расписание",
+            title: NSLocalizedString("Расписание", comment: ""),
             alignment: .bottomCenter,
             config: { button in
                 button.setTitleColor(UIColor.ITMOBlue, for: .normal)
@@ -66,7 +66,7 @@ open class LoginLayout: InsetLayout<UIView> {
         let loginField = SizeLayout<UITextField>(
             size: CGSize(width: UIScreen.main.bounds.width - 128, height: 40),
             config: { textfield in
-                textfield.placeholder = "Логин"
+                textfield.placeholder = NSLocalizedString("Логин", comment: "")
                 textfield.font = UIFont.ITMOFontBold
                 textfield.leftViewMode = .always
                 textfield.rightViewMode = .always
@@ -89,7 +89,7 @@ open class LoginLayout: InsetLayout<UIView> {
         let passwordField = SizeLayout<UITextField>(
             size: CGSize(width: UIScreen.main.bounds.width - 128, height: 40),
             config: { textfield in
-                textfield.placeholder = "Пароль"
+                textfield.placeholder = NSLocalizedString("Пароль", comment: "")
                 textfield.font = UIFont.ITMOFontBold
                 textfield.leftViewMode = .always
                 textfield.rightViewMode = .always

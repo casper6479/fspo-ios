@@ -27,7 +27,7 @@ class SettingsViewController: UIViewController, SettingsViewProtocol, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
         if indexPath.row == 1 {
-            cell.textLabel?.text = "exit"
+            cell.textLabel?.text = NSLocalizedString("Выход", comment: "")
         }
         return cell
     }

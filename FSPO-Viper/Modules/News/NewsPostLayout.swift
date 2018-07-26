@@ -26,7 +26,7 @@ open class NewsPostLayout: InsetLayout<View> {
                 label.preferredMaxLayoutWidth = UIScreen.main.bounds.width - 32
             })
         let authorLayout = LabelLayout(
-            text: "Завилейская Анастасия",
+            text: NSLocalizedString("Завилейская Анастасия", comment: ""),
             font: (UIFont.ITMOFont?.withSize(17))!,
             config: { label in
                 label.textColor = UIColor.ITMOBlue

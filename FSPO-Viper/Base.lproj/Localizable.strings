@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  FSPO-Viper
+
+  Created by Николай Борисов on 27/07/2018.
+  Copyright © 2018 Николай Борисов. All rights reserved.
+*/
+"Вход" = "Login";
+"Расписание" = "Schedule";
+"Логин" = "Login";
+"Пароль" = "Password";
+"Новости" = "News";
+"Профиль" = "Profile";
+"Выход" = "Exit";
+"По дате" = "By date";
+"По предметам" = "By subjects";
+"Подробнее" = "More";
+"Средний балл" = "Average score";
+"Долгов" = "Debts";
+"Посещения" = "Visits";
+"Родители" = "Parents";
+"Завилейская Анастасия" = "Zavileyskaya Anastasia";
+"Ошибка при получении данных" = "Getting data error";
+"Повторить" = "Try again";
+"Изменения в расписании" = "Schedule changes";
+"Журнал" = "Journal";
+"Сообщения" = "Messages";
