@@ -11,9 +11,9 @@ import LayoutKit
 
 open class JournalLayout: InsetLayout<View> {
     public init(dolgs: String, percent: String, score: String) {
-        let byDate = Button().createButton(title: NSLocalizedString("По дате", comment: ""), width: 127, height: 40, alignment: .center)
-        let bySubject = Button().createButton(title: NSLocalizedString("По предметам", comment: ""), width: 127, height: 40, alignment: .center)
-        let more = Button().createButton(title: NSLocalizedString("Подробнее", comment: ""), width: 100, height: 29, alignment: .center)
+        let byDate = Button().createButton(title: NSLocalizedString("По дате", comment: ""), width: 127, height: 40, alignment: .center, target: JournalViewController(), action: #selector(JournalViewController().setNeedsShowByDate))
+        let bySubject = Button().createButton(title: NSLocalizedString("По предметам", comment: ""), width: 127, height: 40, alignment: .center, target: JournalViewController(), action: #selector(JournalViewController().setNeedsShowBySubject))
+        let more = Button().createButton(title: NSLocalizedString("Подробнее", comment: ""), width: 100, height: 29, alignment: .center, target: JournalViewController(), action: #selector(JournalViewController().setNeedsShowMore))
         let avgScoreLabel = LabelLayout(text: "3.5", font: UIFont.ITMOFontBold!.withSize(24), alignment: .center)
         let avgScorePlaceholder = LabelLayout(text: NSLocalizedString("Средний балл", comment: ""), font: UIFont.ITMOFont!, alignment: .center)
         let avgScoreStack = StackLayout(axis: .vertical, spacing: 8, sublayouts: [avgScorePlaceholder, avgScoreLabel])

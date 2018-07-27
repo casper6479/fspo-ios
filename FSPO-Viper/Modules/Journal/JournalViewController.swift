@@ -34,4 +34,16 @@ class JournalViewController: UIViewController, JournalViewProtocol, UITextFieldD
             })
         }
     }
+    func show(vc: UIViewController) {
+        self.navigationController?.show(vc, sender: self)
+    }
+    @objc func setNeedsShowByDate() {
+        presenter?.showByDate()
+    }
+    @objc func setNeedsShowBySubject() {
+        presenter?.showBySubject()
+    }
+    @objc func setNeedsShowMore() {
+        presenter?.showMore()
+    }
 }

@@ -11,7 +11,6 @@
 import UIKit
 
 class ProfilePresenter: ProfilePresenterProtocol {
-
     weak private var view: ProfileViewProtocol?
     var interactor: ProfileInteractorProtocol?
     private let router: ProfileWireframeProtocol
@@ -20,6 +19,12 @@ class ProfilePresenter: ProfilePresenterProtocol {
         self.view = interface
         self.interactor = interactor
         self.router = router
+    }
+    func showParents() {
+        view?.show(vc: ParentsRouter.createModule())
+    }
+    func showSettings() {
+        view?.show(vc: SettingsRouter.createModule())
     }
 
 }

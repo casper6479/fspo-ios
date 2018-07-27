@@ -28,10 +28,16 @@ class ProfileViewController: UIViewController, ProfileViewProtocol {
         }
         let settingButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
         settingButton.setTitle("=", for: .normal)
-        settingButton.addTarget(self, action: #selector(settingUpInside), for: .touchUpInside)
+        settingButton.addTarget(self, action: #selector(setNeedsShowSettings), for: .touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: settingButton)
     }
-    @objc func settingUpInside() {
-        navigationController?.show(SettingsRouter.createModule(), sender: self)
+    func show(vc: UIViewController) {
+        navigationController?.show(vc, sender: self)
+    }
+    @objc func setNeedsShowSettings() {
+        presenter?.showSettings()
+    }
+    @objc func setNeedsShowParents() {
+        presenter?.showParents()
     }
 }

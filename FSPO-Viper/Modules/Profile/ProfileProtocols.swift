@@ -9,14 +9,15 @@
 //
 
 import Foundation
-
+import UIKit
 // MARK: Wireframe -
 protocol ProfileWireframeProtocol: class {
 
 }
 // MARK: Presenter -
 protocol ProfilePresenterProtocol: class {
-
+    func showSettings()
+    func showParents()
 }
 
 // MARK: Interactor -
@@ -27,6 +28,6 @@ protocol ProfileInteractorProtocol: class {
 
 // MARK: View -
 protocol ProfileViewProtocol: class {
-
-  var presenter: ProfilePresenterProtocol? { get set }
+    func show(vc: UIViewController)
+    var presenter: ProfilePresenterProtocol? { get set }
 }

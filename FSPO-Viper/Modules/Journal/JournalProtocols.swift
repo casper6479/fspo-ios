@@ -9,15 +9,19 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: Wireframe -
 protocol JournalWireframeProtocol: class {
 
 }
 // MARK: Presenter -
-protocol JournalPresenterProtocol: class {
+@objc protocol JournalPresenterProtocol: class {
     func updateView()
     func journalFetched(dolgs: String, percent: String, score: String)
+    @objc func showByDate()
+    @objc func showBySubject()
+    @objc func showMore()
 }
 
 // MARK: Interactor -
@@ -28,7 +32,10 @@ protocol JournalInteractorProtocol: class {
 
 // MARK: View -
 protocol JournalViewProtocol: class {
-
-  var presenter: JournalPresenterProtocol? { get set }
-  func setupView(dolgs: String, percent: String, score: String)
+    func setNeedsShowByDate()
+    func setNeedsShowBySubject()
+    func setNeedsShowMore()
+    var presenter: JournalPresenterProtocol? { get set }
+    func setupView(dolgs: String, percent: String, score: String)
+    func show(vc: UIViewController)
 }

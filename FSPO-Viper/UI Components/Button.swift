@@ -10,7 +10,7 @@ import Foundation
 import LayoutKit
 
 class Button {
-    func createButton(title: String, width: CGFloat, height: CGFloat, alignment: Alignment) -> SizeLayout<UIButton> {
+    func createButton(title: String, width: CGFloat, height: CGFloat, alignment: Alignment, target: Any, action: Selector) -> SizeLayout<UIButton> {
         let button = SizeLayout<UIButton>(
             size: CGSize(width: width, height: height),
             alignment: alignment,
@@ -23,6 +23,7 @@ class Button {
                 button.layer.cornerRadius = button.frame.height / 2
                 button.layer.masksToBounds = true
                 button.applyStyle()
+                button.addTarget(target, action: action, for: .touchUpInside)
         })
         return button
     }
