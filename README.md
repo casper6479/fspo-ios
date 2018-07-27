@@ -20,7 +20,7 @@ Everything written according to the SwiftLint.
 # TODO:
 - Infinity News
 - Schedule Module
-- Teacher functionality
+- Teacher & parents functionality
 - Api Requests for: Messages, Journal, Profile, Login
 - Additional modules for each module
 - Local & Remote Notifications
