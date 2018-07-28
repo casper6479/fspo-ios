@@ -29,12 +29,14 @@ class JournalBySubjectViewController: UIViewController, JournalBySubjectViewProt
         tableView.dataSource = reloadableViewLayoutAdapter
         tableView.delegate = reloadableViewLayoutAdapter
         tableView.backgroundColor = .white
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 72, bottom: 0, right: 0)
+        tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
         view.addSubview(tableView)
     }
     func getNewsRows() -> [Layout] {
         var layouts = [Layout]()
         for item in (dataSource?.lessons)! {
-            layouts.append(NewsPostLayout(body: item.name, time: item.semester))
+            layouts.append(JournalBySubjectLayout(sem: item.semester, subject: item.name))
         }
         return layouts
     }
