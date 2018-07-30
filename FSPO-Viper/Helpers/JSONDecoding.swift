@@ -38,6 +38,27 @@ class JSONDecoding {
             let semester: String
         }
     }
+    struct MoreApi: Decodable {
+        let lessons_now: LessonsNow
+        let lessons_before: LessonsBefore
+        struct LessonsBefore: Decodable {
+            let semester: Int
+            let lessons: [Lessons]
+        }
+        struct LessonsNow: Decodable {
+            let semester: Int
+            let lessons: [Lessons]
+        }
+        struct Lessons: Decodable {
+            let name: String
+            let lesson_id: String
+            let ex_all: Int
+            let student_ex_was: Int
+            let student_ex_not: Int
+            let student_validmark: Int?
+            let student_mark: Int?
+        }
+    }
     /*struct studentHistoryAPI: Decodable {
         let groups: [groups]
     }

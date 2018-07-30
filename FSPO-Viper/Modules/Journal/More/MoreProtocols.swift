@@ -16,17 +16,18 @@ protocol MoreWireframeProtocol: class {
 }
 // MARK: Presenter -
 protocol MorePresenterProtocol: class {
-
+    func updateView()
+    func moreFetched(data: JSONDecoding.MoreApi)
 }
 
 // MARK: Interactor -
 protocol MoreInteractorProtocol: class {
-
+    func fetchMore()
   var presenter: MorePresenterProtocol? { get set }
 }
 
 // MARK: View -
 protocol MoreViewProtocol: class {
-
-  var presenter: MorePresenterProtocol? { get set }
+    func showNewRows(source: JSONDecoding.MoreApi)
+    var presenter: MorePresenterProtocol? { get set }
 }

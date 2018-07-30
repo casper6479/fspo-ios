@@ -28,7 +28,7 @@ open class JournalBySubjectLayout: InsetLayout<View> {
                 label.backgroundColor = .white
         })
         super.init(
-                insets: UIEdgeInsets(top: 12, left: 16, bottom: 12, right: 16),
+                insets: UIEdgeInsets(top: 12, left: 8, bottom: 12, right: 8),
                 sublayout: StackLayout(
                     axis: .horizontal,
                     spacing: 8,

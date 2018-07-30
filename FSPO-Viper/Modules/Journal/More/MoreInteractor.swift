@@ -9,8 +9,27 @@
 //
 
 import UIKit
+import Alamofire
 
 class MoreInteractor: MoreInteractorProtocol {
 
     weak var presenter: MorePresenterProtocol?
+    func fetchMore() {
+        let user_id = UserDefaults.standard.integer(forKey: "user_id")
+        let headers: HTTPHeaders = [
+            "token": keychain["token"]!
+        ]
+        let params: Parameters = [
+            "user_id": user_id
+        ]
+        Alamofire.request(Constants.MoreURL, method: .get, parameters: params, headers: headers).responseJSON { (response) in
+            let result = response.data
+            do {
+                let res = try JSONDecoder().decode(JSONDecoding.MoreApi.self, from: result!)
+                self.presenter?.moreFetched(data: res)
+            } catch {
+                print(error)
+            }
+        }
+    }
 }

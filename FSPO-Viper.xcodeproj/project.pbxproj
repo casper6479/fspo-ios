@@ -95,12 +95,14 @@
 		46B6D519210B25B500D83287 /* ParentsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6D513210B25B500D83287 /* ParentsProtocols.swift */; };
 		46B6D51A210B25B500D83287 /* ParentsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6D514210B25B500D83287 /* ParentsInteractor.swift */; };
 		46B6D51D210B75E500D83287 /* JournalBySubjectLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6D51C210B75E500D83287 /* JournalBySubjectLayout.swift */; };
+		46B6D51F210C6C3C00D83287 /* MoreLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6D51E210C6C3C00D83287 /* MoreLayout.swift */; };
 		46C1561C20DBB2D700F2BA79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C1561B20DBB2D700F2BA79 /* AppDelegate.swift */; };
 		46C1562320DBB2D800F2BA79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46C1562220DBB2D800F2BA79 /* Assets.xcassets */; };
 		46C1562620DBB2D800F2BA79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C1562420DBB2D800F2BA79 /* LaunchScreen.storyboard */; };
 		46DF962420FC8FC500C4D901 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621CEB720EFABD700B17323 /* ScheduleViewController.swift */; };
 		46DF962620FC927B00C4D901 /* ScheduleByGroupsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DF962520FC927B00C4D901 /* ScheduleByGroupsLayout.swift */; };
 		46DF962820FC928700C4D901 /* TeachersListLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DF962720FC928700C4D901 /* TeachersListLayout.swift */; };
+		46ED1083210FABBF00B16737 /* ParentsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ED1082210FABBF00B16737 /* ParentsLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -193,6 +195,7 @@
 		46B6D513210B25B500D83287 /* ParentsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentsProtocols.swift; sourceTree = "<group>"; };
 		46B6D514210B25B500D83287 /* ParentsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentsInteractor.swift; sourceTree = "<group>"; };
 		46B6D51C210B75E500D83287 /* JournalBySubjectLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalBySubjectLayout.swift; sourceTree = "<group>"; };
+		46B6D51E210C6C3C00D83287 /* MoreLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreLayout.swift; sourceTree = "<group>"; };
 		46C1561820DBB2D700F2BA79 /* FSPO-Viper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FSPO-Viper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46C1561B20DBB2D700F2BA79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46C1562220DBB2D800F2BA79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -200,6 +203,7 @@
 		46C1562720DBB2D800F2BA79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46DF962520FC927B00C4D901 /* ScheduleByGroupsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleByGroupsLayout.swift; sourceTree = "<group>"; };
 		46DF962720FC928700C4D901 /* TeachersListLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersListLayout.swift; sourceTree = "<group>"; };
+		46ED1082210FABBF00B16737 /* ParentsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentsLayout.swift; sourceTree = "<group>"; };
 		A708E70CE564AC7313194980 /* Pods_FSPO_Viper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FSPO_Viper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C496B420B19573C0E000D13B /* Pods-FSPO-Viper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSPO-Viper.release.xcconfig"; path = "Pods/Target Support Files/Pods-FSPO-Viper/Pods-FSPO-Viper.release.xcconfig"; sourceTree = "<group>"; };
 		DC649CFBB2E0B29D669ACD1A /* Pods-FSPO-Viper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSPO-Viper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FSPO-Viper/Pods-FSPO-Viper.debug.xcconfig"; sourceTree = "<group>"; };
@@ -429,6 +433,7 @@
 				46B6D504210B1FC700D83287 /* MoreViewController.swift */,
 				46B6D505210B1FC700D83287 /* MoreProtocols.swift */,
 				46B6D506210B1FC700D83287 /* MoreInteractor.swift */,
+				46B6D51E210C6C3C00D83287 /* MoreLayout.swift */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -441,6 +446,7 @@
 				46B6D512210B25B500D83287 /* ParentsViewController.swift */,
 				46B6D513210B25B500D83287 /* ParentsProtocols.swift */,
 				46B6D514210B25B500D83287 /* ParentsInteractor.swift */,
+				46ED1082210FABBF00B16737 /* ParentsLayout.swift */,
 			);
 			path = Parents;
 			sourceTree = "<group>";
@@ -659,10 +665,12 @@
 				46B6D4CD210A5A3F00D83287 /* SettingsProtocols.swift in Sources */,
 				46DF962820FC928700C4D901 /* TeachersListLayout.swift in Sources */,
 				46A9F9A420F03FC2008E2653 /* StringSize.swift in Sources */,
+				46ED1083210FABBF00B16737 /* ParentsLayout.swift in Sources */,
 				46A9F9A220F033AB008E2653 /* JournalLayout.swift in Sources */,
 				46B6D4F1210B1E5700D83287 /* JournalBySubjectRouter.swift in Sources */,
 				46A9F9AF20F1744C008E2653 /* LoginViewController.swift in Sources */,
 				46B6D517210B25B500D83287 /* ParentsRouter.swift in Sources */,
+				46B6D51F210C6C3C00D83287 /* MoreLayout.swift in Sources */,
 				466CDF6C20EF9D8700A86701 /* HelloWorldAutoLayoutView.swift in Sources */,
 				466CDF6420EF9D8700A86701 /* ProfileCardLayout.swift in Sources */,
 				46B6D4F3210B1E5700D83287 /* JournalBySubjectProtocols.swift in Sources */,

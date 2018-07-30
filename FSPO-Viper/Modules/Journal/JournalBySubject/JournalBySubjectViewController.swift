@@ -29,7 +29,7 @@ class JournalBySubjectViewController: UIViewController, JournalBySubjectViewProt
         tableView.dataSource = reloadableViewLayoutAdapter
         tableView.delegate = reloadableViewLayoutAdapter
         tableView.backgroundColor = .white
-        tableView.separatorInset = UIEdgeInsets(top: 0, left: 72, bottom: 0, right: 0)
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 64, bottom: 0, right: 0)
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
         view.addSubview(tableView)
     }

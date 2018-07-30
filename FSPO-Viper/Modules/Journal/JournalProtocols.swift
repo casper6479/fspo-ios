@@ -36,6 +36,6 @@ protocol JournalViewProtocol: class {
     func setNeedsShowBySubject()
     func setNeedsShowMore()
     var presenter: JournalPresenterProtocol? { get set }
-    func setupView(dolgs: String, percent: String, score: String)
+    func fillView(dolgs: String, percent: String, score: String)
     func show(vc: UIViewController)
 }

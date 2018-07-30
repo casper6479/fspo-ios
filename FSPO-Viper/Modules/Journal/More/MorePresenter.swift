@@ -11,6 +11,7 @@
 import UIKit
 
 class MorePresenter: MorePresenterProtocol {
+    
 
     weak private var view: MoreViewProtocol?
     var interactor: MoreInteractorProtocol?
@@ -21,5 +22,10 @@ class MorePresenter: MorePresenterProtocol {
         self.interactor = interactor
         self.router = router
     }
-
+    func updateView() {
+        interactor?.fetchMore()
+    }
+    func moreFetched(data: JSONDecoding.MoreApi) {
+        view?.showNewRows(source: data)
+    }
 }

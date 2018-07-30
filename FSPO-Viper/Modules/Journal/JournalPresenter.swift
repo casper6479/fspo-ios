@@ -25,7 +25,7 @@ class JournalPresenter: JournalPresenterProtocol {
         interactor?.fetchJournal()
     }
     func journalFetched(dolgs: String, percent: String, score: String) {
-        view?.setupView(dolgs: dolgs, percent: percent, score: score)
+        view?.fillView(dolgs: dolgs, percent: percent, score: score)
     }
     @objc func showByDate() {
         view?.show(vc: JournalByDateRouter.createModule())
