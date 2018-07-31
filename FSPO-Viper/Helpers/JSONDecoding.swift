@@ -59,6 +59,9 @@ class JSONDecoding {
             let student_mark: Int?
         }
     }
+    struct ParentsApi: Decodable {
+        let relatives: [ProfileApi]
+    }
     struct ProfileApi: Decodable {
         let firstname: String
         let middlename: String
@@ -69,7 +72,7 @@ class JSONDecoding {
         let birthday: String?
         let nationality: String?
         let school: Int?
-        let segrys: Bool
+        let segrys: Bool?
     }
     /*struct studentHistoryAPI: Decodable {
         let groups: [groups]

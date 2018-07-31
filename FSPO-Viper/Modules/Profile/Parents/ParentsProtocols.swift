@@ -9,24 +9,25 @@
 //
 
 import Foundation
-
+import UIKit
 // MARK: Wireframe -
 protocol ParentsWireframeProtocol: class {
 
 }
 // MARK: Presenter -
 protocol ParentsPresenterProtocol: class {
-
+    func updateView()
+    func parentsFetched(firstname: String, lastname: String, middlename: String, email: String, phone: String, photo: UIImage)
 }
 
 // MARK: Interactor -
 protocol ParentsInteractorProtocol: class {
-
-  var presenter: ParentsPresenterProtocol? { get set }
+    func fetchParents()
+    var presenter: ParentsPresenterProtocol? { get set }
 }
 
 // MARK: View -
 protocol ParentsViewProtocol: class {
-
-  var presenter: ParentsPresenterProtocol? { get set }
+    func fillView(firstname: String, lastname: String, middlename: String, email: String, phone: String, photo: UIImage)
+    var presenter: ParentsPresenterProtocol? { get set }
 }

@@ -11,6 +11,7 @@
 import UIKit
 
 class ParentsPresenter: ParentsPresenterProtocol {
+    
 
     weak private var view: ParentsViewProtocol?
     var interactor: ParentsInteractorProtocol?
@@ -21,5 +22,11 @@ class ParentsPresenter: ParentsPresenterProtocol {
         self.interactor = interactor
         self.router = router
     }
-
+    func updateView() {
+        interactor?.fetchParents()
+    }
+    
+    func parentsFetched(firstname: String, lastname: String, middlename: String, email: String, phone: String, photo: UIImage) {
+        view?.fillView(firstname: firstname, lastname: lastname, middlename: middlename, email: email, phone: phone, photo: photo)
+    }
 }
