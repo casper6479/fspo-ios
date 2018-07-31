@@ -18,16 +18,19 @@ protocol ProfileWireframeProtocol: class {
 protocol ProfilePresenterProtocol: class {
     func showSettings()
     func showParents()
+    func updateView()
+    func profileFetched(firstname: String, lastname: String, middlename: String, email: String, phone: String, birthday: String, nationality: String, school: String, segrys: String, photo: UIImage)
 }
 
 // MARK: Interactor -
 protocol ProfileInteractorProtocol: class {
-
-  var presenter: ProfilePresenterProtocol? { get set }
+    func fetchProfile()
+    var presenter: ProfilePresenterProtocol? { get set }
 }
 
 // MARK: View -
 protocol ProfileViewProtocol: class {
     func show(vc: UIViewController)
+    func fillView(firstname: String, lastname: String, middlename: String, email: String, phone: String, birthday: String, nationality: String, school: String, segrys: String, photo: UIImage)
     var presenter: ProfilePresenterProtocol? { get set }
 }

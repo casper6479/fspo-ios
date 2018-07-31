@@ -18,4 +18,5 @@ class Constants {
     public static let JournalURL = "https://ifspo.ifmo.ru/api/eduInfo"
     public static let JournalBySubjectsURL = "https://ifspo.ifmo.ru/api/studentLessons"
     public static let MoreURL = "https://ifspo.ifmo.ru/api/eduInfoMore"
+    public static let ProfileURL = "https://ifspo.ifmo.ru/api/profile"
 }

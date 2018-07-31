@@ -18,18 +18,22 @@ class ProfileViewController: UIViewController, ProfileViewProtocol {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         edgesForExtendedLayout = UIRectEdge()
+        let settingButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        settingButton.setTitle("=", for: .normal)
+        settingButton.addTarget(self, action: #selector(setNeedsShowSettings), for: .touchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: settingButton)
+        fillView(firstname: "s", lastname: "", middlename: "", email: "", phone: "", birthday: "", nationality: "", school: "", segrys: "", photo: UIImage(named: "test")!)
+        presenter?.updateView()
+    }
+    func fillView(firstname: String, lastname: String, middlename: String, email: String, phone: String, birthday: String, nationality: String, school: String, segrys: String, photo: UIImage) {
         let width = view.bounds.width
         DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
-            let profileLayout = ProfileLayout(firstname: "Николай", lastname: "Борисов", middlename: "Викторович", email: "copr@vk.com", phone: "8-800-555-35-35", birthday: "01.01.2001", nationality: "RU", school: "9 Классов", segrys: "Обучался(лась) в сегрисе", photo: UIImage(named: "test")!)
+            let profileLayout = ProfileLayout(firstname: firstname, lastname: lastname, middlename: middlename, email: email, phone: phone, birthday: birthday, nationality: nationality, school: school, segrys: segrys, photo: photo)
             let arrangement = profileLayout.arrangement(width: width)
             DispatchQueue.main.async(execute: {
                 arrangement.makeViews(in: self.view)
             })
         }
-        let settingButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        settingButton.setTitle("=", for: .normal)
-        settingButton.addTarget(self, action: #selector(setNeedsShowSettings), for: .touchUpInside)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: settingButton)
     }
     func show(vc: UIViewController) {
         navigationController?.show(vc, sender: self)

@@ -59,6 +59,18 @@ class JSONDecoding {
             let student_mark: Int?
         }
     }
+    struct ProfileApi: Decodable {
+        let firstname: String
+        let middlename: String
+        let lastname: String
+        let photo: String
+        let email: String?
+        let phone: String?
+        let birthday: String?
+        let nationality: String?
+        let school: Int?
+        let segrys: Bool
+    }
     /*struct studentHistoryAPI: Decodable {
         let groups: [groups]
     }
