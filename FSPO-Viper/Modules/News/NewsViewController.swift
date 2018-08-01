@@ -44,7 +44,10 @@ class NewsViewController: UIViewController, NewsViewProtocol {
     }
     private func reloadTableView(width: CGFloat, synchronous: Bool) {
         reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
-            return [Section(header: nil, items: self?.getNewsRows() ?? [], footer: nil)]
+            return [Section(
+                header: nil,
+                items: self?.getNewsRows() ?? [],
+                footer: nil)]
         })
     }
     /*override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {

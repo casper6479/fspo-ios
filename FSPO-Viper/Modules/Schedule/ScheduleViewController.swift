@@ -9,11 +9,13 @@
 //
 
 import UIKit
-
+import LayoutKit
 class ScheduleViewController: UIViewController, ScheduleViewProtocol {
     private var scrollView: UIScrollView!
 	var presenter: SchedulePresenterProtocol?
-
+    private var studentScheduleLayoutAdapter: ReloadableViewLayoutAdapter?
+    private var scheduleByGroupsLayoutAdapter: ReloadableViewLayoutAdapter?
+    private var teachersListLayoutAdapter: ReloadableViewLayoutAdapter?
 	override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -21,10 +23,33 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol {
         scrollView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         scrollView.isPagingEnabled = true
         view.addSubview(scrollView)
-        let tableView = UITableView(frame: view.bounds, style: .plain)
-        tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.addSubview(tableView)
         self.layoutFeed(width: self.view.bounds.width)
+    }
+    func getNewsRows() -> [Layout] {
+        var layouts = [Layout](repeating: NewsPostLayout(body: "asd", time: "2"), count: 100)
+        return layouts
+    }
+    private func reloadTableView(width: CGFloat, synchronous: Bool, layoutAdapter: ReloadableViewLayoutAdapter) {
+        layoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
+            return [Section(
+                header: nil,
+                items: self?.getNewsRows() ?? [],
+                footer: nil)]
+        })
+    }
+    func setupLayoutAdapters() {
+        self.studentScheduleLayoutAdapter = NewsReloadableViewLayoutAdapter(reloadableView: StudentScheduleLayout.tableView ?? UITableView())
+        StudentScheduleLayout.tableView?.dataSource = self.studentScheduleLayoutAdapter
+        StudentScheduleLayout.tableView?.delegate = self.studentScheduleLayoutAdapter
+        self.reloadTableView(width: self.view.bounds.width, synchronous: false, layoutAdapter: self.studentScheduleLayoutAdapter!)
+        self.scheduleByGroupsLayoutAdapter = NewsReloadableViewLayoutAdapter(reloadableView: ScheduleByGroupsLayout.tableView ?? UITableView())
+        ScheduleByGroupsLayout.tableView?.dataSource = self.scheduleByGroupsLayoutAdapter
+        ScheduleByGroupsLayout.tableView?.delegate = self.scheduleByGroupsLayoutAdapter
+        self.reloadTableView(width: self.view.bounds.width, synchronous: false, layoutAdapter: self.scheduleByGroupsLayoutAdapter!)
+        self.teachersListLayoutAdapter = NewsReloadableViewLayoutAdapter(reloadableView: TeachersListLayout.tableView ?? UITableView())
+        TeachersListLayout.tableView?.dataSource = self.teachersListLayoutAdapter
+        TeachersListLayout.tableView?.delegate = self.teachersListLayoutAdapter
+        self.reloadTableView(width: self.view.bounds.width, synchronous: false, layoutAdapter: self.teachersListLayoutAdapter!)
     }
     private func layoutFeed(width: CGFloat) {
         _ = CFAbsoluteTimeGetCurrent()
@@ -34,6 +59,7 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol {
             DispatchQueue.main.async(execute: {
                 self.scrollView.contentSize = arrangement.frame.size
                 arrangement.makeViews(in: self.scrollView)
+                self.setupLayoutAdapters()
                 _ = CFAbsoluteTimeGetCurrent()
             })
         }

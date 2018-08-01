@@ -10,10 +10,15 @@ import Foundation
 import LayoutKit
 
 open class StudentScheduleLayout: InsetLayout<View> {
+    static var tableView: UITableView?
     public init() {
         super.init(
             insets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
-            sublayout: SizeLayout(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), sublayout: LabelLayout(text: "StudentSchedule")),
+            sublayout: SizeLayout(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), sublayout: SizeLayout<UITableView>(
+                size: UIScreen.main.bounds.size,
+                config: {tab in
+                    StudentScheduleLayout.tableView = tab
+            })),
             config: { view in
                 view.backgroundColor = .white
         })
