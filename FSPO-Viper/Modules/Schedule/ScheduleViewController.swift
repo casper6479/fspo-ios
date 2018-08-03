@@ -25,31 +25,56 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol {
         view.addSubview(scrollView)
         self.layoutFeed(width: self.view.bounds.width)
     }
-    func getNewsRows() -> [Layout] {
-        var layouts = [Layout](repeating: NewsPostLayout(body: "asd", time: "2"), count: 100)
+    func getNewsRows() -> [Layout]? {
+        let layouts = [Layout](repeating: NewsPostLayout(body: "asd", time: "2"), count: 100)
         return layouts
     }
-    private func reloadTableView(width: CGFloat, synchronous: Bool, layoutAdapter: ReloadableViewLayoutAdapter) {
-        layoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
-            return [Section(
-                header: nil,
-                items: self?.getNewsRows() ?? [],
-                footer: nil)]
+    private func reloadTableView(width: CGFloat, synchronous: Bool, layoutAdapter: ReloadableViewLayoutAdapter, ds: [Section<[Layout]>]) {
+        layoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: {
+            return ds
         })
     }
+    func getStudentRows() -> [Layout]? {
+        let layouts = [Layout](repeating: StudentScheduleCellLayout(subject: "", teacher: "", subjects: 2), count: 1)
+        return layouts
+    }
     func setupLayoutAdapters() {
-        self.studentScheduleLayoutAdapter = NewsReloadableViewLayoutAdapter(reloadableView: StudentScheduleLayout.tableView ?? UITableView())
+        self.studentScheduleLayoutAdapter = StudentScheduleReloadableLayoutAdapter(reloadableView: StudentScheduleLayout.tableView ?? UITableView())
         StudentScheduleLayout.tableView?.dataSource = self.studentScheduleLayoutAdapter
         StudentScheduleLayout.tableView?.delegate = self.studentScheduleLayoutAdapter
-        self.reloadTableView(width: self.view.bounds.width, synchronous: false, layoutAdapter: self.studentScheduleLayoutAdapter!)
+        self.reloadTableView(width: self.view.bounds.width, synchronous: false, layoutAdapter: self.studentScheduleLayoutAdapter!, ds: [Section(
+            header: nil,
+            items: getStudentRows() ?? [],
+            footer: nil), Section(
+                header: nil,
+                items: getStudentRows() ?? [],
+                footer: nil), Section(
+                    header: nil,
+                    items: getStudentRows() ?? [],
+                    footer: nil), Section(
+                        header: nil,
+                        items: getStudentRows() ?? [],
+                        footer: nil), Section(
+                            header: nil,
+                            items: getStudentRows() ?? [],
+                            footer: nil), Section(
+                                header: nil,
+                                items: getStudentRows() ?? [],
+                                footer: nil)])
         self.scheduleByGroupsLayoutAdapter = NewsReloadableViewLayoutAdapter(reloadableView: ScheduleByGroupsLayout.tableView ?? UITableView())
         ScheduleByGroupsLayout.tableView?.dataSource = self.scheduleByGroupsLayoutAdapter
         ScheduleByGroupsLayout.tableView?.delegate = self.scheduleByGroupsLayoutAdapter
-        self.reloadTableView(width: self.view.bounds.width, synchronous: false, layoutAdapter: self.scheduleByGroupsLayoutAdapter!)
+        self.reloadTableView(width: self.view.bounds.width, synchronous: false, layoutAdapter: self.scheduleByGroupsLayoutAdapter!, ds: [Section(
+            header: nil,
+            items: getNewsRows() ?? [],
+            footer: nil)])
         self.teachersListLayoutAdapter = NewsReloadableViewLayoutAdapter(reloadableView: TeachersListLayout.tableView ?? UITableView())
         TeachersListLayout.tableView?.dataSource = self.teachersListLayoutAdapter
         TeachersListLayout.tableView?.delegate = self.teachersListLayoutAdapter
-        self.reloadTableView(width: self.view.bounds.width, synchronous: false, layoutAdapter: self.teachersListLayoutAdapter!)
+        self.reloadTableView(width: self.view.bounds.width, synchronous: false, layoutAdapter: self.teachersListLayoutAdapter!, ds: [Section(
+            header: nil,
+            items: getNewsRows() ?? [],
+            footer: nil)])
     }
     private func layoutFeed(width: CGFloat) {
         _ = CFAbsoluteTimeGetCurrent()

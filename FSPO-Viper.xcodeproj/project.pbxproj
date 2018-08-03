@@ -34,6 +34,7 @@
 		4621CEC620F01D9D00B17323 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621CEC520F01D9D00B17323 /* Font.swift */; };
 		4621CEC920F01E4400B17323 /* ALSSchlangesans.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4621CEC720F01E4400B17323 /* ALSSchlangesans.otf */; };
 		4621CECA20F01E4400B17323 /* ALSSchlangesans-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4621CEC820F01E4400B17323 /* ALSSchlangesans-Bold.otf */; };
+		4660F8BC21136030005BF656 /* StudentScheduleCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660F8BB21136030005BF656 /* StudentScheduleCellLayout.swift */; };
 		46639AF920FBEB0A00F4616B /* StudentScheduleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46639AF820FBEB0A00F4616B /* StudentScheduleLayout.swift */; };
 		466CDF4E20EF72F700A86701 /* NewsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466CDF4820EF72F700A86701 /* NewsPresenter.swift */; };
 		466CDF4F20EF72F700A86701 /* NewsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466CDF4920EF72F700A86701 /* NewsRouter.swift */; };
@@ -133,6 +134,7 @@
 		4621CEC520F01D9D00B17323 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		4621CEC720F01E4400B17323 /* ALSSchlangesans.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ALSSchlangesans.otf; sourceTree = "<group>"; };
 		4621CEC820F01E4400B17323 /* ALSSchlangesans-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ALSSchlangesans-Bold.otf"; sourceTree = "<group>"; };
+		4660F8BB21136030005BF656 /* StudentScheduleCellLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentScheduleCellLayout.swift; sourceTree = "<group>"; };
 		46639AF820FBEB0A00F4616B /* StudentScheduleLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentScheduleLayout.swift; sourceTree = "<group>"; };
 		466CDF4820EF72F700A86701 /* NewsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPresenter.swift; sourceTree = "<group>"; };
 		466CDF4920EF72F700A86701 /* NewsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRouter.swift; sourceTree = "<group>"; };
@@ -308,8 +310,9 @@
 		46639AF720FBEAD900F4616B /* Schedule Layouts */ = {
 			isa = PBXGroup;
 			children = (
-				46639AF820FBEB0A00F4616B /* StudentScheduleLayout.swift */,
 				46DF962520FC927B00C4D901 /* ScheduleByGroupsLayout.swift */,
+				4660F8BB21136030005BF656 /* StudentScheduleCellLayout.swift */,
+				46639AF820FBEB0A00F4616B /* StudentScheduleLayout.swift */,
 				46DF962720FC928700C4D901 /* TeachersListLayout.swift */,
 			);
 			path = "Schedule Layouts";
@@ -725,6 +728,7 @@
 				46B6D4C3210A4EEF00D83287 /* KeychainController.swift in Sources */,
 				4621CEB020EFABC700B17323 /* JournalRouter.swift in Sources */,
 				461FDAAC20FAA0A60081C678 /* ScheduleLayout.swift in Sources */,
+				4660F8BC21136030005BF656 /* StudentScheduleCellLayout.swift in Sources */,
 				4621CE9620EFAB8200B17323 /* MessagesProtocols.swift in Sources */,
 				466CDF5120EF72F700A86701 /* NewsProtocols.swift in Sources */,
 				466CDF5220EF72F700A86701 /* NewsInteractor.swift in Sources */,

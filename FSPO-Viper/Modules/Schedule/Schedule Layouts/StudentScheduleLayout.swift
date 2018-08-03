@@ -17,6 +17,8 @@ open class StudentScheduleLayout: InsetLayout<View> {
             sublayout: SizeLayout(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), sublayout: SizeLayout<UITableView>(
                 size: UIScreen.main.bounds.size,
                 config: {tab in
+                    let footer = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
+                    tab.tableFooterView = footer
                     StudentScheduleLayout.tableView = tab
             })),
             config: { view in

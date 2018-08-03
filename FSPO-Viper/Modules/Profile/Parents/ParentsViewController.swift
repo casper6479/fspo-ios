@@ -12,7 +12,6 @@ import UIKit
 
 class ParentsViewController: UIViewController, ParentsViewProtocol {
     
-    
 	var presenter: ParentsPresenterProtocol?
 
 	override func viewDidLoad() {

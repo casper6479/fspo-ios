@@ -63,6 +63,9 @@ class NewsViewController: UIViewController, NewsViewProtocol {
 }
 extension NewsReloadableViewLayoutAdapter {
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        /*DispatchQueue.global(qos: .userInitiated).async {
+            return NewsViewController.publicDS[indexPath.row].text.height(withConstrainedWidth: UIScreen.main.bounds.width, font: (UIFont.ITMOFont?.withSize(17))!) + 74
+        }*/
         return NewsViewController.publicDS[indexPath.row].text.height(withConstrainedWidth: UIScreen.main.bounds.width, font: (UIFont.ITMOFont?.withSize(17))!) + 74
     }
 }

@@ -25,7 +25,6 @@ class ParentsPresenter: ParentsPresenterProtocol {
     func updateView() {
         interactor?.fetchParents()
     }
-    
     func parentsFetched(firstname: String, lastname: String, middlename: String, email: String, phone: String, photo: UIImage) {
         view?.fillView(firstname: firstname, lastname: lastname, middlename: middlename, email: email, phone: phone, photo: photo)
     }
