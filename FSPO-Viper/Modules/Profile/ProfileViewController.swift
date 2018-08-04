@@ -22,7 +22,7 @@ class ProfileViewController: UIViewController, ProfileViewProtocol {
         settingButton.setTitle("=", for: .normal)
         settingButton.addTarget(self, action: #selector(setNeedsShowSettings), for: .touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: settingButton)
-        fillView(firstname: "s", lastname: "", middlename: "", email: "", phone: "", birthday: "", nationality: "", school: "", segrys: "", photo: UIImage(named: "test")!)
+        fillView(firstname: "", lastname: "", middlename: "", email: "", phone: "", birthday: "", nationality: "", school: "", segrys: "", photo: UIImage(named: "test")!)
         presenter?.updateView()
     }
     func fillView(firstname: String, lastname: String, middlename: String, email: String, phone: String, birthday: String, nationality: String, school: String, segrys: String, photo: UIImage) {

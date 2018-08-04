@@ -38,6 +38,10 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol {
         let layouts = [Layout](repeating: StudentScheduleCellLayout(subject: "", teacher: "", subjects: 2), count: 1)
         return layouts
     }
+    func getGroupsRows() -> [Layout]? {
+        let layouts = [Layout](repeating: ScheduleByGroupsCellLayout(group: "Y2135"), count: 4)
+        return layouts
+    }
     func setupLayoutAdapters() {
         self.studentScheduleLayoutAdapter = StudentScheduleReloadableLayoutAdapter(reloadableView: StudentScheduleLayout.tableView ?? UITableView())
         StudentScheduleLayout.tableView?.dataSource = self.studentScheduleLayoutAdapter
@@ -61,13 +65,23 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol {
                                 header: nil,
                                 items: getStudentRows() ?? [],
                                 footer: nil)])
-        self.scheduleByGroupsLayoutAdapter = NewsReloadableViewLayoutAdapter(reloadableView: ScheduleByGroupsLayout.tableView ?? UITableView())
+        self.scheduleByGroupsLayoutAdapter = ScheduleByGroupsReloadableLayoutAdapter(reloadableView: ScheduleByGroupsLayout.tableView ?? UITableView())
         ScheduleByGroupsLayout.tableView?.dataSource = self.scheduleByGroupsLayoutAdapter
         ScheduleByGroupsLayout.tableView?.delegate = self.scheduleByGroupsLayoutAdapter
-        self.reloadTableView(width: self.view.bounds.width, synchronous: false, layoutAdapter: self.scheduleByGroupsLayoutAdapter!, ds: [Section(
+        self.reloadTableView(width: self.view.bounds.width, synchronous: false, layoutAdapter:
+            self.scheduleByGroupsLayoutAdapter!, ds: [Section(
             header: nil,
-            items: getNewsRows() ?? [],
-            footer: nil)])
+            items: getGroupsRows() ?? [],
+            footer: nil), Section(
+                header: nil,
+                items: getGroupsRows() ?? [],
+                footer: nil), Section(
+                    header: nil,
+                    items: getGroupsRows() ?? [],
+                    footer: nil), Section(
+                        header: nil,
+                        items: getGroupsRows() ?? [],
+                        footer: nil)])
         self.teachersListLayoutAdapter = NewsReloadableViewLayoutAdapter(reloadableView: TeachersListLayout.tableView ?? UITableView())
         TeachersListLayout.tableView?.dataSource = self.teachersListLayoutAdapter
         TeachersListLayout.tableView?.delegate = self.teachersListLayoutAdapter

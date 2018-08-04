@@ -63,6 +63,7 @@ class StudentScheduleReloadableLayoutAdapter: ReloadableViewLayoutAdapter {
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header = view as? UITableViewHeaderFooterView
         header?.backgroundView?.backgroundColor = UIColor.ITMOBlue
+        header?.textLabel?.font = UIFont.ITMOFontBold?.withSize(17)
         header?.textLabel?.textColor = .white
     }
 }
