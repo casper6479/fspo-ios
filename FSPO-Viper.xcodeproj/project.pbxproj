@@ -98,6 +98,7 @@
 		46B6D51D210B75E500D83287 /* JournalBySubjectLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6D51C210B75E500D83287 /* JournalBySubjectLayout.swift */; };
 		46B6D51F210C6C3C00D83287 /* MoreLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6D51E210C6C3C00D83287 /* MoreLayout.swift */; };
 		46BDD9A12115B17B00C5CD94 /* ScheduleByGroupsCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BDD9A02115B17B00C5CD94 /* ScheduleByGroupsCellLayout.swift */; };
+		46BDD9A32116137600C5CD94 /* TeachersListCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BDD9A22116137600C5CD94 /* TeachersListCellLayout.swift */; };
 		46C1561C20DBB2D700F2BA79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C1561B20DBB2D700F2BA79 /* AppDelegate.swift */; };
 		46C1562320DBB2D800F2BA79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46C1562220DBB2D800F2BA79 /* Assets.xcassets */; };
 		46C1562620DBB2D800F2BA79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C1562420DBB2D800F2BA79 /* LaunchScreen.storyboard */; };
@@ -200,6 +201,7 @@
 		46B6D51C210B75E500D83287 /* JournalBySubjectLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalBySubjectLayout.swift; sourceTree = "<group>"; };
 		46B6D51E210C6C3C00D83287 /* MoreLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreLayout.swift; sourceTree = "<group>"; };
 		46BDD9A02115B17B00C5CD94 /* ScheduleByGroupsCellLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleByGroupsCellLayout.swift; sourceTree = "<group>"; };
+		46BDD9A22116137600C5CD94 /* TeachersListCellLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersListCellLayout.swift; sourceTree = "<group>"; };
 		46C1561820DBB2D700F2BA79 /* FSPO-Viper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FSPO-Viper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46C1561B20DBB2D700F2BA79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46C1562220DBB2D800F2BA79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 				4660F8BB21136030005BF656 /* StudentScheduleCellLayout.swift */,
 				46639AF820FBEB0A00F4616B /* StudentScheduleLayout.swift */,
 				46DF962720FC928700C4D901 /* TeachersListLayout.swift */,
+				46BDD9A22116137600C5CD94 /* TeachersListCellLayout.swift */,
 			);
 			path = "Schedule Layouts";
 			sourceTree = "<group>";
@@ -655,6 +658,7 @@
 				4621CEAF20EFABC700B17323 /* JournalPresenter.swift in Sources */,
 				46A9F9BC20F2AB91008E2653 /* CocoaTarget.swift in Sources */,
 				46A9F9AD20F1744C008E2653 /* LoginPresenter.swift in Sources */,
+				46BDD9A32116137600C5CD94 /* TeachersListCellLayout.swift in Sources */,
 				46DF962420FC8FC500C4D901 /* ScheduleViewController.swift in Sources */,
 				46BDD9A12115B17B00C5CD94 /* ScheduleByGroupsCellLayout.swift in Sources */,
 				466CDF5020EF72F700A86701 /* NewsViewController.swift in Sources */,

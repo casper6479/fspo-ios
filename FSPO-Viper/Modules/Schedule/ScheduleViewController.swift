@@ -20,13 +20,14 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol {
         super.viewDidLoad()
         view.backgroundColor = .white
         scrollView = UIScrollView(frame: view.bounds)
+        scrollView.showsHorizontalScrollIndicator = false
         scrollView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         scrollView.isPagingEnabled = true
         view.addSubview(scrollView)
         self.layoutFeed(width: self.view.bounds.width)
     }
-    func getNewsRows() -> [Layout]? {
-        let layouts = [Layout](repeating: NewsPostLayout(body: "asd", time: "2"), count: 100)
+    func getTeachersRows() -> [Layout]? {
+        let layouts = [Layout](repeating: TeachersListCellLayout(firstname: "Дмитрий", lastname: "Волчек", middlename: "Геннадьевич", avatar: ""), count: 50)
         return layouts
     }
     private func reloadTableView(width: CGFloat, synchronous: Bool, layoutAdapter: ReloadableViewLayoutAdapter, ds: [Section<[Layout]>]) {
@@ -82,12 +83,12 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol {
                         header: nil,
                         items: getGroupsRows() ?? [],
                         footer: nil)])
-        self.teachersListLayoutAdapter = NewsReloadableViewLayoutAdapter(reloadableView: TeachersListLayout.tableView ?? UITableView())
+        self.teachersListLayoutAdapter = TeacherListReloadableLayoutAdapter(reloadableView: TeachersListLayout.tableView ?? UITableView())
         TeachersListLayout.tableView?.dataSource = self.teachersListLayoutAdapter
         TeachersListLayout.tableView?.delegate = self.teachersListLayoutAdapter
         self.reloadTableView(width: self.view.bounds.width, synchronous: false, layoutAdapter: self.teachersListLayoutAdapter!, ds: [Section(
             header: nil,
-            items: getNewsRows() ?? [],
+            items: getTeachersRows() ?? [],
             footer: nil)])
     }
     private func layoutFeed(width: CGFloat) {

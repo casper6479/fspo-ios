@@ -24,6 +24,7 @@ open class TeachersListLayout: InsetLayout<View> {
             sublayout: SizeLayout<UITableView>(
                 size: CGSize(width: UIScreen.main.bounds.width, height: safeHeight),
                 config: {tab in
+                    tab.separatorInset = UIEdgeInsets(top: 0, left: 66, bottom: 0, right: 0)
                     TeachersListLayout.tableView = tab
             }),
             config: { view in
