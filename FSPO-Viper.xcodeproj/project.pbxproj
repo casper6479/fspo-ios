@@ -99,6 +99,12 @@
 		46B6D51F210C6C3C00D83287 /* MoreLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6D51E210C6C3C00D83287 /* MoreLayout.swift */; };
 		46BDD9A12115B17B00C5CD94 /* ScheduleByGroupsCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BDD9A02115B17B00C5CD94 /* ScheduleByGroupsCellLayout.swift */; };
 		46BDD9A32116137600C5CD94 /* TeachersListCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BDD9A22116137600C5CD94 /* TeachersListCellLayout.swift */; };
+		46BDD9AB21164D1D00C5CD94 /* DialogPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BDD9A521164D1D00C5CD94 /* DialogPresenter.swift */; };
+		46BDD9AC21164D1D00C5CD94 /* DialogRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BDD9A621164D1D00C5CD94 /* DialogRouter.swift */; };
+		46BDD9AD21164D1D00C5CD94 /* DialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BDD9A721164D1D00C5CD94 /* DialogViewController.swift */; };
+		46BDD9AE21164D1D00C5CD94 /* DialogProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BDD9A821164D1D00C5CD94 /* DialogProtocols.swift */; };
+		46BDD9AF21164D1D00C5CD94 /* DialogInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BDD9A921164D1D00C5CD94 /* DialogInteractor.swift */; };
+		46BDD9B221164D3300C5CD94 /* DialogLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BDD9B121164D3300C5CD94 /* DialogLayout.swift */; };
 		46C1561C20DBB2D700F2BA79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C1561B20DBB2D700F2BA79 /* AppDelegate.swift */; };
 		46C1562320DBB2D800F2BA79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46C1562220DBB2D800F2BA79 /* Assets.xcassets */; };
 		46C1562620DBB2D800F2BA79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C1562420DBB2D800F2BA79 /* LaunchScreen.storyboard */; };
@@ -202,6 +208,12 @@
 		46B6D51E210C6C3C00D83287 /* MoreLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreLayout.swift; sourceTree = "<group>"; };
 		46BDD9A02115B17B00C5CD94 /* ScheduleByGroupsCellLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleByGroupsCellLayout.swift; sourceTree = "<group>"; };
 		46BDD9A22116137600C5CD94 /* TeachersListCellLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersListCellLayout.swift; sourceTree = "<group>"; };
+		46BDD9A521164D1D00C5CD94 /* DialogPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogPresenter.swift; sourceTree = "<group>"; };
+		46BDD9A621164D1D00C5CD94 /* DialogRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogRouter.swift; sourceTree = "<group>"; };
+		46BDD9A721164D1D00C5CD94 /* DialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogViewController.swift; sourceTree = "<group>"; };
+		46BDD9A821164D1D00C5CD94 /* DialogProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogProtocols.swift; sourceTree = "<group>"; };
+		46BDD9A921164D1D00C5CD94 /* DialogInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogInteractor.swift; sourceTree = "<group>"; };
+		46BDD9B121164D3300C5CD94 /* DialogLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogLayout.swift; sourceTree = "<group>"; };
 		46C1561820DBB2D700F2BA79 /* FSPO-Viper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FSPO-Viper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46C1561B20DBB2D700F2BA79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46C1562220DBB2D800F2BA79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -230,6 +242,7 @@
 		4621CE9920EFAB8A00B17323 /* Messages */ = {
 			isa = PBXGroup;
 			children = (
+				46BDD9A421164D0F00C5CD94 /* Dialog */,
 				461FDAA620FA1AA30081C678 /* MessagesLayout.swift */,
 				4621CE8D20EFAB8200B17323 /* MessagesPresenter.swift */,
 				4621CE8E20EFAB8200B17323 /* MessagesRouter.swift */,
@@ -287,6 +300,7 @@
 		4621CEC320F01D6300B17323 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				46C1562220DBB2D800F2BA79 /* Assets.xcassets */,
 				46A9F9A020F03316008E2653 /* Fonts */,
 			);
 			path = Resources;
@@ -460,6 +474,19 @@
 			path = Parents;
 			sourceTree = "<group>";
 		};
+		46BDD9A421164D0F00C5CD94 /* Dialog */ = {
+			isa = PBXGroup;
+			children = (
+				46BDD9A521164D1D00C5CD94 /* DialogPresenter.swift */,
+				46BDD9A621164D1D00C5CD94 /* DialogRouter.swift */,
+				46BDD9A721164D1D00C5CD94 /* DialogViewController.swift */,
+				46BDD9A821164D1D00C5CD94 /* DialogProtocols.swift */,
+				46BDD9A921164D1D00C5CD94 /* DialogInteractor.swift */,
+				46BDD9B121164D3300C5CD94 /* DialogLayout.swift */,
+			);
+			path = Dialog;
+			sourceTree = "<group>";
+		};
 		46C1560F20DBB2D700F2BA79 = {
 			isa = PBXGroup;
 			children = (
@@ -487,7 +514,6 @@
 				4621CEC320F01D6300B17323 /* Resources */,
 				466CDF3220EF701500A86701 /* Modules */,
 				46C1561B20DBB2D700F2BA79 /* AppDelegate.swift */,
-				46C1562220DBB2D800F2BA79 /* Assets.xcassets */,
 				46C1562420DBB2D800F2BA79 /* LaunchScreen.storyboard */,
 				46C1562720DBB2D800F2BA79 /* Info.plist */,
 				46B6D4E5210A75D800D83287 /* Localizable.strings */,
@@ -655,6 +681,7 @@
 				46A9F9BA20F2AA43008E2653 /* UIControl + Handler.swift in Sources */,
 				46B6D4FF210B1E6D00D83287 /* JournalByDateProtocols.swift in Sources */,
 				46B6D50A210B1FC700D83287 /* MoreViewController.swift in Sources */,
+				46BDD9B221164D3300C5CD94 /* DialogLayout.swift in Sources */,
 				4621CEAF20EFABC700B17323 /* JournalPresenter.swift in Sources */,
 				46A9F9BC20F2AB91008E2653 /* CocoaTarget.swift in Sources */,
 				46A9F9AD20F1744C008E2653 /* LoginPresenter.swift in Sources */,
@@ -678,6 +705,7 @@
 				46A9F9A420F03FC2008E2653 /* StringSize.swift in Sources */,
 				46ED1083210FABBF00B16737 /* ParentsLayout.swift in Sources */,
 				46A9F9A220F033AB008E2653 /* JournalLayout.swift in Sources */,
+				46BDD9AC21164D1D00C5CD94 /* DialogRouter.swift in Sources */,
 				46B6D4F1210B1E5700D83287 /* JournalBySubjectRouter.swift in Sources */,
 				46A9F9AF20F1744C008E2653 /* LoginViewController.swift in Sources */,
 				46B6D517210B25B500D83287 /* ParentsRouter.swift in Sources */,
@@ -714,8 +742,10 @@
 				466CDF6720EF9D8700A86701 /* SkillsCardLayout.swift in Sources */,
 				4621CE9720EFAB8200B17323 /* MessagesInteractor.swift in Sources */,
 				46B6D518210B25B500D83287 /* ParentsViewController.swift in Sources */,
+				46BDD9AE21164D1D00C5CD94 /* DialogProtocols.swift in Sources */,
 				4621CEB320EFABC700B17323 /* JournalInteractor.swift in Sources */,
 				461FDAA720FA1AA30081C678 /* MessagesLayout.swift in Sources */,
+				46BDD9AD21164D1D00C5CD94 /* DialogViewController.swift in Sources */,
 				466CDF6620EF9D8700A86701 /* FeedItemLayout.swift in Sources */,
 				4621CE9520EFAB8200B17323 /* MessagesViewController.swift in Sources */,
 				466CDF5520EF779D00A86701 /* Constants.swift in Sources */,
@@ -732,7 +762,9 @@
 				466CDF6A20EF9D8700A86701 /* CircleImagePileLayout.swift in Sources */,
 				46A9F9B020F1744C008E2653 /* LoginProtocols.swift in Sources */,
 				46A9F99E20F030B2008E2653 /* DateFormatter.swift in Sources */,
+				46BDD9AF21164D1D00C5CD94 /* DialogInteractor.swift in Sources */,
 				46B6D4F4210B1E5700D83287 /* JournalBySubjectInteractor.swift in Sources */,
+				46BDD9AB21164D1D00C5CD94 /* DialogPresenter.swift in Sources */,
 				46B6D4C3210A4EEF00D83287 /* KeychainController.swift in Sources */,
 				4621CEB020EFABC700B17323 /* JournalRouter.swift in Sources */,
 				461FDAAC20FAA0A60081C678 /* ScheduleLayout.swift in Sources */,

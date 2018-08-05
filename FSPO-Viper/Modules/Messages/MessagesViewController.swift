@@ -12,12 +12,13 @@ import UIKit
 import LayoutKit
 
 class MessagesViewController: UIViewController, MessagesViewProtocol {
-
+//    static var nav: UINavigationController?
 	var presenter: MessagesPresenterProtocol?
     private var reloadableViewLayoutAdapter: ReloadableViewLayoutAdapter!
     private var tableView: UITableView!
 	override func viewDidLoad() {
         super.viewDidLoad()
+//        MessagesViewController.nav = self.navigationController
         tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         reloadableViewLayoutAdapter = MessagesReloadableViewLayoutAdapter(reloadableView: tableView)
@@ -44,5 +45,12 @@ class MessagesViewController: UIViewController, MessagesViewProtocol {
         reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
             return [Section(header: nil, items: self?.getNewsRows() ?? [], footer: nil)]
         })
+    }
+}
+extension MessagesReloadableViewLayoutAdapter {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        MessagesViewController.nav?.show(DialogRouter.createModule(), sender: MessagesViewController())
+        UIApplication.shared.keyWindow?.rootViewController?.childViewControllers[2].show(DialogRouter.createModule(), sender: MessagesViewController())
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

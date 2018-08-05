@@ -71,7 +71,4 @@ open class MessagesLayout: InsetLayout<View> {
     }
 }
 class MessagesReloadableViewLayoutAdapter: ReloadableViewLayoutAdapter {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
 }

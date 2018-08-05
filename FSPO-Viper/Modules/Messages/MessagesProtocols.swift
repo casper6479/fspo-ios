@@ -9,6 +9,7 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: Wireframe -
 protocol MessagesWireframeProtocol: class {
@@ -16,7 +17,6 @@ protocol MessagesWireframeProtocol: class {
 }
 // MARK: Presenter -
 protocol MessagesPresenterProtocol: class {
-
 }
 
 // MARK: Interactor -
@@ -27,6 +27,5 @@ protocol MessagesInteractorProtocol: class {
 
 // MARK: View -
 protocol MessagesViewProtocol: class {
-
   var presenter: MessagesPresenterProtocol? { get set }
 }
