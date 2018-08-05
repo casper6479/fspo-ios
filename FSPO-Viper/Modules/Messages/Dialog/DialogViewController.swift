@@ -20,17 +20,20 @@ class DialogViewController: UIViewController, DialogViewProtocol {
     private var tableView: UITableView!
 	override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(red: 246/255, green: 251/255, blue: 254/255, alpha: 1)
         tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         reloadableViewLayoutAdapter = DialogsReloadableViewLayoutAdapter(reloadableView: tableView)
         tableView.dataSource = reloadableViewLayoutAdapter
         tableView.delegate = reloadableViewLayoutAdapter
         tableView.separatorColor = .clear
+        tableView.allowsSelection = false
+        tableView.backgroundColor = UIColor(red: 246/255, green: 251/255, blue: 254/255, alpha: 1)
         let background = UIView(frame: view.bounds)
         let rofl = UILabel(frame: CGRect(x: 100, y: 100, width: 200, height: 100))
         rofl.text = "ЗАГРУЗКА"
         background.addSubview(rofl)
-        background.backgroundColor = .white
+        background.backgroundColor = UIColor(red: 246/255, green: 251/255, blue: 254/255, alpha: 1)
         view.addSubview(background)
         view.addSubview(tableView)
         tableView.alpha = 0

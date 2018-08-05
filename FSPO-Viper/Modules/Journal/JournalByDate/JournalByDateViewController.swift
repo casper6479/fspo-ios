@@ -16,6 +16,14 @@ class JournalByDateViewController: UIViewController, JournalByDateViewProtocol {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        let width = view.bounds.width
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
+            let journalLayout = JournalByDateLayout()
+            let arrangement = journalLayout.arrangement(width: width)
+            DispatchQueue.main.async(execute: {
+                arrangement.makeViews(in: self.view)
+            })
+        }
     }
 
 }

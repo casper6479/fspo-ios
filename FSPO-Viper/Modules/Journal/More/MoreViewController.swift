@@ -33,16 +33,20 @@ class MoreViewController: UIViewController, MoreViewProtocol {
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
         view.addSubview(tableView)
     }
-    func getNewsRows() -> [Layout] {
+    func getNowRows(first: Bool) -> [Layout] {
         var layouts = [Layout]()
-        for item in (dataSource?.lessons_now.lessons)! {
+        var semester = (dataSource?.lessons_now.lessons)!
+        if !first {
+            semester = (dataSource?.lessons_before.lessons)!
+        }
+        for item in semester {
             layouts.append(MoreLayout(subject: item.name, presense: "\(item.student_ex_was)", nonPresense: "\(item.student_ex_not)", allPresense: "\(item.ex_all)", attestation: "\(item.student_validmark ?? -1)", result: "\(item.student_mark ?? -1)"))
         }
         return layouts
     }
     private func reloadTableView(width: CGFloat, synchronous: Bool) {
         reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
-            return [Section(header: nil, items: self?.getNewsRows() ?? [], footer: nil)]
+            return [Section(header: nil, items: self?.getNowRows(first: true) ?? [], footer: nil), Section(header: nil, items: self?.getNowRows(first: true) ?? [], footer: nil)]
         })
     }
 }

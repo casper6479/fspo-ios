@@ -12,4 +12,5 @@ import UIKit
 extension UIFont {
     static let ITMOFont = UIFont.init(name: "ALSSchlangesans", size: 15)
     static let ITMOFontBold = UIFont.init(name: "ALSSchlangesans-Bold", size: 15)
+    static let messagesFont = UIFont.init(name: "SFCompactRounded-Regular", size: 15)
 }
