@@ -16,6 +16,7 @@ Everything written according to the SwiftLint.
 - Login Module (Inferace 90% done, api requests 80% done)
 - Keychan-stored token
 - Settings Module (10% done)
+- FIX DIALOG BUBBLE TRANSPARENT LABEL BACKGROUND & WIDTH BUG
 
 # TODO:
 - Infinity News
