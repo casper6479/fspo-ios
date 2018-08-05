@@ -74,6 +74,28 @@ class JSONDecoding {
         let school: Int?
         let segrys: Bool?
     }
+    struct MessagesApi: Decodable {
+        let dialogs: [DialogBody]
+        struct DialogBody: Decodable {
+            let dialog_lastname: String
+            let dialog_firstname: String
+            let dialog_photo: String
+            let msg_text: String
+            let dialog_user_id: Int
+            let msg_datetime: String
+            let msg_user_id: Int
+        }
+    }
+    struct DialogsApi: Decodable {
+        let messages: [Messages]
+        struct Messages: Decodable {
+            let text: String
+            let user_id: String
+            let mdatetime: String
+            let read: Bool
+        }
+    }
+    
     /*struct studentHistoryAPI: Decodable {
         let groups: [groups]
     }

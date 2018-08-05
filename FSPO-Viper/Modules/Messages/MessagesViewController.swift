@@ -12,6 +12,11 @@ import UIKit
 import LayoutKit
 
 class MessagesViewController: UIViewController, MessagesViewProtocol {
+    static var publicDS: JSONDecoding.MessagesApi?
+    func showNewRows(source: JSONDecoding.MessagesApi) {
+        MessagesViewController.publicDS = source
+        reloadTableView(width: tableView.frame.width, synchronous: false, data: source)
+    }
 //    static var nav: UINavigationController?
 	var presenter: MessagesPresenterProtocol?
     private var reloadableViewLayoutAdapter: ReloadableViewLayoutAdapter!
@@ -27,30 +32,32 @@ class MessagesViewController: UIViewController, MessagesViewProtocol {
         tableView.separatorColor = .clear
         tableView.backgroundColor = UIColor.backgroundGray
         view.addSubview(tableView)
-        reloadTableView(width: tableView.frame.width, synchronous: false)
+        presenter?.updateView()
     }
-    func getNewsRows() -> [Layout] {
+    func getNewsRows(data: JSONDecoding.MessagesApi) -> [Layout] {
         var layouts = [Layout]()
-        layouts.append(MessagesLayout(name: "Very Long Name, That Causes Some Layout Problems", lastMessage: "And Very Very Long Lorem, Because I Need To See Layout Problems", photo: UIImage(named: "logo")!, date: "13:01"))
-        layouts.append(MessagesLayout(name: "Test Tested Sucessful", lastMessage: "SomeTextHereAndItHaveNoSpacesLolLetsSeeWhatIsGoingOnHere", photo: UIImage(named: "test")!, date: "Not Today"))
-        layouts.append(MessagesLayout(name: "Very Very Long Lorem, Because I Need To See Layout Problems", lastMessage: "llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll", photo: UIImage(named: "logo")!, date: "12:10"))
-        layouts.append(MessagesLayout(name: "Test Tested Sucessful", lastMessage: "asdkdskfkdsksdf", photo: UIImage(named: "logo")!, date: "13:37"))
-        layouts.append(MessagesLayout(name: "Name", lastMessage: "sdkfasgl;djsg;ldskfjgdlgjdflkgjdflgkjdfglkdjgldkgjdlfkgjdlfgkjdflgkjdfglkdfjgdlkfgj", photo: UIImage(named: "logo")!, date: "13:37"))
-        layouts.append(MessagesLayout(name: "Че случилось со временем?", lastMessage: "Че случилось со временем?", photo: UIImage(named: "logo")!, date: "13:37"))
-        layouts.append(MessagesLayout(name: " ", lastMessage: "", photo: UIImage(named: "logo")!, date: "13:37"))
-        layouts.append(MessagesLayout(name: "Andre", lastMessage: "Hí", photo: UIImage(named: "logo")!, date: "13:37"))
+        let user_id = UserDefaults.standard.integer(forKey: "user_id")
+        for item in data.dialogs {
+            var message = ""
+            if item.msg_user_id == user_id {
+                message = "Я: \(item.msg_text)"
+            } else {
+                message = "\(item.msg_text)"
+            }
+            layouts.append(MessagesLayout(name: "\(item.dialog_firstname) \(item.dialog_lastname)", lastMessage: message, photo: UIImage(named: "test")!, date: DateToString().formatDate(item.msg_datetime)))
+        }
         return layouts
     }
-    private func reloadTableView(width: CGFloat, synchronous: Bool) {
+    private func reloadTableView(width: CGFloat, synchronous: Bool, data: JSONDecoding.MessagesApi) {
         reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
-            return [Section(header: nil, items: self?.getNewsRows() ?? [], footer: nil)]
+            return [Section(header: nil, items: self?.getNewsRows(data: data) ?? [], footer: nil)]
         })
     }
 }
 extension MessagesReloadableViewLayoutAdapter {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        MessagesViewController.nav?.show(DialogRouter.createModule(), sender: MessagesViewController())
-        UIApplication.shared.keyWindow?.rootViewController?.childViewControllers[2].show(DialogRouter.createModule(), sender: MessagesViewController())
+        UIApplication.shared.keyWindow?.rootViewController?.childViewControllers[2].show(DialogRouter.createModule(dialog_id: (MessagesViewController.publicDS?.dialogs[indexPath.row].dialog_user_id)!), sender: MessagesViewController())
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

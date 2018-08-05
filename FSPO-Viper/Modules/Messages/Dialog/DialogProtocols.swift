@@ -16,17 +16,19 @@ protocol DialogWireframeProtocol: class {
 }
 //MARK: Presenter -
 protocol DialogPresenterProtocol: class {
-
+    func updateView()
+    func dialogsFetched(data: JSONDecoding.DialogsApi)
 }
 
 //MARK: Interactor -
 protocol DialogInteractorProtocol: class {
-
+    var dialog_user_id: Int? { get set }
+    func fetchDialogs()
   var presenter: DialogPresenterProtocol?  { get set }
 }
 
 //MARK: View -
 protocol DialogViewProtocol: class {
-
+    func showNewRows(source: JSONDecoding.DialogsApi)
   var presenter: DialogPresenterProtocol?  { get set }
 }

@@ -24,11 +24,14 @@ open class DialogsLayout: InsetLayout<View> {
         let constraintRect = CGSize(width: 0, height: 17)
         let boundingBox = text.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [.font: (UIFont.ITMOFont?.withSize(17))!], context: nil)
         var width = ceil(boundingBox.width)
-        let constraintRect1 = CGSize(width: UIScreen.main.bounds.width - 100, height: .greatestFiniteMagnitude)
-        let boundingBox1 = text.boundingRect(with: constraintRect1, options: .usesLineFragmentOrigin, attributes: [.font: (UIFont.ITMOFont?.withSize(17))!], context: nil)
-        let height = ceil(boundingBox1.height)
+        let constraintRectForHeight = CGSize(width: UIScreen.main.bounds.width - 84, height: .greatestFiniteMagnitude)
+        let boundingBoxForHeight = text.boundingRect(with: constraintRectForHeight, options: .usesLineFragmentOrigin, attributes: [.font: (UIFont.ITMOFont?.withSize(17))!], context: nil)
+        let height = ceil(boundingBoxForHeight.height)
         if width > UIScreen.main.bounds.width - 100 {
             width = UIScreen.main.bounds.width - 84
+        }
+        if width < 17 {
+            width = 17
         }
         let test = SizeLayout(
             width: width + 16,

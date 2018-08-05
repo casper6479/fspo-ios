@@ -21,5 +21,10 @@ class DialogPresenter: DialogPresenterProtocol {
         self.interactor = interactor
         self.router = router
     }
-
+    func updateView() {
+        interactor?.fetchDialogs()
+    }
+    func dialogsFetched(data: JSONDecoding.DialogsApi) {
+        view?.showNewRows(source: data)
+    }
 }

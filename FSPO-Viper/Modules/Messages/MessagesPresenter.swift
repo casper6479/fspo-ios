@@ -11,7 +11,7 @@
 import UIKit
 
 class MessagesPresenter: MessagesPresenterProtocol {
-
+    
     weak private var view: MessagesViewProtocol?
     var interactor: MessagesInteractorProtocol?
     private let router: MessagesWireframeProtocol
@@ -21,5 +21,11 @@ class MessagesPresenter: MessagesPresenterProtocol {
         self.interactor = interactor
         self.router = router
     }
-
+    func updateView() {
+        interactor?.fetchMessages()
+    }
+    
+    func messagesFetched(data: JSONDecoding.MessagesApi) {
+        view?.showNewRows(source: data)
+    }
 }

@@ -9,8 +9,24 @@
 //
 
 import UIKit
+import Alamofire
 
 class MessagesInteractor: MessagesInteractorProtocol {
 
     weak var presenter: MessagesPresenterProtocol?
+    func fetchMessages() {
+        let headers: HTTPHeaders = [
+            "token": keychain["token"]!
+        ]
+        Alamofire.request(Constants.MessagesURL, method: .get, headers: headers).responseJSON { (response) in
+            let result = response.data
+            do {
+                let res = try JSONDecoder().decode(JSONDecoding.MessagesApi.self, from: result!)
+                self.presenter?.messagesFetched(data: res)
+            }
+            catch {
+                print(error)
+            }
+        }
+    }
 }

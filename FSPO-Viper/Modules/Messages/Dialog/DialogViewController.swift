@@ -12,7 +12,9 @@ import UIKit
 import LayoutKit
 
 class DialogViewController: UIViewController, DialogViewProtocol {
-
+    func showNewRows(source: JSONDecoding.DialogsApi) {
+        self.reloadTableView(width: view.bounds.width, synchronous: false, data: source)
+    }
 	var presenter: DialogPresenterProtocol?
     private var reloadableViewLayoutAdapter: ReloadableViewLayoutAdapter!
     private var tableView: UITableView!
@@ -24,48 +26,36 @@ class DialogViewController: UIViewController, DialogViewProtocol {
         tableView.dataSource = reloadableViewLayoutAdapter
         tableView.delegate = reloadableViewLayoutAdapter
         tableView.separatorColor = .clear
-        tableView.backgroundColor = UIColor.backgroundGray
+        let background = UIView(frame: view.bounds)
+        let rofl = UILabel(frame: CGRect(x: 100, y: 100, width: 200, height: 100))
+        rofl.text = "ЗАГРУЗКА"
+        background.addSubview(rofl)
+        background.backgroundColor = .white
+        view.addSubview(background)
         view.addSubview(tableView)
-        self.reloadTableView(width: view.bounds.width, synchronous: false)
+        tableView.alpha = 0
+        presenter?.updateView()
     }
-    func getNewsRows() -> [Layout] {
+    func getNewsRows(data: JSONDecoding.DialogsApi) -> [Layout] {
         var layouts = [Layout]()
-        /*layouts = [Layout](repeating: DialogsLayout(text: "ЧУВЫ РЛА1РЫЩ ШВГАРФИ ЛЫНВАМФИЩЫВГЛАНФДМБ ЫИВАФДГЫЛВАР ФОИЫЛДВГАПФЫИВГНАФРЛОБВРА ИЬФДЛОТЬ", isMe: true), count: 100)
-        layouts.append(DialogsLayout(text: "Hello, World!", isMe: true))
-        layouts.append(DialogsLayout(text: "Hello, World!", isMe: false))
-        layouts.append(DialogsLayout(text: "ЧУВЫ РЛА1РЫЩ ШВГАРФИ ЛЫНВАМФИЩЫВГЛАНФДМБ ЫИВАФДГЫЛВАР ФОИЫЛДВГАПФЫИВГНАФРЛОБВРА ИЬФДЛОТЬ", isMe: false))
-        layouts.append(DialogsLayout(text: "LOREMIPSUM(0)LOREMIPSUM(1)LOREMIPSUM(2)LOREMIPSUM(3)LOREMIPSUM(4)LOREMIPSUM(5)LOREMIPSUM(6)LOREMIPSUM(7)LOREMIPSUM(8)LOREMIPSUM(9)LOREMIPSUM(10)LOREMIPSUM(11)LOREMIPSUM(12)LOREMIPSUM(13)LOREMIPSUM(14)LOREMIPSUM(15)LOREMIPSUM(16)LOREMIPSUM(17)LOREMIPSUM(18)LOREMIPSUM(19)LOREMIPSUM(20)", isMe: true))
-        layouts.append(DialogsLayout(text: "ЧУВЫ РЛА1РЫЩ ШВГАРФИ ЛЫНВАМФИЩЫВГЛАНФДМБ ЫИВАФДГЫЛВАР ФОИЫЛДВГАПФЫИВГНАФРЛОБВРА ИЬФДЛОТЬЧУВЫ РЛА1РЫЩ ШВГАРФИ ЛЫНВАМФИЩЫВГЛАНФДМБ ЫИВАФДГЫЛВАР ФОИЫЛДВГАПФЫИВГНАФРЛОБВРА ИЬФДЛОТЬ", isMe: true))
-        layouts.append(DialogsLayout(text: "ЧУВЫ РЛА1РЫЩ ШВГАРФИ ЛЫНВАМФИЩЫВГЛАНФДМБ ЫИВАФДГЫЛВАР ФОИЫЛДВГАПФЫИВГНАФРЛОБВРА ИЬФДЛОТЬЧУВЫ РЛА1РЫЩ ШВГАРФИ ЛЫНВАМФИЩЫВГЛАНФДМБ ЫИВАФДГЫЛВАР ФОИЫЛДВГАПФЫИВГНАФРЛОБВРА ИЬФДЛОТЬЧУВЫ РЛА1РЫЩ ШВГАРФИ ЛЫНВАМФИЩЫВГЛАНФДМБ ЫИВАФДГЫЛВАР ФОИЫЛДВГАПФЫИВГНАФРЛОБВРА ИЬФДЛОТЬЧУВЫ РЛА1РЫЩ ШВГАРФИ ЛЫНВАМФИЩЫВГЛАНФДМБ ЫИВАФДГЫЛВАР ФОИЫЛДВГАПФЫИВГНАФРЛОБВРА ИЬФДЛОТЬ", isMe: false))
-        layouts.append(DialogsLayout(text: "LOREMIPSUM(0)LOREMIPSUM(1)LOREMIPSUM(2)LOREMIPSUM(3)LOREMIPSUM(4)LOREMIPSUM(5)LOREMIPSUM(6)LOREMIPSUM(7)LOREMIPSUM(8)LOREMIPSUM(9)LOREMIPSUM(10)LOREMIPSUM(11)LOREMIPSUM(12)LOREMIPSUM(13)LOREMIPSUM(14)LOREMIPSUM(15)LOREMIPSUM(16)LOREMIPSUM(17)LOREMIPSUM(18)LOREMIPSUM(19)LOREMIPSUM(20)", isMe: true))
-        layouts.append(DialogsLayout(text: "l", isMe: true))
-        layouts.append(DialogsLayout(text: "LOREMIPSUM(0)LOREMIPS", isMe: true))
-        layouts.append(DialogsLayout(text: "LOREMIPSUM(0)LOREMIPSu", isMe: false))
-        layouts.append(DialogsLayout(text: "LOREMIPSUM(0)LOREMIPSuu", isMe: false))
-        layouts.append(DialogsLayout(text: "LOREMIPSUM(0)LOREMIPSuuu", isMe: false))
-        layouts.append(DialogsLayout(text: "LOREMIPSUM(0)LOREMIPSu", isMe: false))
-        layouts.append(DialogsLayout(text: "LOREMIPSUM(0)LOREMIPSuu", isMe: false))
-        layouts.append(DialogsLayout(text: "LOREMIPSUM(0)LOREMIPSuuu", isMe: false))
-        layouts.append(DialogsLayout(text: "LOREMIPSUM(0)LOREMIPSu", isMe: true))
-        layouts.append(DialogsLayout(text: "LOREMIPSUM(0)LOREMIPSuu", isMe: true))
-        layouts.append(DialogsLayout(text: "LOREMIPSUM(0)LOREMIPSuuu", isMe: true))
-        layouts.append(DialogsLayout(text: "LOREMIPSUM(0)LOREMIPSuuuu", isMe: true))
-        layouts.append(DialogsLayout(text: "LOREMIPSUM(0)LOREMIPSuuuuu", isMe: true))
-        layouts.append(DialogsLayout(text: "LOREMIPSUM(0)LOREMIPSuuuuuu", isMe: true))*/
-        var cache = ""
-        for i in 0...1000 {
-            cache += "i"
-            if i % 2 == 0 {
-                layouts.append(DialogsLayout(text: cache, isMe: false))
+        let user_id = UserDefaults.standard.integer(forKey: "user_id")
+        for item in data.messages {
+            var isMe = false
+            if item.user_id == "\(user_id)" {
+                isMe = true
             } else {
-                layouts.append(DialogsLayout(text: cache, isMe: true))
+                isMe = false
             }
+            layouts.append(DialogsLayout(text: item.text, isMe: isMe))
         }
         return layouts
     }
-    private func reloadTableView(width: CGFloat, synchronous: Bool) {
+    private func reloadTableView(width: CGFloat, synchronous: Bool, data: JSONDecoding.DialogsApi) {
         reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
-            return [Section(header: nil, items: self?.getNewsRows() ?? [], footer: nil)]
-        })
+            return [Section(header: nil, items: self?.getNewsRows(data: data) ?? [], footer: nil)]}) { let lastRowIndex = self.tableView.numberOfRows(inSection: 0) - 1
+            let pathToLastRow = IndexPath(row: lastRowIndex, section: 0)
+            self.tableView.scrollToRow(at: pathToLastRow, at: .bottom, animated: false)
+            self.tableView.alpha = 1
+        }
     }
 }
