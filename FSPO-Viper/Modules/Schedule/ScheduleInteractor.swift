@@ -9,8 +9,144 @@
 //
 
 import UIKit
+import Alamofire
 
 class ScheduleInteractor: ScheduleInteractorProtocol {
+    
+    
 
     weak var presenter: SchedulePresenterProtocol?
+    func fetchTeachers() {
+        let params: Parameters = [
+            "app_key": Constants.AppKey
+            ]
+        Alamofire.request(Constants.TeachersURL, method: .get, parameters: params).responseJSON { (response) in
+            let result = response.data
+            do {
+                let res = try JSONDecoder().decode(JSONDecoding.GetTeachersApi.self, from: result!)
+                self.presenter?.teachersFetched(data: res)
+                /*self.teachers = res.teachers
+                self.teachersLoaded = true
+                if self.groupsLoaded && self.teachersLoaded && self.myLoaded {
+                    stopLoader()
+                }
+                for teach in res.teachers {
+                    let index = teach.firstname.index(teach.lastname.startIndex, offsetBy: 0)
+                    self.indexes.append(String(teach.lastname[index]))
+                }
+                DispatchQueue.main.async {
+                    UIView.animate(withDuration: 1, animations: {
+                        self.refreshButton.alpha = 0
+                    })
+                    self.tableView1.reloadData()
+                }*/
+            } catch {
+                print(error)
+            }
+        }
+    }
+    func fetchScheduleByGroups() {
+        let params: Parameters = [
+            "app_key": Constants.AppKey
+            ]
+        Alamofire.request(Constants.GroupsURL, method: .get, parameters: params).responseJSON { (response) in
+            let result = response.data
+            do {
+                let res = try JSONDecoder().decode(JSONDecoding.GetGroupsApi.self, from: result!)
+                self.presenter?.scheduleByGroupsFetched(data: res)
+                /*self.groups = res.courses
+                self.groupsLoaded = true
+                if self.groupsLoaded && self.teachersLoaded && self.myLoaded {
+                    stopLoader()
+                }
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                    UIView.animate(withDuration: 0.3, animations: {
+                        self.tableView.alpha = 1
+                    }, completion:  nil)
+                    UIView.animate(withDuration: 0.3, animations: {
+                        self.tableView1.alpha = 1
+                    }, completion: nil)
+                    UIView.animate(withDuration: 0.3, animations: {
+                        self.pageControl.alpha = 1
+                    }, completion: nil)
+                    self.scView.isUserInteractionEnabled = true
+                }*/
+            } catch {
+                print(error)
+            }
+        }
+    }
+    func fetchStudentSchedule() {
+        var params: Parameters = [
+            "app_key": Constants.AppKey
+        ]
+        params = [
+            "app_key": "c78bf5636f9cf36763b511184c572e8f9341cb07",
+            "type": "group",
+            "id": "5",
+            "week": "now"
+        ]
+        /*if UserDefaults.standard.string(forKey: "user_group_id") != nil {
+            params = [
+                "app_key": "c78bf5636f9cf36763b511184c572e8f9341cb07",
+                "type": "group",
+                "id": UserDefaults.standard.string(forKey: "user_group_id")!,
+                "week": "now"
+            ]
+        }*/
+        Alamofire.request("https://ifspo.ifmo.ru/api/schedule", method: .get, parameters: params).responseJSON { (response) in
+            let result = response.data
+            do {
+                let res = try JSONDecoder().decode(JSONDecoding.StudentScheduleAPI.self, from: result!)
+                print(response.description)
+                self.presenter?.studentScheduleFetched(data: res)
+                /*self.arr = res.weekdays
+                self.myLoaded = true
+                if self.groupsLoaded && self.teachersLoaded && self.myLoaded {
+                    stopLoader()
+                }
+                UserDefaults.standard.set(try? PropertyListEncoder().encode(self.arr), forKey:"MyScheduleCache")
+                if self.week_id == "now" {
+                    if res.week == "odd" {
+                        self.first_segment = "odd"
+                        self.segmentedControl.setTitle("Нечётная", forSegmentAt: 0)
+                        self.segmentedControl.setTitle("Чётная", forSegmentAt: 1)
+                    } else {
+                        self.first_segment = "self"
+                        self.segmentedControl.setTitle("Чётная", forSegmentAt: 0)
+                        self.segmentedControl.setTitle("Нечётная", forSegmentAt: 1)
+                    }
+                }
+                DispatchQueue.main.async {
+                    self.tableView0.reloadData()
+                    self.scView.isScrollEnabled = true
+                    self.segmentedControl.tintColor = UIColor.white
+                    UIView.animate(withDuration: 0.3, animations: {
+                        self.tableView0.alpha = 1
+                        self.segmentedControl.alpha = 1
+                        self.backgrView.backgroundColor = UIColor(red: 25/255, green: 70/255, blue: 186/255, alpha: 1)
+                    }, completion: {finalized in
+                        let date = Date()
+                        let calendar = Calendar.current
+                        var day = calendar.component(.weekday, from: date)
+                        var indexPath = IndexPath(row: 0, section: 0)
+                        day = day-2
+                        if day == -1 {
+                            indexPath = IndexPath(row: 0, section: 0)
+                        } else {
+                            indexPath = IndexPath(row: 0, section: day)
+                        }
+                        if !UserDefaults.standard.bool(forKey: "Spring") {
+                            self.tableView0.scrollToRow(at: indexPath, at: .top, animated: true)
+                        }
+                    })
+                    
+                    
+                }*/
+            } catch {
+                print(error)
+            }
+        }
+    }
 }

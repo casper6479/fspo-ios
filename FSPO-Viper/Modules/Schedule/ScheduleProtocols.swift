@@ -16,17 +16,24 @@ protocol ScheduleWireframeProtocol: class {
 }
 // MARK: Presenter -
 protocol SchedulePresenterProtocol: class {
-
+    func updateView()
+    func teachersFetched(data: JSONDecoding.GetTeachersApi)
+    func scheduleByGroupsFetched(data: JSONDecoding.GetGroupsApi)
+    func studentScheduleFetched(data: JSONDecoding.StudentScheduleAPI)
 }
 
 // MARK: Interactor -
 protocol ScheduleInteractorProtocol: class {
-
+    func fetchTeachers()
+    func fetchScheduleByGroups()
+    func fetchStudentSchedule()
   var presenter: SchedulePresenterProtocol? { get set }
 }
 
 // MARK: View -
 protocol ScheduleViewProtocol: class {
-
+    func showNewTeacherRows(source: JSONDecoding.GetTeachersApi)
+    func showNewScheduleByGroupsRows(source: JSONDecoding.GetGroupsApi)
+    func showNewStudentScheduleRows(source: JSONDecoding.StudentScheduleAPI)
   var presenter: SchedulePresenterProtocol? { get set }
 }

@@ -21,4 +21,6 @@ class Constants {
     public static let ProfileURL = "https://ifspo.ifmo.ru/api/profile"
     public static let MessagesURL = "https://ifspo.ifmo.ru/api/messages"
     public static let DialogURL = "https://ifspo.ifmo.ru/api/messagesHistory"
+    public static let TeachersURL = "https://ifspo.ifmo.ru/api/teachers"
+    public static let GroupsURL = "https://ifspo.ifmo.ru/api/groups"
 }

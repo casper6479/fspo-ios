@@ -11,7 +11,6 @@
 import UIKit
 
 class MessagesPresenter: MessagesPresenterProtocol {
-    
     weak private var view: MessagesViewProtocol?
     var interactor: MessagesInteractorProtocol?
     private let router: MessagesWireframeProtocol

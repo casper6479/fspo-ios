@@ -95,7 +95,52 @@ class JSONDecoding {
             let read: Bool
         }
     }
-    
+    struct GetTeachersApi: Decodable {
+        let teachers: [Teacher]
+        struct Teacher: Decodable {
+            let firstname: String
+            let lastname: String
+            let middlename: String
+            let photo: String
+            let user_id: String
+        }
+    }
+    struct GetGroupsApi: Decodable {
+        let courses: [Course]
+        struct Course: Decodable {
+            let course: Int
+            let groups: [Group]
+            struct Group: Decodable {
+                let group_id: String
+                let name: String
+            }
+        }
+    }
+    struct StudentScheduleAPI: Decodable {
+        let week: String?
+        let weekdays: [Weekdays]
+        struct Weekdays: Decodable {
+            let periods: [Periods]
+            let weekday: String
+            struct Periods: Decodable {
+                let schedule: [Schedule]
+                let period: Int
+                let period_start: String
+                let period_end: String
+                struct Schedule: Decodable {
+                    let name: String
+                    let lastname: String
+                    let middlename: String
+                    let firstname: String
+                    let place: String
+                    let even: String?
+                    let odd: String?
+                    let group_part: Int
+                    let group_name: String
+                }
+            }
+        }
+    }
     /*struct studentHistoryAPI: Decodable {
         let groups: [groups]
     }

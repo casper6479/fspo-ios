@@ -11,6 +11,15 @@
 import UIKit
 import LayoutKit
 class ScheduleViewController: UIViewController, ScheduleViewProtocol {
+    func showNewStudentScheduleRows(source: JSONDecoding.StudentScheduleAPI) {
+        reloadStudentSchedule()
+    }
+    func showNewTeacherRows(source: JSONDecoding.GetTeachersApi) {
+        reloadTeachers(data: source)
+    }
+    func showNewScheduleByGroupsRows(source: JSONDecoding.GetGroupsApi) {
+        reloadScheduleByGroups(data: source)
+    }
     private var scrollView: UIScrollView!
 	var presenter: SchedulePresenterProtocol?
     private var studentScheduleLayoutAdapter: ReloadableViewLayoutAdapter?
@@ -25,9 +34,13 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol {
         scrollView.isPagingEnabled = true
         view.addSubview(scrollView)
         self.layoutFeed(width: self.view.bounds.width)
+        presenter?.updateView()
     }
-    func getTeachersRows() -> [Layout]? {
-        let layouts = [Layout](repeating: TeachersListCellLayout(firstname: "Дмитрий", lastname: "Волчек", middlename: "Геннадьевич", avatar: ""), count: 50)
+    func getTeachersRows(data: JSONDecoding.GetTeachersApi) -> [Layout]? {
+        var layouts = [Layout]()
+        for item in data.teachers {
+            layouts.append(TeachersListCellLayout(firstname: item.firstname, lastname: item.lastname, middlename: item.middlename, avatar: ""))
+        }
         return layouts
     }
     private func reloadTableView(width: CGFloat, synchronous: Bool, layoutAdapter: ReloadableViewLayoutAdapter, ds: [Section<[Layout]>]) {
@@ -39,14 +52,25 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol {
         let layouts = [Layout](repeating: StudentScheduleCellLayout(subject: "", teacher: "", subjects: 2), count: 1)
         return layouts
     }
-    func getGroupsRows() -> [Layout]? {
-        let layouts = [Layout](repeating: ScheduleByGroupsCellLayout(group: "Y2135"), count: 4)
+    func getGroupsRows(data: JSONDecoding.GetGroupsApi.Course) -> [Layout]? {
+        var layouts = [Layout]()
+        for item in data.groups {
+            layouts.append(ScheduleByGroupsCellLayout(group: item.name))
+        }
         return layouts
     }
     func setupLayoutAdapters() {
         self.studentScheduleLayoutAdapter = StudentScheduleReloadableLayoutAdapter(reloadableView: StudentScheduleLayout.tableView ?? UITableView())
         StudentScheduleLayout.tableView?.dataSource = self.studentScheduleLayoutAdapter
         StudentScheduleLayout.tableView?.delegate = self.studentScheduleLayoutAdapter
+        self.scheduleByGroupsLayoutAdapter = ScheduleByGroupsReloadableLayoutAdapter(reloadableView: ScheduleByGroupsLayout.tableView ?? UITableView())
+        ScheduleByGroupsLayout.tableView?.dataSource = self.scheduleByGroupsLayoutAdapter
+        ScheduleByGroupsLayout.tableView?.delegate = self.scheduleByGroupsLayoutAdapter
+        self.teachersListLayoutAdapter = TeacherListReloadableLayoutAdapter(reloadableView: TeachersListLayout.tableView ?? UITableView())
+        TeachersListLayout.tableView?.dataSource = self.teachersListLayoutAdapter
+        TeachersListLayout.tableView?.delegate = self.teachersListLayoutAdapter
+    }
+    func reloadStudentSchedule() {
         self.reloadTableView(width: self.view.bounds.width, synchronous: false, layoutAdapter: self.studentScheduleLayoutAdapter!, ds: [Section(
             header: nil,
             items: getStudentRows() ?? [],
@@ -66,30 +90,28 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol {
                                 header: nil,
                                 items: getStudentRows() ?? [],
                                 footer: nil)])
-        self.scheduleByGroupsLayoutAdapter = ScheduleByGroupsReloadableLayoutAdapter(reloadableView: ScheduleByGroupsLayout.tableView ?? UITableView())
-        ScheduleByGroupsLayout.tableView?.dataSource = self.scheduleByGroupsLayoutAdapter
-        ScheduleByGroupsLayout.tableView?.delegate = self.scheduleByGroupsLayoutAdapter
-        self.reloadTableView(width: self.view.bounds.width, synchronous: false, layoutAdapter:
-            self.scheduleByGroupsLayoutAdapter!, ds: [Section(
-            header: nil,
-            items: getGroupsRows() ?? [],
-            footer: nil), Section(
-                header: nil,
-                items: getGroupsRows() ?? [],
-                footer: nil), Section(
-                    header: nil,
-                    items: getGroupsRows() ?? [],
-                    footer: nil), Section(
-                        header: nil,
-                        items: getGroupsRows() ?? [],
-                        footer: nil)])
-        self.teachersListLayoutAdapter = TeacherListReloadableLayoutAdapter(reloadableView: TeachersListLayout.tableView ?? UITableView())
-        TeachersListLayout.tableView?.dataSource = self.teachersListLayoutAdapter
-        TeachersListLayout.tableView?.delegate = self.teachersListLayoutAdapter
+    }
+    func reloadTeachers(data: JSONDecoding.GetTeachersApi) {
         self.reloadTableView(width: self.view.bounds.width, synchronous: false, layoutAdapter: self.teachersListLayoutAdapter!, ds: [Section(
             header: nil,
-            items: getTeachersRows() ?? [],
+            items: getTeachersRows(data: data) ?? [],
             footer: nil)])
+    }
+    func reloadScheduleByGroups(data: JSONDecoding.GetGroupsApi) {
+        self.reloadTableView(width: self.view.bounds.width, synchronous: false, layoutAdapter:
+            self.scheduleByGroupsLayoutAdapter!, ds: [Section(
+                header: nil,
+                items: getGroupsRows(data: data.courses[0]) ?? [],
+                footer: nil), Section(
+                    header: nil,
+                    items: getGroupsRows(data: data.courses[1]) ?? [],
+                    footer: nil), Section(
+                        header: nil,
+                        items: getGroupsRows(data: data.courses[2]) ?? [],
+                        footer: nil), Section(
+                            header: nil,
+                            items: getGroupsRows(data: data.courses[3]) ?? [],
+                            footer: nil)])
     }
     private func layoutFeed(width: CGFloat) {
         _ = CFAbsoluteTimeGetCurrent()
