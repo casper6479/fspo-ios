@@ -11,8 +11,8 @@
 import UIKit
 import LayoutKit
 class ScheduleViewController: UIViewController, ScheduleViewProtocol {
-    func showNewStudentScheduleRows(source: JSONDecoding.StudentScheduleAPI) {
-        reloadStudentSchedule()
+    func showNewStudentScheduleRows(source: JSONDecoding.StudentScheduleApi) {
+        reloadStudentSchedule(data: source)
     }
     func showNewTeacherRows(source: JSONDecoding.GetTeachersApi) {
         reloadTeachers(data: source)
@@ -48,8 +48,11 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol {
             return ds
         })
     }
-    func getStudentRows() -> [Layout]? {
-        let layouts = [Layout](repeating: StudentScheduleCellLayout(subject: "", teacher: "", subjects: 2), count: 1)
+    func getStudentRows(data: JSONDecoding.StudentScheduleApi.Weekdays) -> [Layout]? {
+        var layouts = [Layout]()
+        for item in data.periods {
+            layouts.append(StudentScheduleCellLayout(schedule: item, subjects: 1))
+        }
         return layouts
     }
     func getGroupsRows(data: JSONDecoding.GetGroupsApi.Course) -> [Layout]? {
@@ -70,36 +73,36 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol {
         TeachersListLayout.tableView?.dataSource = self.teachersListLayoutAdapter
         TeachersListLayout.tableView?.delegate = self.teachersListLayoutAdapter
     }
-    func reloadStudentSchedule() {
-        self.reloadTableView(width: self.view.bounds.width, synchronous: false, layoutAdapter: self.studentScheduleLayoutAdapter!, ds: [Section(
+    func reloadStudentSchedule(data: JSONDecoding.StudentScheduleApi) {
+        self.reloadTableView(width: self.view.bounds.width, synchronous: false, layoutAdapter: self.studentScheduleLayoutAdapter ?? ReloadableViewLayoutAdapter(reloadableView: UITableView()), ds: [Section(
             header: nil,
-            items: getStudentRows() ?? [],
+            items: getStudentRows(data: data.weekdays[0]) ?? [],
             footer: nil), Section(
                 header: nil,
-                items: getStudentRows() ?? [],
+                items: getStudentRows(data: data.weekdays[1]) ?? [],
                 footer: nil), Section(
                     header: nil,
-                    items: getStudentRows() ?? [],
+                    items: getStudentRows(data: data.weekdays[2]) ?? [],
                     footer: nil), Section(
                         header: nil,
-                        items: getStudentRows() ?? [],
+                        items: getStudentRows(data: data.weekdays[3]) ?? [],
                         footer: nil), Section(
                             header: nil,
-                            items: getStudentRows() ?? [],
+                            items: getStudentRows(data: data.weekdays[4]) ?? [],
                             footer: nil), Section(
                                 header: nil,
-                                items: getStudentRows() ?? [],
+                                items: getStudentRows(data: data.weekdays[5]) ?? [],
                                 footer: nil)])
     }
     func reloadTeachers(data: JSONDecoding.GetTeachersApi) {
-        self.reloadTableView(width: self.view.bounds.width, synchronous: false, layoutAdapter: self.teachersListLayoutAdapter!, ds: [Section(
+        self.reloadTableView(width: self.view.bounds.width, synchronous: false, layoutAdapter: self.teachersListLayoutAdapter ?? ReloadableViewLayoutAdapter(reloadableView: UITableView()), ds: [Section(
             header: nil,
             items: getTeachersRows(data: data) ?? [],
             footer: nil)])
     }
     func reloadScheduleByGroups(data: JSONDecoding.GetGroupsApi) {
         self.reloadTableView(width: self.view.bounds.width, synchronous: false, layoutAdapter:
-            self.scheduleByGroupsLayoutAdapter!, ds: [Section(
+            self.scheduleByGroupsLayoutAdapter ?? ReloadableViewLayoutAdapter(reloadableView: UITableView()), ds: [Section(
                 header: nil,
                 items: getGroupsRows(data: data.courses[0]) ?? [],
                 footer: nil), Section(

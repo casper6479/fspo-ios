@@ -78,28 +78,17 @@ class ScheduleInteractor: ScheduleInteractorProtocol {
         }
     }
     func fetchStudentSchedule() {
-        var params: Parameters = [
-            "app_key": Constants.AppKey
-        ]
-        params = [
-            "app_key": "c78bf5636f9cf36763b511184c572e8f9341cb07",
+        let groupId = UserDefaults.standard.integer(forKey: "user_group_id")
+        let params: Parameters = [
+            "app_key": Constants.AppKey,
             "type": "group",
-            "id": "5",
+            "id": groupId,
             "week": "now"
         ]
-        /*if UserDefaults.standard.string(forKey: "user_group_id") != nil {
-            params = [
-                "app_key": "c78bf5636f9cf36763b511184c572e8f9341cb07",
-                "type": "group",
-                "id": UserDefaults.standard.string(forKey: "user_group_id")!,
-                "week": "now"
-            ]
-        }*/
         Alamofire.request("https://ifspo.ifmo.ru/api/schedule", method: .get, parameters: params).responseJSON { (response) in
             let result = response.data
             do {
-                let res = try JSONDecoder().decode(JSONDecoding.StudentScheduleAPI.self, from: result!)
-                print(response.description)
+                let res = try JSONDecoder().decode(JSONDecoding.StudentScheduleApi.self, from: result!)
                 self.presenter?.studentScheduleFetched(data: res)
                 /*self.arr = res.weekdays
                 self.myLoaded = true

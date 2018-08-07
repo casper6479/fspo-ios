@@ -8,7 +8,7 @@
 
 import Foundation
 
-class JSONDecoding {
+public class JSONDecoding {
     struct NewsApi: Decodable {
         let news: [News]
         let count_n: Int
@@ -116,18 +116,18 @@ class JSONDecoding {
             }
         }
     }
-    struct StudentScheduleAPI: Decodable {
+    public struct StudentScheduleApi: Decodable {
         let week: String?
         let weekdays: [Weekdays]
-        struct Weekdays: Decodable {
+        public struct Weekdays: Decodable {
             let periods: [Periods]
             let weekday: String
-            struct Periods: Decodable {
+            public struct Periods: Decodable {
                 let schedule: [Schedule]
                 let period: Int
                 let period_start: String
                 let period_end: String
-                struct Schedule: Decodable {
+                public struct Schedule: Decodable {
                     let name: String
                     let lastname: String
                     let middlename: String
@@ -141,11 +141,11 @@ class JSONDecoding {
             }
         }
     }
-    /*struct studentHistoryAPI: Decodable {
-        let groups: [groups]
+    struct StudentHistoryApi: Decodable {
+        let groups: [Groups]
     }
-    struct groups: Decodable {
+    struct Groups: Decodable {
         let group_id: String
         let name: String
-    }*/
+    }
 }

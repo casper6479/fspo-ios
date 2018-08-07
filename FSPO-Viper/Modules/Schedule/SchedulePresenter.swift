@@ -31,7 +31,7 @@ class SchedulePresenter: SchedulePresenterProtocol {
     func scheduleByGroupsFetched(data: JSONDecoding.GetGroupsApi) {
         view?.showNewScheduleByGroupsRows(source: data)
     }
-    func studentScheduleFetched(data: JSONDecoding.StudentScheduleAPI) {
+    func studentScheduleFetched(data: JSONDecoding.StudentScheduleApi) {
         view?.showNewStudentScheduleRows(source: data)
     }
 }

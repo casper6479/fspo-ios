@@ -19,7 +19,7 @@ protocol SchedulePresenterProtocol: class {
     func updateView()
     func teachersFetched(data: JSONDecoding.GetTeachersApi)
     func scheduleByGroupsFetched(data: JSONDecoding.GetGroupsApi)
-    func studentScheduleFetched(data: JSONDecoding.StudentScheduleAPI)
+    func studentScheduleFetched(data: JSONDecoding.StudentScheduleApi)
 }
 
 // MARK: Interactor -
@@ -34,6 +34,6 @@ protocol ScheduleInteractorProtocol: class {
 protocol ScheduleViewProtocol: class {
     func showNewTeacherRows(source: JSONDecoding.GetTeachersApi)
     func showNewScheduleByGroupsRows(source: JSONDecoding.GetGroupsApi)
-    func showNewStudentScheduleRows(source: JSONDecoding.StudentScheduleAPI)
+    func showNewStudentScheduleRows(source: JSONDecoding.StudentScheduleApi)
   var presenter: SchedulePresenterProtocol? { get set }
 }

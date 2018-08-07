@@ -26,6 +26,21 @@ class LoginInteractor: LoginInteractorProtocol {
                 self.presenter?.userLoggedIn()
                 keychain["token"] = res.token
                 UserDefaults.standard.set(res.user_id, forKey: "user_id")
+                let parameters: Parameters = [
+                    "user_id": res.user_id
+                ]
+                let headers: HTTPHeaders = [
+                    "token": res.token
+                ]
+                Alamofire.request(Constants.StudentHistoryURL, method: .get, parameters: parameters, headers: headers).responseJSON { (response) in
+                    let result = response.data
+                    do {
+                        let res = try JSONDecoder().decode(JSONDecoding.StudentHistoryApi.self, from: result!)
+                        UserDefaults.standard.set(res.groups[res.groups.count-1].group_id, forKey: "user_group_id")
+                    } catch {
+                        print(error)
+                    }
+                }
                 //                UserDefaults.standard.set(res.token, forKey: "token")
                 //                UserDefaults.standard.set(true, forKey: "isLogged")
                 //                UserDefaults.standard.set(5, forKey: "fireDate")
@@ -33,22 +48,7 @@ class LoginInteractor: LoginInteractorProtocol {
                 //                UserDefaults.standard.set(false, forKey: "enable_auth")
                 //                UserDefaults.standard.set(1, forKey: "Notification_sound")
                 //                touchid = true
-                //                let parameters: Parameters = [
-                //                    "user_id": res.user_id
-                //                ]
-                //                let headers: HTTPHeaders = [
-                //                    "token": res.token
-                //                ]
-                //                Alamofire.request(Constants.StudentHistoryURL, method: .get, parameters: parameters, headers: headers).responseJSON { (response) in
-                //                    let result = response.data
-                //                    do{
-                //                        let res = try JSONDecoder().decode(studentHistoryAPI.self, from: result!)
-                //                        UserDefaults.standard.set(res.groups[res.groups.count-1].group_id, forKey: "user_group_id")
-                //                        self.defaults?.set(res.groups[res.groups.count-1].group_id, forKey: "user_group_id")
-                //                    }
-                //                    catch {
-                //                        print(error)
-                //                    }
+                
                 //                }
                 //                let modalTabBar = self.storyboard?.instantiateViewController(withIdentifier: "TabBar")
                 //                let modalTeacherTabBar = self.storyboard?.instantiateViewController(withIdentifier: "TeacherTabBar")

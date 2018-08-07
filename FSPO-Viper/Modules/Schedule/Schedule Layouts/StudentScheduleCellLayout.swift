@@ -11,34 +11,43 @@ import UIKit
 import LayoutKit
 
 open class StudentScheduleCellLayout: InsetLayout<View> {
-    public init(subject: String, teacher: String, subjects: Int) {
-        let paraCount = LabelLayout(text: "1", font: (UIFont.ITMOFontBold?.withSize(23))!, alignment: .center)
-        let timeBegin = LabelLayout(text: "9:00", font: (UIFont.ITMOFont?.withSize(16))!, alignment: .center)
-        let timeEnd = LabelLayout(text: "10:30", font: (UIFont.ITMOFont?.withSize(16))!, alignment: .center)
-        let paraName = LabelLayout(text: "Предмет", font: (UIFont.ITMOFontBold?.withSize(20))!)
-        let teacher = LabelLayout(text: "Препод", font: (UIFont.ITMOFont?.withSize(13))!, alignment: .bottomLeading)
-        let auditory = LabelLayout(text: "Ауд", font: (UIFont.ITMOFont?.withSize(17))!, alignment: .center)
+    public init(schedule: JSONDecoding.StudentScheduleApi.Weekdays.Periods, subjects: Int) {
+        var i = 0
+        var scheduleCell = [Layout]()
+        let paraCount = LabelLayout(text: "\(schedule.period)", font: (UIFont.ITMOFontBold?.withSize(23))!, alignment: .center)
+        let timeBegin = LabelLayout(text: "\(schedule.period_start)", font: (UIFont.ITMOFont?.withSize(16))!, alignment: .center)
+        let timeEnd = LabelLayout(text: "\(schedule.period_end)", font: (UIFont.ITMOFont?.withSize(16))!, alignment: .center)
         let leftPart = SizeLayout(height: 63, sublayout: StackLayout(axis: .vertical, spacing: 4, sublayouts: [paraCount, timeBegin, timeEnd]))
-        let middlePart = StackLayout(axis: .vertical, sublayouts: [paraName, teacher])
-        let rightPart = auditory
         let leftPartSize = SizeLayout(width: 50, sublayout: leftPart)
-        let middlePartSize = SizeLayout(width: UIScreen.main.bounds.width - 150, sublayout: middlePart)
-        let rightPartSize = SizeLayout(width: 100, sublayout: rightPart)
-        /*var subjectsArr = [Layout]()
-        for _ in 0...subjects {
-            subjectsArr.append(<#T##newElement: Layout##Layout#>)
-        }*/
+        while i < schedule.schedule.count {
+            let paraName = LabelLayout(text: schedule.schedule[i].name, font: (UIFont.ITMOFontBold?.withSize(20))!)
+            let teacher = LabelLayout(text: "\(schedule.schedule[i].lastname) \(schedule.schedule[i].firstname) \(schedule.schedule[i].middlename)", font: (UIFont.ITMOFont?.withSize(13))!, alignment: .bottomLeading)
+            let auditory = LabelLayout(text: schedule.schedule[i].place, font: (UIFont.ITMOFont?.withSize(17))!, alignment: .center)
+            let middlePart = StackLayout(axis: .vertical, sublayouts: [paraName, teacher])
+            let rightPart = auditory
+            let middlePartSize = SizeLayout(width: UIScreen.main.bounds.width - 120, sublayout: middlePart)
+            let rightPartSize = SizeLayout(width: 70, sublayout: rightPart)
+            scheduleCell.append(StackLayout(
+                    axis: .horizontal,
+                    spacing: 5,
+                    sublayouts: [middlePartSize, rightPartSize],
+                    config: { view in
+                        view.backgroundColor = .white
+                }))
+            i+=1
+        }
         super.init(
             insets: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
             sublayout: StackLayout(
-                    axis: .horizontal,
-                    spacing: 5,
-                    sublayouts: [
-                        leftPartSize, middlePartSize, rightPartSize
-                    ],
-                    config: { view in
-                        view.backgroundColor = .white
-                }),
+                axis: .horizontal,
+                spacing: 8,
+                sublayouts: [leftPartSize,
+                             StackLayout(
+                                axis: .vertical,
+                                spacing: 8,
+                                sublayouts: scheduleCell
+                            )]
+                ),
             config: { view in
                 view.backgroundColor = .white
         })
