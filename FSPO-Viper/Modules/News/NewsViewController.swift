@@ -38,7 +38,7 @@ class NewsViewController: UIViewController, NewsViewProtocol {
     func getNewsRows() -> [Layout] {
         var layouts = [Layout]()
         for item in dataSource {
-            layouts.append(NewsPostLayout(body: item.text, time: DateToString().formatDate(item.ndatetime)))
+            layouts.append(NewsPostLayout(body: item.text, time: DateToString().formatDateNews(item.ndatetime)))
         }
         return layouts
     }

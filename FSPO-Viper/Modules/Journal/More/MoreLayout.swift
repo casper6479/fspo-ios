@@ -11,9 +11,15 @@ import LayoutKit
 
 open class MoreLayout: InsetLayout<View> {
     public init(subject: String, presense: String, nonPresense: String, allPresense: String, attestation: String, result: String) {
-        //156
+        var wholeString = ""
+        if NSLocalizedString("Не был", comment: "").width(withConstrainedHeight: 10, font: UIFont.ITMOFont!.withSize(10)) > NSLocalizedString("Был", comment: "").width(withConstrainedHeight: 10, font: UIFont.ITMOFont!.withSize(10)) {
+            wholeString = "\(NSLocalizedString("Не был", comment: ""))\(NSLocalizedString("Всего", comment: ""))\(NSLocalizedString("Аттестация", comment: ""))\(NSLocalizedString("Оценка", comment: ""))"
+        } else {
+            wholeString = "\(NSLocalizedString("Был", comment: ""))\(NSLocalizedString("Всего", comment: ""))\(NSLocalizedString("Аттестация", comment: ""))\(NSLocalizedString("Оценка", comment: ""))"
+        }
+        let width = wholeString.width(withConstrainedHeight: 10, font: UIFont.ITMOFont!.withSize(10)) + 50
         let subjectLabel = SizeLayout(
-            width: UIScreen.main.bounds.width - 156,
+            width: UIScreen.main.bounds.width - width,
             sublayout: LabelLayout(
                 text: subject,
                 font: UIFont.ITMOFont!,
@@ -82,6 +88,7 @@ open class MoreLayout: InsetLayout<View> {
         })
         let allPresenseLabelStack = StackLayout(
             axis: .vertical,
+            distribution: .fillEqualSpacing,
             alignment: .center,
             sublayouts: [allPresenseLabel, allPresenseLabelDescription])
         let presenseStack = StackLayout(
@@ -119,14 +126,14 @@ open class MoreLayout: InsetLayout<View> {
         let resultLabelDescription = LabelLayout(
             text: NSLocalizedString("Оценка", comment: ""),
             font: UIFont.ITMOFont!.withSize(10),
-            alignment: .center,
+            alignment: .centerLeading,
             config: { label in
                 label.textColor = .black
                 label.backgroundColor = .white
         })
         let resultStack = StackLayout(
             axis: .vertical,
-            alignment: .centerTrailing,
+            alignment: .center,
             sublayouts: [resultLabel, resultLabelDescription])
         super.init(
             insets: UIEdgeInsets(top: 12, left: 8, bottom: 12, right: 8),

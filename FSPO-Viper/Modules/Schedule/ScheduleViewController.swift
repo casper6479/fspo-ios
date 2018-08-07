@@ -51,7 +51,7 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol {
     func getStudentRows(data: JSONDecoding.StudentScheduleApi.Weekdays) -> [Layout]? {
         var layouts = [Layout]()
         for item in data.periods {
-            layouts.append(StudentScheduleCellLayout(schedule: item, subjects: 1))
+            layouts.append(StudentScheduleCellLayout(schedule: item))
         }
         return layouts
     }
@@ -117,15 +117,13 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol {
                             footer: nil)])
     }
     private func layoutFeed(width: CGFloat) {
-        _ = CFAbsoluteTimeGetCurrent()
-        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInteractive).async {
             let scheduleLayout = ScheduleLayout()
             let arrangement = scheduleLayout.arrangement(width: width * 3)
             DispatchQueue.main.async(execute: {
                 self.scrollView.contentSize = arrangement.frame.size
                 arrangement.makeViews(in: self.scrollView)
                 self.setupLayoutAdapters()
-                _ = CFAbsoluteTimeGetCurrent()
             })
         }
     }

@@ -59,10 +59,10 @@ public class JSONDecoding {
             let student_mark: Int?
         }
     }
-    struct ParentsApi: Decodable {
+    public struct ParentsApi: Decodable {
         let relatives: [ProfileApi]
     }
-    struct ProfileApi: Decodable {
+    public struct ProfileApi: Decodable {
         let firstname: String
         let middlename: String
         let lastname: String

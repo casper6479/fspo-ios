@@ -35,9 +35,9 @@ class MoreViewController: UIViewController, MoreViewProtocol {
     }
     func getNowRows(first: Bool) -> [Layout] {
         var layouts = [Layout]()
-        var semester = (dataSource?.lessons_now.lessons)!
+        var semester = (dataSource?.lessons_before.lessons)!
         if !first {
-            semester = (dataSource?.lessons_before.lessons)!
+            semester = (dataSource?.lessons_now.lessons)!
         }
         for item in semester {
             layouts.append(MoreLayout(subject: item.name, presense: "\(item.student_ex_was)", nonPresense: "\(item.student_ex_not)", allPresense: "\(item.ex_all)", attestation: "\(item.student_validmark ?? -1)", result: "\(item.student_mark ?? -1)"))

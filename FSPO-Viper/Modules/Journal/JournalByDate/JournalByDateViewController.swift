@@ -9,11 +9,12 @@
 //
 
 import UIKit
-
+import LayoutKit
 class JournalByDateViewController: UIViewController, JournalByDateViewProtocol {
 
 	var presenter: JournalByDatePresenterProtocol?
-
+    private var tableView: UITableView!
+    private var reloadableViewLayoutAdapter: ReloadableViewLayoutAdapter!
 	override func viewDidLoad() {
         super.viewDidLoad()
         let width = view.bounds.width
@@ -24,6 +25,16 @@ class JournalByDateViewController: UIViewController, JournalByDateViewProtocol {
                 arrangement.makeViews(in: self.view)
             })
         }
+        let scheduleView = UIView(frame: CGRect(x: 0, y: 100, width: view.bounds.width, height: Constants.safeHeight-100))
+        scheduleView.backgroundColor = .white
+        view.addSubview(scheduleView)
+        tableView = UITableView(frame: scheduleView.bounds, style: .plain)
+        tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        reloadableViewLayoutAdapter = NewsReloadableViewLayoutAdapter(reloadableView: tableView)
+        tableView.dataSource = reloadableViewLayoutAdapter
+        tableView.delegate = reloadableViewLayoutAdapter
+        tableView.backgroundColor = UIColor.backgroundGray
+        scheduleView.addSubview(tableView)
     }
 
 }

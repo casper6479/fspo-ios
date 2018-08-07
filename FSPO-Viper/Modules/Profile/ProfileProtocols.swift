@@ -19,7 +19,7 @@ protocol ProfilePresenterProtocol: class {
     func showSettings()
     func showParents()
     func updateView()
-    func profileFetched(firstname: String, lastname: String, middlename: String, email: String, phone: String, birthday: String, nationality: String, school: String, segrys: String, photo: UIImage)
+    func profileFetched(data: JSONDecoding.ProfileApi)
 }
 
 // MARK: Interactor -
@@ -31,6 +31,6 @@ protocol ProfileInteractorProtocol: class {
 // MARK: View -
 protocol ProfileViewProtocol: class {
     func show(vc: UIViewController)
-    func fillView(firstname: String, lastname: String, middlename: String, email: String, phone: String, birthday: String, nationality: String, school: String, segrys: String, photo: UIImage)
+    func fillView(data: JSONDecoding.ProfileApi)
     var presenter: ProfilePresenterProtocol? { get set }
 }

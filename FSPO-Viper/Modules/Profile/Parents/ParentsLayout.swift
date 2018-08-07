@@ -22,7 +22,7 @@ open class ParentsLayout: InsetLayout<View> {
             var profileLine = [Layout]()
             var i = 0
             while i < textCases.count {
-                profileLine.append(StackLayout(axis: .horizontal, spacing: 16, sublayouts: [profileIcon(image: UIImage(named: "profile_icon_\(i)")!), LabelLayout(text: textCases[i], font: (UIFont.ITMOFont?.withSize(17))!, numberOfLines: 1, alignment: .centerLeading)]))
+                profileLine.append(StackLayout(axis: .horizontal, spacing: 16, sublayouts: [profileIcon(image: UIImage(named: "profile_icon_\(i)")!), LabelLayout(text: textCases[i], font: (UIFont.ITMOFont?.withSize(16))!, numberOfLines: 1, alignment: .centerLeading)]))
                 i+=1
             }
             return profileLine
@@ -30,7 +30,7 @@ open class ParentsLayout: InsetLayout<View> {
         let profileLines = generateProfileLines()
         let firstnameLabel = LabelLayout(
             text: firstname,
-            font: (UIFont.ITMOFont?.withSize(17))!,
+            font: (UIFont.ITMOFont?.withSize(16))!,
             numberOfLines: 1,
             alignment: .center,
             flexibility: .flexible,
@@ -40,7 +40,7 @@ open class ParentsLayout: InsetLayout<View> {
         })
         let lastnameLabel = LabelLayout(
             text: lastname,
-            font: (UIFont.ITMOFont?.withSize(17))!,
+            font: (UIFont.ITMOFont?.withSize(16))!,
             numberOfLines: 1,
             alignment: .center,
             flexibility: .flexible,
@@ -68,15 +68,6 @@ open class ParentsLayout: InsetLayout<View> {
         })
         let namesStackLayout = StackLayout(axis: .vertical, spacing: 8, alignment: .center, sublayouts: [lastnameLabel, firstnameLabel, middlenameLabel])
         let nameAvatarLayout = StackLayout(axis: .horizontal, sublayouts: [photoLayout, namesStackLayout])
-        var safeHeight: CGFloat = 0
-        if #available(iOS 11, *) {
-            DispatchQueue.main.sync {
-                let safeInset = UIApplication.shared.delegate?.window??.safeAreaInsets.bottom
-                safeHeight = UIScreen.main.bounds.height - (UITabBarController().tabBar.frame.height + UINavigationController().navigationBar.frame.height + UIApplication.shared.statusBarFrame.height + 24 + safeInset!)
-            }
-        } else {
-            safeHeight = UIScreen.main.bounds.height - (UITabBarController().tabBar.frame.height + UINavigationController().navigationBar.frame.height + UIApplication.shared.statusBarFrame.height + 24)
-        }
         let mainStackView = StackLayout (
             axis: .vertical,
             spacing: 0,

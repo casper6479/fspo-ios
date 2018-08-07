@@ -23,8 +23,8 @@ class ProfilePresenter: ProfilePresenterProtocol {
     func updateView() {
         interactor?.fetchProfile()
     }
-    func profileFetched(firstname: String, lastname: String, middlename: String, email: String, phone: String, birthday: String, nationality: String, school: String, segrys: String, photo: UIImage) {
-        view?.fillView(firstname: firstname, lastname: lastname, middlename: middlename, email: email, phone: phone, birthday: birthday, nationality: nationality, school: school, segrys: segrys, photo: photo)
+    func profileFetched(data: JSONDecoding.ProfileApi) {
+        view?.fillView(data: data)
     }
     func showParents() {
         view?.show(vc: ParentsRouter.createModule())

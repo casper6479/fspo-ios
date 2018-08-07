@@ -22,24 +22,6 @@ open class LoginLayout: InsetLayout<UIView> {
                 imageView.image = UIImage(named: "logo")
                 imageView.contentMode = .scaleAspectFit
         })
-//        let loginButton = SizeLayout(
-//            size: CGSize(width: 80, height: 40),
-//            sublayout: ButtonLayout(
-//                type: .custom,
-//                title: "Вход",
-//                alignment: .center,
-//                config: { button in
-//                    button.backgroundColor = UIColor.ITMOBlue
-//                    button.setTitleColor(.white, for: .normal)
-//                    button.setTitleColor(.lightGray, for: .highlighted)
-//                    button.titleLabel?.font = UIFont.ITMOFontBold?.withSize(17)
-//            }),
-//            config: { view in
-//                view.backgroundColor = UIColor.ITMOBlue
-//                view.layer.cornerRadius = view.frame.height / 2
-//                view.layer.masksToBounds = true
-//        })
-
         let loginButton = SizeLayout<UIButton>(
             size: CGSize(width: 80, height: 40),
             alignment: .center,
@@ -109,24 +91,17 @@ open class LoginLayout: InsetLayout<UIView> {
                 }
                 LoginLayout.passwordTextField = textfield
         })
-        var safeHeight: CGFloat = 0
-        if #available(iOS 11, *) {
-            let safeInset = UIApplication.shared.delegate?.window??.safeAreaInsets.bottom
-            safeHeight = UIScreen.main.bounds.height - (UITabBarController().tabBar.frame.height + UINavigationController().navigationBar.frame.height + UIApplication.shared.statusBarFrame.height + 24 + safeInset!)
-        } else {
-            safeHeight = UIScreen.main.bounds.height - (UITabBarController().tabBar.frame.height + UINavigationController().navigationBar.frame.height + UIApplication.shared.statusBarFrame.height + 24)
-        }
         let topContainer = SizeLayout(
-            size: CGSize(width: UIScreen.main.bounds.width, height: safeHeight / 3),
+            size: CGSize(width: UIScreen.main.bounds.width, height: (Constants.safeHeight - 24) / 3),
             sublayout: itmoLogo
         )
         let centerContainer = SizeLayout(
-            size: CGSize(width: UIScreen.main.bounds.width, height: safeHeight / 3 + 50),
+            size: CGSize(width: UIScreen.main.bounds.width, height: (Constants.safeHeight - 24) / 3 + 50),
             alignment: .center,
             sublayout: StackLayout(axis: .vertical, spacing: 16, alignment: .center, sublayouts: [loginField, passwordField, loginButton])
         )
         let bottomContainer = SizeLayout(
-            size: CGSize(width: UIScreen.main.bounds.width, height: safeHeight / 3 - 50),
+            size: CGSize(width: UIScreen.main.bounds.width, height: (Constants.safeHeight - 24) / 3 - 50),
             sublayout: scheduleButton
         )
         super.init(

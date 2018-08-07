@@ -15,7 +15,7 @@ open class DialogsLayout: InsetLayout<View> {
         var textColor: UIColor?
         var alignment: Alignment
         var fontSize = 16
-        let font = UIFont.messagesFont?.withSize(CGFloat(fontSize))
+        let font = UIFont.MessagesFont?.withSize(CGFloat(fontSize))
         switch isMe {
         case true:
             textColor = .white

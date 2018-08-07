@@ -12,17 +12,10 @@ import LayoutKit
 open class TeachersListLayout: InsetLayout<View> {
     static var tableView: UITableView?
     public init() {
-        var safeHeight: CGFloat = 0
-        if #available(iOS 11, *) {
-            let safeInset = UIApplication.shared.delegate?.window??.safeAreaInsets.bottom
-            safeHeight = UIScreen.main.bounds.height - (UITabBarController().tabBar.frame.height + UINavigationController().navigationBar.frame.height + UIApplication.shared.statusBarFrame.height + safeInset!)
-        } else {
-            safeHeight = UIScreen.main.bounds.height - (UITabBarController().tabBar.frame.height + UINavigationController().navigationBar.frame.height + UIApplication.shared.statusBarFrame.height)
-        }
         super.init(
             insets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             sublayout: SizeLayout<UITableView>(
-                size: CGSize(width: UIScreen.main.bounds.width, height: safeHeight),
+                size: CGSize(width: UIScreen.main.bounds.width, height: Constants.safeHeight),
                 config: {tab in
                     tab.separatorInset = UIEdgeInsets(top: 0, left: 66, bottom: 0, right: 0)
                     TeachersListLayout.tableView = tab

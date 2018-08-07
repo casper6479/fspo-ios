@@ -11,6 +11,7 @@
 import UIKit
 
 class ProfileViewController: UIViewController, ProfileViewProtocol {
+    
 
 	var presenter: ProfilePresenterProtocol?
 
@@ -19,16 +20,16 @@ class ProfileViewController: UIViewController, ProfileViewProtocol {
         view.backgroundColor = UIColor.white
         edgesForExtendedLayout = UIRectEdge()
         let settingButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        settingButton.setTitle("=", for: .normal)
+        settingButton.setImage(UIImage(named: "settings"), for: .normal)
         settingButton.addTarget(self, action: #selector(setNeedsShowSettings), for: .touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: settingButton)
-        fillView(firstname: "", lastname: "", middlename: "", email: "", phone: "", birthday: "", nationality: "", school: "", segrys: "", photo: UIImage(named: "test")!)
+//        fillView(firstname: "", lastname: "", middlename: "", email: "", phone: "", birthday: "", nationality: "", school: "", segrys: "", photo: UIImage(named: "test")!)
         presenter?.updateView()
     }
-    func fillView(firstname: String, lastname: String, middlename: String, email: String, phone: String, birthday: String, nationality: String, school: String, segrys: String, photo: UIImage) {
+    func fillView(data: JSONDecoding.ProfileApi) {
         let width = view.bounds.width
         DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
-            let profileLayout = ProfileLayout(firstname: firstname, lastname: lastname, middlename: middlename, email: email, phone: phone, birthday: birthday, nationality: nationality, school: school, segrys: segrys, photo: photo)
+            let profileLayout = ProfileLayout(data: data)
             let arrangement = profileLayout.arrangement(width: width)
             DispatchQueue.main.async(execute: {
                 arrangement.makeViews(in: self.view)

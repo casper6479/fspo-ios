@@ -12,24 +12,34 @@ open class NewsPostLayout: InsetLayout<View> {
     public init(body: String, time: String) {
         let bodyLayout = LabelLayout(
             text: body,
-            font: (UIFont.ITMOFont?.withSize(17))!,
+            font: (UIFont.LongTextFont?.withSize(16))!,
             config: { label in
                 label.backgroundColor = .white
                 label.preferredMaxLayoutWidth = UIScreen.main.bounds.width - 32
             })
-        let timeLayout = LabelLayout(
+        let timeLabel = LabelLayout(
             text: time,
-            font: UIFont.ITMOFont!,
+            font: UIFont.ITMOFont!.withSize(14),
+            alignment: .center,
             config: { label in
-                label.textColor = .gray
-                label.backgroundColor = .white
+                label.textColor = .white
+                label.backgroundColor = UIColor.ITMOBlue
                 label.preferredMaxLayoutWidth = UIScreen.main.bounds.width - 32
             })
+        let timeWidth = time.width(withConstrainedHeight: 14, font: UIFont.ITMOFont!.withSize(14))
+        let timeLayout = SizeLayout(
+            size: CGSize(width: timeWidth + 16, height: 14 + 12),
+            alignment: .centerLeading,
+            sublayout: timeLabel,
+            config: {view in
+                view.backgroundColor = UIColor.ITMOBlue
+                view.layer.cornerRadius = 7
+        })
         let authorLayout = LabelLayout(
             text: NSLocalizedString("Завилейская Анастасия", comment: ""),
-            font: (UIFont.ITMOFont?.withSize(17))!,
+            font: (UIFont.ITMOFont?.withSize(18))!,
             config: { label in
-                label.textColor = UIColor.ITMOBlue
+                label.textColor = .black
                 label.backgroundColor = .white
                 label.preferredMaxLayoutWidth = UIScreen.main.bounds.width - 32
             })

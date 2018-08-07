@@ -31,8 +31,8 @@
 "Оценка" = "Note";
 "Аттестация" = "Attestation";
 "Всего" = "All";
-"Был" = "was";
-"Не был" = "wasnt";
+"Был" = "Presence";
+"Не был" = "Absence";
 "Понедельник" = "Monday";
 "Вторник" = "Tuesday";
 "Среда" = "Wednesday";

@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:FSPO-Viper.xcodeproj">
+      location = "group:/Users/casper6479/Desktop/swift/FSPO-Viper/FSPO.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

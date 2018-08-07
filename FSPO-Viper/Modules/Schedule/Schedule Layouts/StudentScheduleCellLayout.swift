@@ -11,18 +11,43 @@ import UIKit
 import LayoutKit
 
 open class StudentScheduleCellLayout: InsetLayout<View> {
-    public init(schedule: JSONDecoding.StudentScheduleApi.Weekdays.Periods, subjects: Int) {
-        var i = 0
+    public init(schedule: JSONDecoding.StudentScheduleApi.Weekdays.Periods) {
         var scheduleCell = [Layout]()
         let paraCount = LabelLayout(text: "\(schedule.period)", font: (UIFont.ITMOFontBold?.withSize(23))!, alignment: .center)
         let timeBegin = LabelLayout(text: "\(schedule.period_start)", font: (UIFont.ITMOFont?.withSize(16))!, alignment: .center)
         let timeEnd = LabelLayout(text: "\(schedule.period_end)", font: (UIFont.ITMOFont?.withSize(16))!, alignment: .center)
         let leftPart = SizeLayout(height: 63, sublayout: StackLayout(axis: .vertical, spacing: 4, sublayouts: [paraCount, timeBegin, timeEnd]))
         let leftPartSize = SizeLayout(width: 50, sublayout: leftPart)
-        while i < schedule.schedule.count {
-            let paraName = LabelLayout(text: schedule.schedule[i].name, font: (UIFont.ITMOFontBold?.withSize(20))!)
-            let teacher = LabelLayout(text: "\(schedule.schedule[i].lastname) \(schedule.schedule[i].firstname) \(schedule.schedule[i].middlename)", font: (UIFont.ITMOFont?.withSize(13))!, alignment: .bottomLeading)
-            let auditory = LabelLayout(text: schedule.schedule[i].place, font: (UIFont.ITMOFont?.withSize(17))!, alignment: .center)
+        for item in schedule.schedule {
+            var name = item.name
+            if item.group_part != 0 {
+                name = "\(item.group_part):\(name)"
+            }
+            var place = item.place
+            switch place {
+            case "Ушинского":
+                place = "У"
+            case "Спортзал":
+                place = "С"
+            case "Ломоносова":
+                place = "Л"
+            default:
+                place = item.place
+            }
+            var color = UIColor.black
+            if item.even != nil {
+                color = UIColor.ITMOBlue
+            }
+            if item.odd != nil {
+                color = UIColor.ITMORed
+            }
+            let paraName = LabelLayout(text: name, font: (UIFont.ITMOFontBold?.withSize(20))!, config: { label in
+                label.textColor = color
+            })
+            let teacher = LabelLayout(text: "\(item.lastname) \(item.firstname) \(item.middlename)", font: (UIFont.ITMOFont?.withSize(13))!, alignment: .bottomLeading)
+            let auditory = LabelLayout(text: place, font: (UIFont.ITMOFont?.withSize(17))!, alignment: .center, config: { label in
+                label.textColor = color
+            })
             let middlePart = StackLayout(axis: .vertical, sublayouts: [paraName, teacher])
             let rightPart = auditory
             let middlePartSize = SizeLayout(width: UIScreen.main.bounds.width - 120, sublayout: middlePart)
@@ -34,7 +59,6 @@ open class StudentScheduleCellLayout: InsetLayout<View> {
                     config: { view in
                         view.backgroundColor = .white
                 }))
-            i+=1
         }
         super.init(
             insets: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Constants {
     public static let KeychainService = "com.casper6479.FSPO-Viper"
@@ -23,4 +24,5 @@ class Constants {
     public static let DialogURL = "https://ifspo.ifmo.ru/api/messagesHistory"
     public static let TeachersURL = "https://ifspo.ifmo.ru/api/teachers"
     public static let GroupsURL = "https://ifspo.ifmo.ru/api/groups"
+    public static var safeHeight: CGFloat = 0.0
 }

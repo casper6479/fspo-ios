@@ -13,7 +13,7 @@ open class MessagesLayout: InsetLayout<View> {
     public init(name: String, lastMessage: String, photo: UIImage, date: String) {
         let nameLayout = LabelLayout(
             text: name,
-            font: (UIFont.ITMOFont?.withSize(17))!,
+            font: (UIFont.ITMOFont?.withSize(16))!,
             numberOfLines: 1,
             alignment: .centerLeading,
             flexibility: .flexible,
@@ -25,14 +25,14 @@ open class MessagesLayout: InsetLayout<View> {
             size: CGSize(width: UIScreen.main.bounds.width - 84, height: 15),
             config: { label in
                 label.text = lastMessage
-                label.font = UIFont.ITMOFont!
+                label.font = UIFont.LongTextFont!.withSize(14)
                 label.numberOfLines = 1
                 label.textColor = .gray
                 label.backgroundColor = .white
         })
         let dateLayout = LabelLayout(
             text: date,
-            font: UIFont.ITMOFont!,
+            font: UIFont.ITMOFont!.withSize(14),
             numberOfLines: 1,
             alignment: .fillTrailing,
             flexibility: .inflexible,

@@ -24,7 +24,7 @@ class ProfileInteractor: ProfileInteractorProtocol {
             let result = response.data
             do {
                 let res = try JSONDecoder().decode(JSONDecoding.ProfileApi.self, from: result!)
-                self.presenter?.profileFetched(firstname: res.firstname, lastname: res.lastname, middlename: res.middlename, email: res.email!, phone: res.phone!, birthday: res.birthday!, nationality: res.nationality!, school: "\(res.school)", segrys: "\(res.segrys)", photo: UIImage(named: "test")!)
+                self.presenter?.profileFetched(data: res)
                 /*if res.email == nil {
                     self.email.text = "Не указано"
                 } else {

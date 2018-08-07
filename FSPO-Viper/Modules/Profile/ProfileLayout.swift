@@ -10,7 +10,27 @@ import Foundation
 import LayoutKit
 
 open class ProfileLayout: InsetLayout<View> {
-    public init(firstname: String, lastname: String, middlename: String, email: String, phone: String, birthday: String, nationality: String, school: String, segrys: String, photo: UIImage) {
+    public init(data: JSONDecoding.ProfileApi) {
+        var school = "\(data.school ?? 0)"
+        if school == "0" {
+            school = "Не указано"
+        } else {
+            school += " классов"
+        }
+        var segrys = "\(data.segrys ?? false)"
+        if data.segrys == nil {
+            segrys = "Не указано"
+        }
+        if segrys == "true" {
+            segrys = "Обучался(лась) в Сегрисе"
+        }
+        if segrys == "true" {
+            segrys = "Не обучался(лась) в Сегрисе"
+        }
+        let email = data.email ?? "Не указано"
+        let phone = data.phone ?? "Не указано"
+        let birthday = data.birthday ?? "Не указано"
+        let nationality = data.nationality ?? "Не указано"
         let textCases = [email, phone, birthday, nationality, school, segrys]
         func profileIcon(image: UIImage) -> Layout {
             let profileIcon = SizeLayout<UIImageView>(
@@ -22,15 +42,15 @@ open class ProfileLayout: InsetLayout<View> {
             var profileLine = [Layout]()
             var i = 0
             while i < textCases.count {
-                profileLine.append(StackLayout(axis: .horizontal, spacing: 16, sublayouts: [profileIcon(image: UIImage(named: "profile_icon_\(i)")!), LabelLayout(text: textCases[i], font: (UIFont.ITMOFont?.withSize(17))!, numberOfLines: 1, alignment: .centerLeading)]))
+                profileLine.append(StackLayout(axis: .horizontal, spacing: 16, sublayouts: [profileIcon(image: UIImage(named: "profile_icon_\(i)")!), LabelLayout(text: textCases[i], font: (UIFont.ITMOFont?.withSize(16))!, numberOfLines: 1, alignment: .centerLeading)]))
                 i+=1
             }
             return profileLine
         }
         let profileLines = generateProfileLines()
         let firstnameLabel = LabelLayout(
-            text: firstname,
-            font: (UIFont.ITMOFont?.withSize(17))!,
+            text: data.firstname,
+            font: (UIFont.ITMOFont?.withSize(16))!,
             numberOfLines: 1,
             alignment: .center,
             flexibility: .flexible,
@@ -39,8 +59,8 @@ open class ProfileLayout: InsetLayout<View> {
                 label.backgroundColor = .white
         })
         let lastnameLabel = LabelLayout(
-            text: lastname,
-            font: (UIFont.ITMOFont?.withSize(17))!,
+            text: data.lastname,
+            font: (UIFont.ITMOFont?.withSize(16))!,
             numberOfLines: 1,
             alignment: .center,
             flexibility: .flexible,
@@ -49,8 +69,8 @@ open class ProfileLayout: InsetLayout<View> {
                 label.backgroundColor = .white
         })
         let middlenameLabel = LabelLayout(
-            text: middlename,
-            font: (UIFont.ITMOFont?.withSize(17))!,
+            text: data.middlename,
+            font: (UIFont.ITMOFont?.withSize(16))!,
             numberOfLines: 1,
             alignment: .center,
             flexibility: .flexible,
@@ -61,7 +81,7 @@ open class ProfileLayout: InsetLayout<View> {
         let photoLayout = SizeLayout<UIImageView>(
             size: CGSize(width: 100, height: 100),
             config: { avatar in
-                avatar.image = photo
+                avatar.image = UIImage(named: "test")
                 avatar.contentMode = .scaleAspectFill
                 avatar.layer.cornerRadius = avatar.frame.height / 2
                 avatar.clipsToBounds = true
@@ -69,15 +89,6 @@ open class ProfileLayout: InsetLayout<View> {
         let namesStackLayout = StackLayout(axis: .vertical, spacing: 8, alignment: .center, sublayouts: [lastnameLabel, firstnameLabel, middlenameLabel])
         let nameAvatarLayout = StackLayout(axis: .horizontal, sublayouts: [photoLayout, namesStackLayout])
         let bottomButton = Button().createButton(title: NSLocalizedString("Родители", comment: ""), width: UIScreen.main.bounds.width - 32, height: 40, alignment: .bottomCenter, target: ProfileViewController(), action: #selector(ProfileViewController().setNeedsShowParents))
-        var safeHeight: CGFloat = 0
-        if #available(iOS 11, *) {
-            DispatchQueue.main.sync {
-                let safeInset = UIApplication.shared.delegate?.window??.safeAreaInsets.bottom
-                safeHeight = UIScreen.main.bounds.height - (UITabBarController().tabBar.frame.height + UINavigationController().navigationBar.frame.height + UIApplication.shared.statusBarFrame.height + 24 + safeInset!)
-            }
-        } else {
-            safeHeight = UIScreen.main.bounds.height - (UITabBarController().tabBar.frame.height + UINavigationController().navigationBar.frame.height + UIApplication.shared.statusBarFrame.height + 24)
-        }
         let mainStackView = StackLayout (
             axis: .vertical,
             spacing: 0,
@@ -89,7 +100,7 @@ open class ProfileLayout: InsetLayout<View> {
                     size: CGSize(width: UIScreen.main.bounds.width, height: 260),
                     sublayout: StackLayout(axis: .vertical, spacing: 16, sublayouts: profileLines)),
                 SizeLayout(
-                    size: CGSize(width: UIScreen.main.bounds.width, height: safeHeight - 384),
+                    size: CGSize(width: UIScreen.main.bounds.width, height: Constants.safeHeight - 24 - 384),
                     sublayout: bottomButton)
             ])
         super.init(

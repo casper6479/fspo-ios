@@ -12,9 +12,6 @@ import UIKit
 import Alamofire
 
 class ScheduleInteractor: ScheduleInteractorProtocol {
-    
-    
-
     weak var presenter: SchedulePresenterProtocol?
     func fetchTeachers() {
         let params: Parameters = [
@@ -83,7 +80,7 @@ class ScheduleInteractor: ScheduleInteractorProtocol {
             "app_key": Constants.AppKey,
             "type": "group",
             "id": groupId,
-            "week": "now"
+            "week": "all"
         ]
         Alamofire.request("https://ifspo.ifmo.ru/api/schedule", method: .get, parameters: params).responseJSON { (response) in
             let result = response.data
