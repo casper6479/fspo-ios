@@ -16,17 +16,20 @@ protocol JournalByDateWireframeProtocol: class {
 }
 // MARK: Presenter -
 protocol JournalByDatePresenterProtocol: class {
-
+    func updateView(date: String)
+    func journalByDateFetched(data: JSONDecoding.JournalByDateAPI)
+    func journalByDateShowNoLessons()
 }
 
 // MARK: Interactor -
 protocol JournalByDateInteractorProtocol: class {
-
-  var presenter: JournalByDatePresenterProtocol? { get set }
+    func fetchJournalByDate(date: String)
+    var presenter: JournalByDatePresenterProtocol? { get set }
 }
 
 // MARK: View -
 protocol JournalByDateViewProtocol: class {
-
-  var presenter: JournalByDatePresenterProtocol? { get set }
+    func updateTableView(source: JSONDecoding.JournalByDateAPI)
+    func showNoLessons()
+    var presenter: JournalByDatePresenterProtocol? { get set }
 }

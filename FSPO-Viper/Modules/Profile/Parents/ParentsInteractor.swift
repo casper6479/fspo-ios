@@ -12,7 +12,6 @@ import UIKit
 import Alamofire
 
 class ParentsInteractor: ParentsInteractorProtocol {
-    
     weak var presenter: ParentsPresenterProtocol?
     func fetchParents() {
         let user_id = UserDefaults.standard.integer(forKey: "user_id")

@@ -23,8 +23,7 @@ class MessagesInteractor: MessagesInteractorProtocol {
             do {
                 let res = try JSONDecoder().decode(JSONDecoding.MessagesApi.self, from: result!)
                 self.presenter?.messagesFetched(data: res)
-            }
-            catch {
+            } catch {
                 print(error)
             }
         }

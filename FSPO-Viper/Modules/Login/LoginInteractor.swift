@@ -48,7 +48,6 @@ class LoginInteractor: LoginInteractorProtocol {
                 //                UserDefaults.standard.set(false, forKey: "enable_auth")
                 //                UserDefaults.standard.set(1, forKey: "Notification_sound")
                 //                touchid = true
-                
                 //                }
                 //                let modalTabBar = self.storyboard?.instantiateViewController(withIdentifier: "TabBar")
                 //                let modalTeacherTabBar = self.storyboard?.instantiateViewController(withIdentifier: "TeacherTabBar")

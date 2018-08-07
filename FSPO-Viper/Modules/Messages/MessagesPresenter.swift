@@ -23,7 +23,6 @@ class MessagesPresenter: MessagesPresenterProtocol {
     func updateView() {
         interactor?.fetchMessages()
     }
-    
     func messagesFetched(data: JSONDecoding.MessagesApi) {
         view?.showNewRows(source: data)
     }

@@ -10,25 +10,25 @@
 
 import Foundation
 
-//MARK: Wireframe -
+// MARK: Wireframe -
 protocol DialogWireframeProtocol: class {
 
 }
-//MARK: Presenter -
+// MARK: Presenter -
 protocol DialogPresenterProtocol: class {
     func updateView()
     func dialogsFetched(data: JSONDecoding.DialogsApi)
 }
 
-//MARK: Interactor -
+// MARK: Interactor -
 protocol DialogInteractorProtocol: class {
     var dialog_user_id: Int? { get set }
     func fetchDialogs()
-  var presenter: DialogPresenterProtocol?  { get set }
+  var presenter: DialogPresenterProtocol? { get set }
 }
 
-//MARK: View -
+// MARK: View -
 protocol DialogViewProtocol: class {
     func showNewRows(source: JSONDecoding.DialogsApi)
-  var presenter: DialogPresenterProtocol?  { get set }
+  var presenter: DialogPresenterProtocol? { get set }
 }

@@ -11,8 +11,6 @@
 import UIKit
 
 class ParentsPresenter: ParentsPresenterProtocol {
-    
-
     weak private var view: ParentsViewProtocol?
     var interactor: ParentsInteractorProtocol?
     private let router: ParentsWireframeProtocol

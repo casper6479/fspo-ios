@@ -21,5 +21,13 @@ class JournalByDatePresenter: JournalByDatePresenterProtocol {
         self.interactor = interactor
         self.router = router
     }
-
+    func updateView(date: String) {
+        interactor?.fetchJournalByDate(date: date)
+    }
+    func journalByDateFetched(data: JSONDecoding.JournalByDateAPI) {
+        view?.updateTableView(source: data)
+    }
+    func journalByDateShowNoLessons() {
+        view?.showNoLessons()
+    }
 }

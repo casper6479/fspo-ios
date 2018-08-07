@@ -11,10 +11,14 @@
 import UIKit
 import LayoutKit
 class JournalByDateViewController: UIViewController, JournalByDateViewProtocol {
-
+    func updateTableView(source: JSONDecoding.JournalByDateAPI) {
+        reloadTableView(width: view.bounds.width, synchronous: false, data: source)
+    }
 	var presenter: JournalByDatePresenterProtocol?
     private var tableView: UITableView!
     private var reloadableViewLayoutAdapter: ReloadableViewLayoutAdapter!
+    private var scheduleView: UIView!
+    private let dateFormatter = DateFormatter()
 	override func viewDidLoad() {
         super.viewDidLoad()
         let width = view.bounds.width
@@ -25,16 +29,53 @@ class JournalByDateViewController: UIViewController, JournalByDateViewProtocol {
                 arrangement.makeViews(in: self.view)
             })
         }
-        let scheduleView = UIView(frame: CGRect(x: 0, y: 100, width: view.bounds.width, height: Constants.safeHeight-100))
+        scheduleView = UIView(frame: CGRect(x: 0, y: 100, width: view.bounds.width, height: Constants.safeHeight-100))
         scheduleView.backgroundColor = .white
         view.addSubview(scheduleView)
         tableView = UITableView(frame: scheduleView.bounds, style: .plain)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        reloadableViewLayoutAdapter = NewsReloadableViewLayoutAdapter(reloadableView: tableView)
+        reloadableViewLayoutAdapter = JournalBySubjectReloadableLayoutAdapter(reloadableView: tableView)
         tableView.dataSource = reloadableViewLayoutAdapter
         tableView.delegate = reloadableViewLayoutAdapter
-        tableView.backgroundColor = UIColor.backgroundGray
+        tableView.backgroundColor = .white
+        let footer = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
+        tableView.tableFooterView = footer
         scheduleView.addSubview(tableView)
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        presenter?.updateView(date: dateFormatter.string(from: JournalByDateLayout.datePicker.date))
     }
-
+    func getNewsRows(data: JSONDecoding.JournalByDateAPI.Exercises) -> [Layout] {
+        var layouts = [Layout]()
+        layouts.append(JournalByDateCellLayout(data: data))
+        return layouts
+    }
+    func showNoLessons() {
+        let width = view.bounds.width
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
+            let noLessonsLayout = NoLessonsLayout()
+            let arrangement = noLessonsLayout.arrangement(width: width)
+            DispatchQueue.main.async(execute: {
+                arrangement.makeViews(in: self.scheduleView)
+            })
+        }
+    }
+    func hideNoLessons() {
+        NoLessonsLayout.noLessonView.removeFromSuperview()
+    }
+    @objc func dateDidChanged() {
+        hideNoLessons()
+        presenter?.updateView(date: dateFormatter.string(from: JournalByDateLayout.datePicker.date))
+    }
+    private func reloadTableView(width: CGFloat, synchronous: Bool, data: JSONDecoding.JournalByDateAPI) {
+        var dataSource = [Section<[Layout]>]()
+        for item in data.exercises {
+            dataSource.append(Section(
+                header: nil,
+                items: self.getNewsRows(data: item),
+                footer: nil))
+        }
+        reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
+            return dataSource
+        })
+    }
 }

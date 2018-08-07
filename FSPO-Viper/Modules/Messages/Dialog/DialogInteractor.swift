@@ -13,11 +13,9 @@ import Alamofire
 
 class DialogInteractor: DialogInteractorProtocol {
     var dialog_user_id: Int?
-    
     init(dialog_user_id: Int) {
         self.dialog_user_id = dialog_user_id
     }
-    
     func fetchDialogs() {
         let headers: HTTPHeaders = [
             "token": keychain["token"]!

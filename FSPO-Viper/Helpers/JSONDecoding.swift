@@ -148,4 +148,20 @@ public class JSONDecoding {
         let group_id: String
         let name: String
     }
+    public struct JournalByDateAPI: Decodable {
+        let count_ex: Int
+        let exercises: [Exercises]
+        public struct Exercises: Decodable {
+            let ex_period: String
+            let ex_topic: String
+            let ex_type: String
+            let lesson_name: String
+            let student_presence: Bool
+            let student_mark: Int?
+            let lesson_id: String
+            let student_performance: String?
+            let student_dropout: Bool
+            let student_delay: String?
+        }
+    }
 }
