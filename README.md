@@ -19,6 +19,7 @@ Everything written according to the SwiftLint.
 - Login Module (90% done)
 - Keychan-stored token
 - Settings Module (10% done)
+- English localization
 
 # TODO:
 - FIX DIALOG BUBBLE TRANSPARENT LABEL BACKGROUND & WIDTH BUG
@@ -26,4 +27,5 @@ Everything written according to the SwiftLint.
 - Teacher & parents functionality
 - Local & Remote Notifications
 - Biometric Guard
-- English localization
+- Caching
+- Today Extensions
