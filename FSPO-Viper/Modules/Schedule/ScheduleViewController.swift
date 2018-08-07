@@ -39,7 +39,7 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol {
     func getTeachersRows(data: JSONDecoding.GetTeachersApi) -> [Layout]? {
         var layouts = [Layout]()
         for item in data.teachers {
-            layouts.append(TeachersListCellLayout(firstname: item.firstname, lastname: item.lastname, middlename: item.middlename, avatar: ""))
+            layouts.append(TeachersListCellLayout(firstname: item.firstname, lastname: item.lastname, middlename: item.middlename, photo: item.photo))
         }
         return layouts
     }

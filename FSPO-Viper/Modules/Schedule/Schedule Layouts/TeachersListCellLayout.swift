@@ -8,9 +8,10 @@
 
 import Foundation
 import LayoutKit
+import Kingfisher
 
 open class TeachersListCellLayout: InsetLayout<View> {
-    public init(firstname: String, lastname: String, middlename: String, avatar: String) {
+    public init(firstname: String, lastname: String, middlename: String, photo: String) {
         let firstnameLabel = LabelLayout(
             text: firstname,
             font: UIFont.ITMOFont!,
@@ -35,7 +36,8 @@ open class TeachersListCellLayout: InsetLayout<View> {
         let photoLayout = SizeLayout<UIImageView>(
             size: CGSize(width: 50, height: 50),
             config: { avatar in
-                avatar.image = UIImage(named: "test")
+                let resource = ImageResource(downloadURL: URL(string: photo)!, cacheKey: photo)
+                avatar.kf.setImage(with: resource)
                 avatar.contentMode = .scaleAspectFill
                 avatar.layer.cornerRadius = avatar.frame.height / 2
                 avatar.clipsToBounds = true

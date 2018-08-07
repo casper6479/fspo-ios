@@ -8,9 +8,11 @@
 
 import Foundation
 import LayoutKit
+import Kingfisher
+import UIKit
 
 open class MessagesLayout: InsetLayout<View> {
-    public init(name: String, lastMessage: String, photo: UIImage, date: String) {
+    public init(name: String, lastMessage: String, photo: String, date: String) {
         let nameLayout = LabelLayout(
             text: name,
             font: (UIFont.ITMOFont?.withSize(16))!,
@@ -54,7 +56,8 @@ open class MessagesLayout: InsetLayout<View> {
         let photoLayout = SizeLayout<UIImageView>(
             size: CGSize(width: 60, height: 60),
             config: { avatar in
-                avatar.image = photo
+                let resource = ImageResource(downloadURL: URL(string: photo)!, cacheKey: photo)
+                avatar.kf.setImage(with: resource)
                 avatar.contentMode = .scaleAspectFill
                 avatar.layer.cornerRadius = avatar.frame.height / 2
                 avatar.clipsToBounds = true

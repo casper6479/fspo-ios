@@ -25,7 +25,7 @@ class ParentsInteractor: ParentsInteractorProtocol {
             let result = response.data
             do {
                 let res = try JSONDecoder().decode(JSONDecoding.ParentsApi.self, from: result!)
-                self.presenter?.parentsFetched(firstname: res.relatives[0].firstname, lastname: res.relatives[0].lastname, middlename: res.relatives[0].middlename, email: res.relatives[0].email!, phone: res.relatives[0].phone!, photo: UIImage(named: "logo")!)
+                self.presenter?.parentsFetched(firstname: res.relatives[0].firstname, lastname: res.relatives[0].lastname, middlename: res.relatives[0].middlename, email: res.relatives[0].email!, phone: res.relatives[0].phone!, photo: res.relatives[0].photo)
                 /*self.first.text = res.relatives[0].lastname
                 self.second.text = res.relatives[0].firstname
                 self.third.text = res.relatives[0].middlename

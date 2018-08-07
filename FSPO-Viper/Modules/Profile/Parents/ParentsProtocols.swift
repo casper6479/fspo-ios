@@ -17,7 +17,7 @@ protocol ParentsWireframeProtocol: class {
 // MARK: Presenter -
 protocol ParentsPresenterProtocol: class {
     func updateView()
-    func parentsFetched(firstname: String, lastname: String, middlename: String, email: String, phone: String, photo: UIImage)
+    func parentsFetched(firstname: String, lastname: String, middlename: String, email: String, phone: String, photo: String)
 }
 
 // MARK: Interactor -
@@ -28,6 +28,6 @@ protocol ParentsInteractorProtocol: class {
 
 // MARK: View -
 protocol ParentsViewProtocol: class {
-    func fillView(firstname: String, lastname: String, middlename: String, email: String, phone: String, photo: UIImage)
+    func fillView(firstname: String, lastname: String, middlename: String, email: String, phone: String, photo: String)
     var presenter: ParentsPresenterProtocol? { get set }
 }

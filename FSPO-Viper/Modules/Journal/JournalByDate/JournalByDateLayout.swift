@@ -8,7 +8,7 @@
 
 import Foundation
 import LayoutKit
-
+import UIKit
 open class JournalByDateLayout: InsetLayout<View> {
     static var datePicker = UIDatePicker()
     public init() {
@@ -82,8 +82,32 @@ open class NoLessonsLayout: InsetLayout<View> {
         })
     }
 }
+open class HeaderLayout: InsetLayout<UITableViewHeaderFooterView> {
+    public init(text: String) {
+        super.init(
+            insets: UIEdgeInsets(top: 4, left: 40, bottom: 0, right: 0),
+            sublayout: SizeLayout(height: 22, sublayout: LabelLayout(
+                text: text,
+                font: UIFont.ITMOFontBold!.withSize(17),
+                numberOfLines: 1,
+                config: {label in
+                    label.textColor = .white
+                    label.lineBreakMode = .byTruncatingTail
+            })),
+            config: {header in
+                let background = UIView()
+                background.backgroundColor = UIColor.ITMOBlue
+                header.backgroundView = background
+        })
+    }
+}
+//let header = view as? UITableViewHeaderFooterView
+//header?.backgroundView?.backgroundColor = UIColor.ITMOBlue
+//header?.textLabel?.font = UIFont.ITMOFontBold?.withSize(17)
+//header?.textLabel?.textColor = .white
 class JournalByDateReloadableLayoutAdapter: ReloadableViewLayoutAdapter {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        UIApplication.shared.keyWindow?.rootViewController?.childViewControllers[1].show(JournalByTeacherRouter.createModule(), sender: JournalByDateViewController())
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

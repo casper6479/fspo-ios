@@ -22,6 +22,7 @@ class MoreViewController: UIViewController, MoreViewProtocol {
     }
 	override func viewDidLoad() {
         super.viewDidLoad()
+        title = NSLocalizedString("Подробнее", comment: "")
         presenter?.updateView()
         tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

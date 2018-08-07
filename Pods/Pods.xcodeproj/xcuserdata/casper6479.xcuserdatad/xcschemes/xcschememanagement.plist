@@ -24,12 +24,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Kingfisher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>LayoutKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-FSPO-Viper.xcscheme</key>
+		<key>Pods-FSPO.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

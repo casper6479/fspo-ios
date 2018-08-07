@@ -22,6 +22,7 @@ class JournalBySubjectViewController: UIViewController, JournalBySubjectViewProt
     }
 	override func viewDidLoad() {
         super.viewDidLoad()
+        title = NSLocalizedString("По предметам", comment: "")
         presenter?.updateView()
         tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

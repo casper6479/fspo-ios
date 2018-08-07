@@ -46,6 +46,12 @@
 		466CDF6E20EFA4DB00A86701 /* TabBarBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466CDF6D20EFA4DB00A86701 /* TabBarBuilder.swift */; };
 		467C20912119C937000736A8 /* Calibri.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 467C20902119C936000736A8 /* Calibri.ttf */; };
 		467C20992119DB53000736A8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 467C209B2119DB53000736A8 /* InfoPlist.strings */; };
+		467C20B9211A3438000736A8 /* JournalByTeacherPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467C20B3211A3438000736A8 /* JournalByTeacherPresenter.swift */; };
+		467C20BA211A3438000736A8 /* JournalByTeacherRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467C20B4211A3438000736A8 /* JournalByTeacherRouter.swift */; };
+		467C20BB211A3438000736A8 /* JournalByTeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467C20B5211A3438000736A8 /* JournalByTeacherViewController.swift */; };
+		467C20BC211A3438000736A8 /* JournalByTeacherProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467C20B6211A3438000736A8 /* JournalByTeacherProtocols.swift */; };
+		467C20BD211A3438000736A8 /* JournalByTeacherInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467C20B7211A3438000736A8 /* JournalByTeacherInteractor.swift */; };
+		467C20C0211A3810000736A8 /* JournalByTeacherTeacherCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467C20BF211A3810000736A8 /* JournalByTeacherTeacherCellLayout.swift */; };
 		46A9F99C20F02C27008E2653 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9F99B20F02C27008E2653 /* Color.swift */; };
 		46A9F99E20F030B2008E2653 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9F99D20F030B2008E2653 /* DateFormatter.swift */; };
 		46A9F9A220F033AB008E2653 /* JournalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9F9A120F033AB008E2653 /* JournalLayout.swift */; };
@@ -105,9 +111,11 @@
 		46F5BC9A21173D6E00913931 /* JournalByDateLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F5BC9921173D6E00913931 /* JournalByDateLayout.swift */; };
 		46F5BCAC21178C4A00913931 /* SFCompactRounded-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46F5BCA321178C4A00913931 /* SFCompactRounded-Regular.ttf */; };
 		46F5BCAE211792CC00913931 /* InsetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F5BCAD211792CC00913931 /* InsetView.swift */; };
+		C9FDE83B6E8929FC73982F94 /* Pods_FSPO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 702BDCD060D9B2E8491017E1 /* Pods_FSPO.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21B408E0A5478CBB0C767117 /* Pods-FSPO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSPO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FSPO/Pods-FSPO.debug.xcconfig"; sourceTree = "<group>"; };
 		461FDAA620FA1AA30081C678 /* MessagesLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesLayout.swift; sourceTree = "<group>"; };
 		461FDAA820FA70530081C678 /* ProfileLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLayout.swift; sourceTree = "<group>"; };
 		461FDAAB20FAA0A60081C678 /* ScheduleLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleLayout.swift; sourceTree = "<group>"; };
@@ -149,6 +157,12 @@
 		467C20952119DAAF000736A8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		467C209D2119DB5E000736A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		467C209F2119DF44000736A8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		467C20B3211A3438000736A8 /* JournalByTeacherPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalByTeacherPresenter.swift; sourceTree = "<group>"; };
+		467C20B4211A3438000736A8 /* JournalByTeacherRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalByTeacherRouter.swift; sourceTree = "<group>"; };
+		467C20B5211A3438000736A8 /* JournalByTeacherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalByTeacherViewController.swift; sourceTree = "<group>"; };
+		467C20B6211A3438000736A8 /* JournalByTeacherProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalByTeacherProtocols.swift; sourceTree = "<group>"; };
+		467C20B7211A3438000736A8 /* JournalByTeacherInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalByTeacherInteractor.swift; sourceTree = "<group>"; };
+		467C20BF211A3810000736A8 /* JournalByTeacherTeacherCellLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalByTeacherTeacherCellLayout.swift; sourceTree = "<group>"; };
 		46A9F99B20F02C27008E2653 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		46A9F99D20F030B2008E2653 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		46A9F9A120F033AB008E2653 /* JournalLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalLayout.swift; sourceTree = "<group>"; };
@@ -209,9 +223,11 @@
 		46F5BC9921173D6E00913931 /* JournalByDateLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalByDateLayout.swift; sourceTree = "<group>"; };
 		46F5BCA321178C4A00913931 /* SFCompactRounded-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactRounded-Regular.ttf"; sourceTree = "<group>"; };
 		46F5BCAD211792CC00913931 /* InsetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetView.swift; sourceTree = "<group>"; };
+		702BDCD060D9B2E8491017E1 /* Pods_FSPO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FSPO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A708E70CE564AC7313194980 /* Pods_FSPO_Viper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FSPO_Viper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C496B420B19573C0E000D13B /* Pods-FSPO-Viper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSPO-Viper.release.xcconfig"; path = "Pods/Target Support Files/Pods-FSPO-Viper/Pods-FSPO-Viper.release.xcconfig"; sourceTree = "<group>"; };
 		DC649CFBB2E0B29D669ACD1A /* Pods-FSPO-Viper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSPO-Viper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FSPO-Viper/Pods-FSPO-Viper.debug.xcconfig"; sourceTree = "<group>"; };
+		F46C86DD60774078C67EB4F9 /* Pods-FSPO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSPO.release.xcconfig"; path = "Pods/Target Support Files/Pods-FSPO/Pods-FSPO.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B1CD936D4C769238CDCD92B /* Pods_FSPO_Viper.framework in Frameworks */,
+				C9FDE83B6E8929FC73982F94 /* Pods_FSPO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +283,7 @@
 				46B6D4E8210B1E2A00D83287 /* JournalByDate */,
 				46B6D4E9210B1E4100D83287 /* JournalBySubject */,
 				46B6D50E210B1FCB00D83287 /* More */,
+				467C20A6211A337C000736A8 /* JournalByTeacher */,
 			);
 			path = Journal;
 			sourceTree = "<group>";
@@ -347,6 +365,19 @@
 				4621CEC120EFB08000B17323 /* NewsPostLayout.swift */,
 			);
 			path = News;
+			sourceTree = "<group>";
+		};
+		467C20A6211A337C000736A8 /* JournalByTeacher */ = {
+			isa = PBXGroup;
+			children = (
+				467C20B3211A3438000736A8 /* JournalByTeacherPresenter.swift */,
+				467C20B4211A3438000736A8 /* JournalByTeacherRouter.swift */,
+				467C20B5211A3438000736A8 /* JournalByTeacherViewController.swift */,
+				467C20B6211A3438000736A8 /* JournalByTeacherProtocols.swift */,
+				467C20B7211A3438000736A8 /* JournalByTeacherInteractor.swift */,
+				467C20BF211A3810000736A8 /* JournalByTeacherTeacherCellLayout.swift */,
+			);
+			path = JournalByTeacher;
 			sourceTree = "<group>";
 		};
 		46A9F9A020F03316008E2653 /* Fonts */ = {
@@ -497,6 +528,7 @@
 			isa = PBXGroup;
 			children = (
 				A708E70CE564AC7313194980 /* Pods_FSPO_Viper.framework */,
+				702BDCD060D9B2E8491017E1 /* Pods_FSPO.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -506,6 +538,8 @@
 			children = (
 				DC649CFBB2E0B29D669ACD1A /* Pods-FSPO-Viper.debug.xcconfig */,
 				C496B420B19573C0E000D13B /* Pods-FSPO-Viper.release.xcconfig */,
+				21B408E0A5478CBB0C767117 /* Pods-FSPO.debug.xcconfig */,
+				F46C86DD60774078C67EB4F9 /* Pods-FSPO.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -592,11 +626,12 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FSPO-Viper/Pods-FSPO-Viper-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-FSPO/Pods-FSPO-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FPSCounter/FPSCounter.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/LayoutKit/LayoutKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -605,11 +640,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FPSCounter.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LayoutKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FSPO-Viper/Pods-FSPO-Viper-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FSPO/Pods-FSPO-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		463A1F9020DC271400E04656 /* SwiftLint */ = {
@@ -637,7 +673,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FSPO-Viper-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-FSPO-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -670,17 +706,20 @@
 				46A9F9C120F2BA7F008E2653 /* Button.swift in Sources */,
 				466CDF4F20EF72F700A86701 /* NewsRouter.swift in Sources */,
 				4621CEA720EFABBE00B17323 /* ProfileInteractor.swift in Sources */,
+				467C20BC211A3438000736A8 /* JournalByTeacherProtocols.swift in Sources */,
 				46B6D50C210B1FC700D83287 /* MoreInteractor.swift in Sources */,
 				46B6D4C1210A44CD00D83287 /* ToastExtension.swift in Sources */,
 				46B6D4CD210A5A3F00D83287 /* SettingsProtocols.swift in Sources */,
 				46F5BC9A21173D6E00913931 /* JournalByDateLayout.swift in Sources */,
 				46DF962820FC928700C4D901 /* TeachersListLayout.swift in Sources */,
+				467C20BB211A3438000736A8 /* JournalByTeacherViewController.swift in Sources */,
 				46A9F9A420F03FC2008E2653 /* StringSize.swift in Sources */,
 				46ED1083210FABBF00B16737 /* ParentsLayout.swift in Sources */,
 				46A9F9A220F033AB008E2653 /* JournalLayout.swift in Sources */,
 				46BDD9AC21164D1D00C5CD94 /* DialogRouter.swift in Sources */,
 				46B6D4F1210B1E5700D83287 /* JournalBySubjectRouter.swift in Sources */,
 				46A9F9AF20F1744C008E2653 /* LoginViewController.swift in Sources */,
+				467C20B9211A3438000736A8 /* JournalByTeacherPresenter.swift in Sources */,
 				46B6D517210B25B500D83287 /* ParentsRouter.swift in Sources */,
 				46B6D51F210C6C3C00D83287 /* MoreLayout.swift in Sources */,
 				46B6D4F3210B1E5700D83287 /* JournalBySubjectProtocols.swift in Sources */,
@@ -692,6 +731,7 @@
 				466CDF6E20EFA4DB00A86701 /* TabBarBuilder.swift in Sources */,
 				46B6D4FC210B1E6D00D83287 /* JournalByDatePresenter.swift in Sources */,
 				4621CEBE20EFABD700B17323 /* ScheduleProtocols.swift in Sources */,
+				467C20BD211A3438000736A8 /* JournalByTeacherInteractor.swift in Sources */,
 				466CDF4E20EF72F700A86701 /* NewsPresenter.swift in Sources */,
 				4621CEA520EFABBE00B17323 /* ProfileViewController.swift in Sources */,
 				4621CEA620EFABBE00B17323 /* ProfileProtocols.swift in Sources */,
@@ -728,8 +768,10 @@
 				4621CE9420EFAB8200B17323 /* MessagesRouter.swift in Sources */,
 				46A9F9B020F1744C008E2653 /* LoginProtocols.swift in Sources */,
 				46A9F99E20F030B2008E2653 /* DateFormatter.swift in Sources */,
+				467C20C0211A3810000736A8 /* JournalByTeacherTeacherCellLayout.swift in Sources */,
 				46BDD9AF21164D1D00C5CD94 /* DialogInteractor.swift in Sources */,
 				46B6D4F4210B1E5700D83287 /* JournalBySubjectInteractor.swift in Sources */,
+				467C20BA211A3438000736A8 /* JournalByTeacherRouter.swift in Sources */,
 				46BDD9AB21164D1D00C5CD94 /* DialogPresenter.swift in Sources */,
 				46B6D4C3210A4EEF00D83287 /* KeychainController.swift in Sources */,
 				4621CEB020EFABC700B17323 /* JournalRouter.swift in Sources */,
@@ -893,7 +935,7 @@
 		};
 		46C1562B20DBB2D800F2BA79 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DC649CFBB2E0B29D669ACD1A /* Pods-FSPO-Viper.debug.xcconfig */;
+			baseConfigurationReference = 21B408E0A5478CBB0C767117 /* Pods-FSPO.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -913,7 +955,7 @@
 		};
 		46C1562C20DBB2D800F2BA79 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C496B420B19573C0E000D13B /* Pods-FSPO-Viper.release.xcconfig */;
+			baseConfigurationReference = F46C86DD60774078C67EB4F9 /* Pods-FSPO.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

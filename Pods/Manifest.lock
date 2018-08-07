@@ -3,6 +3,7 @@ PODS:
   - FPSCounter (2.1.0)
   - IQKeyboardManagerSwift (6.0.4)
   - KeychainAccess (3.1.1)
+  - Kingfisher (4.8.0)
   - LayoutKit (8.0.1)
   - SwiftLint (0.25.1)
 
@@ -11,6 +12,7 @@ DEPENDENCIES:
   - FPSCounter
   - IQKeyboardManagerSwift
   - KeychainAccess
+  - Kingfisher
   - LayoutKit
   - SwiftLint
 
@@ -20,6 +22,7 @@ SPEC REPOS:
     - FPSCounter
     - IQKeyboardManagerSwift
     - KeychainAccess
+    - Kingfisher
     - LayoutKit
     - SwiftLint
 
@@ -28,9 +31,10 @@ SPEC CHECKSUMS:
   FPSCounter: c0fac1110b723872ab960c929ad672fd956e6a4e
   IQKeyboardManagerSwift: 36dbe324b4f9793f5f41ba5227f3e7c76dfefd50
   KeychainAccess: 7bd430028059754a3debab3cfc0bd1fc7fb85df3
+  Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
   LayoutKit: dab1c2eea7a0bf9d8d755a8a793f87a929768455
   SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
 
-PODFILE CHECKSUM: f63d9a7275148b3f0f110cc36f58c7f978792d1b
+PODFILE CHECKSUM: 12a9460189f372493c0b2437ff4071d433bb0628
 
 COCOAPODS: 1.5.0

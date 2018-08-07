@@ -11,7 +11,9 @@
 import UIKit
 import LayoutKit
 class JournalByDateViewController: UIViewController, JournalByDateViewProtocol {
+    static var publicDS: JSONDecoding.JournalByDateAPI?
     func updateTableView(source: JSONDecoding.JournalByDateAPI) {
+        JournalByDateViewController.publicDS = source
         reloadTableView(width: view.bounds.width, synchronous: false, data: source)
     }
 	var presenter: JournalByDatePresenterProtocol?
@@ -21,6 +23,7 @@ class JournalByDateViewController: UIViewController, JournalByDateViewProtocol {
     private let dateFormatter = DateFormatter()
 	override func viewDidLoad() {
         super.viewDidLoad()
+        title = NSLocalizedString("По дате", comment: "")
         let width = view.bounds.width
         DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
             let journalLayout = JournalByDateLayout()
@@ -34,7 +37,7 @@ class JournalByDateViewController: UIViewController, JournalByDateViewProtocol {
         view.addSubview(scheduleView)
         tableView = UITableView(frame: scheduleView.bounds, style: .plain)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        reloadableViewLayoutAdapter = JournalBySubjectReloadableLayoutAdapter(reloadableView: tableView)
+        reloadableViewLayoutAdapter = JournalByDateReloadableLayoutAdapter(reloadableView: tableView)
         tableView.dataSource = reloadableViewLayoutAdapter
         tableView.delegate = reloadableViewLayoutAdapter
         tableView.backgroundColor = .white
@@ -42,7 +45,7 @@ class JournalByDateViewController: UIViewController, JournalByDateViewProtocol {
         tableView.tableFooterView = footer
         scheduleView.addSubview(tableView)
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        presenter?.updateView(date: dateFormatter.string(from: JournalByDateLayout.datePicker.date))
+        presenter?.updateView(date: dateFormatter.string(from: Date()))
     }
     func getNewsRows(data: JSONDecoding.JournalByDateAPI.Exercises) -> [Layout] {
         var layouts = [Layout]()
@@ -66,15 +69,19 @@ class JournalByDateViewController: UIViewController, JournalByDateViewProtocol {
         hideNoLessons()
         presenter?.updateView(date: dateFormatter.string(from: JournalByDateLayout.datePicker.date))
     }
+    func getHeader(lesson: String) -> Layout {
+        let layouts = HeaderLayout(text: lesson)
+        return layouts
+    }
     private func reloadTableView(width: CGFloat, synchronous: Bool, data: JSONDecoding.JournalByDateAPI) {
         var dataSource = [Section<[Layout]>]()
         for item in data.exercises {
             dataSource.append(Section(
-                header: nil,
+                header: getHeader(lesson: item.lesson_name),
                 items: self.getNewsRows(data: item),
                 footer: nil))
         }
-        reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
+        reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: { () in
             return dataSource
         })
     }

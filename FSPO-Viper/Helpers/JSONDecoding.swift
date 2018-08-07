@@ -164,4 +164,30 @@ public class JSONDecoding {
             let student_delay: String?
         }
     }
+    struct JournalByTeacherAPI: Decodable {
+        let days: [Days]
+        let teacher_info: TeacherInfo
+        struct TeacherInfo: Decodable {
+            let photo: String
+            let lastname: String
+            let firstname: String
+            let middlename: String
+            let email: String?
+            let phone: String?
+        }
+        struct Days: Decodable {
+            let ddate: String
+            let exercises: [Exercises]
+            struct Exercises: Decodable {
+                let ex_period: String
+                let ex_topic: String
+                let ex_type: String
+                let student_presence: Bool
+                let student_mark: Int?
+                let student_performance: String?
+                let student_dropout: Bool
+                let student_delay: String?
+            }
+        }
+    }
 }

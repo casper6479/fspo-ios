@@ -44,7 +44,7 @@ class MessagesViewController: UIViewController, MessagesViewProtocol {
             } else {
                 message = "\(item.msg_text)"
             }
-            layouts.append(MessagesLayout(name: "\(item.dialog_firstname) \(item.dialog_lastname)", lastMessage: message, photo: UIImage(named: "test")!, date: DateToString().formatDateMessages(item.msg_datetime)))
+            layouts.append(MessagesLayout(name: "\(item.dialog_firstname) \(item.dialog_lastname)", lastMessage: message, photo: item.dialog_photo, date: DateToString().formatDateMessages(item.msg_datetime)))
         }
         return layouts
     }

@@ -27,6 +27,7 @@ class JournalByDateInteractor: JournalByDateInteractorProtocol {
             do {
                 let res = try JSONDecoder().decode(JSONDecoding.JournalByDateAPI.self, from: result!)
                 if res.count_ex == 0 {
+                    self.presenter?.journalByDateFetched(data: res)
                     self.presenter?.journalByDateShowNoLessons()
                 } else {
                     self.presenter?.journalByDateFetched(data: res)

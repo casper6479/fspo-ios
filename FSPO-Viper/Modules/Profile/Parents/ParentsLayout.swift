@@ -8,9 +8,10 @@
 
 import Foundation
 import LayoutKit
+import Kingfisher
 
 open class ParentsLayout: InsetLayout<View> {
-    public init(firstname: String, lastname: String, middlename: String, email: String, phone: String, photo: UIImage) {
+    public init(firstname: String, lastname: String, middlename: String, email: String, phone: String, photo: String) {
         let textCases = [email, phone]
         func profileIcon(image: UIImage) -> Layout {
             let profileIcon = SizeLayout<UIImageView>(
@@ -61,7 +62,8 @@ open class ParentsLayout: InsetLayout<View> {
         let photoLayout = SizeLayout<UIImageView>(
             size: CGSize(width: 100, height: 100),
             config: { avatar in
-                avatar.image = photo
+                let resource = ImageResource(downloadURL: URL(string: photo)!, cacheKey: photo)
+                avatar.kf.setImage(with: resource)
                 avatar.contentMode = .scaleAspectFill
                 avatar.layer.cornerRadius = avatar.frame.height / 2
                 avatar.clipsToBounds = true

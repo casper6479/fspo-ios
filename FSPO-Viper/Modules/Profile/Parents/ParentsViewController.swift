@@ -19,10 +19,10 @@ class ParentsViewController: UIViewController, ParentsViewProtocol {
         edgesForExtendedLayout = UIRectEdge()
         presenter?.updateView()
     }
-    func fillView(firstname: String, lastname: String, middlename: String, email: String, phone: String, photo: UIImage) {
+    func fillView(firstname: String, lastname: String, middlename: String, email: String, phone: String, photo: String) {
         let width = view.bounds.width
         DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
-            let profileLayout = ParentsLayout(firstname: firstname, lastname: lastname, middlename: middlename, email: email, phone: phone, photo: UIImage(named: "logo")!)
+            let profileLayout = ParentsLayout(firstname: firstname, lastname: lastname, middlename: middlename, email: email, phone: phone, photo: photo)
             let arrangement = profileLayout.arrangement(width: width)
             DispatchQueue.main.async(execute: {
                 arrangement.makeViews(in: self.view)
