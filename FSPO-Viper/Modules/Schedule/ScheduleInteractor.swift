@@ -74,13 +74,13 @@ class ScheduleInteractor: ScheduleInteractorProtocol {
             }
         }
     }
-    func fetchStudentSchedule() {
+    func fetchStudentSchedule(week: String) {
         let groupId = UserDefaults.standard.integer(forKey: "user_group_id")
         let params: Parameters = [
             "app_key": Constants.AppKey,
             "type": "group",
             "id": groupId,
-            "week": "all"
+            "week": week
         ]
         Alamofire.request("https://ifspo.ifmo.ru/api/schedule", method: .get, parameters: params).responseJSON { (response) in
             let result = response.data

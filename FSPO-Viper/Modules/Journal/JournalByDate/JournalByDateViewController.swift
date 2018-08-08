@@ -45,11 +45,12 @@ class JournalByDateViewController: UIViewController, JournalByDateViewProtocol {
         tableView.tableFooterView = footer
         scheduleView.addSubview(tableView)
         dateFormatter.dateFormat = "yyyy-MM-dd"
+        showNoLessons()
         presenter?.updateView(date: dateFormatter.string(from: Date()))
     }
     func getNewsRows(data: JSONDecoding.JournalByDateAPI.Exercises) -> [Layout] {
         var layouts = [Layout]()
-        layouts.append(JournalByDateCellLayout(data: data))
+        layouts.append(JournalLessonCellLayout(data: data))
         return layouts
     }
     func showNoLessons() {

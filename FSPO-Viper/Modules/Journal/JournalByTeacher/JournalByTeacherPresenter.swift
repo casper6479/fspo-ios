@@ -21,5 +21,11 @@ class JournalByTeacherPresenter: JournalByTeacherPresenterProtocol {
         self.interactor = interactor
         self.router = router
     }
-
+    func updateView() {
+        interactor?.fetchLessons()
+    }
+    func journalByTeacherFetched(data: JSONDecoding.JournalByTeacherAPI) {
+        view?.updateTableView(source: data)
+        view?.setupHeader(data: data.teacher_info)
+    }
 }

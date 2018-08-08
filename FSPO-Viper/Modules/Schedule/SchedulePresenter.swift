@@ -23,7 +23,7 @@ class SchedulePresenter: SchedulePresenterProtocol {
     func updateView() {
         interactor?.fetchScheduleByGroups()
         interactor?.fetchTeachers()
-        interactor?.fetchStudentSchedule()
+        interactor?.fetchStudentSchedule(week: "now")
     }
     func teachersFetched(data: JSONDecoding.GetTeachersApi) {
         view?.showNewTeacherRows(source: data)
@@ -33,5 +33,8 @@ class SchedulePresenter: SchedulePresenterProtocol {
     }
     func studentScheduleFetched(data: JSONDecoding.StudentScheduleApi) {
         view?.showNewStudentScheduleRows(source: data)
+    }
+    func updateStudentSchedule(week: String) {
+        interactor?.fetchStudentSchedule(week: week)
     }
 }

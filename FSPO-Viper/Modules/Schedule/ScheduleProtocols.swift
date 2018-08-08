@@ -20,13 +20,14 @@ protocol SchedulePresenterProtocol: class {
     func teachersFetched(data: JSONDecoding.GetTeachersApi)
     func scheduleByGroupsFetched(data: JSONDecoding.GetGroupsApi)
     func studentScheduleFetched(data: JSONDecoding.StudentScheduleApi)
+    func updateStudentSchedule(week: String)
 }
 
 // MARK: Interactor -
 protocol ScheduleInteractorProtocol: class {
     func fetchTeachers()
     func fetchScheduleByGroups()
-    func fetchStudentSchedule()
+    func fetchStudentSchedule(week: String)
   var presenter: SchedulePresenterProtocol? { get set }
 }
 

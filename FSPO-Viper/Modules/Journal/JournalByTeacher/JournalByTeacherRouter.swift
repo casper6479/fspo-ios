@@ -12,10 +12,10 @@ import UIKit
 
 class JournalByTeacherRouter: JournalByTeacherWireframeProtocol {
     weak var viewController: UIViewController?
-    static func createModule() -> UIViewController {
+    static func createModule(lessonId: Int) -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = JournalByTeacherViewController(nibName: nil, bundle: nil)
-        let interactor = JournalByTeacherInteractor()
+        let interactor = JournalByTeacherInteractor(lessonId: lessonId)
         let router = JournalByTeacherRouter()
         let presenter = JournalByTeacherPresenter(interface: view, interactor: interactor, router: router)
         view.presenter = presenter

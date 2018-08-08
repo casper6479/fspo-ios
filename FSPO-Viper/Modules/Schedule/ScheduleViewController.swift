@@ -10,8 +10,18 @@
 
 import UIKit
 import LayoutKit
+
 class ScheduleViewController: UIViewController, ScheduleViewProtocol {
     func showNewStudentScheduleRows(source: JSONDecoding.StudentScheduleApi) {
+        var first = "Чётная"
+        var second = "Нечётная"
+        if source.week == "odd" {
+            first = second
+            second = "Чётная"
+        }
+        if StudentScheduleLayout.tableView?.tableHeaderView == nil {
+            StudentScheduleLayout.tableView?.tableHeaderView = buildHeaderForStudentSchedule(first: first, second: second)
+        }
         reloadStudentSchedule(data: source)
     }
     func showNewTeacherRows(source: JSONDecoding.GetTeachersApi) {
@@ -19,6 +29,20 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol {
     }
     func showNewScheduleByGroupsRows(source: JSONDecoding.GetGroupsApi) {
         reloadScheduleByGroups(data: source)
+    }
+    func buildHeaderForStudentSchedule(first: String, second: String) -> UIView {
+        let header = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 36))
+        header.backgroundColor = UIColor.ITMOBlue
+        let items = [first, second, "Все"]
+        let segmentedControl = UISegmentedControl(items: items)
+        segmentedControl.setTitleTextAttributes([NSAttributedStringKey.font: UIFont.ITMOFont!],
+                                                for: .normal)
+        segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.frame = CGRect(origin: CGPoint(x: 4, y: 4), size: CGSize(width: UIScreen.main.bounds.width - 8, height: 28))
+        segmentedControl.tintColor = .white
+        segmentedControl.addTarget(self, action: #selector(self.segmentChanged), for: .valueChanged)
+        header.addSubview(segmentedControl)
+        return header
     }
     private var scrollView: UIScrollView!
 	var presenter: SchedulePresenterProtocol?
@@ -35,6 +59,15 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol {
         view.addSubview(scrollView)
         self.layoutFeed(width: self.view.bounds.width)
         presenter?.updateView()
+    }
+    @objc func segmentChanged(sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            presenter?.updateStudentSchedule(week: "now")
+        } else if sender.selectedSegmentIndex == 1 {
+            presenter?.updateStudentSchedule(week: "next")
+        } else {
+            presenter?.updateStudentSchedule(week: "all")
+        }
     }
     func getTeachersRows(data: JSONDecoding.GetTeachersApi) -> [Layout]? {
         var layouts = [Layout]()

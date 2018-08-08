@@ -16,17 +16,19 @@ protocol JournalByTeacherWireframeProtocol: class {
 }
 // MARK: Presenter -
 protocol JournalByTeacherPresenterProtocol: class {
-
+    func updateView()
+    func journalByTeacherFetched(data: JSONDecoding.JournalByTeacherAPI)
 }
 
 // MARK: Interactor -
 protocol JournalByTeacherInteractorProtocol: class {
-
-  var presenter: JournalByTeacherPresenterProtocol? { get set }
+    func fetchLessons()
+    var presenter: JournalByTeacherPresenterProtocol? { get set }
 }
 
 // MARK: View -
 protocol JournalByTeacherViewProtocol: class {
-
-  var presenter: JournalByTeacherPresenterProtocol? { get set }
+    func updateTableView(source: JSONDecoding.JournalByTeacherAPI)
+    func setupHeader(data: JSONDecoding.JournalByTeacherAPI.TeacherInfo)
+    var presenter: JournalByTeacherPresenterProtocol? { get set }
 }

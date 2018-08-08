@@ -12,7 +12,9 @@ import UIKit
 import LayoutKit
 
 class JournalByTeacherViewController: UIViewController, JournalByTeacherViewProtocol {
-
+    func updateTableView(source: JSONDecoding.JournalByTeacherAPI) {
+        reloadTableView(width: view.bounds.width, synchronous: false, data: source)
+    }
 	var presenter: JournalByTeacherPresenterProtocol?
     private var tableView: UITableView!
     private var reloadableViewLayoutAdapter: ReloadableViewLayoutAdapter!
@@ -24,33 +26,40 @@ class JournalByTeacherViewController: UIViewController, JournalByTeacherViewProt
         tableView.dataSource = reloadableViewLayoutAdapter
         tableView.delegate = reloadableViewLayoutAdapter
         tableView.backgroundColor = .white
-        let width = view.bounds.width
         tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 229))
+        tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
+        view.addSubview(tableView)
+        presenter?.updateView()
+    }
+    func setupHeader(data: JSONDecoding.JournalByTeacherAPI.TeacherInfo) {
+        let width = view.bounds.width
         DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
-            let journalByTeacher = JournalByTeacherHeaderLayout(firstname: "a", lastname: "a", middlename: "a", email: "a", phone: "a", photo: "https://ifspo.ifmo.ru/img/users/d4b9227f0383497234869f5681263b11.jpg")
+            let journalByTeacher = JournalByTeacherHeaderLayout(firstname: data.firstname, lastname: data.lastname, middlename: data.middlename, email: "\(data.email ?? "Не указано")", phone: "Скрыто", photo: data.photo)
             let arrangement = journalByTeacher.arrangement(width: width)
             DispatchQueue.main.async(execute: {
                 arrangement.makeViews(in: self.tableView.tableHeaderView)
             })
         }
-        view.addSubview(tableView)
-        reloadTableView(width: view.bounds.width, synchronous: false)
     }
-    func getNewsRows() -> [Layout] {
-        let shit = JSONDecoding.JournalByDateAPI.Exercises.init(ex_period: "s", ex_topic: "s", ex_type: "s", lesson_name: "s", student_presence: true, student_mark: 5, lesson_id: "s", student_performance: "s", student_dropout: false, student_delay: "false")
-        let layouts = [Layout](repeating: JournalByDateCellLayout(data: shit), count: 100)
+    func getNewsRows(data: JSONDecoding.JournalByTeacherAPI.Days) -> [Layout] {
+//        let shit = JSONDecoding.JournalByDateAPI.Exercises.init(ex_period: "1", ex_topic: "Отличная тема", ex_type: "6", lesson_name: "s", student_presence: false, student_mark: 5, lesson_id: "s", student_performance: "2", student_dropout: true, student_delay: "3")
+        var layouts = [Layout]()
+        for item in data.exercises {
+            let source = JSONDecoding.JournalByDateAPI.Exercises.init(ex_period: item.ex_period, ex_topic: item.ex_topic, ex_type: item.ex_type, lesson_name: "", student_presence: item.student_presence, student_mark: item.student_mark, lesson_id: "", student_performance: item.student_performance, student_dropout: item.student_dropout, student_delay: item.student_delay)
+            layouts.append(JournalLessonCellLayout(data: source))
+        }
         return layouts
     }
     func getHeader(lesson: String) -> Layout {
         let layouts = HeaderLayout(text: "FIasd")
         return layouts
     }
-    private func reloadTableView(width: CGFloat, synchronous: Bool) {
+    private func reloadTableView(width: CGFloat, synchronous: Bool, data: JSONDecoding.JournalByTeacherAPI) {
         var dataSource = [Section<[Layout]>]()
-        for _ in self.getNewsRows() {
+        for item in data.days {
             dataSource.append(Section(
                 header: getHeader(lesson: "item.lesson_name"),
-                items: self.getNewsRows(),
+                items: self.getNewsRows(data: item),
                 footer: nil))
         }
         reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: { () in
