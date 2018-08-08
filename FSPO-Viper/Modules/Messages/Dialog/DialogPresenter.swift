@@ -27,4 +27,10 @@ class DialogPresenter: DialogPresenterProtocol {
     func dialogsFetched(data: JSONDecoding.DialogsApi) {
         view?.showNewRows(source: data)
     }
+    func prepareMessageForSend(message: String) {
+        interactor?.sendMessage(text: message)
+    }
+    func test() {
+        print("test")
+    }
 }

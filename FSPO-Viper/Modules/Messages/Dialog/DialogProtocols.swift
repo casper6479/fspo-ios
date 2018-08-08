@@ -18,12 +18,14 @@ protocol DialogWireframeProtocol: class {
 protocol DialogPresenterProtocol: class {
     func updateView()
     func dialogsFetched(data: JSONDecoding.DialogsApi)
+    func prepareMessageForSend(message: String)
 }
 
 // MARK: Interactor -
 protocol DialogInteractorProtocol: class {
     var dialog_user_id: Int? { get set }
     func fetchDialogs()
+    func sendMessage(text: String)
   var presenter: DialogPresenterProtocol? { get set }
 }
 

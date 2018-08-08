@@ -13,4 +13,5 @@ target 'FSPO' do
 	pod 'KeychainAccess'
 	pod 'IQKeyboardManagerSwift'
 	pod 'Kingfisher'
+	pod 'NextGrowingTextView'
 end

@@ -33,5 +33,18 @@ class DialogInteractor: DialogInteractorProtocol {
             }
         }
     }
+    func sendMessage(text: String) {
+        let headers: HTTPHeaders = [
+            "token": keychain["token"]!
+        ]
+        let params: Parameters = [
+            "user_id": dialog_user_id!,
+            "text": text
+        ]
+        Alamofire.request("https://ifspo.ifmo.ru/api/sendMessage", method: .post, parameters: params, headers: headers)
+                .responseJSON { _ in
+                    self.presenter?.updateView()
+        }
+    }
     weak var presenter: DialogPresenterProtocol?
 }
