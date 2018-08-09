@@ -34,7 +34,7 @@ class JournalBySubjectViewController: UIViewController, JournalBySubjectViewProt
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
         view.addSubview(tableView)
     }
-    func getNewsRows() -> [Layout] {
+    func getNewRows() -> [Layout] {
         var layouts = [Layout]()
         for item in (dataSource?.lessons)! {
             layouts.append(JournalBySubjectLayout(sem: item.semester, subject: item.name))
@@ -43,7 +43,7 @@ class JournalBySubjectViewController: UIViewController, JournalBySubjectViewProt
     }
     private func reloadTableView(width: CGFloat, synchronous: Bool) {
         reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
-            return [Section(header: nil, items: self?.getNewsRows() ?? [], footer: nil)]
+            return [Section(header: nil, items: self?.getNewRows() ?? [], footer: nil)]
         })
     }
 }

@@ -11,7 +11,7 @@ import UIKit
 import LayoutKit
 
 open class StudentScheduleCellLayout: InsetLayout<View> {
-    public init(schedule: JSONDecoding.StudentScheduleApi.Weekdays.Periods) {
+    public init(schedule: JSONDecoding.StudentScheduleApi.Weekdays.Periods, type: String) {
         var scheduleCell = [Layout]()
         let paraCount = LabelLayout(text: "\(schedule.period)", font: (UIFont.ITMOFontBold?.withSize(23))!, alignment: .center, config: {label in
             label.backgroundColor = .white
@@ -51,9 +51,14 @@ open class StudentScheduleCellLayout: InsetLayout<View> {
                 label.textColor = color
                 label.backgroundColor = .white
             })
-            let teacher = LabelLayout(text: "\(item.lastname) \(item.firstname) \(item.middlename)", font: (UIFont.ITMOFont?.withSize(13))!, alignment: .bottomLeading, config: {label in
+            var teacher = LabelLayout(text: "\(item.lastname) \(item.firstname) \(item.middlename)", font: (UIFont.ITMOFont?.withSize(13))!, alignment: .bottomLeading, config: {label in
                 label.backgroundColor = .white
             })
+            if type == "teacher" {
+                teacher = LabelLayout(text: "\(item.group_name)", font: (UIFont.ITMOFont?.withSize(13))!, alignment: .bottomLeading, config: {label in
+                    label.backgroundColor = .white
+                })
+            }
             let auditory = LabelLayout(text: place, font: (UIFont.ITMOFont?.withSize(17))!, alignment: .center, config: { label in
                 label.textColor = color
                 label.backgroundColor = .white
@@ -87,6 +92,19 @@ open class StudentScheduleCellLayout: InsetLayout<View> {
         })
     }
 }
+open class NoScheduleCellLayout: InsetLayout<View> {
+    public init() {
+        super.init(
+            insets: UIEdgeInsets(top: 16, left: 0, bottom: 16, right: 0),
+            sublayout: LabelLayout(
+                text: NSLocalizedString("Занятий нет", comment: ""),
+                font: UIFont.ITMOFontBold!.withSize(18),
+                alignment: .center),
+            config: { view in
+                view.backgroundColor = .white
+        })
+    }
+}
 class StudentScheduleReloadableLayoutAdapter: ReloadableViewLayoutAdapter {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.selectionStyle = .none
@@ -107,6 +125,7 @@ class StudentScheduleReloadableLayoutAdapter: ReloadableViewLayoutAdapter {
         let header = view as? UITableViewHeaderFooterView
         header?.backgroundView?.backgroundColor = UIColor.ITMOBlue
         header?.textLabel?.font = UIFont.ITMOFontBold?.withSize(17)
+        header?.textLabel?.backgroundColor = UIColor.ITMOBlue
         header?.textLabel?.textColor = .white
     }
 }

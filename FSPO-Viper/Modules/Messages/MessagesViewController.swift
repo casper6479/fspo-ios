@@ -34,7 +34,7 @@ class MessagesViewController: UIViewController, MessagesViewProtocol {
         view.addSubview(tableView)
         presenter?.updateView()
     }
-    func getNewsRows(data: JSONDecoding.MessagesApi) -> [Layout] {
+    func getNewRows(data: JSONDecoding.MessagesApi) -> [Layout] {
         var layouts = [Layout]()
         let user_id = UserDefaults.standard.integer(forKey: "user_id")
         for item in data.dialogs {
@@ -50,7 +50,7 @@ class MessagesViewController: UIViewController, MessagesViewProtocol {
     }
     private func reloadTableView(width: CGFloat, synchronous: Bool, data: JSONDecoding.MessagesApi) {
         reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
-            return [Section(header: nil, items: self?.getNewsRows(data: data) ?? [], footer: nil)]
+            return [Section(header: nil, items: self?.getNewRows(data: data) ?? [], footer: nil)]
         })
     }
 }

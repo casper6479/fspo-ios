@@ -34,9 +34,9 @@ open class JournalLessonCellLayout: InsetLayout<View> {
         let lessonNameLabel = LabelLayout(text: data.ex_topic, font: (UIFont.ITMOFontBold?.withSize(18))!, config: { label in
             label.backgroundColor = .white
         })
-        var presenceText = "Присутствие"
+        var presenceText = NSLocalizedString("Присутствие", comment: "")
         if !data.student_presence {
-            presenceText = "Отсутствие"
+            presenceText = NSLocalizedString("Отсутствие", comment: "")
         }
         let presenceTextLabel = LabelLayout(text: presenceText, font: UIFont.ITMOFont!.withSize(15), config: { label in
             if data.student_presence {
@@ -49,23 +49,23 @@ open class JournalLessonCellLayout: InsetLayout<View> {
         var lessonTypeText = ""
         switch data.ex_type {
         case "1":
-            lessonTypeText = "лекция"
+            lessonTypeText = NSLocalizedString("лекция", comment: "")
         case "2":
-            lessonTypeText = "лабараторная"
+            lessonTypeText = NSLocalizedString("лабараторная", comment: "")
         case "3":
-            lessonTypeText = "аттестация"
+            lessonTypeText = NSLocalizedString("аттестация", comment: "")
         case "4":
-            lessonTypeText = "зачёт"
+            lessonTypeText = NSLocalizedString("зачёт", comment: "")
         case "5":
-            lessonTypeText = "экзамен"
+            lessonTypeText = NSLocalizedString("экзамен", comment: "")
         case "6":
-            lessonTypeText = "практическая"
+            lessonTypeText = NSLocalizedString("практическая", comment: "")
         case "8":
-            lessonTypeText = "контрольная работа"
+            lessonTypeText = NSLocalizedString("контрольная работа", comment: "")
         default:
             lessonTypeText = ""
         }
-        let lessonType = LabelLayout(text: "Тип пары: \(lessonTypeText)", font: UIFont.ITMOFont!.withSize(15), config: { label in
+        let lessonType = LabelLayout(text: "\(NSLocalizedString("Тип пары", comment: "")): \(lessonTypeText)", font: UIFont.ITMOFont!.withSize(15), config: { label in
             label.textColor = UIColor.ITMOBlue
             label.backgroundColor = .white
         })
@@ -84,7 +84,7 @@ open class JournalLessonCellLayout: InsetLayout<View> {
         var sublayouts: [Layout] = [lessonNameLabel]
         var optionalTexts = ["\(String(describing: data.student_mark))", "\(String(describing: data.student_delay))", "\(data.student_dropout)", "\(String(describing: data.student_performance))"]
         if optionalTexts[0] != "nil" {
-            let noteLabel = LabelLayout(text: "Оценка: \(data.student_mark!)", font: UIFont.ITMOFont!.withSize(15), config: { label in
+            let noteLabel = LabelLayout(text: "\(NSLocalizedString("Оценка", comment: "")): \(data.student_mark!)", font: UIFont.ITMOFont!.withSize(15), config: { label in
                     label.textColor = .black
                     label.backgroundColor = .white
             })
@@ -94,11 +94,11 @@ open class JournalLessonCellLayout: InsetLayout<View> {
             var delayText = ""
             switch optionalTexts[1] {
             case "Optional(\"1\")":
-                delayText = "Опоздание"
+                delayText = NSLocalizedString("Опоздание", comment: "")
             case "Optional(\"2\")":
-                delayText = "Ранний уход"
+                delayText = NSLocalizedString("Ранний уход", comment: "")
             case "Optional(\"3\")":
-                delayText = "Опоздание и ранний уход"
+                delayText = NSLocalizedString("Опоздание и ранний уход", comment: "")
             default:
                 delayText = ""
             }
@@ -109,7 +109,7 @@ open class JournalLessonCellLayout: InsetLayout<View> {
             sublayouts.append(delayLabel)
         }
         if optionalTexts[2] == "true" {
-            let dropoutLabel = LabelLayout(text: "Удаление с занятия", font: UIFont.ITMOFont!.withSize(15), config: { label in
+            let dropoutLabel = LabelLayout(text: NSLocalizedString("Удаление с занятия", comment: ""), font: UIFont.ITMOFont!.withSize(15), config: { label in
                 label.textColor = UIColor.ITMORed
                 label.backgroundColor = .white
             })
@@ -151,9 +151,12 @@ open class NoLessonsLayout: InsetLayout<View> {
     static var noLessonView = UIView()
     public init() {
         let noLessons = LabelLayout(
-            text: "В этот день занятий не было",
+            text: NSLocalizedString("В этот день занятий не было", comment: ""),
             font: UIFont.ITMOFontBold!.withSize(20),
-            alignment: .topCenter)
+            alignment: .topCenter,
+            config: {label in
+                label.textAlignment = .center
+        })
         super.init(
             insets: UIEdgeInsets(top: 30, left: 0, bottom: 0, right: 0),
             sublayout: noLessons,
@@ -164,17 +167,20 @@ open class NoLessonsLayout: InsetLayout<View> {
     }
 }
 open class HeaderLayout: InsetLayout<UITableViewHeaderFooterView> {
-    public init(text: String) {
+    public init(text: String, inset: CGFloat) {
         super.init(
-            insets: UIEdgeInsets(top: 4, left: 40, bottom: 0, right: 0),
+            insets: UIEdgeInsets(top: 4, left: inset, bottom: 0, right: 0),
             sublayout: SizeLayout(height: 22, sublayout: LabelLayout(
                 text: text,
                 font: UIFont.ITMOFontBold!.withSize(17),
                 numberOfLines: 1,
                 config: {label in
                     label.textColor = .white
+                    label.backgroundColor = UIColor.ITMOBlue
                     label.lineBreakMode = .byTruncatingTail
-            })),
+            }), config: {view in
+                view.backgroundColor = UIColor.ITMOBlue
+            }),
             config: {header in
                 let background = UIView()
                 background.backgroundColor = UIColor.ITMOBlue

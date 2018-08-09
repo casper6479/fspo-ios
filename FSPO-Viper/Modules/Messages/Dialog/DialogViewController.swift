@@ -55,6 +55,7 @@ class DialogViewController: UIViewController, DialogViewProtocol {
             ]
         )
         growingTextView.maxNumberOfLines = 6
+        growingTextView.scrollIndicatorInsets = UIEdgeInsets(top: 19, left: 0, bottom: 34, right: 0)
         var cachedHeight: CGFloat = 40
         growingTextView.delegates.didChangeHeight = { [weak self] height in
             guard let `self` = self else { return }
@@ -82,7 +83,6 @@ class DialogViewController: UIViewController, DialogViewProtocol {
         view.addSubview(growingTextView)
         view.addSubview(button)
         tableView.alpha = 0
-        tableView.scrollIndicatorInsets = tableView.contentInset
         presenter?.updateView()
         registerKeyboardNotifications()
     }
@@ -100,7 +100,7 @@ class DialogViewController: UIViewController, DialogViewProtocol {
     @objc func tapOnTableView() {
         _ = growingTextView.resignFirstResponder()
     }
-    func getNewsRows(data: JSONDecoding.DialogsApi) -> [Layout] {
+    func getNewRows(data: JSONDecoding.DialogsApi) -> [Layout] {
         var layouts = [Layout]()
         let user_id = UserDefaults.standard.integer(forKey: "user_id")
         for item in data.messages {
@@ -116,7 +116,7 @@ class DialogViewController: UIViewController, DialogViewProtocol {
     }
     private func reloadTableView(width: CGFloat, synchronous: Bool, data: JSONDecoding.DialogsApi) {
         reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
-            return [Section(header: nil, items: self?.getNewsRows(data: data) ?? [], footer: nil)]}, completion: {
+            return [Section(header: nil, items: self?.getNewRows(data: data) ?? [], footer: nil)]}, completion: {
                     let lastRowIndex = self.tableView.numberOfRows(inSection: 0) - 1
                     let pathToLastRow = IndexPath(row: lastRowIndex, section: 0)
                     self.tableView.scrollToRow(at: pathToLastRow, at: .bottom, animated: false)
@@ -131,7 +131,7 @@ class DialogViewController: UIViewController, DialogViewProtocol {
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     }
-    var inset: CGFloat!
+    var inset: CGFloat = 0
     var cachedOverheight: CGFloat!
     var keyboardDidShow = false
     var cachedKeyboardSize: CGFloat!
@@ -142,22 +142,25 @@ class DialogViewController: UIViewController, DialogViewProtocol {
         if !keyboardDidShow {
             if #available(iOS 11, *) {
                 let safeInset = UIApplication.shared.delegate?.window??.safeAreaInsets.bottom
-                inset = tableView.contentInset.bottom + keyboardSize.height -  UITabBarController().tabBar.frame.height + safeInset!
+                inset = keyboardSize.height - UITabBarController().tabBar.frame.height - safeInset!
             } else {
-                inset = tableView.contentInset.bottom + keyboardSize.height -  UITabBarController().tabBar.frame.height
+                inset = keyboardSize.height - UITabBarController().tabBar.frame.height
             }
             if overheight == cachedOverheight {
-                tableView.contentOffset.y += inset - UITabBarController().tabBar.frame.height - overheight
-                tableView.contentInset.bottom += inset - UITabBarController().tabBar.frame.height - overheight
-                button.frame.origin.y -= inset - UITabBarController().tabBar.frame.height - overheight
-                growingTextView.frame.origin.y -= inset - UITabBarController().tabBar.frame.height - overheight
+                tableView.scrollIndicatorInsets.bottom += inset - overheight
+                tableView.contentOffset.y += inset - overheight
+                tableView.contentInset.bottom += inset - overheight
+                button.frame.origin.y -= inset - overheight
+                growingTextView.frame.origin.y -= inset - overheight
             } else {
-                tableView.contentOffset.y += inset - UITabBarController().tabBar.frame.height
-                tableView.contentInset.bottom += inset - UITabBarController().tabBar.frame.height
-                button.frame.origin.y -= inset - UITabBarController().tabBar.frame.height
-                growingTextView.frame.origin.y -= inset - UITabBarController().tabBar.frame.height
+                tableView.scrollIndicatorInsets.bottom += inset
+                tableView.contentOffset.y += inset
+                tableView.contentInset.bottom += inset
+                button.frame.origin.y -= inset
+                growingTextView.frame.origin.y -= inset
             }
         } else {
+            tableView.scrollIndicatorInsets.bottom += keyboardSize.height - cachedKeyboardSize
             tableView.contentOffset.y += keyboardSize.height - cachedKeyboardSize
             tableView.contentInset.bottom += keyboardSize.height - cachedKeyboardSize
             button.frame.origin.y -= keyboardSize.height - cachedKeyboardSize
@@ -168,16 +171,18 @@ class DialogViewController: UIViewController, DialogViewProtocol {
     }
     @objc private func keyboardHide(notification: NSNotification) {
         if cachedOverheight != overheight {
-            tableView.contentOffset.y -= inset - UITabBarController().tabBar.frame.height
-            tableView.contentInset.bottom -= inset - UITabBarController().tabBar.frame.height
-            button.frame.origin.y += inset - UITabBarController().tabBar.frame.height
-            growingTextView.frame.origin.y += inset - UITabBarController().tabBar.frame.height
+            tableView.scrollIndicatorInsets.bottom -= inset
+            tableView.contentOffset.y -= inset
+            tableView.contentInset.bottom -= inset
+            button.frame.origin.y += inset
+            growingTextView.frame.origin.y += inset
             cachedOverheight = overheight
         } else {
-            tableView.contentOffset.y -= inset - UITabBarController().tabBar.frame.height - overheight
-            tableView.contentInset.bottom -= inset - UITabBarController().tabBar.frame.height - overheight
-            button.frame.origin.y += inset - UITabBarController().tabBar.frame.height - overheight
-            growingTextView.frame.origin.y += inset - UITabBarController().tabBar.frame.height - overheight
+            tableView.scrollIndicatorInsets.bottom -= inset + overheight
+            tableView.contentOffset.y -= inset + overheight
+            tableView.contentInset.bottom -= inset + overheight
+            button.frame.origin.y += inset + overheight
+            growingTextView.frame.origin.y += inset + overheight
             cachedOverheight = 0
         }
         keyboardDidShow = false

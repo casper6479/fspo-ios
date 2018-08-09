@@ -12,12 +12,14 @@ import UIKit
 import LayoutKit
 
 class ScheduleViewController: UIViewController, ScheduleViewProtocol {
+    static var publicGroupsDS: JSONDecoding.GetGroupsApi?
+    static var publicTeachersDS: JSONDecoding.GetTeachersApi?
     func showNewStudentScheduleRows(source: JSONDecoding.StudentScheduleApi) {
-        var first = "Чётная"
-        var second = "Нечётная"
+        var first = NSLocalizedString("Чётная", comment: "")
+        var second = NSLocalizedString("Нечётная", comment: "")
         if source.week == "odd" {
             first = second
-            second = "Чётная"
+            second = NSLocalizedString("Чётная", comment: "")
         }
         if StudentScheduleLayout.tableView?.tableHeaderView == nil {
             StudentScheduleLayout.tableView?.tableHeaderView = buildHeaderForStudentSchedule(first: first, second: second)
@@ -25,15 +27,17 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol {
         reloadStudentSchedule(data: source)
     }
     func showNewTeacherRows(source: JSONDecoding.GetTeachersApi) {
+        ScheduleViewController.publicTeachersDS = source
         reloadTeachers(data: source)
     }
     func showNewScheduleByGroupsRows(source: JSONDecoding.GetGroupsApi) {
+        ScheduleViewController.publicGroupsDS = source
         reloadScheduleByGroups(data: source)
     }
     func buildHeaderForStudentSchedule(first: String, second: String) -> UIView {
         let header = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 36))
         header.backgroundColor = UIColor.ITMOBlue
-        let items = [first, second, "Все"]
+        let items = [first, second, NSLocalizedString("Все", comment: "")]
         let segmentedControl = UISegmentedControl(items: items)
         segmentedControl.setTitleTextAttributes([NSAttributedStringKey.font: UIFont.ITMOFont!],
                                                 for: .normal)
@@ -84,7 +88,10 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol {
     func getStudentRows(data: JSONDecoding.StudentScheduleApi.Weekdays) -> [Layout]? {
         var layouts = [Layout]()
         for item in data.periods {
-            layouts.append(StudentScheduleCellLayout(schedule: item))
+            layouts.append(StudentScheduleCellLayout(schedule: item, type: "group"))
+        }
+        if data.periods.count == 0 {
+            layouts.append(NoScheduleCellLayout())
         }
         return layouts
     }

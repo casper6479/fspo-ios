@@ -48,7 +48,7 @@ class JournalByDateViewController: UIViewController, JournalByDateViewProtocol {
         showNoLessons()
         presenter?.updateView(date: dateFormatter.string(from: Date()))
     }
-    func getNewsRows(data: JSONDecoding.JournalByDateAPI.Exercises) -> [Layout] {
+    func getNewRows(data: JSONDecoding.JournalByDateAPI.Exercises) -> [Layout] {
         var layouts = [Layout]()
         layouts.append(JournalLessonCellLayout(data: data))
         return layouts
@@ -71,7 +71,7 @@ class JournalByDateViewController: UIViewController, JournalByDateViewProtocol {
         presenter?.updateView(date: dateFormatter.string(from: JournalByDateLayout.datePicker.date))
     }
     func getHeader(lesson: String) -> Layout {
-        let layouts = HeaderLayout(text: lesson)
+        let layouts = HeaderLayout(text: lesson, inset: 40)
         return layouts
     }
     private func reloadTableView(width: CGFloat, synchronous: Bool, data: JSONDecoding.JournalByDateAPI) {
@@ -79,7 +79,7 @@ class JournalByDateViewController: UIViewController, JournalByDateViewProtocol {
         for item in data.exercises {
             dataSource.append(Section(
                 header: getHeader(lesson: item.lesson_name),
-                items: self.getNewsRows(data: item),
+                items: self.getNewRows(data: item),
                 footer: nil))
         }
         reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: { () in

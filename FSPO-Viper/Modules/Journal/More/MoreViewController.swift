@@ -37,17 +37,24 @@ class MoreViewController: UIViewController, MoreViewProtocol {
     func getNowRows(first: Bool) -> [Layout] {
         var layouts = [Layout]()
         var semester = (dataSource?.lessons_before.lessons)!
-        if !first {
+        if first {
             semester = (dataSource?.lessons_now.lessons)!
         }
         for item in semester {
             layouts.append(MoreLayout(subject: item.name, presense: "\(item.student_ex_was)", nonPresense: "\(item.student_ex_not)", allPresense: "\(item.ex_all)", attestation: "\(item.student_validmark ?? -1)", result: "\(item.student_mark ?? -1)"))
         }
+        if semester.count == 0 {
+            layouts.append(SizeLayout(height: 0))
+        }
+        return layouts
+    }
+    func getHeader(lesson: String) -> Layout {
+        let layouts = HeaderLayout(text: lesson, inset: 15)
         return layouts
     }
     private func reloadTableView(width: CGFloat, synchronous: Bool) {
         reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
-            return [Section(header: nil, items: self?.getNowRows(first: true) ?? [], footer: nil), Section(header: nil, items: self?.getNowRows(first: true) ?? [], footer: nil)]
+            return [Section(header: self?.getHeader(lesson: "\(self?.dataSource?.lessons_now.semester ?? 0) \(NSLocalizedString("семестр", comment: ""))"), items: self?.getNowRows(first: true) ?? [], footer: nil), Section(header: self?.getHeader(lesson: "\(self?.dataSource?.lessons_before.semester ?? 0) \(NSLocalizedString("семестр", comment: ""))"), items: self?.getNowRows(first: false) ?? [], footer: nil)]
         })
     }
 }

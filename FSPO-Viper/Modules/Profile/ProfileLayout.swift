@@ -14,24 +14,24 @@ open class ProfileLayout: InsetLayout<View> {
     public init(data: JSONDecoding.ProfileApi) {
         var school = "\(data.school ?? 0)"
         if school == "0" {
-            school = "Не указано"
+            school = NSLocalizedString("Не указано", comment: "")
         } else {
-            school += " классов"
+            school += " \(NSLocalizedString("классов", comment: ""))"
         }
         var segrys = "\(data.segrys ?? false)"
         if data.segrys == nil {
-            segrys = "Не указано"
+            segrys = NSLocalizedString("Не указано", comment: "")
         }
         if segrys == "true" {
-            segrys = "Обучался(лась) в Сегрисе"
+            segrys = NSLocalizedString("Обучался(лась) в Сегрисе", comment: "")
         }
         if segrys == "true" {
-            segrys = "Не обучался(лась) в Сегрисе"
+            segrys = NSLocalizedString("Не обучался(лась) в Сегрисе", comment: "")
         }
-        let email = data.email ?? "Не указано"
-        let phone = data.phone ?? "Не указано"
-        let birthday = data.birthday ?? "Не указано"
-        let nationality = data.nationality ?? "Не указано"
+        let email = data.email ?? NSLocalizedString("Не указано", comment: "")
+        let phone = data.phone ?? NSLocalizedString("Не указано", comment: "")
+        let birthday = data.birthday ?? NSLocalizedString("Не указано", comment: "")
+        let nationality = data.nationality ?? NSLocalizedString("Не указано", comment: "")
         let textCases = [email, phone, birthday, nationality, school, segrys]
         func profileIcon(image: UIImage) -> Layout {
             let profileIcon = SizeLayout<UIImageView>(

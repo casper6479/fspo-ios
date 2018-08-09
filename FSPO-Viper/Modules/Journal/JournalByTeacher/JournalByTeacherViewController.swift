@@ -41,7 +41,7 @@ class JournalByTeacherViewController: UIViewController, JournalByTeacherViewProt
             })
         }
     }
-    func getNewsRows(data: JSONDecoding.JournalByTeacherAPI.Days) -> [Layout] {
+    func getNewRows(data: JSONDecoding.JournalByTeacherAPI.Days) -> [Layout] {
 //        let shit = JSONDecoding.JournalByDateAPI.Exercises.init(ex_period: "1", ex_topic: "Отличная тема", ex_type: "6", lesson_name: "s", student_presence: false, student_mark: 5, lesson_id: "s", student_performance: "2", student_dropout: true, student_delay: "3")
         var layouts = [Layout]()
         for item in data.exercises {
@@ -51,7 +51,7 @@ class JournalByTeacherViewController: UIViewController, JournalByTeacherViewProt
         return layouts
     }
     func getHeader(lesson: String) -> Layout {
-        let layouts = HeaderLayout(text: "FIasd")
+        let layouts = HeaderLayout(text: "FIasd", inset: 40)
         return layouts
     }
     private func reloadTableView(width: CGFloat, synchronous: Bool, data: JSONDecoding.JournalByTeacherAPI) {
@@ -59,7 +59,7 @@ class JournalByTeacherViewController: UIViewController, JournalByTeacherViewProt
         for item in data.days {
             dataSource.append(Section(
                 header: getHeader(lesson: "item.lesson_name"),
-                items: self.getNewsRows(data: item),
+                items: self.getNewRows(data: item),
                 footer: nil))
         }
         reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: { () in
