@@ -51,7 +51,7 @@ class JournalByTeacherViewController: UIViewController, JournalByTeacherViewProt
         return layouts
     }
     func getHeader(lesson: String) -> Layout {
-        let layouts = HeaderLayout(text: "FIasd", inset: 40)
+        let layouts = HeaderLayout(text: "Header", inset: 40)
         return layouts
     }
     private func reloadTableView(width: CGFloat, synchronous: Bool, data: JSONDecoding.JournalByTeacherAPI) {

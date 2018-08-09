@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B1CD936D4C769238CDCD92B /* Pods_FSPO_Viper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A708E70CE564AC7313194980 /* Pods_FSPO_Viper.framework */; };
+		0212571B49A68BEB1BA67E48 /* Pods_FSPO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB84AAE1C33C2AE5B4C9735 /* Pods_FSPO.framework */; };
+		461DD69B211CD60F007A68AA /* FSPOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461DD69A211CD60F007A68AA /* FSPOUITests.swift */; };
 		461FDAA720FA1AA30081C678 /* MessagesLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461FDAA620FA1AA30081C678 /* MessagesLayout.swift */; };
 		461FDAAA20FA713A0081C678 /* ProfileLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461FDAA820FA70530081C678 /* ProfileLayout.swift */; };
 		461FDAAC20FAA0A60081C678 /* ScheduleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461FDAAB20FAA0A60081C678 /* ScheduleLayout.swift */; };
@@ -116,11 +117,25 @@
 		46F5BC9A21173D6E00913931 /* JournalByDateLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F5BC9921173D6E00913931 /* JournalByDateLayout.swift */; };
 		46F5BCAC21178C4A00913931 /* SFCompactRounded-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46F5BCA321178C4A00913931 /* SFCompactRounded-Regular.ttf */; };
 		46F5BCAE211792CC00913931 /* InsetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F5BCAD211792CC00913931 /* InsetView.swift */; };
-		C9FDE83B6E8929FC73982F94 /* Pods_FSPO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 702BDCD060D9B2E8491017E1 /* Pods_FSPO.framework */; };
+		79799E434EEE2C2BC5FBE23A /* Pods_FSPOUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 547768368EBCD51AD0F8726C /* Pods_FSPOUITests.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		461DD69D211CD60F007A68AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46C1561020DBB2D700F2BA79 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 46C1561720DBB2D700F2BA79;
+			remoteInfo = FSPO;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		21B408E0A5478CBB0C767117 /* Pods-FSPO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSPO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FSPO/Pods-FSPO.debug.xcconfig"; sourceTree = "<group>"; };
+		0EB28521BED10455071BDC25 /* Pods-FSPOUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSPOUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FSPOUITests/Pods-FSPOUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		0FB1107598BF6C73CB5B9F89 /* Pods-FSPO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSPO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FSPO/Pods-FSPO.debug.xcconfig"; sourceTree = "<group>"; };
+		461DD698211CD60F007A68AA /* FSPOUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FSPOUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		461DD69A211CD60F007A68AA /* FSPOUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSPOUITests.swift; sourceTree = "<group>"; };
+		461DD69C211CD60F007A68AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		461FDAA620FA1AA30081C678 /* MessagesLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesLayout.swift; sourceTree = "<group>"; };
 		461FDAA820FA70530081C678 /* ProfileLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLayout.swift; sourceTree = "<group>"; };
 		461FDAAB20FAA0A60081C678 /* ScheduleLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleLayout.swift; sourceTree = "<group>"; };
@@ -233,26 +248,52 @@
 		46F5BC9921173D6E00913931 /* JournalByDateLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalByDateLayout.swift; sourceTree = "<group>"; };
 		46F5BCA321178C4A00913931 /* SFCompactRounded-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactRounded-Regular.ttf"; sourceTree = "<group>"; };
 		46F5BCAD211792CC00913931 /* InsetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetView.swift; sourceTree = "<group>"; };
-		702BDCD060D9B2E8491017E1 /* Pods_FSPO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FSPO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A708E70CE564AC7313194980 /* Pods_FSPO_Viper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FSPO_Viper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C496B420B19573C0E000D13B /* Pods-FSPO-Viper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSPO-Viper.release.xcconfig"; path = "Pods/Target Support Files/Pods-FSPO-Viper/Pods-FSPO-Viper.release.xcconfig"; sourceTree = "<group>"; };
-		DC649CFBB2E0B29D669ACD1A /* Pods-FSPO-Viper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSPO-Viper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FSPO-Viper/Pods-FSPO-Viper.debug.xcconfig"; sourceTree = "<group>"; };
-		F46C86DD60774078C67EB4F9 /* Pods-FSPO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSPO.release.xcconfig"; path = "Pods/Target Support Files/Pods-FSPO/Pods-FSPO.release.xcconfig"; sourceTree = "<group>"; };
+		547768368EBCD51AD0F8726C /* Pods_FSPOUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FSPOUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AB84AAE1C33C2AE5B4C9735 /* Pods_FSPO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FSPO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF4289B5E756B3EB9CC6C503 /* Pods-FSPO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSPO.release.xcconfig"; path = "Pods/Target Support Files/Pods-FSPO/Pods-FSPO.release.xcconfig"; sourceTree = "<group>"; };
+		F8684DC6C579B2D06DA82249 /* Pods-FSPOUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSPOUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FSPOUITests/Pods-FSPOUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		461DD695211CD60F007A68AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79799E434EEE2C2BC5FBE23A /* Pods_FSPOUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		46C1561520DBB2D700F2BA79 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B1CD936D4C769238CDCD92B /* Pods_FSPO_Viper.framework in Frameworks */,
-				C9FDE83B6E8929FC73982F94 /* Pods_FSPO.framework in Frameworks */,
+				0212571B49A68BEB1BA67E48 /* Pods_FSPO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14CEABD73764EDBF7615C1EB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0FB1107598BF6C73CB5B9F89 /* Pods-FSPO.debug.xcconfig */,
+				BF4289B5E756B3EB9CC6C503 /* Pods-FSPO.release.xcconfig */,
+				0EB28521BED10455071BDC25 /* Pods-FSPOUITests.debug.xcconfig */,
+				F8684DC6C579B2D06DA82249 /* Pods-FSPOUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		461DD699211CD60F007A68AA /* FSPOUITests */ = {
+			isa = PBXGroup;
+			children = (
+				461DD69A211CD60F007A68AA /* FSPOUITests.swift */,
+				461DD69C211CD60F007A68AA /* Info.plist */,
+			);
+			path = FSPOUITests;
+			sourceTree = "<group>";
+		};
 		4621CE9920EFAB8A00B17323 /* Messages */ = {
 			isa = PBXGroup;
 			children = (
@@ -517,9 +558,10 @@
 			isa = PBXGroup;
 			children = (
 				46C1561A20DBB2D700F2BA79 /* FSPO-Viper */,
+				461DD699211CD60F007A68AA /* FSPOUITests */,
 				46C1561920DBB2D700F2BA79 /* Products */,
-				6D37F18B4240FB7CA3492570 /* Pods */,
-				60A0FF66EF3E5B7914BD06B8 /* Frameworks */,
+				14CEABD73764EDBF7615C1EB /* Pods */,
+				607951704E3601943721188E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -527,6 +569,7 @@
 			isa = PBXGroup;
 			children = (
 				46C1561820DBB2D700F2BA79 /* FSPO.app */,
+				461DD698211CD60F007A68AA /* FSPOUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -547,39 +590,48 @@
 			path = "FSPO-Viper";
 			sourceTree = "<group>";
 		};
-		60A0FF66EF3E5B7914BD06B8 /* Frameworks */ = {
+		607951704E3601943721188E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A708E70CE564AC7313194980 /* Pods_FSPO_Viper.framework */,
-				702BDCD060D9B2E8491017E1 /* Pods_FSPO.framework */,
+				8AB84AAE1C33C2AE5B4C9735 /* Pods_FSPO.framework */,
+				547768368EBCD51AD0F8726C /* Pods_FSPOUITests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		6D37F18B4240FB7CA3492570 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				DC649CFBB2E0B29D669ACD1A /* Pods-FSPO-Viper.debug.xcconfig */,
-				C496B420B19573C0E000D13B /* Pods-FSPO-Viper.release.xcconfig */,
-				21B408E0A5478CBB0C767117 /* Pods-FSPO.debug.xcconfig */,
-				F46C86DD60774078C67EB4F9 /* Pods-FSPO.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		461DD697211CD60F007A68AA /* FSPOUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 461DD6A1211CD60F007A68AA /* Build configuration list for PBXNativeTarget "FSPOUITests" */;
+			buildPhases = (
+				B24F5DBC9D6B8358832F6985 /* [CP] Check Pods Manifest.lock */,
+				461DD694211CD60F007A68AA /* Sources */,
+				461DD695211CD60F007A68AA /* Frameworks */,
+				461DD696211CD60F007A68AA /* Resources */,
+				0E32681C01B18E25B854A849 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				461DD69E211CD60F007A68AA /* PBXTargetDependency */,
+			);
+			name = FSPOUITests;
+			productName = FSPOUITests;
+			productReference = 461DD698211CD60F007A68AA /* FSPOUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		46C1561720DBB2D700F2BA79 /* FSPO */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46C1562A20DBB2D800F2BA79 /* Build configuration list for PBXNativeTarget "FSPO" */;
 			buildPhases = (
-				CA0E227277917A6917734630 /* [CP] Check Pods Manifest.lock */,
+				D796C1618C42CA83218B1402 /* [CP] Check Pods Manifest.lock */,
 				46C1561420DBB2D700F2BA79 /* Sources */,
 				46C1561520DBB2D700F2BA79 /* Frameworks */,
 				46C1561620DBB2D700F2BA79 /* Resources */,
-				2A3BE96CA0D9B57E9A19A136 /* [CP] Embed Pods Frameworks */,
 				463A1F9020DC271400E04656 /* SwiftLint */,
+				E55DDFA49110363AB6C64EE1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -600,6 +652,10 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Николай Борисов";
 				TargetAttributes = {
+					461DD697211CD60F007A68AA = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 46C1561720DBB2D700F2BA79;
+					};
 					46C1561720DBB2D700F2BA79 = {
 						CreatedOnToolsVersion = 9.4;
 					};
@@ -620,11 +676,19 @@
 			projectRoot = "";
 			targets = (
 				46C1561720DBB2D700F2BA79 /* FSPO */,
+				461DD697211CD60F007A68AA /* FSPOUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		461DD696211CD60F007A68AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		46C1561620DBB2D700F2BA79 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -643,7 +707,87 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2A3BE96CA0D9B57E9A19A136 /* [CP] Embed Pods Frameworks */ = {
+		0E32681C01B18E25B854A849 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FSPOUITests/Pods-FSPOUITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FPSCounter/FPSCounter.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/LayoutKit/LayoutKit.framework",
+				"${BUILT_PRODUCTS_DIR}/NextGrowingTextView/NextGrowingTextView.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FPSCounter.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LayoutKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NextGrowingTextView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FSPOUITests/Pods-FSPOUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		463A1F9020DC271400E04656 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+		};
+		B24F5DBC9D6B8358832F6985 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FSPOUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D796C1618C42CA83218B1402 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FSPO-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E55DDFA49110363AB6C64EE1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -673,41 +817,17 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FSPO/Pods-FSPO-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		463A1F9020DC271400E04656 /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
-		};
-		CA0E227277917A6917734630 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FSPO-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		461DD694211CD60F007A68AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				461DD69B211CD60F007A68AA /* FSPOUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		46C1561420DBB2D700F2BA79 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -817,6 +937,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		461DD69E211CD60F007A68AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 46C1561720DBB2D700F2BA79 /* FSPO */;
+			targetProxy = 461DD69D211CD60F007A68AA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		467C209B2119DB53000736A8 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -847,6 +975,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		461DD69F211CD60F007A68AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EB28521BED10455071BDC25 /* Pods-FSPOUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PCHAWD2XTV;
+				INFOPLIST_FILE = FSPOUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.casper6479.FSPOUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FSPO;
+			};
+			name = Debug;
+		};
+		461DD6A0211CD60F007A68AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8684DC6C579B2D06DA82249 /* Pods-FSPOUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PCHAWD2XTV;
+				INFOPLIST_FILE = FSPOUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.casper6479.FSPOUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FSPO;
+			};
+			name = Release;
+		};
 		46C1562820DBB2D800F2BA79 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -965,17 +1125,15 @@
 		};
 		46C1562B20DBB2D800F2BA79 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 21B408E0A5478CBB0C767117 /* Pods-FSPO.debug.xcconfig */;
+			baseConfigurationReference = 0FB1107598BF6C73CB5B9F89 /* Pods-FSPO.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PCHAWD2XTV;
+				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = "FSPO-Viper/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.casper6479.FSPO-Viper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -985,17 +1143,15 @@
 		};
 		46C1562C20DBB2D800F2BA79 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F46C86DD60774078C67EB4F9 /* Pods-FSPO.release.xcconfig */;
+			baseConfigurationReference = BF4289B5E756B3EB9CC6C503 /* Pods-FSPO.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PCHAWD2XTV;
+				ENABLE_TESTABILITY = NO;
 				INFOPLIST_FILE = "FSPO-Viper/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.casper6479.FSPO-Viper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1006,6 +1162,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		461DD6A1211CD60F007A68AA /* Build configuration list for PBXNativeTarget "FSPOUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				461DD69F211CD60F007A68AA /* Debug */,
+				461DD6A0211CD60F007A68AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		46C1561320DBB2D700F2BA79 /* Build configuration list for PBXProject "FSPO" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -59,8 +59,7 @@ class ScheduleListViewController: UIViewController, ScheduleListViewProtocol {
         reloadableViewLayoutAdapter = ScheduleReloadableLayoutAdapter(reloadableView: tableView)
         tableView.dataSource = reloadableViewLayoutAdapter
         tableView.delegate = reloadableViewLayoutAdapter
-        tableView.separatorColor = .clear
-        tableView.backgroundColor = UIColor.backgroundGray
+        tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
         view.addSubview(tableView)
         presenter?.updateView()
     }

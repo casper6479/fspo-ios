@@ -25,6 +25,7 @@ open class MoreLayout: InsetLayout<View> {
                 font: UIFont.ITMOFont!,
                 alignment: .centerLeading,
                 config: { label in
+                    label.accessibilityIdentifier = "cellLabel"
                     label.lineBreakMode = .byWordWrapping
                     label.textColor = .black
                     label.backgroundColor = .white
@@ -147,6 +148,7 @@ open class MoreLayout: InsetLayout<View> {
                     view.backgroundColor = .white
             }),
             config: { view in
+//                view.accessibilityIdentifier = "cellLabel"
                 view.backgroundColor = .white
         })
     }

@@ -21,8 +21,8 @@ class NewsViewController: UIViewController, NewsViewProtocol {
         present(alert, animated: true, completion: nil)
     }
 	var presenter: NewsPresenterProtocol?
-    private var reloadableViewLayoutAdapter: ReloadableViewLayoutAdapter!
-    private var tableView: UITableView!
+    var reloadableViewLayoutAdapter: ReloadableViewLayoutAdapter!
+    var tableView: UITableView!
 	override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.updateView()
@@ -42,7 +42,7 @@ class NewsViewController: UIViewController, NewsViewProtocol {
         }
         return layouts
     }
-    private func reloadTableView(width: CGFloat, synchronous: Bool) {
+    func reloadTableView(width: CGFloat, synchronous: Bool) {
         reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
             return [Section(
                 header: nil,
