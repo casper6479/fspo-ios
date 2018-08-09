@@ -83,6 +83,10 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol {
     private func reloadTableView(width: CGFloat, synchronous: Bool, layoutAdapter: ReloadableViewLayoutAdapter, ds: [Section<[Layout]>]) {
         layoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: {
             return ds
+        }, completion: {
+            if layoutAdapter == self.studentScheduleLayoutAdapter {
+                print("motherfucka did it")
+            }
         })
     }
     func getStudentRows(data: JSONDecoding.StudentScheduleApi.Weekdays) -> [Layout]? {
