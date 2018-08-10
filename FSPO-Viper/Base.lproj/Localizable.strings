@@ -68,3 +68,6 @@
 "Ошибка при обновлении уведомлений" = "Error during notifications update";
 "Неправильные данные!" = "Wrong credentials!";
 "Ошибка" = "Error";
+"Подтверждение личности" = "Proof of identity";
+"Подтвердите личность" = "Confirm identity";
+"Face ID/Touch ID не может настроиться" = "Face ID/Touch ID may not be configured";

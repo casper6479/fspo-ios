@@ -7,3 +7,4 @@
 */
 "CFBundleDisplayName" = "FSPO";
 "CFBundleName" = "FSPO";
+"Доступ к FaceID для подтверждения личности" = "test";

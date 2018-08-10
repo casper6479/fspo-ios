@@ -13,7 +13,27 @@ import Alamofire
 class LoginInteractor: LoginInteractorProtocol {
 
     weak var presenter: LoginPresenterProtocol?
-    func login() {
+    private var token: String?
+    private var userId: Int?
+    func getGroupId(user_id: Int, token: String, completion: @escaping (Bool) -> Void) {
+        let parameters: Parameters = [
+            "user_id": user_id
+        ]
+        let headers: HTTPHeaders = [
+            "token": token
+        ]
+        Alamofire.request(Constants.StudentHistoryURL, method: .get, parameters: parameters, headers: headers).responseJSON { (response) in
+            let result = response.data
+            do {
+                let res = try JSONDecoder().decode(JSONDecoding.StudentHistoryApi.self, from: result!)
+                UserDefaults.standard.set(res.groups[res.groups.count-1].group_id, forKey: "user_group_id")
+            } catch {
+                print(error)
+            }
+            completion(true)
+        }
+    }
+    func getToken(completion: @escaping (Bool) -> Void) {
         let params: Parameters = [
             "login": LoginLayout.loginTextField.text!,
             "password": LoginLayout.passwordTextField.text!,
@@ -23,72 +43,38 @@ class LoginInteractor: LoginInteractorProtocol {
             let result = response.data
             do {
                 let res = try JSONDecoder().decode(JSONDecoding.AuthApi.self, from: result!)
-                self.presenter?.userLoggedIn()
                 keychain["token"] = res.token
                 UserDefaults.standard.set(res.user_id, forKey: "user_id")
-                let parameters: Parameters = [
-                    "user_id": res.user_id
-                ]
-                let headers: HTTPHeaders = [
-                    "token": res.token
-                ]
-                Alamofire.request(Constants.StudentHistoryURL, method: .get, parameters: parameters, headers: headers).responseJSON { (response) in
-                    let result = response.data
-                    do {
-                        let res = try JSONDecoder().decode(JSONDecoding.StudentHistoryApi.self, from: result!)
-                        UserDefaults.standard.set(res.groups[res.groups.count-1].group_id, forKey: "user_group_id")
-                    } catch {
-                        print(error)
-                    }
-                }
-                //                UserDefaults.standard.set(res.token, forKey: "token")
-                //                UserDefaults.standard.set(true, forKey: "isLogged")
-                //                UserDefaults.standard.set(5, forKey: "fireDate")
-                //                UserDefaults.standard.set(true, forKey: "allow_notifications")
-                //                UserDefaults.standard.set(false, forKey: "enable_auth")
-                //                UserDefaults.standard.set(1, forKey: "Notification_sound")
-                //                touchid = true
-                //                }
-                //                let modalTabBar = self.storyboard?.instantiateViewController(withIdentifier: "TabBar")
-                //                let modalTeacherTabBar = self.storyboard?.instantiateViewController(withIdentifier: "TeacherTabBar")
-                //                Alamofire.request(Constants.RolesURL, method: .get, parameters: parameters, headers: headers).responseJSON { (response) in
-                //                    let result = response.data
-                //                    do{
-                //                        let res = try JSONDecoder().decode(RolesAPI.self, from: result!)
-                //                        if res.parent {
-                //                            UserDefaults.standard.set("parent", forKey: "role")
-                //                            self.didFinishYourLoading(controller: modalTabBar!)
-                //                        }
-                //                        if res.student {
-                //                            UserDefaults.standard.set("student", forKey: "role")
-                //                            self.didFinishYourLoading(controller: modalTabBar!)
-                //                        }
-                //                        if res.teacher {
-                //                            UserDefaults.standard.set("teacher", forKey: "role")
-                //                            self.didFinishYourLoading(controller: modalTeacherTabBar!)
-                //                        }
-                //
-                //                    }
-                //                    catch {
-                //                        print(error)
-                //                    }
-                //                }
-                //
+                self.userId = res.user_id
+                self.token = res.token
             } catch Swift.DecodingError.keyNotFound {
                 do {
                     let res = try JSONDecoder().decode(JSONDecoding.ApiError.self, from: result!)
                     if res.error_code == 6 {
                         showMessage(message: NSLocalizedString("Неправильные данные!", comment: ""), y: 8)
-                        //                        self.enter.returnToOriginalState()
                     } else {
                         showMessage(message: "\(NSLocalizedString("Ошибка", comment: "")): \(res.error_code)", y: 8)
-                        //                        self.enter.returnToOriginalState()
                     }
                 } catch {
+                    print(error)
                 }
             } catch {
-                print("xz")
+                print("другая ошибка")
             }
+            completion(true)
+        }
+    }
+    func login() {
+        let group = DispatchGroup()
+        group.enter()
+        getToken { _ in
+            self.getGroupId(user_id: self.userId!, token: self.token!) { _ in
+                group.leave()
+            }
+        }
+        group.notify(queue: .main) {
+//            print(UserDefaults.standard.string(forKey: "user_group_id"))
+            self.presenter?.userLoggedIn()
         }
     }
 }

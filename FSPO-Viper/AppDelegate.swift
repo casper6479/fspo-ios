@@ -10,13 +10,33 @@ import UIKit
 import FPSCounter
 import IQKeyboardManagerSwift
 import UserNotifications
+import LocalAuthentication
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var biometricView: UIView!
+    let authContex = LAContext()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        UIApplication.shared.statusBarStyle = .lightContent
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let loginModule = UINavigationController.init(rootViewController: LoginRouter.createModule())
+        if UserDefaults.standard.integer(forKey: "user_id") != 0 {
+            window?.rootViewController = UITabBarController().buildStudentsTabBar()
+        } else {
+            window?.rootViewController = loginModule
+        }
+        window?.makeKeyAndVisible()
+        if window?.rootViewController != loginModule {
+            var authError: NSError?
+            if authContex.canEvaluatePolicy(.deviceOwnerAuthentication, error: &authError) {
+                showGuard(window: window!)
+            } else {
+                showMessage(message: (authError?.localizedDescription)!, y: 16)
+            }
+        }
         if #available(iOS 10.0, *) {
             let center = UNUserNotificationCenter.current()
             let options: UNAuthorizationOptions = [.alert, .sound]
@@ -30,23 +50,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
              UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types:[.alert, .sound], categories: nil))
              }*/
         }
-        UIApplication.shared.statusBarStyle = .lightContent
-        window = UIWindow(frame: UIScreen.main.bounds)
-        if keychain["token"] != nil {
-            window?.rootViewController = UITabBarController().buildStudentsTabBar()
-        } else {
-            window?.rootViewController = UINavigationController.init(rootViewController: LoginRouter.createModule())
-        }
-        window?.makeKeyAndVisible()
+
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false
         IQKeyboardManager.shared.keyboardDistanceFromTextField = 5
         /*FPSCounter.showInStatusBar(UIApplication.shared)
         FPSCounter().startTracking()*/
+
         UINavigationBar.appearance().barTintColor = UIColor.ITMOBlue
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.backgroundColor: UIColor.ITMOBlue]
+
         if #available(iOS 11, *) {
             let safeInset = UIApplication.shared.delegate?.window??.safeAreaInsets.bottom
             Constants.safeHeight = UIScreen.main.bounds.height - (UITabBarController().tabBar.frame.height + UINavigationController().navigationBar.frame.height + UIApplication.shared.statusBarFrame.height + safeInset!)
@@ -55,27 +70,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return true
     }
-
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+    func showGuard(window: UIWindow) {
+        biometricView = UIView(frame: window.bounds)
+        biometricView.backgroundColor = .white
+        let width = UIScreen.main.bounds.width
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
+            let biometricScreen = BiometricLayout()
+            let arrangement = biometricScreen.arrangement(width: width)
+            DispatchQueue.main.async(execute: {
+                arrangement.makeViews(in: self.biometricView)
+            })
+        }
+        window.addSubview(biometricView)
+        authUser()
     }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    func authUser() {
+        authContex.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: NSLocalizedString("Подтвердите личность", comment: "")) { (success, error) in
+            if success {
+                DispatchQueue.main.async {
+                    self.biometricView.removeFromSuperview()
+                }
+            } else {
+                switch error {
+                case LAError.authenticationFailed?:
+                    DispatchQueue.main.async {
+                        BiometricLayout.label.text = "Возникла ошибка"
+                    }
+                case LAError.userCancel?:
+                    DispatchQueue.main.async {
+                        BiometricLayout.label.text = "Отменено пользователем"
+                    }
+                case LAError.userFallback?:
+                    DispatchQueue.main.async {
+                        BiometricLayout.label.text = "Введите пароль"
+                    }
+                default:
+                    showMessage(message: NSLocalizedString("Face ID/Touch ID не может настроиться", comment: ""), y: 16)
+                }
+            }
+        }
     }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    @objc func againUpInside() {
+        authUser()
     }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-
 }

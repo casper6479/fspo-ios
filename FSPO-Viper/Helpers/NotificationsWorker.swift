@@ -32,11 +32,6 @@ public func updateNothificationContext() {
                 for u in i.periods {
                     if #available(iOS 10.0, *) {
                         let center = UNUserNotificationCenter.current()
-                        center.getNotificationSettings { (settings) in
-                            if settings.authorizationStatus != .authorized {
-                                print("Nothification is not Allowed")
-                            }
-                        }
                         let dateFormatter = DateFormatter()
                         let days = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]
                         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
@@ -100,8 +95,11 @@ public func updateNothificationContext() {
                 wd += 1
             }
             //            UserDefaults.standard.set(try? PropertyListEncoder().encode(res.weekdays), forKey:"MyScheduleCache")
+            showMessage(message: NSLocalizedString("Уведомления обновлены", comment: ""), y: 8)
         } catch {
-            showMessage(message: NSLocalizedString("Ошибка при обновлении уведомлений", comment: ""), y: 8)
+            print(error)
+            print()
+            showMessage(message: "\(NSLocalizedString("Ошибка при обновлении уведомлений", comment: "")): \n\(error.localizedDescription)", y: 8)
         }
     }
 }

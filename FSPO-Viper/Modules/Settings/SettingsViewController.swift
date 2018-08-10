@@ -34,6 +34,7 @@ class SettingsViewController: UIViewController, SettingsViewProtocol, UITableVie
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 1 {
             keychain["token"] = nil
+            UserDefaults.standard.set(0, forKey: "user_id")
             self.present(UINavigationController.init(rootViewController: LoginRouter.createModule()), animated: true)
         }
     }

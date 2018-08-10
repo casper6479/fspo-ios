@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 extension UITabBarController {
     func buildStudentsTabBar() -> UITabBarController {
@@ -33,7 +34,14 @@ extension UITabBarController {
         tabBarController.viewControllers = navigationControllers
         tabBarController.tabBar.backgroundColor = .white
         tabBarController.tabBar.tintColor = UIColor.ITMOBlue
-        updateNothificationContext()
+        if #available(iOS 10.0, *) {
+            let center = UNUserNotificationCenter.current()
+            center.getNotificationSettings { (settings) in
+                if settings.authorizationStatus == .authorized {
+                    updateNothificationContext()
+                }
+            }
+        }
         return tabBarController
     }
 }
