@@ -10,8 +10,7 @@ Everything written according to the SwiftLint.
 
 # Now Available:
 - Profile Module
-- Journal-Home Module
-- All Journal Submodules (70% done)
+- Journal Module
 - Schedule Module(80% done)
 - News Module (90% done)
 - Messages Module (95% done)
@@ -20,12 +19,13 @@ Everything written according to the SwiftLint.
 - Keychan-stored token
 - Settings Module (10% done)
 - English localization
+- Local Notifications
 
 # TODO:
 - FIX DIALOG BUBBLE TRANSPARENT LABEL BACKGROUND & WIDTH BUG
 - Infinity News
 - Teacher & parents functionality
-- Local & Remote Notifications
+- Remote Notifications
 - Biometric Guard
 - Caching
 - Today Extensions
