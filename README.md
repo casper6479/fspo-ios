@@ -20,12 +20,12 @@ Everything written according to the SwiftLint.
 - Settings Module (10% done)
 - English localization
 - Local Notifications
+- Biometric Guard
 
 # TODO:
 - FIX DIALOG BUBBLE TRANSPARENT LABEL BACKGROUND & WIDTH BUG
 - Infinity News
 - Teacher & parents functionality
 - Remote Notifications
-- Biometric Guard
 - Caching
 - Today Extensions
