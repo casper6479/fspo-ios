@@ -24,7 +24,6 @@ Everything written according to the SwiftLint.
 
 # TODO:
 - FIX DIALOG BUBBLE TRANSPARENT LABEL BACKGROUND & WIDTH BUG
-- Infinity News
 - Teacher & parents functionality
 - Remote Notifications
 - Caching
