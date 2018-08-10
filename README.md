@@ -21,10 +21,11 @@ Everything written according to the SwiftLint.
 - English localization
 - Local Notifications
 - Biometric Guard
+- Today Extensions
 
 # TODO:
 - FIX DIALOG BUBBLE TRANSPARENT LABEL BACKGROUND & WIDTH BUG
 - Teacher & parents functionality
 - Remote Notifications
 - Caching
-- Today Extensions
+- Animations
