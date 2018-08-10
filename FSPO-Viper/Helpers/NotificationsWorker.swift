@@ -95,7 +95,7 @@ public func updateNothificationContext() {
                 wd += 1
             }
             //            UserDefaults.standard.set(try? PropertyListEncoder().encode(res.weekdays), forKey:"MyScheduleCache")
-            showMessage(message: NSLocalizedString("Уведомления обновлены", comment: ""), y: 8)
+//            showMessage(message: NSLocalizedString("Уведомления обновлены", comment: ""), y: 8)
         } catch {
             print(error)
             print()
