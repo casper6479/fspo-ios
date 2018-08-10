@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (4.7.2)
+  - Crashlytics (3.10.5):
+    - Fabric (~> 1.7.9)
+  - Fabric (1.7.9)
   - FPSCounter (2.1.0)
   - IQKeyboardManagerSwift (6.0.4)
   - KeychainAccess (3.1.1)
@@ -10,6 +13,8 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Crashlytics (~> 3.10.5)
+  - Fabric (~> 1.7.9)
   - FPSCounter
   - IQKeyboardManagerSwift
   - KeychainAccess
@@ -21,6 +26,8 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - Crashlytics
+    - Fabric
     - FPSCounter
     - IQKeyboardManagerSwift
     - KeychainAccess
@@ -31,6 +38,8 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  Crashlytics: 7f2e38d302d9da96475b3d64d86fb29e31a542b7
+  Fabric: a2917d3895e4c1569b9c3170de7320ea1b1e6661
   FPSCounter: c0fac1110b723872ab960c929ad672fd956e6a4e
   IQKeyboardManagerSwift: 36dbe324b4f9793f5f41ba5227f3e7c76dfefd50
   KeychainAccess: 7bd430028059754a3debab3cfc0bd1fc7fb85df3
@@ -39,6 +48,6 @@ SPEC CHECKSUMS:
   NextGrowingTextView: 78c8b96f7ac6dc845f5babb27dcf7c18dd3210ec
   SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
 
-PODFILE CHECKSUM: 96c7b2ebf71f906facc6bc28e148692d71234d70
+PODFILE CHECKSUM: 1ab5ad35cebddda267659a5bfd047476745d5f63
 
 COCOAPODS: 1.5.3

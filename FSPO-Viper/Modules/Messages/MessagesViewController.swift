@@ -10,6 +10,7 @@
 
 import UIKit
 import LayoutKit
+import Crashlytics
 
 class MessagesViewController: UIViewController, MessagesViewProtocol {
     static var publicDS: JSONDecoding.MessagesApi?

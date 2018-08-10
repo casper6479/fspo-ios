@@ -11,6 +11,8 @@ def pods
 	pod 'IQKeyboardManagerSwift'
 	pod 'Kingfisher'
 	pod 'NextGrowingTextView'
+	pod 'Fabric', '~> 1.7.9'
+	pod 'Crashlytics', '~> 3.10.5'
   end
 
 target 'FSPO' do
@@ -18,4 +20,12 @@ target 'FSPO' do
 end
 target 'FSPOUITests' do
 	pods
+end
+target 'TodaySchedule' do
+	pod 'Alamofire'
+	pod 'LayoutKit'
+end
+target 'TommorowSchedule' do
+	pod 'Alamofire'
+	pod 'LayoutKit'
 end

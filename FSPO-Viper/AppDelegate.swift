@@ -11,7 +11,8 @@ import FPSCounter
 import IQKeyboardManagerSwift
 import UserNotifications
 import LocalAuthentication
-
+import Fabric
+import Crashlytics
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -22,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UIApplication.shared.statusBarStyle = .lightContent
         window = UIWindow(frame: UIScreen.main.bounds)
+
         let loginModule = UINavigationController.init(rootViewController: LoginRouter.createModule())
         if UserDefaults.standard.integer(forKey: "user_id") != 0 {
             window?.rootViewController = UITabBarController().buildStudentsTabBar()
@@ -50,6 +52,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
              UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types:[.alert, .sound], categories: nil))
              }*/
         }
+
+        Fabric.with([Crashlytics.self])
 
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false

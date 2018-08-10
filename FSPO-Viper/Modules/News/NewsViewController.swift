@@ -63,7 +63,6 @@ extension NewsReloadableViewLayoutAdapter {
         let newsVC = tableView.controller() as? NewsViewController
         if indexPath.row == newsVC!.dataSource.count - 1 {
             newsVC!.offset += 100
-            print(newsVC!.countAll!)
             if newsVC!.countAll == 0 {
                 newsVC!.tableView.tableFooterView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 1, height: 1)))
             } else {

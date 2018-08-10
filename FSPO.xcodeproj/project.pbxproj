@@ -52,6 +52,18 @@
 		466CDF5520EF779D00A86701 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466CDF5420EF779C00A86701 /* Constants.swift */; };
 		466CDF5720EF7B3400A86701 /* JSONDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466CDF5620EF7B3400A86701 /* JSONDecoding.swift */; };
 		466CDF6E20EFA4DB00A86701 /* TabBarBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466CDF6D20EFA4DB00A86701 /* TabBarBuilder.swift */; };
+		4677E83C211E03600055517F /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4677E83B211E03600055517F /* NotificationCenter.framework */; };
+		4677E83F211E03600055517F /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4677E83E211E03600055517F /* TodayViewController.swift */; };
+		4677E846211E03600055517F /* TodaySchedule.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4677E83A211E03600055517F /* TodaySchedule.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4677E84C211E051C0055517F /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4677E84B211E051C0055517F /* Layout.swift */; };
+		4677E84E211E053E0055517F /* JSONDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4677E84D211E053E0055517F /* JSONDecoding.swift */; };
+		4677E854211E0F5C0055517F /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4677E83B211E03600055517F /* NotificationCenter.framework */; };
+		4677E857211E0F5C0055517F /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4677E856211E0F5C0055517F /* TodayViewController.swift */; };
+		4677E85A211E0F5C0055517F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4677E858211E0F5C0055517F /* MainInterface.storyboard */; };
+		4677E85E211E0F5C0055517F /* TommorowSchedule.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4677E853211E0F5C0055517F /* TommorowSchedule.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4677E864211E0F7A0055517F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4677E862211E0F7A0055517F /* MainInterface.storyboard */; };
+		4677E867211E124A0055517F /* JSONDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4677E865211E124A0055517F /* JSONDecoding.swift */; };
+		4677E868211E124A0055517F /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4677E866211E124A0055517F /* Layout.swift */; };
 		467C20912119C937000736A8 /* Calibri.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 467C20902119C936000736A8 /* Calibri.ttf */; };
 		467C20992119DB53000736A8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 467C209B2119DB53000736A8 /* InfoPlist.strings */; };
 		467C20B9211A3438000736A8 /* JournalByTeacherPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467C20B3211A3438000736A8 /* JournalByTeacherPresenter.swift */; };
@@ -121,6 +133,8 @@
 		46F5BCAC21178C4A00913931 /* SFCompactRounded-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46F5BCA321178C4A00913931 /* SFCompactRounded-Regular.ttf */; };
 		46F5BCAE211792CC00913931 /* InsetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F5BCAD211792CC00913931 /* InsetView.swift */; };
 		79799E434EEE2C2BC5FBE23A /* Pods_FSPOUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 547768368EBCD51AD0F8726C /* Pods_FSPOUITests.framework */; };
+		7D0875CBEE6743DAFADDAD96 /* Pods_TodaySchedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 543062F1A1FAEFA7D30BA97E /* Pods_TodaySchedule.framework */; };
+		BA40FD0A72E9F57725B4014E /* Pods_TommorowSchedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C21AC064A12FA16717FABEBE /* Pods_TommorowSchedule.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,11 +145,41 @@
 			remoteGlobalIDString = 46C1561720DBB2D700F2BA79;
 			remoteInfo = FSPO;
 		};
+		4677E844211E03600055517F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46C1561020DBB2D700F2BA79 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4677E839211E03600055517F;
+			remoteInfo = TodaySchedule;
+		};
+		4677E85C211E0F5C0055517F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46C1561020DBB2D700F2BA79 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4677E852211E0F5C0055517F;
+			remoteInfo = TommorowSchedule;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4677E84A211E03600055517F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4677E846211E03600055517F /* TodaySchedule.appex in Embed App Extensions */,
+				4677E85E211E0F5C0055517F /* TommorowSchedule.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0EB28521BED10455071BDC25 /* Pods-FSPOUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSPOUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FSPOUITests/Pods-FSPOUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0FB1107598BF6C73CB5B9F89 /* Pods-FSPO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSPO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FSPO/Pods-FSPO.debug.xcconfig"; sourceTree = "<group>"; };
+		34E002B8332208310038B66F /* Pods-TodaySchedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaySchedule.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodaySchedule/Pods-TodaySchedule.release.xcconfig"; sourceTree = "<group>"; };
 		460C7FD8211D8BE200D94ECB /* NotificationsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsWorker.swift; sourceTree = "<group>"; };
 		461DD698211CD60F007A68AA /* FSPOUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FSPOUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		461DD69A211CD60F007A68AA /* FSPOUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSPOUITests.swift; sourceTree = "<group>"; };
@@ -183,6 +227,22 @@
 		466CDF5420EF779C00A86701 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		466CDF5620EF7B3400A86701 /* JSONDecoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoding.swift; sourceTree = "<group>"; };
 		466CDF6D20EFA4DB00A86701 /* TabBarBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarBuilder.swift; sourceTree = "<group>"; };
+		4677E83A211E03600055517F /* TodaySchedule.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodaySchedule.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4677E83B211E03600055517F /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		4677E83E211E03600055517F /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		4677E843211E03600055517F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4677E84B211E051C0055517F /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		4677E84D211E053E0055517F /* JSONDecoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoding.swift; sourceTree = "<group>"; };
+		4677E853211E0F5C0055517F /* TommorowSchedule.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TommorowSchedule.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4677E856211E0F5C0055517F /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		4677E859211E0F5C0055517F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		4677E85B211E0F5C0055517F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4677E863211E0F7A0055517F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		4677E865211E124A0055517F /* JSONDecoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecoding.swift; sourceTree = "<group>"; };
+		4677E866211E124A0055517F /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		4677E869211E27E60055517F /* FSPO.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FSPO.entitlements; sourceTree = "<group>"; };
+		4677E86A211E28030055517F /* TodaySchedule.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodaySchedule.entitlements; sourceTree = "<group>"; };
+		4677E86B211E28090055517F /* TommorowSchedule.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TommorowSchedule.entitlements; sourceTree = "<group>"; };
 		467C20902119C936000736A8 /* Calibri.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Calibri.ttf; sourceTree = "<group>"; };
 		467C20952119DAAF000736A8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		467C209D2119DB5E000736A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -254,9 +314,14 @@
 		46F5BC9921173D6E00913931 /* JournalByDateLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalByDateLayout.swift; sourceTree = "<group>"; };
 		46F5BCA321178C4A00913931 /* SFCompactRounded-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactRounded-Regular.ttf"; sourceTree = "<group>"; };
 		46F5BCAD211792CC00913931 /* InsetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetView.swift; sourceTree = "<group>"; };
+		543062F1A1FAEFA7D30BA97E /* Pods_TodaySchedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodaySchedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		547768368EBCD51AD0F8726C /* Pods_FSPOUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FSPOUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AB84AAE1C33C2AE5B4C9735 /* Pods_FSPO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FSPO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		98F2198C9501845FB3E164BE /* Pods-TommorowSchedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TommorowSchedule.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TommorowSchedule/Pods-TommorowSchedule.debug.xcconfig"; sourceTree = "<group>"; };
+		AA46B36367B0FF72CBAC6737 /* Pods-TommorowSchedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TommorowSchedule.release.xcconfig"; path = "Pods/Target Support Files/Pods-TommorowSchedule/Pods-TommorowSchedule.release.xcconfig"; sourceTree = "<group>"; };
+		BC61A0DD6144705484A5D278 /* Pods-TodaySchedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaySchedule.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodaySchedule/Pods-TodaySchedule.debug.xcconfig"; sourceTree = "<group>"; };
 		BF4289B5E756B3EB9CC6C503 /* Pods-FSPO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSPO.release.xcconfig"; path = "Pods/Target Support Files/Pods-FSPO/Pods-FSPO.release.xcconfig"; sourceTree = "<group>"; };
+		C21AC064A12FA16717FABEBE /* Pods_TommorowSchedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TommorowSchedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8684DC6C579B2D06DA82249 /* Pods-FSPOUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSPOUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FSPOUITests/Pods-FSPOUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -266,6 +331,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				79799E434EEE2C2BC5FBE23A /* Pods_FSPOUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4677E837211E03600055517F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4677E83C211E03600055517F /* NotificationCenter.framework in Frameworks */,
+				7D0875CBEE6743DAFADDAD96 /* Pods_TodaySchedule.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4677E850211E0F5C0055517F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4677E854211E0F5C0055517F /* NotificationCenter.framework in Frameworks */,
+				BA40FD0A72E9F57725B4014E /* Pods_TommorowSchedule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +370,10 @@
 				BF4289B5E756B3EB9CC6C503 /* Pods-FSPO.release.xcconfig */,
 				0EB28521BED10455071BDC25 /* Pods-FSPOUITests.debug.xcconfig */,
 				F8684DC6C579B2D06DA82249 /* Pods-FSPOUITests.release.xcconfig */,
+				BC61A0DD6144705484A5D278 /* Pods-TodaySchedule.debug.xcconfig */,
+				34E002B8332208310038B66F /* Pods-TodaySchedule.release.xcconfig */,
+				98F2198C9501845FB3E164BE /* Pods-TommorowSchedule.debug.xcconfig */,
+				AA46B36367B0FF72CBAC6737 /* Pods-TommorowSchedule.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -440,6 +527,32 @@
 			path = News;
 			sourceTree = "<group>";
 		};
+		4677E83D211E03600055517F /* TodaySchedule */ = {
+			isa = PBXGroup;
+			children = (
+				4677E86A211E28030055517F /* TodaySchedule.entitlements */,
+				4677E843211E03600055517F /* Info.plist */,
+				4677E84D211E053E0055517F /* JSONDecoding.swift */,
+				4677E84B211E051C0055517F /* Layout.swift */,
+				4677E862211E0F7A0055517F /* MainInterface.storyboard */,
+				4677E83E211E03600055517F /* TodayViewController.swift */,
+			);
+			path = TodaySchedule;
+			sourceTree = "<group>";
+		};
+		4677E855211E0F5C0055517F /* TommorowSchedule */ = {
+			isa = PBXGroup;
+			children = (
+				4677E86B211E28090055517F /* TommorowSchedule.entitlements */,
+				4677E85B211E0F5C0055517F /* Info.plist */,
+				4677E865211E124A0055517F /* JSONDecoding.swift */,
+				4677E866211E124A0055517F /* Layout.swift */,
+				4677E858211E0F5C0055517F /* MainInterface.storyboard */,
+				4677E856211E0F5C0055517F /* TodayViewController.swift */,
+			);
+			path = TommorowSchedule;
+			sourceTree = "<group>";
+		};
 		467C20A6211A337C000736A8 /* JournalByTeacher */ = {
 			isa = PBXGroup;
 			children = (
@@ -566,8 +679,11 @@
 		46C1560F20DBB2D700F2BA79 = {
 			isa = PBXGroup;
 			children = (
+				4677E869211E27E60055517F /* FSPO.entitlements */,
 				46C1561A20DBB2D700F2BA79 /* FSPO-Viper */,
 				461DD699211CD60F007A68AA /* FSPOUITests */,
+				4677E83D211E03600055517F /* TodaySchedule */,
+				4677E855211E0F5C0055517F /* TommorowSchedule */,
 				46C1561920DBB2D700F2BA79 /* Products */,
 				14CEABD73764EDBF7615C1EB /* Pods */,
 				607951704E3601943721188E /* Frameworks */,
@@ -579,6 +695,8 @@
 			children = (
 				46C1561820DBB2D700F2BA79 /* FSPO.app */,
 				461DD698211CD60F007A68AA /* FSPOUITests.xctest */,
+				4677E83A211E03600055517F /* TodaySchedule.appex */,
+				4677E853211E0F5C0055517F /* TommorowSchedule.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -604,6 +722,9 @@
 			children = (
 				8AB84AAE1C33C2AE5B4C9735 /* Pods_FSPO.framework */,
 				547768368EBCD51AD0F8726C /* Pods_FSPOUITests.framework */,
+				4677E83B211E03600055517F /* NotificationCenter.framework */,
+				543062F1A1FAEFA7D30BA97E /* Pods_TodaySchedule.framework */,
+				C21AC064A12FA16717FABEBE /* Pods_TommorowSchedule.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -631,6 +752,42 @@
 			productReference = 461DD698211CD60F007A68AA /* FSPOUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		4677E839211E03600055517F /* TodaySchedule */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4677E847211E03600055517F /* Build configuration list for PBXNativeTarget "TodaySchedule" */;
+			buildPhases = (
+				D0A613138A6C6050238BB9BA /* [CP] Check Pods Manifest.lock */,
+				4677E836211E03600055517F /* Sources */,
+				4677E837211E03600055517F /* Frameworks */,
+				4677E838211E03600055517F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TodaySchedule;
+			productName = TodaySchedule;
+			productReference = 4677E83A211E03600055517F /* TodaySchedule.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		4677E852211E0F5C0055517F /* TommorowSchedule */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4677E85F211E0F5C0055517F /* Build configuration list for PBXNativeTarget "TommorowSchedule" */;
+			buildPhases = (
+				5236A70CA86DBDE6781CC6BA /* [CP] Check Pods Manifest.lock */,
+				4677E84F211E0F5C0055517F /* Sources */,
+				4677E850211E0F5C0055517F /* Frameworks */,
+				4677E851211E0F5C0055517F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TommorowSchedule;
+			productName = TommorowSchedule;
+			productReference = 4677E853211E0F5C0055517F /* TommorowSchedule.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		46C1561720DBB2D700F2BA79 /* FSPO */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46C1562A20DBB2D800F2BA79 /* Build configuration list for PBXNativeTarget "FSPO" */;
@@ -641,10 +798,14 @@
 				46C1561620DBB2D700F2BA79 /* Resources */,
 				463A1F9020DC271400E04656 /* SwiftLint */,
 				E55DDFA49110363AB6C64EE1 /* [CP] Embed Pods Frameworks */,
+				4677E833211DF6120055517F /* Crashlytics */,
+				4677E84A211E03600055517F /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4677E845211E03600055517F /* PBXTargetDependency */,
+				4677E85D211E0F5C0055517F /* PBXTargetDependency */,
 			);
 			name = FSPO;
 			productName = "FSPO-Viper";
@@ -665,8 +826,29 @@
 						CreatedOnToolsVersion = 9.4.1;
 						TestTargetID = 46C1561720DBB2D700F2BA79;
 					};
+					4677E839211E03600055517F = {
+						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					4677E852211E0F5C0055517F = {
+						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					46C1561720DBB2D700F2BA79 = {
 						CreatedOnToolsVersion = 9.4;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -686,6 +868,8 @@
 			targets = (
 				46C1561720DBB2D700F2BA79 /* FSPO */,
 				461DD697211CD60F007A68AA /* FSPOUITests */,
+				4677E839211E03600055517F /* TodaySchedule */,
+				4677E852211E0F5C0055517F /* TommorowSchedule */,
 			);
 		};
 /* End PBXProject section */
@@ -695,6 +879,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4677E838211E03600055517F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4677E864211E0F7A0055517F /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4677E851211E0F5C0055517F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4677E85A211E0F5C0055517F /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -760,6 +960,38 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
 		};
+		4677E833211DF6120055517F /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Crashlytics;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 184a1ada80a2b3fb49591ab01f62efdbff90c06c 52c5b161487f64200aa22766d1352488a32964341963c8392675d73586a4fc9d";
+		};
+		5236A70CA86DBDE6781CC6BA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TommorowSchedule-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B24F5DBC9D6B8358832F6985 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -772,6 +1004,24 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-FSPOUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0A613138A6C6050238BB9BA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TodaySchedule-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -834,6 +1084,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				461DD69B211CD60F007A68AA /* FSPOUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4677E836211E03600055517F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4677E83F211E03600055517F /* TodayViewController.swift in Sources */,
+				4677E84E211E053E0055517F /* JSONDecoding.swift in Sources */,
+				4677E84C211E051C0055517F /* Layout.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4677E84F211E0F5C0055517F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4677E867211E124A0055517F /* JSONDecoding.swift in Sources */,
+				4677E857211E0F5C0055517F /* TodayViewController.swift in Sources */,
+				4677E868211E124A0055517F /* Layout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -955,9 +1225,35 @@
 			target = 46C1561720DBB2D700F2BA79 /* FSPO */;
 			targetProxy = 461DD69D211CD60F007A68AA /* PBXContainerItemProxy */;
 		};
+		4677E845211E03600055517F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4677E839211E03600055517F /* TodaySchedule */;
+			targetProxy = 4677E844211E03600055517F /* PBXContainerItemProxy */;
+		};
+		4677E85D211E0F5C0055517F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4677E852211E0F5C0055517F /* TommorowSchedule */;
+			targetProxy = 4677E85C211E0F5C0055517F /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		4677E858211E0F5C0055517F /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4677E859211E0F5C0055517F /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		4677E862211E0F7A0055517F /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4677E863211E0F7A0055517F /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		467C209B2119DB53000736A8 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -991,6 +1287,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0EB28521BED10455071BDC25 /* Pods-FSPOUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PCHAWD2XTV;
 				INFOPLIST_FILE = FSPOUITests/Info.plist;
@@ -1011,6 +1308,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F8684DC6C579B2D06DA82249 /* Pods-FSPOUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PCHAWD2XTV;
 				INFOPLIST_FILE = FSPOUITests/Info.plist;
@@ -1024,6 +1322,98 @@
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = FSPO;
+			};
+			name = Release;
+		};
+		4677E848211E03600055517F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC61A0DD6144705484A5D278 /* Pods-TodaySchedule.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CODE_SIGN_ENTITLEMENTS = TodaySchedule/TodaySchedule.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PCHAWD2XTV;
+				INFOPLIST_FILE = TodaySchedule/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.casper6479.fspo.TodaySchedule;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4677E849211E03600055517F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34E002B8332208310038B66F /* Pods-TodaySchedule.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CODE_SIGN_ENTITLEMENTS = TodaySchedule/TodaySchedule.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PCHAWD2XTV;
+				INFOPLIST_FILE = TodaySchedule/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.casper6479.fspo.TodaySchedule;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4677E860211E0F5C0055517F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98F2198C9501845FB3E164BE /* Pods-TommorowSchedule.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CODE_SIGN_ENTITLEMENTS = TommorowSchedule/TommorowSchedule.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PCHAWD2XTV;
+				INFOPLIST_FILE = TommorowSchedule/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.casper6479.fspo.TommorowSchedule;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4677E861211E0F5C0055517F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA46B36367B0FF72CBAC6737 /* Pods-TommorowSchedule.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CODE_SIGN_ENTITLEMENTS = TommorowSchedule/TommorowSchedule.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PCHAWD2XTV;
+				INFOPLIST_FILE = TommorowSchedule/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.casper6479.fspo.TommorowSchedule;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1147,8 +1537,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0FB1107598BF6C73CB5B9F89 /* Pods-FSPO.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FSPO.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = PCHAWD2XTV;
 				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = "FSPO-Viper/Info.plist";
@@ -1157,7 +1550,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.casper6479.FSPO-Viper";
+				PRODUCT_BUNDLE_IDENTIFIER = com.casper6479.fspo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1168,7 +1561,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BF4289B5E756B3EB9CC6C503 /* Pods-FSPO.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FSPO.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PCHAWD2XTV;
 				ENABLE_TESTABILITY = NO;
@@ -1178,7 +1573,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.casper6479.FSPO-Viper";
+				PRODUCT_BUNDLE_IDENTIFIER = com.casper6479.fspo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1193,6 +1588,24 @@
 			buildConfigurations = (
 				461DD69F211CD60F007A68AA /* Debug */,
 				461DD6A0211CD60F007A68AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4677E847211E03600055517F /* Build configuration list for PBXNativeTarget "TodaySchedule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4677E848211E03600055517F /* Debug */,
+				4677E849211E03600055517F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4677E85F211E0F5C0055517F /* Build configuration list for PBXNativeTarget "TommorowSchedule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4677E860211E0F5C0055517F /* Debug */,
+				4677E861211E0F5C0055517F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -7,4 +7,4 @@
 */
 "CFBundleDisplayName" = "FSPO";
 "CFBundleName" = "FSPO";
-"Доступ к FaceID для подтверждения личности" = "test";
+"NSFaceIDUsageDescription" = "FaceID access for proving of identity";

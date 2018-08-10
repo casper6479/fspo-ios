@@ -15,6 +15,7 @@ class LoginInteractor: LoginInteractorProtocol {
     weak var presenter: LoginPresenterProtocol?
     private var token: String?
     private var userId: Int?
+    var defaults = UserDefaults(suiteName: "group.com.casper6479.fspo")
     func getGroupId(user_id: Int, token: String, completion: @escaping (Bool) -> Void) {
         let parameters: Parameters = [
             "user_id": user_id
@@ -27,8 +28,38 @@ class LoginInteractor: LoginInteractorProtocol {
             do {
                 let res = try JSONDecoder().decode(JSONDecoding.StudentHistoryApi.self, from: result!)
                 UserDefaults.standard.set(res.groups[res.groups.count-1].group_id, forKey: "user_group_id")
+                self.defaults?.set(res.groups[res.groups.count-1].group_id, forKey: "user_group_id")
             } catch {
-                print(error)
+                showMessage(message: "\(NSLocalizedString("Ошибка", comment: "")): \(error.localizedDescription)", y: 8)
+            }
+            completion(true)
+        }
+    }
+    func getRole(user_id: Int, token: String, completion: @escaping (Bool) -> Void) {
+        let parameters: Parameters = [
+            "user_id": user_id
+        ]
+        let headers: HTTPHeaders = [
+            "token": token
+        ]
+        Alamofire.request(Constants.RolesURL, method: .get, parameters: parameters, headers: headers).responseJSON { (response) in
+            let result = response.data
+            do {
+                let res = try JSONDecoder().decode(JSONDecoding.RolesApi.self, from: result!)
+                if res.parent {
+                    UserDefaults.standard.set("parent", forKey: "role")
+                    self.defaults?.set("parent", forKey: "role")
+                }
+                if res.student {
+                    UserDefaults.standard.set("student", forKey: "role")
+                    self.defaults?.set("student", forKey: "role")
+                }
+                if res.teacher {
+                    UserDefaults.standard.set("teacher", forKey: "role")
+                    self.defaults?.set("teacher", forKey: "role")
+                }
+            } catch {
+                showMessage(message: "\(NSLocalizedString("Ошибка", comment: "")): \(error.localizedDescription)", y: 8)
             }
             completion(true)
         }
@@ -71,9 +102,12 @@ class LoginInteractor: LoginInteractorProtocol {
             self.getGroupId(user_id: self.userId!, token: self.token!) { _ in
                 group.leave()
             }
+            group.enter()
+            self.getRole(user_id: self.userId!, token: self.token!) { _ in
+                group.leave()
+            }
         }
         group.notify(queue: .main) {
-//            print(UserDefaults.standard.string(forKey: "user_group_id"))
             self.presenter?.userLoggedIn()
         }
     }
