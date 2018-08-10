@@ -6,7 +6,6 @@
 //  Copyright © 2018 Николай Борисов. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 extension UITabBarController {
@@ -34,6 +33,7 @@ extension UITabBarController {
         tabBarController.viewControllers = navigationControllers
         tabBarController.tabBar.backgroundColor = .white
         tabBarController.tabBar.tintColor = UIColor.ITMOBlue
+        updateNothificationContext()
         return tabBarController
     }
 }

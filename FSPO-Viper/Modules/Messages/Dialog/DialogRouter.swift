@@ -12,12 +12,13 @@ import UIKit
 
 class DialogRouter: DialogWireframeProtocol {
     weak var viewController: UIViewController?
-    static func createModule(dialog_id: Int) -> UIViewController {
+    static func createModule(dialog_id: Int, title: String) -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = DialogViewController(nibName: nil, bundle: nil)
+        let view = DialogViewController()
         let interactor = DialogInteractor(dialog_user_id: dialog_id)
         let router = DialogRouter()
         let presenter = DialogPresenter(interface: view, interactor: interactor, router: router)
+        view.title = title
         view.presenter = presenter
         interactor.presenter = presenter
         router.viewController = view

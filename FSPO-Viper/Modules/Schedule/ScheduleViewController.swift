@@ -85,7 +85,15 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol {
             return ds
         }, completion: {
             if layoutAdapter == self.studentScheduleLayoutAdapter {
-                print("motherfucka did it")
+                var day = Calendar.current.component(.weekday, from: Date())
+                var indexPath = IndexPath(row: 0, section: 0)
+                day -= 2
+                if day == -1 {
+                    indexPath = IndexPath(row: 0, section: 0)
+                } else {
+                    indexPath = IndexPath(row: 0, section: day)
+                }
+                StudentScheduleLayout.tableView?.scrollToRow(at: indexPath, at: .top, animated: true)
             }
         })
     }

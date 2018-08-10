@@ -44,7 +44,9 @@ class ScheduleByGroupsReloadableLayoutAdapter: ReloadableViewLayoutAdapter {
         header?.textLabel?.textColor = .white
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    UIApplication.shared.keyWindow?.rootViewController?.childViewControllers[3].show(ScheduleListRouter.createModule(id: Int((ScheduleViewController.publicGroupsDS?.courses[indexPath.section].groups[indexPath.row].group_id)!)!, type: "group"), sender: ScheduleViewController())
+        let id = ScheduleViewController.publicGroupsDS?.courses[indexPath.section].groups[indexPath.row].group_id
+        let name = ScheduleViewController.publicGroupsDS?.courses[indexPath.section].groups[indexPath.row].name
+        tableView.navigationController()?.show(ScheduleListRouter.createModule(id: Int(id!)!, type: "group", title: name!), sender: ScheduleViewController())
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

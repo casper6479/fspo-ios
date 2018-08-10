@@ -56,8 +56,10 @@ class MessagesViewController: UIViewController, MessagesViewProtocol {
 }
 extension MessagesReloadableViewLayoutAdapter {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        MessagesViewController.nav?.show(DialogRouter.createModule(), sender: MessagesViewController())
-        UIApplication.shared.keyWindow?.rootViewController?.childViewControllers[2].show(DialogRouter.createModule(dialog_id: (MessagesViewController.publicDS?.dialogs[indexPath.row].dialog_user_id)!), sender: MessagesViewController())
+        let firstname = MessagesViewController.publicDS?.dialogs[indexPath.row].dialog_firstname
+        let lastname = MessagesViewController.publicDS?.dialogs[indexPath.row].dialog_lastname
+        let dialogId = (MessagesViewController.publicDS?.dialogs[indexPath.row].dialog_user_id)!
+        tableView.navigationController()?.show(DialogRouter.createModule(dialog_id: dialogId, title: "\(firstname!) \(lastname!)"), sender: MessagesViewController())
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

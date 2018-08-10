@@ -6,8 +6,6 @@
 //  Copyright © 2018 Николай Борисов. All rights reserved.
 //
 
-import Foundation
-
 public class JSONDecoding {
     struct NewsApi: Decodable {
         let news: [News]

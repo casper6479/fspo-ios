@@ -6,7 +6,6 @@
 //  Copyright © 2018 Николай Борисов. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class Constants {
@@ -27,4 +26,5 @@ class Constants {
     public static let DialogURL = "https://ifspo.ifmo.ru/api/messagesHistory"
     public static let TeachersURL = "https://ifspo.ifmo.ru/api/teachers"
     public static let GroupsURL = "https://ifspo.ifmo.ru/api/groups"
+    public static let ScheduleURL = "https://ifspo.ifmo.ru/api/schedule"
 }

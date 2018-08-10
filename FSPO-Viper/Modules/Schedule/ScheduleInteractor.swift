@@ -82,7 +82,7 @@ class ScheduleInteractor: ScheduleInteractorProtocol {
             "id": groupId,
             "week": week
         ]
-        Alamofire.request("https://ifspo.ifmo.ru/api/schedule", method: .get, parameters: params).responseJSON { (response) in
+        Alamofire.request(Constants.ScheduleURL, method: .get, parameters: params).responseJSON { (response) in
             let result = response.data
             do {
                 let res = try JSONDecoder().decode(JSONDecoding.StudentScheduleApi.self, from: result!)

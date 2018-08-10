@@ -78,10 +78,10 @@ class LoginInteractor: LoginInteractorProtocol {
                 do {
                     let res = try JSONDecoder().decode(JSONDecoding.ApiError.self, from: result!)
                     if res.error_code == 6 {
-//                        self.showToast(message: "Неправильные данные!")
+                        showMessage(message: NSLocalizedString("Неправильные данные!", comment: ""), y: 8)
                         //                        self.enter.returnToOriginalState()
                     } else {
-//                        self.showToast(message: "Ошибка: \(res.error_code)")
+                        showMessage(message: "\(NSLocalizedString("Ошибка", comment: "")): \(res.error_code)", y: 8)
                         //                        self.enter.returnToOriginalState()
                     }
                 } catch {

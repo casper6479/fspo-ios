@@ -194,7 +194,9 @@ open class HeaderLayout: InsetLayout<UITableViewHeaderFooterView> {
 //header?.textLabel?.textColor = .white
 class JournalByDateReloadableLayoutAdapter: ReloadableViewLayoutAdapter {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        UIApplication.shared.keyWindow?.rootViewController?.childViewControllers[1].show(JournalByTeacherRouter.createModule(lessonId: Int((JournalByDateViewController.publicDS?.exercises[indexPath.section].lesson_id)!)!), sender: JournalByDateViewController())
+        let lessonId = JournalByDateViewController.publicDS?.exercises[indexPath.section].lesson_id
+        let name = JournalByDateViewController.publicDS?.exercises[indexPath.section].lesson_name
+        tableView.navigationController()?.show(JournalByTeacherRouter.createModule(lessonId: Int(lessonId!)!, title: name!), sender: JournalByDateViewController())
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

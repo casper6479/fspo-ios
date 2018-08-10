@@ -9,6 +9,7 @@
 import UIKit
 import FPSCounter
 import IQKeyboardManagerSwift
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        if #available(iOS 10.0, *) {
+            let center = UNUserNotificationCenter.current()
+            let options: UNAuthorizationOptions = [.alert, .sound]
+            center.requestAuthorization(options: options) { (_, error) in
+                if error != nil {
+                    print("Error in notification auth")
+                }
+            }
+        } else {
+            /*if(UIApplication.instancesRespond(to: #selector(UIApplication.registerUserNotificationSettings(_:)))) {
+             UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types:[.alert, .sound], categories: nil))
+             }*/
+        }
         UIApplication.shared.statusBarStyle = .lightContent
         window = UIWindow(frame: UIScreen.main.bounds)
         if keychain["token"] != nil {

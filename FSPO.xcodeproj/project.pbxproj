@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0212571B49A68BEB1BA67E48 /* Pods_FSPO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB84AAE1C33C2AE5B4C9735 /* Pods_FSPO.framework */; };
+		460C7FD9211D8BE200D94ECB /* NotificationsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C7FD8211D8BE200D94ECB /* NotificationsWorker.swift */; };
 		461DD69B211CD60F007A68AA /* FSPOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461DD69A211CD60F007A68AA /* FSPOUITests.swift */; };
 		461FDAA720FA1AA30081C678 /* MessagesLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461FDAA620FA1AA30081C678 /* MessagesLayout.swift */; };
 		461FDAAA20FA713A0081C678 /* ProfileLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461FDAA820FA70530081C678 /* ProfileLayout.swift */; };
@@ -35,9 +36,9 @@
 		4621CEC620F01D9D00B17323 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621CEC520F01D9D00B17323 /* Font.swift */; };
 		4621CEC920F01E4400B17323 /* ALSSchlangesans.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4621CEC720F01E4400B17323 /* ALSSchlangesans.otf */; };
 		4621CECA20F01E4400B17323 /* ALSSchlangesans-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4621CEC820F01E4400B17323 /* ALSSchlangesans-Bold.otf */; };
+		464B2759211CFF5F006DBA66 /* ScheduleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464D8962211C4FD500D2799B /* ScheduleListViewController.swift */; };
 		464D8966211C4FD500D2799B /* ScheduleListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464D8960211C4FD500D2799B /* ScheduleListPresenter.swift */; };
 		464D8967211C4FD500D2799B /* ScheduleListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464D8961211C4FD500D2799B /* ScheduleListRouter.swift */; };
-		464D8968211C4FD500D2799B /* ScheduleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464D8962211C4FD500D2799B /* ScheduleListViewController.swift */; };
 		464D8969211C4FD500D2799B /* ScheduleListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464D8963211C4FD500D2799B /* ScheduleListProtocols.swift */; };
 		464D896A211C4FD500D2799B /* ScheduleListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464D8964211C4FD500D2799B /* ScheduleListInteractor.swift */; };
 		4660F8BC21136030005BF656 /* StudentScheduleCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660F8BB21136030005BF656 /* StudentScheduleCellLayout.swift */; };
@@ -69,7 +70,8 @@
 		46A9F9B020F1744C008E2653 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9F9AA20F1744C008E2653 /* LoginProtocols.swift */; };
 		46A9F9B120F1744C008E2653 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9F9AB20F1744C008E2653 /* LoginInteractor.swift */; };
 		46A9F9C120F2BA7F008E2653 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9F9C020F2BA7F008E2653 /* Button.swift */; };
-		46B6D4C1210A44CD00D83287 /* ToastExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6D4C0210A44CD00D83287 /* ToastExtension.swift */; };
+		46B42006211D9CFB00AB93B6 /* ResponderChainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B42005211D9CFB00AB93B6 /* ResponderChainHelper.swift */; };
+		46B6D4C1210A44CD00D83287 /* QuickMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6D4C0210A44CD00D83287 /* QuickMessage.swift */; };
 		46B6D4C3210A4EEF00D83287 /* KeychainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6D4C2210A4EEF00D83287 /* KeychainController.swift */; };
 		46B6D4CA210A5A3F00D83287 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6D4C4210A5A3F00D83287 /* SettingsPresenter.swift */; };
 		46B6D4CB210A5A3F00D83287 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6D4C5210A5A3F00D83287 /* SettingsRouter.swift */; };
@@ -133,6 +135,7 @@
 /* Begin PBXFileReference section */
 		0EB28521BED10455071BDC25 /* Pods-FSPOUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSPOUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FSPOUITests/Pods-FSPOUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0FB1107598BF6C73CB5B9F89 /* Pods-FSPO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSPO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FSPO/Pods-FSPO.debug.xcconfig"; sourceTree = "<group>"; };
+		460C7FD8211D8BE200D94ECB /* NotificationsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsWorker.swift; sourceTree = "<group>"; };
 		461DD698211CD60F007A68AA /* FSPOUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FSPOUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		461DD69A211CD60F007A68AA /* FSPOUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSPOUITests.swift; sourceTree = "<group>"; };
 		461DD69C211CD60F007A68AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -199,7 +202,8 @@
 		46A9F9AA20F1744C008E2653 /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
 		46A9F9AB20F1744C008E2653 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		46A9F9C020F2BA7F008E2653 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
-		46B6D4C0210A44CD00D83287 /* ToastExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastExtension.swift; sourceTree = "<group>"; };
+		46B42005211D9CFB00AB93B6 /* ResponderChainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderChainHelper.swift; sourceTree = "<group>"; };
+		46B6D4C0210A44CD00D83287 /* QuickMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickMessage.swift; sourceTree = "<group>"; };
 		46B6D4C2210A4EEF00D83287 /* KeychainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainController.swift; sourceTree = "<group>"; };
 		46B6D4C4210A5A3F00D83287 /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		46B6D4C5210A5A3F00D83287 /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
@@ -373,8 +377,10 @@
 				46A9F99B20F02C27008E2653 /* Color.swift */,
 				46A9F99D20F030B2008E2653 /* DateFormatter.swift */,
 				46A9F9A320F03FC2008E2653 /* StringSize.swift */,
-				46B6D4C0210A44CD00D83287 /* ToastExtension.swift */,
+				46B6D4C0210A44CD00D83287 /* QuickMessage.swift */,
 				46B6D4C2210A4EEF00D83287 /* KeychainController.swift */,
+				460C7FD8211D8BE200D94ECB /* NotificationsWorker.swift */,
+				46B42005211D9CFB00AB93B6 /* ResponderChainHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -838,6 +844,7 @@
 				46B6D4FF210B1E6D00D83287 /* JournalByDateProtocols.swift in Sources */,
 				46B6D50A210B1FC700D83287 /* MoreViewController.swift in Sources */,
 				46BDD9B221164D3300C5CD94 /* DialogLayout.swift in Sources */,
+				464B2759211CFF5F006DBA66 /* ScheduleListViewController.swift in Sources */,
 				4621CEAF20EFABC700B17323 /* JournalPresenter.swift in Sources */,
 				464D896A211C4FD500D2799B /* ScheduleListInteractor.swift in Sources */,
 				464D8969211C4FD500D2799B /* ScheduleListProtocols.swift in Sources */,
@@ -848,6 +855,7 @@
 				466CDF5020EF72F700A86701 /* NewsViewController.swift in Sources */,
 				46B6D4FD210B1E6D00D83287 /* JournalByDateRouter.swift in Sources */,
 				46639AF920FBEB0A00F4616B /* StudentScheduleLayout.swift in Sources */,
+				460C7FD9211D8BE200D94ECB /* NotificationsWorker.swift in Sources */,
 				4621CEA320EFABBE00B17323 /* ProfilePresenter.swift in Sources */,
 				46B6D516210B25B500D83287 /* ParentsPresenter.swift in Sources */,
 				46A9F9C120F2BA7F008E2653 /* Button.swift in Sources */,
@@ -855,7 +863,7 @@
 				4621CEA720EFABBE00B17323 /* ProfileInteractor.swift in Sources */,
 				467C20BC211A3438000736A8 /* JournalByTeacherProtocols.swift in Sources */,
 				46B6D50C210B1FC700D83287 /* MoreInteractor.swift in Sources */,
-				46B6D4C1210A44CD00D83287 /* ToastExtension.swift in Sources */,
+				46B6D4C1210A44CD00D83287 /* QuickMessage.swift in Sources */,
 				46B6D4CD210A5A3F00D83287 /* SettingsProtocols.swift in Sources */,
 				46F5BC9A21173D6E00913931 /* JournalByDateLayout.swift in Sources */,
 				46DF962820FC928700C4D901 /* TeachersListLayout.swift in Sources */,
@@ -874,7 +882,6 @@
 				46F5BCAE211792CC00913931 /* InsetView.swift in Sources */,
 				4621CEB120EFABC700B17323 /* JournalViewController.swift in Sources */,
 				46B6D4CC210A5A3F00D83287 /* SettingsViewController.swift in Sources */,
-				464D8968211C4FD500D2799B /* ScheduleListViewController.swift in Sources */,
 				46A9F9AE20F1744C008E2653 /* LoginRouter.swift in Sources */,
 				4621CEC620F01D9D00B17323 /* Font.swift in Sources */,
 				466CDF6E20EFA4DB00A86701 /* TabBarBuilder.swift in Sources */,
@@ -883,6 +890,7 @@
 				467C20BD211A3438000736A8 /* JournalByTeacherInteractor.swift in Sources */,
 				466CDF4E20EF72F700A86701 /* NewsPresenter.swift in Sources */,
 				4621CEA520EFABBE00B17323 /* ProfileViewController.swift in Sources */,
+				46B42006211D9CFB00AB93B6 /* ResponderChainHelper.swift in Sources */,
 				4621CEA620EFABBE00B17323 /* ProfileProtocols.swift in Sources */,
 				46B6D500210B1E6D00D83287 /* JournalByDateInteractor.swift in Sources */,
 				46A9F99C20F02C27008E2653 /* Color.swift in Sources */,
@@ -982,7 +990,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PCHAWD2XTV;
 				INFOPLIST_FILE = FSPOUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.casper6479.FSPOUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -998,7 +1010,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PCHAWD2XTV;
 				INFOPLIST_FILE = FSPOUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.casper6479.FSPOUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1133,7 +1149,10 @@
 				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = "FSPO-Viper/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.casper6479.FSPO-Viper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1151,7 +1170,10 @@
 				ENABLE_TESTABILITY = NO;
 				INFOPLIST_FILE = "FSPO-Viper/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.casper6479.FSPO-Viper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

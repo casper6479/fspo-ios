@@ -126,6 +126,12 @@ class StudentScheduleReloadableLayoutAdapter: ReloadableViewLayoutAdapter {
         header?.backgroundView?.backgroundColor = UIColor.ITMOBlue
         header?.textLabel?.font = UIFont.ITMOFontBold?.withSize(17)
         header?.textLabel?.backgroundColor = UIColor.ITMOBlue
+        var day = Calendar.current.component(.weekday, from: Date())
+        day -= 2
+        if section == day {
+            header?.backgroundView?.backgroundColor = UIColor(red: 65/255, green: 182/255, blue: 69/255, alpha: 1.0)
+            header?.textLabel?.backgroundColor = UIColor(red: 65/255, green: 182/255, blue: 69/255, alpha: 1.0)
+        }
         header?.textLabel?.textColor = .white
     }
 }

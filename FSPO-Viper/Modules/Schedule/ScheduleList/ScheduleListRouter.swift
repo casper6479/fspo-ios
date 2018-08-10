@@ -14,12 +14,13 @@ class ScheduleListRouter: ScheduleListWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule(id: Int, type: String) -> UIViewController {
+    static func createModule(id: Int, type: String, title: String) -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = ScheduleListViewController()
         let interactor = ScheduleListInteractor(id: id, type: type)
         let router = ScheduleListRouter()
         let presenter = ScheduleListPresenter(interface: view, interactor: interactor, router: router)
+        view.title = title
         view.presenter = presenter
         interactor.presenter = presenter
         router.viewController = view

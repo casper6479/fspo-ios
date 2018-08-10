@@ -65,3 +65,6 @@
 "Чётная" = "Even";
 "Нечётная" = "Odd";
 "Занятий нет" = "No lessons";
+"Ошибка при обновлении уведомлений" = "Error during notifications update";
+"Неправильные данные!" = "Wrong credentials!";
+"Ошибка" = "Error";

@@ -19,7 +19,7 @@ DEPENDENCIES:
   - SwiftLint
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Alamofire
     - FPSCounter
     - IQKeyboardManagerSwift
@@ -41,4 +41,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 96c7b2ebf71f906facc6bc28e148692d71234d70
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

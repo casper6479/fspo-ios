@@ -6,7 +6,6 @@
 //  Copyright © 2018 Николай Борисов. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 extension String {
