@@ -11,10 +11,12 @@ import LayoutKit
 
 class NewsViewController: UIViewController, NewsViewProtocol {
     var dataSource = [JSONDecoding.NewsApi.News]()
-    static var publicDS = [JSONDecoding.NewsApi.News]()
+    var offset = 0
+    var countAll: Int?
     func showNews(source: [JSONDecoding.NewsApi.News]) {
-        dataSource = source
-        NewsViewController.publicDS = source
+        for item in source {
+            dataSource.append(item)
+        }
         self.reloadTableView(width: tableView.frame.width, synchronous: false)
     }
     func showError(alert: UIAlertController) {
@@ -25,7 +27,7 @@ class NewsViewController: UIViewController, NewsViewProtocol {
     var tableView: UITableView!
 	override func viewDidLoad() {
         super.viewDidLoad()
-        presenter?.updateView()
+        presenter?.updateView(offset: 0)
         tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         reloadableViewLayoutAdapter = NewsReloadableViewLayoutAdapter(reloadableView: tableView)
@@ -33,6 +35,10 @@ class NewsViewController: UIViewController, NewsViewProtocol {
         tableView.delegate = reloadableViewLayoutAdapter
         tableView.separatorColor = .clear
         tableView.backgroundColor = UIColor.backgroundGray
+        let activity = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        activity.startAnimating()
+        activity.frame = CGRect(origin: .zero, size: CGSize(width: tableView.bounds.width, height: 44))
+        tableView.tableFooterView = activity
         view.addSubview(tableView)
     }
     func getNewsRows() -> [Layout] {
@@ -52,6 +58,19 @@ class NewsViewController: UIViewController, NewsViewProtocol {
     }
 }
 extension NewsReloadableViewLayoutAdapter {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.selectionStyle = .none
+        let newsVC = tableView.controller() as? NewsViewController
+        if indexPath.row == newsVC!.dataSource.count - 1 {
+            newsVC!.offset += 100
+            print(newsVC!.countAll!)
+            if newsVC!.countAll == 0 {
+                newsVC!.tableView.tableFooterView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 1, height: 1)))
+            } else {
+                newsVC!.presenter?.updateView(offset: newsVC!.offset)
+            }
+        }
+    }
     /*func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         /*DispatchQueue.global(qos: .userInitiated).async {
             return NewsViewController.publicDS[indexPath.row].text.height(withConstrainedWidth: UIScreen.main.bounds.width, font: (UIFont.ITMOFont?.withSize(17))!) + 74

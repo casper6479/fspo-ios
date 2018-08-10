@@ -13,18 +13,19 @@ protocol NewsWireframeProtocol: class {
 }
 // MARK: Presenter
 protocol NewsPresenterProtocol: class {
-    func updateView()
-    func updateData(data: [JSONDecoding.NewsApi.News])
+    func updateView(offset: Int)
+    func updateData(data: JSONDecoding.NewsApi)
     func updateFailed(alertController: UIAlertController)
 }
 // MARK: Interactor
 protocol NewsInteractorProtocol: class {
     var presenter: NewsPresenterProtocol? { get set }
-    func fetchNews()
+    func fetchNews(offset: Int)
 }
 // MARK: View
 protocol NewsViewProtocol: class {
     var presenter: NewsPresenterProtocol? { get set }
+    var countAll: Int? { get set }
     func showNews(source: [JSONDecoding.NewsApi.News])
     func showError(alert: UIAlertController)
 }

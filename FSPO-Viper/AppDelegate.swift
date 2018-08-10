@@ -54,8 +54,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false
         IQKeyboardManager.shared.keyboardDistanceFromTextField = 5
-        /*FPSCounter.showInStatusBar(UIApplication.shared)
-        FPSCounter().startTracking()*/
+
+        FPSCounter().startTracking()
 
         UINavigationBar.appearance().barTintColor = UIColor.ITMOBlue
         UINavigationBar.appearance().isTranslucent = false

@@ -9,6 +9,7 @@
 //
 
 import UIKit
+import FPSCounter
 
 class SettingsViewController: UIViewController, SettingsViewProtocol, UITableViewDelegate, UITableViewDataSource {
 
@@ -32,6 +33,9 @@ class SettingsViewController: UIViewController, SettingsViewProtocol, UITableVie
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            FPSCounter.showInStatusBar(UIApplication.shared)
+        }
         if indexPath.row == 1 {
             keychain["token"] = nil
             UserDefaults.standard.set(0, forKey: "user_id")

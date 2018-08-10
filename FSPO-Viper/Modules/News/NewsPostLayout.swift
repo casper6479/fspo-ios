@@ -66,7 +66,4 @@ open class NewsPostLayout: InsetLayout<View> {
 }
 
 class NewsReloadableViewLayoutAdapter: ReloadableViewLayoutAdapter {
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.selectionStyle = .none
-    }
 }

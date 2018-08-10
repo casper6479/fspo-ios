@@ -19,11 +19,12 @@ class NewsPresenter: NewsPresenterProtocol {
         self.interactor = interactor
         self.router = router
     }
-    func updateView() {
-        interactor?.fetchNews()
+    func updateView(offset: Int) {
+        return (interactor?.fetchNews(offset: offset))!
     }
-    func updateData(data: [JSONDecoding.NewsApi.News]) {
-        view?.showNews(source: data)
+    func updateData(data: JSONDecoding.NewsApi) {
+        view?.showNews(source: data.news)
+        view?.countAll = data.count_n
     }
     func updateFailed(alertController: UIAlertController) {
         view?.showError(alert: alertController)
