@@ -51,7 +51,6 @@ class FSPOUITests: XCTestCase {
             XCTAssert(leftPickerWheel.exists, "leftPickerWheel is wrong")
             leftPickerWheel.swipeDown()
             XCTAssert(datePickersQuery.pickerWheels[swipeDownMonth].exists, "leftPickerWheel after swipedown is wrong")
-//          TODO: write tableTest
 
             app.navigationBars["By date"].buttons["Journal"].tap()
             byDateButton.tap()

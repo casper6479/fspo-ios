@@ -13,6 +13,7 @@ def pods
 	pod 'NextGrowingTextView'
 	pod 'Fabric', '~> 1.7.9'
 	pod 'Crashlytics', '~> 3.10.5'
+	pod 'Cache'
   end
 
 target 'FSPO' do

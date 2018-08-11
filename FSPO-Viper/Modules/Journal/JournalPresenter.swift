@@ -11,7 +11,6 @@
 import UIKit
 
 class JournalPresenter: JournalPresenterProtocol {
-
     weak private var view: JournalViewProtocol?
     var interactor: JournalInteractorProtocol?
     private let router: JournalWireframeProtocol
@@ -21,11 +20,11 @@ class JournalPresenter: JournalPresenterProtocol {
         self.interactor = interactor
         self.router = router
     }
-    func updateView() {
-        interactor?.fetchJournal()
+    func updateView(cache: JSONDecoding.JournalApi?) {
+        interactor?.fetchJournal(cache: cache)
     }
-    func journalFetched(dolgs: String, percent: String, score: String) {
-        view?.fillView(dolgs: dolgs, percent: percent, score: score)
+    func journalFetched(data: JSONDecoding.JournalApi) {
+        view?.fillView(data: data)
     }
     @objc func showByDate() {
         view?.show(vc: JournalByDateRouter.createModule())

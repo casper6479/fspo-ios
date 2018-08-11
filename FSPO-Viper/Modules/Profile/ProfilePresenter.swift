@@ -20,8 +20,8 @@ class ProfilePresenter: ProfilePresenterProtocol {
         self.interactor = interactor
         self.router = router
     }
-    func updateView() {
-        interactor?.fetchProfile()
+    func updateView(cache: JSONDecoding.ProfileApi?) {
+        interactor?.fetchProfile(cache: cache)
     }
     func profileFetched(data: JSONDecoding.ProfileApi) {
         view?.fillView(data: data)

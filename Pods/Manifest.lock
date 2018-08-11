@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.7.2)
+  - Cache (5.0.0)
   - Crashlytics (3.10.5):
     - Fabric (~> 1.7.9)
   - Fabric (1.7.9)
@@ -13,6 +14,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Cache
   - Crashlytics (~> 3.10.5)
   - Fabric (~> 1.7.9)
   - FPSCounter
@@ -26,6 +28,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - Cache
     - Crashlytics
     - Fabric
     - FPSCounter
@@ -38,6 +41,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  Cache: fae4826ba52d7a5d9a3a0ad6fe73e3501a82964f
   Crashlytics: 7f2e38d302d9da96475b3d64d86fb29e31a542b7
   Fabric: a2917d3895e4c1569b9c3170de7320ea1b1e6661
   FPSCounter: c0fac1110b723872ab960c929ad672fd956e6a4e
@@ -48,6 +52,6 @@ SPEC CHECKSUMS:
   NextGrowingTextView: 78c8b96f7ac6dc845f5babb27dcf7c18dd3210ec
   SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
 
-PODFILE CHECKSUM: 1ab5ad35cebddda267659a5bfd047476745d5f63
+PODFILE CHECKSUM: bd90575e62f90ac4e71e8598c807ba5e6fcacf5c
 
 COCOAPODS: 1.5.3

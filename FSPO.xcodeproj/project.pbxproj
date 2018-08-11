@@ -132,6 +132,7 @@
 		46F5BC9A21173D6E00913931 /* JournalByDateLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F5BC9921173D6E00913931 /* JournalByDateLayout.swift */; };
 		46F5BCAC21178C4A00913931 /* SFCompactRounded-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46F5BCA321178C4A00913931 /* SFCompactRounded-Regular.ttf */; };
 		46F5BCAE211792CC00913931 /* InsetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F5BCAD211792CC00913931 /* InsetView.swift */; };
+		46FED984211E2F93007737EB /* CacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FED983211E2F93007737EB /* CacheStorage.swift */; };
 		79799E434EEE2C2BC5FBE23A /* Pods_FSPOUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 547768368EBCD51AD0F8726C /* Pods_FSPOUITests.framework */; };
 		7D0875CBEE6743DAFADDAD96 /* Pods_TodaySchedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 543062F1A1FAEFA7D30BA97E /* Pods_TodaySchedule.framework */; };
 		BA40FD0A72E9F57725B4014E /* Pods_TommorowSchedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C21AC064A12FA16717FABEBE /* Pods_TommorowSchedule.framework */; };
@@ -314,6 +315,7 @@
 		46F5BC9921173D6E00913931 /* JournalByDateLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalByDateLayout.swift; sourceTree = "<group>"; };
 		46F5BCA321178C4A00913931 /* SFCompactRounded-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactRounded-Regular.ttf"; sourceTree = "<group>"; };
 		46F5BCAD211792CC00913931 /* InsetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetView.swift; sourceTree = "<group>"; };
+		46FED983211E2F93007737EB /* CacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheStorage.swift; sourceTree = "<group>"; };
 		543062F1A1FAEFA7D30BA97E /* Pods_TodaySchedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodaySchedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		547768368EBCD51AD0F8726C /* Pods_FSPOUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FSPOUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AB84AAE1C33C2AE5B4C9735 /* Pods_FSPO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FSPO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -471,6 +473,7 @@
 				46A9F9A320F03FC2008E2653 /* StringSize.swift */,
 				466CDF6D20EFA4DB00A86701 /* TabBarBuilder.swift */,
 				4641E548211DBAF00015A425 /* BiometricLayout.swift */,
+				46FED983211E2F93007737EB /* CacheStorage.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -924,6 +927,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FSPOUITests/Pods-FSPOUITests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
 				"${BUILT_PRODUCTS_DIR}/FPSCounter/FPSCounter.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
@@ -934,6 +938,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FPSCounter.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
@@ -1054,6 +1059,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FSPO/Pods-FSPO-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
 				"${BUILT_PRODUCTS_DIR}/FPSCounter/FPSCounter.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
@@ -1064,6 +1070,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FPSCounter.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
@@ -1133,6 +1140,7 @@
 				46B6D516210B25B500D83287 /* ParentsPresenter.swift in Sources */,
 				46A9F9C120F2BA7F008E2653 /* Button.swift in Sources */,
 				466CDF4F20EF72F700A86701 /* NewsRouter.swift in Sources */,
+				46FED984211E2F93007737EB /* CacheStorage.swift in Sources */,
 				4621CEA720EFABBE00B17323 /* ProfileInteractor.swift in Sources */,
 				467C20BC211A3438000736A8 /* JournalByTeacherProtocols.swift in Sources */,
 				46B6D50C210B1FC700D83287 /* MoreInteractor.swift in Sources */,

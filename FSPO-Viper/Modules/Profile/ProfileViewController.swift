@@ -21,8 +21,21 @@ class ProfileViewController: UIViewController, ProfileViewProtocol {
         settingButton.setImage(UIImage(named: "settings"), for: .normal)
         settingButton.addTarget(self, action: #selector(setNeedsShowSettings), for: .touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: settingButton)
-//        fillView(firstname: "", lastname: "", middlename: "", email: "", phone: "", birthday: "", nationality: "", school: "", segrys: "", photo: UIImage(named: "test")!)
-        presenter?.updateView()
+        storage?.async.object(forKey: "profile", completion: { result in
+            switch result {
+            case .value(let data):
+                if let decoded = try? JSONDecoder().decode(JSONDecoding.ProfileApi.self, from: data) {
+                    DispatchQueue.main.async {
+                        self.fillView(data: decoded)
+                    }
+                    self.presenter?.updateView(cache: decoded)
+                } else {
+                    self.presenter?.updateView(cache: nil)
+                }
+            case .error:
+                self.presenter?.updateView(cache: nil)
+            }
+        })
     }
     func fillView(data: JSONDecoding.ProfileApi) {
         let width = view.bounds.width

@@ -17,13 +17,13 @@ protocol MessagesWireframeProtocol: class {
 }
 // MARK: Presenter -
 protocol MessagesPresenterProtocol: class {
-    func updateView()
+    func updateView(cache: JSONDecoding.MessagesApi?)
     func messagesFetched(data: JSONDecoding.MessagesApi)
 }
 
 // MARK: Interactor -
 protocol MessagesInteractorProtocol: class {
-    func fetchMessages()
+    func fetchMessages(cache: JSONDecoding.MessagesApi?)
   var presenter: MessagesPresenterProtocol? { get set }
 }
 

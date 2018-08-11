@@ -12,9 +12,8 @@ import UIKit
 import Alamofire
 
 class MessagesInteractor: MessagesInteractorProtocol {
-
     weak var presenter: MessagesPresenterProtocol?
-    func fetchMessages() {
+    func fetchMessages(cache: JSONDecoding.MessagesApi?) {
         let headers: HTTPHeaders = [
             "token": keychain["token"]!
         ]
@@ -22,7 +21,20 @@ class MessagesInteractor: MessagesInteractorProtocol {
             let result = response.data
             do {
                 let res = try JSONDecoder().decode(JSONDecoding.MessagesApi.self, from: result!)
-                self.presenter?.messagesFetched(data: res)
+                if let safeCache = cache {
+                    if safeCache != res {
+                        print("cache is deprecated")
+                        clearCache(forKey: "messages")
+                        updateCache(with: result!, forKey: "messages")
+                        self.presenter?.messagesFetched(data: res)
+                    } else {
+                        print("found in cache")
+                    }
+                } else {
+                    print("cache is empty")
+                    updateCache(with: result!, forKey: "messages")
+                    self.presenter?.messagesFetched(data: res)
+                }
             } catch {
                 print(error)
             }

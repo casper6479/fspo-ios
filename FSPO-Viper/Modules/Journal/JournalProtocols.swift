@@ -16,26 +16,23 @@ protocol JournalWireframeProtocol: class {
 
 }
 // MARK: Presenter -
-@objc protocol JournalPresenterProtocol: class {
-    func updateView()
-    func journalFetched(dolgs: String, percent: String, score: String)
-    @objc func showByDate()
-    @objc func showBySubject()
-    @objc func showMore()
+protocol JournalPresenterProtocol: class {
+    func updateView(cache: JSONDecoding.JournalApi?)
+    func journalFetched(data: JSONDecoding.JournalApi)
+    func showByDate()
+    func showBySubject()
+    func showMore()
 }
 
 // MARK: Interactor -
 protocol JournalInteractorProtocol: class {
-  func fetchJournal()
+    func fetchJournal(cache: JSONDecoding.JournalApi?)
   var presenter: JournalPresenterProtocol? { get set }
 }
 
 // MARK: View -
 protocol JournalViewProtocol: class {
-    func setNeedsShowByDate()
-    func setNeedsShowBySubject()
-    func setNeedsShowMore()
     var presenter: JournalPresenterProtocol? { get set }
-    func fillView(dolgs: String, percent: String, score: String)
+    func fillView(data: JSONDecoding.JournalApi)
     func show(vc: UIViewController)
 }

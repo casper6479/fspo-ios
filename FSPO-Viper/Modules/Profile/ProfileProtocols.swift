@@ -18,13 +18,13 @@ protocol ProfileWireframeProtocol: class {
 protocol ProfilePresenterProtocol: class {
     func showSettings()
     func showParents()
-    func updateView()
+    func updateView(cache: JSONDecoding.ProfileApi?)
     func profileFetched(data: JSONDecoding.ProfileApi)
 }
 
 // MARK: Interactor -
 protocol ProfileInteractorProtocol: class {
-    func fetchProfile()
+    func fetchProfile(cache: JSONDecoding.ProfileApi?)
     var presenter: ProfilePresenterProtocol? { get set }
 }
 

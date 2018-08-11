@@ -29,10 +29,10 @@ class LoginInteractor: LoginInteractorProtocol {
                 let res = try JSONDecoder().decode(JSONDecoding.StudentHistoryApi.self, from: result!)
                 UserDefaults.standard.set(res.groups[res.groups.count-1].group_id, forKey: "user_group_id")
                 self.defaults?.set(res.groups[res.groups.count-1].group_id, forKey: "user_group_id")
+                completion(true)
             } catch {
                 showMessage(message: "\(NSLocalizedString("Ошибка", comment: "")): \(error.localizedDescription)", y: 8)
             }
-            completion(true)
         }
     }
     func getRole(user_id: Int, token: String, completion: @escaping (Bool) -> Void) {
@@ -58,10 +58,10 @@ class LoginInteractor: LoginInteractorProtocol {
                     UserDefaults.standard.set("teacher", forKey: "role")
                     self.defaults?.set("teacher", forKey: "role")
                 }
+                completion(true)
             } catch {
                 showMessage(message: "\(NSLocalizedString("Ошибка", comment: "")): \(error.localizedDescription)", y: 8)
             }
-            completion(true)
         }
     }
     func getToken(completion: @escaping (Bool) -> Void) {
@@ -78,6 +78,7 @@ class LoginInteractor: LoginInteractorProtocol {
                 UserDefaults.standard.set(res.user_id, forKey: "user_id")
                 self.userId = res.user_id
                 self.token = res.token
+                completion(true)
             } catch Swift.DecodingError.keyNotFound {
                 do {
                     let res = try JSONDecoder().decode(JSONDecoding.ApiError.self, from: result!)
@@ -92,7 +93,6 @@ class LoginInteractor: LoginInteractorProtocol {
             } catch {
                 print("другая ошибка")
             }
-            completion(true)
         }
     }
     func login() {

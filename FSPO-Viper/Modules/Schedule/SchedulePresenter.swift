@@ -20,10 +20,14 @@ class SchedulePresenter: SchedulePresenterProtocol {
         self.interactor = interactor
         self.router = router
     }
-    func updateView() {
+    func updateSchedule(cache: JSONDecoding.StudentScheduleApi?) {
+        interactor?.fetchStudentSchedule(week: "now", cache: cache)
+    }
+    func updateGroups(cache: JSONDecoding.GetGroupsApi?) {
         interactor?.fetchScheduleByGroups()
+    }
+    func updateTeachers(cache: JSONDecoding.GetGroupsApi?) {
         interactor?.fetchTeachers()
-        interactor?.fetchStudentSchedule(week: "now")
     }
     func teachersFetched(data: JSONDecoding.GetTeachersApi) {
         view?.showNewTeacherRows(source: data)
@@ -35,6 +39,6 @@ class SchedulePresenter: SchedulePresenterProtocol {
         view?.showNewStudentScheduleRows(source: data)
     }
     func updateStudentSchedule(week: String) {
-        interactor?.fetchStudentSchedule(week: week)
+        interactor?.fetchStudentSchedule(week: week, cache: nil)
     }
 }

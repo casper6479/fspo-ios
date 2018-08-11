@@ -19,8 +19,8 @@ class NewsPresenter: NewsPresenterProtocol {
         self.interactor = interactor
         self.router = router
     }
-    func updateView(offset: Int) {
-        return (interactor?.fetchNews(offset: offset))!
+    func updateView(offset: Int, cache: [JSONDecoding.NewsApi.News]?) {
+        return (interactor?.fetchNews(offset: offset, cache: cache))!
     }
     func updateData(data: JSONDecoding.NewsApi) {
         view?.showNews(source: data.news)

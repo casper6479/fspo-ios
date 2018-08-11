@@ -51,30 +51,12 @@ class ScheduleInteractor: ScheduleInteractorProtocol {
             do {
                 let res = try JSONDecoder().decode(JSONDecoding.GetGroupsApi.self, from: result!)
                 self.presenter?.scheduleByGroupsFetched(data: res)
-                /*self.groups = res.courses
-                self.groupsLoaded = true
-                if self.groupsLoaded && self.teachersLoaded && self.myLoaded {
-                    stopLoader()
-                }
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                    UIView.animate(withDuration: 0.3, animations: {
-                        self.tableView.alpha = 1
-                    }, completion:  nil)
-                    UIView.animate(withDuration: 0.3, animations: {
-                        self.tableView1.alpha = 1
-                    }, completion: nil)
-                    UIView.animate(withDuration: 0.3, animations: {
-                        self.pageControl.alpha = 1
-                    }, completion: nil)
-                    self.scView.isUserInteractionEnabled = true
-                }*/
             } catch {
                 print(error)
             }
         }
     }
-    func fetchStudentSchedule(week: String) {
+    func fetchStudentSchedule(week: String, cache: JSONDecoding.StudentScheduleApi?) {
         let groupId = UserDefaults.standard.integer(forKey: "user_group_id")
         let params: Parameters = [
             "app_key": Constants.AppKey,
@@ -86,50 +68,20 @@ class ScheduleInteractor: ScheduleInteractorProtocol {
             let result = response.data
             do {
                 let res = try JSONDecoder().decode(JSONDecoding.StudentScheduleApi.self, from: result!)
-                self.presenter?.studentScheduleFetched(data: res)
-                /*self.arr = res.weekdays
-                self.myLoaded = true
-                if self.groupsLoaded && self.teachersLoaded && self.myLoaded {
-                    stopLoader()
-                }
-                UserDefaults.standard.set(try? PropertyListEncoder().encode(self.arr), forKey:"MyScheduleCache")
-                if self.week_id == "now" {
-                    if res.week == "odd" {
-                        self.first_segment = "odd"
-                        self.segmentedControl.setTitle("Нечётная", forSegmentAt: 0)
-                        self.segmentedControl.setTitle("Чётная", forSegmentAt: 1)
+                if let safeCache = cache {
+                    if safeCache != res {
+                        print("cache is deprecated")
+                        clearCache(forKey: "schedule")
+                        updateCache(with: result!, forKey: "schedule")
+                        self.presenter?.studentScheduleFetched(data: res)
                     } else {
-                        self.first_segment = "self"
-                        self.segmentedControl.setTitle("Чётная", forSegmentAt: 0)
-                        self.segmentedControl.setTitle("Нечётная", forSegmentAt: 1)
+                        print("found in cache")
                     }
+                } else {
+                    print("cache is empty")
+                    updateCache(with: result!, forKey: "schedule")
+                    self.presenter?.studentScheduleFetched(data: res)
                 }
-                DispatchQueue.main.async {
-                    self.tableView0.reloadData()
-                    self.scView.isScrollEnabled = true
-                    self.segmentedControl.tintColor = UIColor.white
-                    UIView.animate(withDuration: 0.3, animations: {
-                        self.tableView0.alpha = 1
-                        self.segmentedControl.alpha = 1
-                        self.backgrView.backgroundColor = UIColor(red: 25/255, green: 70/255, blue: 186/255, alpha: 1)
-                    }, completion: {finalized in
-                        let date = Date()
-                        let calendar = Calendar.current
-                        var day = calendar.component(.weekday, from: date)
-                        var indexPath = IndexPath(row: 0, section: 0)
-                        day = day-2
-                        if day == -1 {
-                            indexPath = IndexPath(row: 0, section: 0)
-                        } else {
-                            indexPath = IndexPath(row: 0, section: day)
-                        }
-                        if !UserDefaults.standard.bool(forKey: "Spring") {
-                            self.tableView0.scrollToRow(at: indexPath, at: .top, animated: true)
-                        }
-                    })
-                    
-                    
-                }*/
             } catch {
                 print(error)
             }

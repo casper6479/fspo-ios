@@ -20,8 +20,8 @@ class MessagesPresenter: MessagesPresenterProtocol {
         self.interactor = interactor
         self.router = router
     }
-    func updateView() {
-        interactor?.fetchMessages()
+    func updateView(cache: JSONDecoding.MessagesApi?) {
+        interactor?.fetchMessages(cache: cache)
     }
     func messagesFetched(data: JSONDecoding.MessagesApi) {
         view?.showNewRows(source: data)

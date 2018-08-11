@@ -7,10 +7,10 @@
 //
 
 public class JSONDecoding {
-    struct NewsApi: Decodable {
+    struct NewsApi: Decodable, Equatable {
         let news: [News]
         let count_n: Int
-        struct News: Decodable {
+        struct News: Decodable, Equatable {
             let text: String
             let ndatetime: String
         }
@@ -28,7 +28,7 @@ public class JSONDecoding {
         let parent: Bool
         let teacher: Bool
     }
-    struct JournalApi: Decodable {
+    struct JournalApi: Decodable, Equatable {
         let avg_score: Double
         let debts: Int
         let visits: Int
@@ -65,7 +65,7 @@ public class JSONDecoding {
     public struct ParentsApi: Decodable {
         let relatives: [ProfileApi]
     }
-    public struct ProfileApi: Decodable {
+    public struct ProfileApi: Decodable, Equatable {
         let firstname: String
         let middlename: String
         let lastname: String
@@ -77,9 +77,9 @@ public class JSONDecoding {
         let school: Int?
         let segrys: Bool?
     }
-    struct MessagesApi: Decodable {
+    struct MessagesApi: Decodable, Equatable {
         let dialogs: [DialogBody]
-        struct DialogBody: Decodable {
+        struct DialogBody: Decodable, Equatable {
             let dialog_lastname: String
             let dialog_firstname: String
             let dialog_photo: String
@@ -119,18 +119,18 @@ public class JSONDecoding {
             }
         }
     }
-    public struct StudentScheduleApi: Decodable {
+    public struct StudentScheduleApi: Decodable, Equatable {
         let week: String?
         let weekdays: [Weekdays]
-        public struct Weekdays: Decodable {
+        public struct Weekdays: Decodable, Equatable {
             let periods: [Periods]
             let weekday: String
-            public struct Periods: Decodable {
+            public struct Periods: Decodable, Equatable {
                 let schedule: [Schedule]
                 let period: Int
                 let period_start: String
                 let period_end: String
-                public struct Schedule: Decodable {
+                public struct Schedule: Decodable, Equatable {
                     let name: String
                     let lastname: String
                     let middlename: String

@@ -8,16 +8,21 @@
 
 import UIKit
 import LayoutKit
+import Cache
 
 class NewsViewController: UIViewController, NewsViewProtocol {
+
     var dataSource = [JSONDecoding.NewsApi.News]()
     var offset = 0
     var countAll: Int?
+
     func showNews(source: [JSONDecoding.NewsApi.News]) {
         for item in source {
             dataSource.append(item)
         }
-        self.reloadTableView(width: tableView.frame.width, synchronous: false)
+        DispatchQueue.main.async {
+            self.reloadTableView(width: self.tableView.frame.width, synchronous: false)
+        }
     }
     func showError(alert: UIAlertController) {
         present(alert, animated: true, completion: nil)
@@ -27,7 +32,19 @@ class NewsViewController: UIViewController, NewsViewProtocol {
     var tableView: UITableView!
 	override func viewDidLoad() {
         super.viewDidLoad()
-        presenter?.updateView(offset: 0)
+        storage?.async.object(forKey: "news", completion: { result in
+            switch result {
+            case .value(let data):
+                if let decoded = try? JSONDecoder().decode(JSONDecoding.NewsApi.self, from: data) {
+                    self.showNews(source: decoded.news)
+                    self.presenter?.updateView(offset: 0, cache: decoded.news)
+                } else {
+                    self.presenter?.updateView(offset: 0, cache: nil)
+                }
+            case .error:
+                self.presenter?.updateView(offset: 0, cache: nil)
+            }
+        })
         tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         reloadableViewLayoutAdapter = NewsReloadableViewLayoutAdapter(reloadableView: tableView)
@@ -66,7 +83,7 @@ extension NewsReloadableViewLayoutAdapter {
             if newsVC!.countAll == 0 {
                 newsVC!.tableView.tableFooterView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 1, height: 1)))
             } else {
-                newsVC!.presenter?.updateView(offset: newsVC!.offset)
+                newsVC!.presenter?.updateView(offset: newsVC!.offset, cache: nil)
             }
         }
     }

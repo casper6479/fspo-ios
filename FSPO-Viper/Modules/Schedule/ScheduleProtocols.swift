@@ -14,7 +14,9 @@ protocol ScheduleWireframeProtocol: class {
 }
 // MARK: Presenter -
 protocol SchedulePresenterProtocol: class {
-    func updateView()
+    func updateSchedule(cache: JSONDecoding.StudentScheduleApi?)
+    func updateGroups(cache: JSONDecoding.GetGroupsApi?)
+    func updateTeachers(cache: JSONDecoding.GetGroupsApi?)
     func teachersFetched(data: JSONDecoding.GetTeachersApi)
     func scheduleByGroupsFetched(data: JSONDecoding.GetGroupsApi)
     func studentScheduleFetched(data: JSONDecoding.StudentScheduleApi)
@@ -25,7 +27,7 @@ protocol SchedulePresenterProtocol: class {
 protocol ScheduleInteractorProtocol: class {
     func fetchTeachers()
     func fetchScheduleByGroups()
-    func fetchStudentSchedule(week: String)
+    func fetchStudentSchedule(week: String, cache: JSONDecoding.StudentScheduleApi?)
   var presenter: SchedulePresenterProtocol? { get set }
 }
 

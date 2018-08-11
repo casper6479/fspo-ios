@@ -13,18 +13,18 @@ import LayoutKit
 import Crashlytics
 
 class MessagesViewController: UIViewController, MessagesViewProtocol {
-    static var publicDS: JSONDecoding.MessagesApi?
+    var publicDS: JSONDecoding.MessagesApi?
     func showNewRows(source: JSONDecoding.MessagesApi) {
-        MessagesViewController.publicDS = source
-        reloadTableView(width: tableView.frame.width, synchronous: false, data: source)
+        publicDS = source
+        DispatchQueue.main.async {
+            self.reloadTableView(width: self.tableView.frame.width, synchronous: false, data: source)
+        }
     }
-//    static var nav: UINavigationController?
 	var presenter: MessagesPresenterProtocol?
     private var reloadableViewLayoutAdapter: ReloadableViewLayoutAdapter!
     private var tableView: UITableView!
 	override func viewDidLoad() {
         super.viewDidLoad()
-//        MessagesViewController.nav = self.navigationController
         tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         reloadableViewLayoutAdapter = MessagesReloadableViewLayoutAdapter(reloadableView: tableView)
@@ -33,7 +33,19 @@ class MessagesViewController: UIViewController, MessagesViewProtocol {
         tableView.separatorColor = .clear
         tableView.backgroundColor = UIColor.backgroundGray
         view.addSubview(tableView)
-        presenter?.updateView()
+        storage?.async.object(forKey: "messages", completion: { result in
+            switch result {
+            case .value(let data):
+                if let decoded = try? JSONDecoder().decode(JSONDecoding.MessagesApi.self, from: data) {
+                    self.showNewRows(source: decoded)
+                    self.presenter?.updateView(cache: decoded)
+                } else {
+                    self.presenter?.updateView(cache: nil)
+                }
+            case .error:
+                self.presenter?.updateView(cache: nil)
+            }
+        })
     }
     func getNewRows(data: JSONDecoding.MessagesApi) -> [Layout] {
         var layouts = [Layout]()
@@ -57,9 +69,11 @@ class MessagesViewController: UIViewController, MessagesViewProtocol {
 }
 extension MessagesReloadableViewLayoutAdapter {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let firstname = MessagesViewController.publicDS?.dialogs[indexPath.row].dialog_firstname
-        let lastname = MessagesViewController.publicDS?.dialogs[indexPath.row].dialog_lastname
-        let dialogId = (MessagesViewController.publicDS?.dialogs[indexPath.row].dialog_user_id)!
+        let vc = tableView.controller() as? MessagesViewController
+        let datasource = vc!.publicDS
+        let firstname = datasource?.dialogs[indexPath.row].dialog_firstname
+        let lastname = datasource?.dialogs[indexPath.row].dialog_lastname
+        let dialogId = (datasource?.dialogs[indexPath.row].dialog_user_id)!
         tableView.navigationController()?.show(DialogRouter.createModule(dialog_id: dialogId, title: "\(firstname!) \(lastname!)"), sender: MessagesViewController())
         tableView.deselectRow(at: indexPath, animated: true)
     }

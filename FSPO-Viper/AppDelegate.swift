@@ -33,10 +33,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         if window?.rootViewController != loginModule {
             var authError: NSError?
-            if authContex.canEvaluatePolicy(.deviceOwnerAuthentication, error: &authError) {
-                showGuard(window: window!)
-            } else {
-                showMessage(message: (authError?.localizedDescription)!, y: 16)
+            if !UserDefaults.standard.bool(forKey: "biometricDisabled") {
+                if authContex.canEvaluatePolicy(.deviceOwnerAuthentication, error: &authError) {
+                    showGuard(window: window!)
+                } else {
+                    showMessage(message: (authError?.localizedDescription)!, y: 16)
+                }
             }
         }
         if #available(iOS 10.0, *) {

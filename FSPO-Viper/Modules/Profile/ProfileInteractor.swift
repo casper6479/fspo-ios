@@ -12,7 +12,7 @@ import UIKit
 import Alamofire
 
 class ProfileInteractor: ProfileInteractorProtocol {
-    func fetchProfile() {
+    func fetchProfile(cache: JSONDecoding.ProfileApi?) {
         let user_id = UserDefaults.standard.integer(forKey: "user_id")
         let params: Parameters = [
             "user_id": user_id
@@ -24,82 +24,20 @@ class ProfileInteractor: ProfileInteractorProtocol {
             let result = response.data
             do {
                 let res = try JSONDecoder().decode(JSONDecoding.ProfileApi.self, from: result!)
-                self.presenter?.profileFetched(data: res)
-                /*if res.email == nil {
-                    self.email.text = "Не указано"
+                if let safeCache = cache {
+                    if safeCache != res {
+                        print("cache is deprecated")
+                        clearCache(forKey: "profile")
+                        updateCache(with: result!, forKey: "profile")
+                        self.presenter?.profileFetched(data: res)
+                    } else {
+                        print("found in cache")
+                    }
                 } else {
-                    self.email.text = res.email
+                    print("cache is empty")
+                    updateCache(with: result!, forKey: "profile")
+                    self.presenter?.profileFetched(data: res)
                 }
-                if res.phone == nil {
-                    self.phone.text = "Не указано"
-                } else {
-                    self.phone.text = res.phone
-                }
-                if res.birthday == nil {
-                    self.birthday.text = "Не указано"
-                } else {
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "yyyy-MM-dd"
-                    dateFormatter.locale = Locale(identifier: "RU_ru")
-                    
-                    let getDate = dateFormatter.date(from: res.birthday!)
-                    
-                    dateFormatter.dateFormat = "d MMMM yyyy"
-                    
-                    let dateString: String = dateFormatter.string(from: getDate!)
-                    
-                    self.birthday.text = dateFormatter.string(from: dateFormatter.date(from: dateString)!)
-                }
-                if res.nationality == nil {
-                    self.nationality.text = "Не указано"
-                } else {
-                    self.nationality.text = res.nationality
-                }
-                if res.school == nil {
-                    self.school.text = "Не указано"
-                } else {
-                    self.school.text = "\(res.school!) классов"
-                }
-                var frame = self.emailImage.frame
-                frame.origin.x = 100
-                var labelframe = self.email.frame
-                labelframe.origin.x = -300
-                var parentsframe = self.parentButton.frame
-                parentsframe.origin.y = 100
-                stopLoader()
-                self.emailImage.alpha = 1
-                self.birthImage.alpha = 1
-                self.nationalityimage.alpha = 1
-                self.phoneImage.alpha = 1
-                self.segrysimage.alpha = 1
-                self.schoolimage.alpha = 1
-                self.parentButton.alpha = 1
-                UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
-                    self.emailImage.frame = frame
-                    self.birthImage.frame = frame
-                    self.nationalityimage.frame = frame
-                    self.phoneImage.frame = frame
-                    self.segrysimage.frame = frame
-                    self.schoolimage.frame = frame
-                    self.email.frame = labelframe
-                    self.birthday.frame = labelframe
-                    self.nationality.frame = labelframe
-                    self.phone.frame = labelframe
-                    self.segrys.frame = labelframe
-                    self.school.frame = labelframe
-                }) { (true) in
-                }
-                UIView.animate(withDuration: 0.5, delay: 0.2, options: .curveEaseInOut, animations: {
-                    self.parentButton.frame = parentsframe
-                })
-                
-                if res.segrys == true {
-                    self.segrys.text = "Обучался(лась) в Сегрисе"
-                } else if res.segrys == false {
-                    self.segrys.text = "Не обучался(лась) в Сегрисе"
-                }
-                let resource = ImageResource(downloadURL: URL(string: res.photo)!, cacheKey: res.photo)
-                self.fourth.kf.setImage(with: resource)*/
             } catch {
                 print(error)
             }

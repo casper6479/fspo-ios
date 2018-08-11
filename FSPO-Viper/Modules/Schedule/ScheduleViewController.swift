@@ -21,18 +21,24 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol {
             first = second
             second = NSLocalizedString("Чётная", comment: "")
         }
-        if StudentScheduleLayout.tableView?.tableHeaderView == nil {
-            StudentScheduleLayout.tableView?.tableHeaderView = buildHeaderForStudentSchedule(first: first, second: second)
+        DispatchQueue.main.async {
+            if StudentScheduleLayout.tableView?.tableHeaderView == nil {
+                StudentScheduleLayout.tableView?.tableHeaderView = self.buildHeaderForStudentSchedule(first: first, second: second)
+            }
+            self.reloadStudentSchedule(data: source)
         }
-        reloadStudentSchedule(data: source)
     }
     func showNewTeacherRows(source: JSONDecoding.GetTeachersApi) {
         ScheduleViewController.publicTeachersDS = source
-        reloadTeachers(data: source)
+        DispatchQueue.main.async {
+            self.reloadTeachers(data: source)
+        }
     }
     func showNewScheduleByGroupsRows(source: JSONDecoding.GetGroupsApi) {
         ScheduleViewController.publicGroupsDS = source
-        reloadScheduleByGroups(data: source)
+        DispatchQueue.main.async {
+            self.reloadScheduleByGroups(data: source)
+        }
     }
     func buildHeaderForStudentSchedule(first: String, second: String) -> UIView {
         let header = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 36))
@@ -62,7 +68,21 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol {
         scrollView.isPagingEnabled = true
         view.addSubview(scrollView)
         self.layoutFeed(width: self.view.bounds.width)
-        presenter?.updateView()
+        storage?.async.object(forKey: "schedule", completion: { result in
+            switch result {
+            case .value(let data):
+                if let decoded = try? JSONDecoder().decode(JSONDecoding.StudentScheduleApi.self, from: data) {
+                    self.showNewStudentScheduleRows(source: decoded)
+                    self.presenter?.updateSchedule(cache: decoded)
+                } else {
+                    self.presenter?.updateSchedule(cache: nil)
+                }
+            case .error:
+                self.presenter?.updateSchedule(cache: nil)
+            }
+        })
+        presenter?.updateGroups(cache: nil)
+        presenter?.updateTeachers(cache: nil)
     }
     @objc func segmentChanged(sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {

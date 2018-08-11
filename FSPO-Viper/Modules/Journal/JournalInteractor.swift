@@ -12,9 +12,8 @@ import UIKit
 import Alamofire
 
 class JournalInteractor: JournalInteractorProtocol {
-
     weak var presenter: JournalPresenterProtocol?
-    func fetchJournal() {
+    func fetchJournal(cache: JSONDecoding.JournalApi?) {
         let user_id = UserDefaults.standard.string(forKey: "user_id")
         let headers: HTTPHeaders = [
             "token": keychain["token"]!
@@ -26,7 +25,20 @@ class JournalInteractor: JournalInteractorProtocol {
             let result = response.data
             do {
                 let res = try JSONDecoder().decode(JSONDecoding.JournalApi.self, from: result!)
-                self.presenter?.journalFetched(dolgs: "\(res.debts)", percent: "\(res.visits) %", score: "\(res.avg_score)")
+                if let safeCache = cache {
+                    if safeCache != res {
+                        print("cache is deprecated")
+                        clearCache(forKey: "journal")
+                        updateCache(with: result!, forKey: "journal")
+                        self.presenter?.journalFetched(data: res)
+                    } else {
+                        print("found in cache")
+                    }
+                } else {
+                    print("cache is empty")
+                    updateCache(with: result!, forKey: "journal")
+                    self.presenter?.journalFetched(data: res)
+                }
             } catch {
                 print(error)
             }
