@@ -22,10 +22,10 @@ Everything written according to the SwiftLint.
 - Local Notifications
 - Biometric Guard
 - Today Extensions
+- Caching
 
 # TODO:
 - FIX DIALOG BUBBLE TRANSPARENT LABEL BACKGROUND & WIDTH BUG
 - Teacher & parents functionality
 - Remote Notifications
-- Caching
-- Animations
+- Good Animations
