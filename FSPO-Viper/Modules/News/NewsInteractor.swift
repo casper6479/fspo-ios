@@ -23,19 +23,15 @@ class NewsInteractor: NewsInteractorProtocol {
                 let res = try JSONDecoder().decode(JSONDecoding.NewsApi.self, from: result!)
                 if let safeCache = cache {
                     if safeCache != res.news {
-                        print("cache is deprecated")
                         clearCache(forKey: "news")
                         if offset == 0 {
-                            updateCache(with: result!, forKey: "news")
+                            updateCache(with: result!, forKey: "news", expiry: .never)
                         }
                         self.presenter?.updateData(data: res)
-                    } else {
-                        print("found in cache")
                     }
                 } else {
-                    print("cache is empty")
                     if offset == 0 {
-                        updateCache(with: result!, forKey: "news")
+                        updateCache(with: result!, forKey: "news", expiry: .never)
                     }
                     self.presenter?.updateData(data: res)
                 }

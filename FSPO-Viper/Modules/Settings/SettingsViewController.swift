@@ -53,18 +53,32 @@ class SettingsViewController: UIViewController, SettingsViewProtocol, UITableVie
             }
         }
         if indexPath.row == 2 {
+            let group = DispatchGroup()
+            group.enter()
             storage?.async.removeAll(completion: { result in
                 switch result {
                 case .value:
-                    DispatchQueue.main.async {
-                        showMessage(message: "Кэш очищен", y: 8)
-                    }
+                    group.leave()
                 case .error(let error):
                     DispatchQueue.main.async {
                         showMessage(message: "Ошибка очистки: \(error)", y: 8)
                     }
                 }
             })
+            group.enter()
+            do {
+                try ScheduleStorage().storage?.removeAll()
+                group.leave()
+            } catch {
+                DispatchQueue.main.async {
+                    showMessage(message: "Ошибка очистки: \(error)", y: 8)
+                }
+            }
+            group.notify(queue: DispatchQueue.main) {
+                DispatchQueue.main.async {
+                    showMessage(message: "Кэш очищен", y: 8)
+                }
+            }
         }
         if indexPath.row == 3 {
             keychain["token"] = nil

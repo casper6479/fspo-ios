@@ -89,18 +89,18 @@ public class JSONDecoding {
             let msg_user_id: Int
         }
     }
-    struct DialogsApi: Decodable {
+    struct DialogsApi: Decodable, Equatable {
         let messages: [Messages]
-        struct Messages: Decodable {
+        struct Messages: Decodable, Equatable {
             let text: String
             let user_id: String
             let mdatetime: String
             let read: Bool
         }
     }
-    struct GetTeachersApi: Decodable {
+    struct GetTeachersApi: Decodable, Equatable {
         let teachers: [Teacher]
-        struct Teacher: Decodable {
+        struct Teacher: Decodable, Equatable {
             let firstname: String
             let lastname: String
             let middlename: String
@@ -108,12 +108,12 @@ public class JSONDecoding {
             let user_id: String
         }
     }
-    struct GetGroupsApi: Decodable {
+    struct GetGroupsApi: Decodable, Equatable {
         let courses: [Course]
-        struct Course: Decodable {
+        struct Course: Decodable, Equatable {
             let course: Int
             let groups: [Group]
-            struct Group: Decodable {
+            struct Group: Decodable, Equatable {
                 let group_id: String
                 let name: String
             }

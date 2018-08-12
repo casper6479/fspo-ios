@@ -16,7 +16,7 @@ class DialogInteractor: DialogInteractorProtocol {
     init(dialog_user_id: Int) {
         self.dialog_user_id = dialog_user_id
     }
-    func fetchDialogs() {
+    func fetchDialogs(cache: JSONDecoding.DialogsApi?) {
         let headers: HTTPHeaders = [
             "token": keychain["token"]!
         ]
@@ -27,7 +27,16 @@ class DialogInteractor: DialogInteractorProtocol {
             let result = response.data
             do {
                 let res = try JSONDecoder().decode(JSONDecoding.DialogsApi.self, from: result!)
-                self.presenter?.dialogsFetched(data: res)
+                if let safeCache = cache {
+                    if safeCache != res {
+                        clearCache(forKey: "dialogs\(self.dialog_user_id!)")
+                        updateCache(with: result!, forKey: "dialogs\(self.dialog_user_id!)", expiry: .never)
+                        self.presenter?.dialogsFetched(data: res)
+                    }
+                } else {
+                    updateCache(with: result!, forKey: "dialogs\(self.dialog_user_id!)", expiry: .never)
+                    self.presenter?.dialogsFetched(data: res)
+                }
             } catch {
                 print(error)
             }
@@ -43,7 +52,7 @@ class DialogInteractor: DialogInteractorProtocol {
         ]
         Alamofire.request("https://ifspo.ifmo.ru/api/sendMessage", method: .post, parameters: params, headers: headers)
                 .responseJSON { _ in
-                    self.presenter?.updateView()
+                    self.presenter?.updateView(cache: nil)
         }
     }
     weak var presenter: DialogPresenterProtocol?

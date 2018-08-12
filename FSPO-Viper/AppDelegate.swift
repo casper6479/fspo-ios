@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let authContex = LAContext()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        ScheduleStorage().setExludedFromBackup()
+
         UIApplication.shared.statusBarStyle = .lightContent
         window = UIWindow(frame: UIScreen.main.bounds)
 

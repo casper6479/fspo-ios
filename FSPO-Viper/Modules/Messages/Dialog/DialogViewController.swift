@@ -12,15 +12,20 @@ import UIKit
 import LayoutKit
 import NextGrowingTextView
 import IQKeyboardManagerSwift
+import Cache
+
 class DialogViewController: UIViewController, DialogViewProtocol {
     func showNewRows(source: JSONDecoding.DialogsApi) {
-        self.reloadTableView(width: view.bounds.width, synchronous: false, data: source)
+        DispatchQueue.main.async {
+            self.reloadTableView(width: self.view.bounds.width, synchronous: false, data: source)
+        }
     }
 	var presenter: DialogPresenterProtocol?
     private var reloadableViewLayoutAdapter: ReloadableViewLayoutAdapter!
     private var tableView: UITableView!
     private var growingTextView: NextGrowingTextView!
     private var button: UIButton!
+    var dialogId: Int!
     var overheight: CGFloat = 0
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,9 +39,6 @@ class DialogViewController: UIViewController, DialogViewProtocol {
         tableView.allowsSelection = false
         tableView.backgroundColor = UIColor(red: 246/255, green: 251/255, blue: 254/255, alpha: 1)
         let background = UIView(frame: view.bounds)
-        let rofl = UILabel(frame: CGRect(x: 100, y: 100, width: 200, height: 100))
-        rofl.text = "ЗАГРУЗКА"
-        background.addSubview(rofl)
         background.backgroundColor = UIColor(red: 246/255, green: 251/255, blue: 254/255, alpha: 1)
         view.addSubview(background)
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
@@ -83,7 +85,19 @@ class DialogViewController: UIViewController, DialogViewProtocol {
         view.addSubview(growingTextView)
         view.addSubview(button)
         tableView.alpha = 0
-        presenter?.updateView()
+        storage?.async.object(forKey: "dialogs\(dialogId!)", completion: { result in
+            switch result {
+            case .value(let data):
+                if let decoded = try? JSONDecoder().decode(JSONDecoding.DialogsApi.self, from: data) {
+                    self.showNewRows(source: decoded)
+                    self.presenter?.updateView(cache: decoded)
+                } else {
+                    self.presenter?.updateView(cache: nil)
+                }
+            case .error:
+                self.presenter?.updateView(cache: nil)
+            }
+        })
         registerKeyboardNotifications()
     }
     override func viewDidAppear(_ animated: Bool) {

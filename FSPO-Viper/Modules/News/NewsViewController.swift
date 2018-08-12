@@ -32,7 +32,7 @@ class NewsViewController: UIViewController, NewsViewProtocol {
     var tableView: UITableView!
 	override func viewDidLoad() {
         super.viewDidLoad()
-        storage?.async.object(forKey: "news", completion: { result in
+        /*storage?.async.object(forKey: "news", completion: { result in
             switch result {
             case .value(let data):
                 if let decoded = try? JSONDecoder().decode(JSONDecoding.NewsApi.self, from: data) {
@@ -43,6 +43,19 @@ class NewsViewController: UIViewController, NewsViewProtocol {
                 }
             case .error:
                 self.presenter?.updateView(offset: 0, cache: nil)
+            }
+        })*/
+        storage?.async.object(forKey: "news", completion: { result in
+            switch result {
+            case .value(let data):
+                if let decoded = try? JSONDecoder().decode(JSONDecoding.NewsApi.self, from: data) {
+                    self.showNews(source: decoded.news)
+                    self.presenter?.updateView(offset: 0, cache: decoded.news)
+                } else {
+                     self.presenter?.updateView(offset: 0, cache: nil)
+                }
+            case .error:
+                 self.presenter?.updateView(offset: 0, cache: nil)
             }
         })
         tableView = UITableView(frame: view.bounds, style: .plain)

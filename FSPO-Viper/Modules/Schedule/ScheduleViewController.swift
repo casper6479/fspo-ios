@@ -68,21 +68,40 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol {
         scrollView.isPagingEnabled = true
         view.addSubview(scrollView)
         self.layoutFeed(width: self.view.bounds.width)
-        storage?.async.object(forKey: "schedule", completion: { result in
+        do {
+            let data = try ScheduleStorage().storage?.object(forKey: "schedule")
+            let decoded = try JSONDecoder().decode(JSONDecoding.StudentScheduleApi.self, from: data!)
+            self.showNewStudentScheduleRows(source: decoded)
+            self.presenter?.updateSchedule(cache: decoded)
+        } catch {
+            self.presenter?.updateSchedule(cache: nil)
+        }
+        storage?.async.object(forKey: "groups", completion: { result in
             switch result {
             case .value(let data):
-                if let decoded = try? JSONDecoder().decode(JSONDecoding.StudentScheduleApi.self, from: data) {
-                    self.showNewStudentScheduleRows(source: decoded)
-                    self.presenter?.updateSchedule(cache: decoded)
+                if let decoded = try? JSONDecoder().decode(JSONDecoding.GetGroupsApi.self, from: data) {
+                    self.showNewScheduleByGroupsRows(source: decoded)
+                    self.presenter?.updateGroups(cache: decoded)
                 } else {
-                    self.presenter?.updateSchedule(cache: nil)
+                    self.presenter?.updateGroups(cache: nil)
                 }
             case .error:
-                self.presenter?.updateSchedule(cache: nil)
+                self.presenter?.updateGroups(cache: nil)
             }
         })
-        presenter?.updateGroups(cache: nil)
-        presenter?.updateTeachers(cache: nil)
+        storage?.async.object(forKey: "teachers", completion: { result in
+            switch result {
+            case .value(let data):
+                if let decoded = try? JSONDecoder().decode(JSONDecoding.GetTeachersApi.self, from: data) {
+                    self.showNewTeacherRows(source: decoded)
+                    self.presenter?.updateTeachers(cache: decoded)
+                } else {
+                    self.presenter?.updateTeachers(cache: nil)
+                }
+            case .error:
+                self.presenter?.updateTeachers(cache: nil)
+            }
+        })
     }
     @objc func segmentChanged(sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {

@@ -19,6 +19,7 @@ class DialogRouter: DialogWireframeProtocol {
         let router = DialogRouter()
         let presenter = DialogPresenter(interface: view, interactor: interactor, router: router)
         view.title = title
+        view.dialogId = dialog_id
         view.presenter = presenter
         interactor.presenter = presenter
         router.viewController = view

@@ -19,9 +19,6 @@ def pods
 target 'FSPO' do
 	pods
 end
-target 'FSPOUITests' do
-	pods
-end
 target 'TodaySchedule' do
 	pod 'Alamofire'
 	pod 'LayoutKit'
@@ -29,4 +26,11 @@ end
 target 'TommorowSchedule' do
 	pod 'Alamofire'
 	pod 'LayoutKit'
+end
+
+post_install do |installer|
+    podsTargets = installer.pods_project.targets.find_all { |target| target.name.start_with?('Pods') }
+    podsTargets.each do |target|
+        target.frameworks_build_phase.clear
+    end
 end

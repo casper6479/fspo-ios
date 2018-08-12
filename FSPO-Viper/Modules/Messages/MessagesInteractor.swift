@@ -23,16 +23,12 @@ class MessagesInteractor: MessagesInteractorProtocol {
                 let res = try JSONDecoder().decode(JSONDecoding.MessagesApi.self, from: result!)
                 if let safeCache = cache {
                     if safeCache != res {
-                        print("cache is deprecated")
                         clearCache(forKey: "messages")
-                        updateCache(with: result!, forKey: "messages")
+                        updateCache(with: result!, forKey: "messages", expiry: .never)
                         self.presenter?.messagesFetched(data: res)
-                    } else {
-                        print("found in cache")
                     }
                 } else {
-                    print("cache is empty")
-                    updateCache(with: result!, forKey: "messages")
+                    updateCache(with: result!, forKey: "messages", expiry: .never)
                     self.presenter?.messagesFetched(data: res)
                 }
             } catch {

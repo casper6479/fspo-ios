@@ -61,7 +61,7 @@ public func updateNothificationContext() {
                         //                        if UserDefaults.standard.string(forKey: "user_id") == "1000369" {
                         //                            content.sound = UNNotificationSound.init(named: "burp.mp3")
                         //                        } else {
-                        let sounds = [UNNotificationSound.default(), UNNotificationSound.init(named: "notify.caf"), UNNotificationSound.init(named: "vkadmin.mp3"), UNNotificationSound.init(named: "waterdrop.mp3"), UNNotificationSound.init(named: "line_notif_ios.mp3")]
+//                        let sounds = [UNNotificationSound.default(), UNNotificationSound.init(named: "notify.caf"), UNNotificationSound.init(named: "vkadmin.mp3"), UNNotificationSound.init(named: "waterdrop.mp3"), UNNotificationSound.init(named: "line_notif_ios.mp3")]
                         content.sound = .default()
                         //                        }
                         let datestring = "\(days[wd]):\(u.period_start)"

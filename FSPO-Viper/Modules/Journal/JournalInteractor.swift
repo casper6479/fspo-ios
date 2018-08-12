@@ -27,16 +27,12 @@ class JournalInteractor: JournalInteractorProtocol {
                 let res = try JSONDecoder().decode(JSONDecoding.JournalApi.self, from: result!)
                 if let safeCache = cache {
                     if safeCache != res {
-                        print("cache is deprecated")
                         clearCache(forKey: "journal")
-                        updateCache(with: result!, forKey: "journal")
+                        updateCache(with: result!, forKey: "journal", expiry: .never)
                         self.presenter?.journalFetched(data: res)
-                    } else {
-                        print("found in cache")
                     }
                 } else {
-                    print("cache is empty")
-                    updateCache(with: result!, forKey: "journal")
+                    updateCache(with: result!, forKey: "journal", expiry: .never)
                     self.presenter?.journalFetched(data: res)
                 }
             } catch {

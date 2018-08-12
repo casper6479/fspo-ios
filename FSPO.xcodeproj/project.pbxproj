@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0212571B49A68BEB1BA67E48 /* Pods_FSPO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB84AAE1C33C2AE5B4C9735 /* Pods_FSPO.framework */; };
 		460C7FD9211D8BE200D94ECB /* NotificationsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C7FD8211D8BE200D94ECB /* NotificationsWorker.swift */; };
-		461DD69B211CD60F007A68AA /* FSPOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461DD69A211CD60F007A68AA /* FSPOUITests.swift */; };
 		461FDAA720FA1AA30081C678 /* MessagesLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461FDAA620FA1AA30081C678 /* MessagesLayout.swift */; };
 		461FDAAA20FA713A0081C678 /* ProfileLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461FDAA820FA70530081C678 /* ProfileLayout.swift */; };
 		461FDAAC20FAA0A60081C678 /* ScheduleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461FDAAB20FAA0A60081C678 /* ScheduleLayout.swift */; };
@@ -133,19 +132,11 @@
 		46F5BCAC21178C4A00913931 /* SFCompactRounded-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46F5BCA321178C4A00913931 /* SFCompactRounded-Regular.ttf */; };
 		46F5BCAE211792CC00913931 /* InsetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F5BCAD211792CC00913931 /* InsetView.swift */; };
 		46FED984211E2F93007737EB /* CacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FED983211E2F93007737EB /* CacheStorage.swift */; };
-		79799E434EEE2C2BC5FBE23A /* Pods_FSPOUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 547768368EBCD51AD0F8726C /* Pods_FSPOUITests.framework */; };
 		7D0875CBEE6743DAFADDAD96 /* Pods_TodaySchedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 543062F1A1FAEFA7D30BA97E /* Pods_TodaySchedule.framework */; };
 		BA40FD0A72E9F57725B4014E /* Pods_TommorowSchedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C21AC064A12FA16717FABEBE /* Pods_TommorowSchedule.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		461DD69D211CD60F007A68AA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46C1561020DBB2D700F2BA79 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 46C1561720DBB2D700F2BA79;
-			remoteInfo = FSPO;
-		};
 		4677E844211E03600055517F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46C1561020DBB2D700F2BA79 /* Project object */;
@@ -182,9 +173,6 @@
 		0FB1107598BF6C73CB5B9F89 /* Pods-FSPO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSPO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FSPO/Pods-FSPO.debug.xcconfig"; sourceTree = "<group>"; };
 		34E002B8332208310038B66F /* Pods-TodaySchedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaySchedule.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodaySchedule/Pods-TodaySchedule.release.xcconfig"; sourceTree = "<group>"; };
 		460C7FD8211D8BE200D94ECB /* NotificationsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsWorker.swift; sourceTree = "<group>"; };
-		461DD698211CD60F007A68AA /* FSPOUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FSPOUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		461DD69A211CD60F007A68AA /* FSPOUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSPOUITests.swift; sourceTree = "<group>"; };
-		461DD69C211CD60F007A68AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		461FDAA620FA1AA30081C678 /* MessagesLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesLayout.swift; sourceTree = "<group>"; };
 		461FDAA820FA70530081C678 /* ProfileLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLayout.swift; sourceTree = "<group>"; };
 		461FDAAB20FAA0A60081C678 /* ScheduleLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleLayout.swift; sourceTree = "<group>"; };
@@ -328,14 +316,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		461DD695211CD60F007A68AA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				79799E434EEE2C2BC5FBE23A /* Pods_FSPOUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4677E837211E03600055517F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -378,15 +358,6 @@
 				AA46B36367B0FF72CBAC6737 /* Pods-TommorowSchedule.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		461DD699211CD60F007A68AA /* FSPOUITests */ = {
-			isa = PBXGroup;
-			children = (
-				461DD69A211CD60F007A68AA /* FSPOUITests.swift */,
-				461DD69C211CD60F007A68AA /* Info.plist */,
-			);
-			path = FSPOUITests;
 			sourceTree = "<group>";
 		};
 		4621CE9920EFAB8A00B17323 /* Messages */ = {
@@ -684,7 +655,6 @@
 			children = (
 				4677E869211E27E60055517F /* FSPO.entitlements */,
 				46C1561A20DBB2D700F2BA79 /* FSPO-Viper */,
-				461DD699211CD60F007A68AA /* FSPOUITests */,
 				4677E83D211E03600055517F /* TodaySchedule */,
 				4677E855211E0F5C0055517F /* TommorowSchedule */,
 				46C1561920DBB2D700F2BA79 /* Products */,
@@ -697,7 +667,6 @@
 			isa = PBXGroup;
 			children = (
 				46C1561820DBB2D700F2BA79 /* FSPO.app */,
-				461DD698211CD60F007A68AA /* FSPOUITests.xctest */,
 				4677E83A211E03600055517F /* TodaySchedule.appex */,
 				4677E853211E0F5C0055517F /* TommorowSchedule.appex */,
 			);
@@ -735,26 +704,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		461DD697211CD60F007A68AA /* FSPOUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 461DD6A1211CD60F007A68AA /* Build configuration list for PBXNativeTarget "FSPOUITests" */;
-			buildPhases = (
-				B24F5DBC9D6B8358832F6985 /* [CP] Check Pods Manifest.lock */,
-				461DD694211CD60F007A68AA /* Sources */,
-				461DD695211CD60F007A68AA /* Frameworks */,
-				461DD696211CD60F007A68AA /* Resources */,
-				0E32681C01B18E25B854A849 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				461DD69E211CD60F007A68AA /* PBXTargetDependency */,
-			);
-			name = FSPOUITests;
-			productName = FSPOUITests;
-			productReference = 461DD698211CD60F007A68AA /* FSPOUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		4677E839211E03600055517F /* TodaySchedule */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4677E847211E03600055517F /* Build configuration list for PBXNativeTarget "TodaySchedule" */;
@@ -825,10 +774,6 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Николай Борисов";
 				TargetAttributes = {
-					461DD697211CD60F007A68AA = {
-						CreatedOnToolsVersion = 9.4.1;
-						TestTargetID = 46C1561720DBB2D700F2BA79;
-					};
 					4677E839211E03600055517F = {
 						CreatedOnToolsVersion = 9.4.1;
 						SystemCapabilities = {
@@ -870,7 +815,6 @@
 			projectRoot = "";
 			targets = (
 				46C1561720DBB2D700F2BA79 /* FSPO */,
-				461DD697211CD60F007A68AA /* FSPOUITests */,
 				4677E839211E03600055517F /* TodaySchedule */,
 				4677E852211E0F5C0055517F /* TommorowSchedule */,
 			);
@@ -878,13 +822,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		461DD696211CD60F007A68AA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4677E838211E03600055517F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -919,38 +856,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0E32681C01B18E25B854A849 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FSPOUITests/Pods-FSPOUITests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
-				"${BUILT_PRODUCTS_DIR}/FPSCounter/FPSCounter.framework",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/LayoutKit/LayoutKit.framework",
-				"${BUILT_PRODUCTS_DIR}/NextGrowingTextView/NextGrowingTextView.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cache.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FPSCounter.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LayoutKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NextGrowingTextView.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FSPOUITests/Pods-FSPOUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		463A1F9020DC271400E04656 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -991,24 +896,6 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-TommorowSchedule-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B24F5DBC9D6B8358832F6985 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FSPOUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1086,14 +973,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		461DD694211CD60F007A68AA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				461DD69B211CD60F007A68AA /* FSPOUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4677E836211E03600055517F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1228,11 +1107,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		461DD69E211CD60F007A68AA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 46C1561720DBB2D700F2BA79 /* FSPO */;
-			targetProxy = 461DD69D211CD60F007A68AA /* PBXContainerItemProxy */;
-		};
 		4677E845211E03600055517F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4677E839211E03600055517F /* TodaySchedule */;
@@ -1291,48 +1165,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		461DD69F211CD60F007A68AA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0EB28521BED10455071BDC25 /* Pods-FSPOUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PCHAWD2XTV;
-				INFOPLIST_FILE = FSPOUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.casper6479.FSPOUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = FSPO;
-			};
-			name = Debug;
-		};
-		461DD6A0211CD60F007A68AA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F8684DC6C579B2D06DA82249 /* Pods-FSPOUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PCHAWD2XTV;
-				INFOPLIST_FILE = FSPOUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.casper6479.FSPOUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = FSPO;
-			};
-			name = Release;
-		};
 		4677E848211E03600055517F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BC61A0DD6144705484A5D278 /* Pods-TodaySchedule.debug.xcconfig */;
@@ -1591,15 +1423,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		461DD6A1211CD60F007A68AA /* Build configuration list for PBXNativeTarget "FSPOUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				461DD69F211CD60F007A68AA /* Debug */,
-				461DD6A0211CD60F007A68AA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4677E847211E03600055517F /* Build configuration list for PBXNativeTarget "TodaySchedule" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

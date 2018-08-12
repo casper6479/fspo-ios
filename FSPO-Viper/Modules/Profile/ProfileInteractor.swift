@@ -28,14 +28,14 @@ class ProfileInteractor: ProfileInteractorProtocol {
                     if safeCache != res {
                         print("cache is deprecated")
                         clearCache(forKey: "profile")
-                        updateCache(with: result!, forKey: "profile")
+                        updateCache(with: result!, forKey: "profile", expiry: .never)
                         self.presenter?.profileFetched(data: res)
                     } else {
                         print("found in cache")
                     }
                 } else {
                     print("cache is empty")
-                    updateCache(with: result!, forKey: "profile")
+                    updateCache(with: result!, forKey: "profile", expiry: .never)
                     self.presenter?.profileFetched(data: res)
                 }
             } catch {

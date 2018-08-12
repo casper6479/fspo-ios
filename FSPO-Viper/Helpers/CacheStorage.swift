@@ -7,8 +7,11 @@
 //
 
 import Cache
+import FileProvider
+import UIKit
 
 let diskConfig = DiskConfig(name: "FSPO", expiry: .never)
+
 let memoryConfig = MemoryConfig(expiry: .never, countLimit: 150, totalCostLimit: 150)
 
 let storage = try? Storage(
@@ -16,11 +19,12 @@ let storage = try? Storage(
     memoryConfig: memoryConfig,
     transformer: TransformerFactory.forData()
 )
-func updateCache(with data: Data, forKey key: String) {
+
+func updateCache(with data: Data, forKey key: String, expiry: Expiry) {
     storage?.async.setObject(
         data,
         forKey: key,
-        expiry: .never,
+        expiry: expiry,
         completion: { result in
             switch result {
             case .value:
@@ -39,4 +43,33 @@ func clearCache(forKey key: String) {
             print("Error while clearing cache: \(error)")
         }
     })
+}
+class ScheduleStorage {
+    func setExludedFromBackup() {
+        var url = try? FileManager.default.url(
+            for: .documentDirectory,
+            in: .userDomainMask,
+            appropriateFor: nil,
+            create: true).appendingPathComponent("Schedule")
+        var resuorceValues = URLResourceValues()
+        resuorceValues.isExcludedFromBackup = true
+        try? url?.setResourceValues(resuorceValues)
+        print(try? url?.resourceValues(forKeys: [.isExcludedFromBackupKey]).isExcludedFromBackup)
+    }
+    let storage = try? DiskStorage(
+        config: DiskConfig(
+            name: "FSPO-Schedule",
+            expiry: .seconds(604800),
+            directory: try? FileManager.default.url(
+                for: .documentDirectory,
+                in: .userDomainMask,
+                appropriateFor: nil,
+                create: true).appendingPathComponent("Schedule")),
+        transformer: TransformerFactory.forData())
+    func updateDisk(with data: Data, forKey key: String, expiry: Expiry) {
+        try? storage?.setObject(data, forKey: key, expiry: expiry)
+    }
+    func clearDisk(forKey key: String) {
+        try? storage?.removeObject(forKey: key)
+    }
 }

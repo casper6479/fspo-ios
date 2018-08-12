@@ -16,7 +16,7 @@ protocol DialogWireframeProtocol: class {
 }
 // MARK: Presenter -
 protocol DialogPresenterProtocol: class {
-    func updateView()
+    func updateView(cache: JSONDecoding.DialogsApi?)
     func dialogsFetched(data: JSONDecoding.DialogsApi)
     func prepareMessageForSend(message: String)
 }
@@ -24,7 +24,7 @@ protocol DialogPresenterProtocol: class {
 // MARK: Interactor -
 protocol DialogInteractorProtocol: class {
     var dialog_user_id: Int? { get set }
-    func fetchDialogs()
+    func fetchDialogs(cache: JSONDecoding.DialogsApi?)
     func sendMessage(text: String)
   var presenter: DialogPresenterProtocol? { get set }
 }
