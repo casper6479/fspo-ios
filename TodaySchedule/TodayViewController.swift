@@ -17,6 +17,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     var defaults = UserDefaults(suiteName: "group.com.casper6479.fspo")
     override func viewDidLoad() {
         super.viewDidLoad()
+        ScheduleStorage().setExludedFromBackup()
         if #available(iOS 10, *) {
             extensionContext?.widgetLargestAvailableDisplayMode = .expanded
         }
@@ -31,7 +32,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         if type == "student" || type == "parent" {
             type = "group"
         }
-        downloadJSON(type: type!, id: id!)
+        do {
+            let data = try ScheduleStorage().storage?.object(forKey: "schedulenow")
+            let decoded = try JSONDecoder().decode(JSONDecoding.StudentScheduleApi.self, from: data!)
+            self.reloadTableView(width: self.view.bounds.width, synchronous: false, data: decoded, type: type!)
+            downloadJSON(type: type!, id: id!, cache: decoded)
+        } catch {
+            downloadJSON(type: type!, id: id!, cache: nil)
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -66,7 +74,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             })
         }
     }
-    func downloadJSON(type: String, id: Int) {
+    func downloadJSON(type: String, id: Int, cache: JSONDecoding.StudentScheduleApi?) {
         let params: Parameters = [
             "app_key": "c78bf5636f9cf36763b511184c572e8f9341cb07",
             "type": type,
@@ -77,7 +85,16 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             let result = response.data
             do {
                 let res = try JSONDecoder().decode(JSONDecoding.StudentScheduleApi.self, from: result!)
-                self.reloadTableView(width: self.view.bounds.width, synchronous: false, data: res, type: type)
+                if let safeCache = cache {
+                    if safeCache != res {
+                        ScheduleStorage().clearDisk(forKey: "schedulenow")
+                        ScheduleStorage().updateDisk(with: result!, forKey: "schedulenow")
+                        self.reloadTableView(width: self.view.bounds.width, synchronous: false, data: res, type: type)
+                    }
+                } else {
+                    ScheduleStorage().updateDisk(with: result!, forKey: "schedulenow")
+                    self.reloadTableView(width: self.view.bounds.width, synchronous: false, data: res, type: type)
+                }
             } catch {
                 print(error)
             }

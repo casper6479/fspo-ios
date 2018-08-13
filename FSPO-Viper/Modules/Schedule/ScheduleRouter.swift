@@ -10,11 +10,12 @@ import UIKit
 
 class ScheduleRouter: ScheduleWireframeProtocol {
     weak var viewController: UIViewController?
-    static func createModule() -> UIViewController {
+    static func createModule(withMy: Bool) -> UIViewController {
         let view = ScheduleViewController()
         let interactor = ScheduleInteractor()
         let router = ScheduleRouter()
         let presenter = SchedulePresenter(interface: view, interactor: interactor, router: router)
+        view.withMy = withMy
         view.presenter = presenter
         interactor.presenter = presenter
         router.viewController = view

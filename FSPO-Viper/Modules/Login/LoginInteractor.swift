@@ -105,6 +105,7 @@ class LoginInteractor: LoginInteractorProtocol {
                 group.leave()
             }
         }
+        UserDefaults.standard.set(5, forKey: "notificationsDelay")
         group.notify(queue: .main) {
             self.presenter?.userLoggedIn()
         }

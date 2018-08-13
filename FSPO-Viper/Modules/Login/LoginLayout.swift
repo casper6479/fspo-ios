@@ -43,6 +43,7 @@ open class LoginLayout: InsetLayout<UIView> {
                 button.setTitleColor(UIColor.ITMOBlue, for: .normal)
                 button.setTitleColor(UIColor.ITMOBlue.withAlphaComponent(0.5), for: .highlighted)
                 button.titleLabel?.font = UIFont.ITMOFontBold?.withSize(17)
+                button.addTarget(LoginViewController(), action: #selector(LoginViewController().scheduleUpInside), for: .touchUpInside)
         })
         let loginField = SizeLayout<UITextField>(
             size: CGSize(width: UIScreen.main.bounds.width - 128, height: 40),

@@ -72,15 +72,15 @@ class ScheduleInteractor: ScheduleInteractorProtocol {
                 if let safeCache = cache {
                     if safeCache != res {
                         print("cache is deprecated")
-                        ScheduleStorage().clearDisk(forKey: "schedule")
-                        ScheduleStorage().updateDisk(with: result!, forKey: "schedule", expiry: .never)
+                        ScheduleStorage().clearDisk(forKey: "schedule\(week)")
+                        ScheduleStorage().updateDisk(with: result!, forKey: "schedule\(week)")
                         self.presenter?.studentScheduleFetched(data: res)
                     } else {
                         print("found in cache")
                     }
                 } else {
                     print("cache is empty")
-                    ScheduleStorage().updateDisk(with: result!, forKey: "schedule", expiry: .never)
+                    ScheduleStorage().updateDisk(with: result!, forKey: "schedule\(week)")
                     self.presenter?.studentScheduleFetched(data: res)
                 }
             } catch {

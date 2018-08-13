@@ -22,10 +22,12 @@ end
 target 'TodaySchedule' do
 	pod 'Alamofire'
 	pod 'LayoutKit'
+	pod 'Cache'
 end
 target 'TommorowSchedule' do
 	pod 'Alamofire'
 	pod 'LayoutKit'
+	pod 'Cache'
 end
 
 post_install do |installer|

@@ -25,7 +25,7 @@ class ScheduleListPresenter: ScheduleListPresenterProtocol {
     func scheduleFetched(data: JSONDecoding.StudentScheduleApi, type: String) {
         view?.showNewScheduleRows(source: data, type: type)
     }
-    func updateSchedule(week: String) {
-        interactor?.fetchSchedule(week: week, cache: nil)
+    func updateSchedule(week: String, cache: JSONDecoding.StudentScheduleApi?) {
+        interactor?.fetchSchedule(week: week, cache: cache)
     }
 }

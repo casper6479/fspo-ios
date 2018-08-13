@@ -37,28 +37,28 @@ open class DialogsLayout: InsetLayout<View> {
 
         var width = ceil(boundingBox.width)
         let height = ceil(boundingBox.height)
-//        let boundingBoxForHeight = text.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [.font: (UIFont.ITMOFontBold?.withSize(16))!, .paragraphStyle: style], context: nil)
         if width > UIScreen.main.bounds.width - 100 {
             width = UIScreen.main.bounds.width - 84
         }
         if width < 16 {
             width = 16
         }
-        let test = SizeLayout(
+        let subText: Layout = LabelLayout(
+            text: text,
+            font: (font?.withSize(CGFloat(fontSize)))!,
+            alignment: .center,
+            config: { label in
+                label.textAlignment = .left
+                label.backgroundColor = .clear
+                label.textColor = textColor
+        })
+        let bubble = SizeLayout(
             width: width + 16,
             height: height + 16,
             alignment: alignment,
             sublayout: InsetLayout<InsetView>(
                 insets: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
-                sublayout: LabelLayout(
-                    text: text,
-                    font: (font?.withSize(CGFloat(fontSize)))!,
-                    alignment: .center,
-                    config: { label in
-                        label.textAlignment = .left
-                        label.backgroundColor = .clear
-                        label.textColor = textColor
-                    }),
+                sublayout: subText,
                 config: { inse in
                     inse.backgroundColor = backgroundColor
                     inse.layer.cornerRadius = 16
@@ -72,7 +72,7 @@ open class DialogsLayout: InsetLayout<View> {
         })
         super.init(
             insets: UIEdgeInsets(top: 4, left: 8, bottom: 4, right: 8),
-            sublayout: test,
+            sublayout: bubble,
             config: { view in
                 view.backgroundColor = UIColor(red: 246/255, green: 251/255, blue: 254/255, alpha: 1)
         })

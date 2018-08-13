@@ -54,7 +54,7 @@ class ScheduleStorage {
         var resuorceValues = URLResourceValues()
         resuorceValues.isExcludedFromBackup = true
         try? url?.setResourceValues(resuorceValues)
-        print(try? url?.resourceValues(forKeys: [.isExcludedFromBackupKey]).isExcludedFromBackup)
+//        print(try? url?.resourceValues(forKeys: [.isExcludedFromBackupKey]).isExcludedFromBackup)
     }
     let storage = try? DiskStorage(
         config: DiskConfig(
@@ -66,8 +66,8 @@ class ScheduleStorage {
                 appropriateFor: nil,
                 create: true).appendingPathComponent("Schedule")),
         transformer: TransformerFactory.forData())
-    func updateDisk(with data: Data, forKey key: String, expiry: Expiry) {
-        try? storage?.setObject(data, forKey: key, expiry: expiry)
+    func updateDisk(with data: Data, forKey key: String) {
+        try? storage?.setObject(data, forKey: key)
     }
     func clearDisk(forKey key: String) {
         try? storage?.removeObject(forKey: key)

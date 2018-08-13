@@ -18,7 +18,7 @@ protocol SchedulePresenterProtocol: class {
     func teachersFetched(data: JSONDecoding.GetTeachersApi)
     func scheduleByGroupsFetched(data: JSONDecoding.GetGroupsApi)
     func studentScheduleFetched(data: JSONDecoding.StudentScheduleApi)
-    func updateStudentSchedule(week: String)
+    func updateStudentSchedule(week: String, cache: JSONDecoding.StudentScheduleApi?)
 }
 
 // MARK: Interactor -

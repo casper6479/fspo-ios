@@ -14,7 +14,7 @@ protocol ScheduleListWireframeProtocol: class {
 protocol ScheduleListPresenterProtocol: class {
     func updateView(cache: JSONDecoding.StudentScheduleApi?)
     func scheduleFetched(data: JSONDecoding.StudentScheduleApi, type: String)
-    func updateSchedule(week: String)
+    func updateSchedule(week: String, cache: JSONDecoding.StudentScheduleApi?)
 }
 
 // MARK: Interactor -

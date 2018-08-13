@@ -10,12 +10,15 @@ import Foundation
 import LayoutKit
 
 open class ScheduleLayout: StackLayout<View> {
-    public init() {
+    public init(withMySchedule: Bool) {
         let studentSchedule = StudentScheduleLayout()
         let scheduleByGroups = ScheduleByGroupsLayout()
         let teachersList = TeachersListLayout()
+        var sublayouts = [scheduleByGroups, teachersList]
+        if withMySchedule {
+            sublayouts = [studentSchedule, scheduleByGroups, teachersList]
+        }
         super.init(axis: .horizontal, spacing: 0,
-                   sublayouts: [
-                    studentSchedule, scheduleByGroups, teachersList])
+                   sublayouts: sublayouts)
     }
 }

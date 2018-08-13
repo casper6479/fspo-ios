@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         if window?.rootViewController != loginModule {
             var authError: NSError?
-            if !UserDefaults.standard.bool(forKey: "biometricDisabled") {
+            if UserDefaults.standard.bool(forKey: "biometricEnabled") {
                 if authContex.canEvaluatePolicy(.deviceOwnerAuthentication, error: &authError) {
                     showGuard(window: window!)
                 } else {

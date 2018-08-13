@@ -31,12 +31,12 @@ class ScheduleListInteractor: ScheduleListInteractorProtocol {
                 let res = try JSONDecoder().decode(JSONDecoding.StudentScheduleApi.self, from: result!)
                 if let safeCache = cache {
                     if safeCache != res {
-                        clearCache(forKey: "\(self.type!)\(self.id!)")
-                        updateCache(with: result!, forKey: "\(self.type!)\(self.id!)", expiry: .never)
+                        clearCache(forKey: "\(self.type!)\(self.id!)\(week)")
+                        updateCache(with: result!, forKey: "\(self.type!)\(self.id!)\(week)", expiry: .never)
                         self.presenter?.scheduleFetched(data: res, type: self.type!)
                     }
                 } else {
-                    updateCache(with: result!, forKey: "\(self.type!)\(self.id!)", expiry: .never)
+                    updateCache(with: result!, forKey: "\(self.type!)\(self.id!)\(week)", expiry: .never)
                     self.presenter?.scheduleFetched(data: res, type: self.type!)
                 }
             } catch {

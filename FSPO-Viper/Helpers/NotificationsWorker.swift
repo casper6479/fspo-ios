@@ -8,7 +8,7 @@
 import Alamofire
 import UserNotifications
 // swiftlint:disable:next cyclomatic_complexity
-public func updateNothificationContext() {
+public func updateNotificationContext() {
     var params: Parameters = ["app_key": Constants.AppKey]
     if UserDefaults.standard.string(forKey: "user_group_id") != nil {
         params = [
@@ -59,11 +59,8 @@ public func updateNothificationContext() {
                         }
                         content.body = "\(u.schedule[0].name) \(place)"
                         //                        if UserDefaults.standard.string(forKey: "user_id") == "1000369" {
-                        //                            content.sound = UNNotificationSound.init(named: "burp.mp3")
-                        //                        } else {
-//                        let sounds = [UNNotificationSound.default(), UNNotificationSound.init(named: "notify.caf"), UNNotificationSound.init(named: "vkadmin.mp3"), UNNotificationSound.init(named: "waterdrop.mp3"), UNNotificationSound.init(named: "line_notif_ios.mp3")]
-                        content.sound = .default()
-                        //                        }
+                        let sounds: [UNNotificationSound] = [UNNotificationSound(named: "notify.caf"), .default()]
+                        content.sound = sounds[UserDefaults.standard.integer(forKey: "notificationSound")]
                         let datestring = "\(days[wd]):\(u.period_start)"
                         let date = dateFormatter.date(from: datestring)
                         if date != nil {
@@ -94,7 +91,6 @@ public func updateNothificationContext() {
                 }
                 wd += 1
             }
-            //            UserDefaults.standard.set(try? PropertyListEncoder().encode(res.weekdays), forKey:"MyScheduleCache")
 //            showMessage(message: NSLocalizedString("Уведомления обновлены", comment: ""), y: 8)
         } catch {
             print(error)

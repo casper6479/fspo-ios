@@ -47,12 +47,27 @@ class ScheduleListViewController: UIViewController, ScheduleListViewProtocol {
     }
     @objc func segmentChanged(sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
-            presenter?.updateSchedule(week: "now")
+            updateSchedule(week: "now")
         } else if sender.selectedSegmentIndex == 1 {
-            presenter?.updateSchedule(week: "next")
+            updateSchedule(week: "next")
         } else {
-            presenter?.updateSchedule(week: "all")
+            updateSchedule(week: "all")
         }
+    }
+    func updateSchedule(week: String) {
+        storage?.async.object(forKey: "\(scheduleType!)\(id!)\(week)", completion: { result in
+            switch result {
+            case .value(let data):
+                if let decoded = try? JSONDecoder().decode(JSONDecoding.StudentScheduleApi.self, from: data) {
+                    self.showNewScheduleRows(source: decoded, type: self.scheduleType!)
+                    self.presenter?.updateSchedule(week: week, cache: decoded)
+                } else {
+                    self.presenter?.updateSchedule(week: week, cache: nil)
+                }
+            case .error:
+                self.presenter?.updateSchedule(week: week, cache: nil)
+            }
+        })
     }
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +78,7 @@ class ScheduleListViewController: UIViewController, ScheduleListViewProtocol {
         tableView.delegate = reloadableViewLayoutAdapter
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
         view.addSubview(tableView)
-        storage?.async.object(forKey: "\(scheduleType!)\(id!)", completion: { result in
+        storage?.async.object(forKey: "\(scheduleType!)\(id!)now", completion: { result in
             switch result {
             case .value(let data):
                 if let decoded = try? JSONDecoder().decode(JSONDecoding.StudentScheduleApi.self, from: data) {
@@ -109,15 +124,17 @@ class ScheduleListViewController: UIViewController, ScheduleListViewProtocol {
                                     items: self.getNewRows(data: data.weekdays[5], type: type) ?? [],
                                     footer: nil)]
         }, completion: {
-            var day = Calendar.current.component(.weekday, from: Date())
-            var indexPath = IndexPath(row: 0, section: 0)
-            day -= 2
-            if day == -1 {
-                indexPath = IndexPath(row: 0, section: 0)
-            } else {
-                indexPath = IndexPath(row: 0, section: day)
+            if !UserDefaults.standard.bool(forKey: "spring") {
+                var day = Calendar.current.component(.weekday, from: Date())
+                var indexPath = IndexPath(row: 0, section: 0)
+                day -= 2
+                if day == -1 {
+                    indexPath = IndexPath(row: 0, section: 0)
+                } else {
+                    indexPath = IndexPath(row: 0, section: day)
+                }
+                self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
             }
-            self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
         })
     }
 }

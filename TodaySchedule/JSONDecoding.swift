@@ -7,18 +7,18 @@
 //
 
 public class JSONDecoding {
-    public struct StudentScheduleApi: Decodable {
+    public struct StudentScheduleApi: Decodable, Equatable {
         let week: String?
         let weekdays: [Weekdays]
-        public struct Weekdays: Decodable {
+        public struct Weekdays: Decodable, Equatable {
             let periods: [Periods]
             let weekday: String
-            public struct Periods: Decodable {
+            public struct Periods: Decodable, Equatable {
                 let schedule: [Schedule]
                 let period: Int
                 let period_start: String
                 let period_end: String
-                public struct Schedule: Decodable {
+                public struct Schedule: Decodable, Equatable {
                     let name: String
                     let lastname: String
                     let middlename: String

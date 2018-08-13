@@ -28,6 +28,9 @@ class LoginViewController: UIViewController, LoginViewProtocol {
     @objc func loginUpInside() {
         presenter?.loginUser()
     }
+    @objc func scheduleUpInside() {
+        navigationController?.show(ScheduleRouter.createModule(withMy: false), sender: self)
+    }
     @objc func returnKeyPressed(sender: UITextField) {
         if sender == LoginLayout.loginTextField {
             LoginLayout.passwordTextField.becomeFirstResponder()

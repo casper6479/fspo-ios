@@ -33,26 +33,26 @@ public class JSONDecoding {
         let debts: Int
         let visits: Int
     }
-    struct JournalBySubjectsApi: Decodable {
+    struct JournalBySubjectsApi: Decodable, Equatable {
         let lessons: [Lessons]
-        struct Lessons: Decodable {
+        struct Lessons: Decodable, Equatable {
             let lesson_id: String
             let name: String
             let semester: String
         }
     }
-    struct MoreApi: Decodable {
+    struct MoreApi: Decodable, Equatable {
         let lessons_now: LessonsNow
         let lessons_before: LessonsBefore
-        struct LessonsBefore: Decodable {
+        struct LessonsBefore: Decodable, Equatable {
             let semester: Int
             let lessons: [Lessons]
         }
-        struct LessonsNow: Decodable {
+        struct LessonsNow: Decodable, Equatable {
             let semester: Int
             let lessons: [Lessons]
         }
-        struct Lessons: Decodable {
+        struct Lessons: Decodable, Equatable {
             let name: String
             let lesson_id: String
             let ex_all: Int
