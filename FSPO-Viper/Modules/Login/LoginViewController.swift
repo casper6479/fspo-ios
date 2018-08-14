@@ -41,7 +41,7 @@ class LoginViewController: UIViewController, LoginViewProtocol {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    func presentTabBar() {
-        self.present(UITabBarController().buildStudentsTabBar(), animated: true)
+    func presentAuthRequest() {
+        self.present(IdentityRequestRouter.createModule(), animated: true)
     }
 }

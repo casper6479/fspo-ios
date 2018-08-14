@@ -27,5 +27,5 @@ protocol LoginInteractorProtocol: class {
 protocol LoginViewProtocol: class {
 
   var presenter: LoginPresenterProtocol? { get set }
-  func presentTabBar()
+  func presentAuthRequest()
 }

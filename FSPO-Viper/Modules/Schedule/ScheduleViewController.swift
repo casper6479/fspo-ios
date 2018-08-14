@@ -8,7 +8,7 @@
 
 import UIKit
 import LayoutKit
-// swiftlint:disable:next type_body_length
+
 class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollViewDelegate {
     static var publicGroupsDS: JSONDecoding.GetGroupsApi?
     static var publicTeachersDS: JSONDecoding.GetTeachersApi?
@@ -170,10 +170,10 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollVi
             }
         })
     }
-    func getStudentRows(data: JSONDecoding.StudentScheduleApi.Weekdays) -> [Layout]? {
+    func getStudentRows(data: JSONDecoding.StudentScheduleApi.Weekdays, isToday: Bool) -> [Layout]? {
         var layouts = [Layout]()
         for item in data.periods {
-            layouts.append(StudentScheduleCellLayout(schedule: item, type: "group"))
+            layouts.append(StudentScheduleCellLayout(schedule: item, type: "group", isToday: isToday))
         }
         if data.periods.count == 0 {
             layouts.append(NoScheduleCellLayout())
@@ -199,25 +199,16 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollVi
         TeachersListLayout.tableView?.delegate = self.teachersListLayoutAdapter
     }
     func reloadStudentSchedule(data: JSONDecoding.StudentScheduleApi) {
-        self.reloadTableView(width: self.view.bounds.width, synchronous: false, layoutAdapter: self.studentScheduleLayoutAdapter ?? ReloadableViewLayoutAdapter(reloadableView: UITableView()), ds: [Section(
-            header: nil,
-            items: getStudentRows(data: data.weekdays[0]) ?? [],
-            footer: nil), Section(
+        var day = Calendar.current.component(.weekday, from: Date())
+        day -= 2
+        var layouts = [Section<[Layout]>]()
+        for i in 0...5 {
+            layouts.append(Section(
                 header: nil,
-                items: getStudentRows(data: data.weekdays[1]) ?? [],
-                footer: nil), Section(
-                    header: nil,
-                    items: getStudentRows(data: data.weekdays[2]) ?? [],
-                    footer: nil), Section(
-                        header: nil,
-                        items: getStudentRows(data: data.weekdays[3]) ?? [],
-                        footer: nil), Section(
-                            header: nil,
-                            items: getStudentRows(data: data.weekdays[4]) ?? [],
-                            footer: nil), Section(
-                                header: nil,
-                                items: getStudentRows(data: data.weekdays[5]) ?? [],
-                                footer: nil)])
+                items: self.getStudentRows(data: data.weekdays[i], isToday: i == day ? true : false) ?? [],
+                footer: nil))
+        }
+        self.reloadTableView(width: self.view.bounds.width, synchronous: false, layoutAdapter: self.studentScheduleLayoutAdapter ?? ReloadableViewLayoutAdapter(reloadableView: UITableView()), ds: layouts)
     }
     func reloadTeachers(data: JSONDecoding.GetTeachersApi) {
         self.reloadTableView(width: self.view.bounds.width, synchronous: false, layoutAdapter: self.teachersListLayoutAdapter ?? ReloadableViewLayoutAdapter(reloadableView: UITableView()), ds: [Section(

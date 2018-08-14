@@ -14,7 +14,7 @@ class NotificationSettingsViewController: UIViewController, UITableViewDelegate,
     var audioPlayer = AVAudioPlayer()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Настройки уведомлений"
+        self.title = NSLocalizedString("Настройки уведомлений", comment: "")
         tableView = UITableView(frame: view.bounds, style: .grouped)
         tableView.frame.size.height = Constants.safeHeight
         tableView.delegate = self
@@ -34,13 +34,13 @@ class NotificationSettingsViewController: UIViewController, UITableViewDelegate,
         return 1
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let titles = ["Типы уведомлений", "Уведомление о занятии за", "Звук уведомления"]
+        let titles = [NSLocalizedString("Типы уведомлений", comment: ""), NSLocalizedString("Уведомление о занятии за", comment: ""), NSLocalizedString("Звук уведомления", comment: "")]
         return titles[section]
     }
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         var title = ""
         if section == 1 {
-            title = "до занятия"
+            title = NSLocalizedString("до занятия", comment: "")
         }
         return title
     }
@@ -48,20 +48,20 @@ class NotificationSettingsViewController: UIViewController, UITableViewDelegate,
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
         if indexPath.section == 0 {
             cell.textLabel?.isEnabled = false
-            cell.textLabel?.text = "О предстоящих занятиях"
+            cell.textLabel?.text = NSLocalizedString("О предстоящих занятиях", comment: "")
             cell.accessoryType = .checkmark
             cell.selectionStyle = .none
         }
         if indexPath.section == 1 {
-            cell.textLabel?.text = "\(indexPath.row) минут"
+            cell.textLabel?.text = "\(indexPath.row) \(NSLocalizedString("минут", comment: ""))"
             if indexPath.row == 6 {
-                cell.textLabel?.text = "10 минут"
+                cell.textLabel?.text = "10 \(NSLocalizedString("минут", comment: ""))"
             }
         }
         if indexPath.section == 2 {
-            cell.textLabel?.text = "Стандартный"
+            cell.textLabel?.text = NSLocalizedString("Стандартный", comment: "")
             if indexPath.row == 0 {
-                cell.textLabel?.text = "Кастомный"
+                cell.textLabel?.text = NSLocalizedString("Кастомный", comment: "")
             }
         }
         return cell

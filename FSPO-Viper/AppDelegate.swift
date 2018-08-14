@@ -24,11 +24,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ScheduleStorage().setExludedFromBackup()
 
         UIApplication.shared.statusBarStyle = .lightContent
+
         window = UIWindow(frame: UIScreen.main.bounds)
 
         let loginModule = UINavigationController.init(rootViewController: LoginRouter.createModule())
         if UserDefaults.standard.integer(forKey: "user_id") != 0 {
-            window?.rootViewController = UITabBarController().buildStudentsTabBar()
+            if UserDefaults.standard.string(forKey: "role") == "student" {
+                window?.rootViewController = UITabBarController().buildStudentsTabBar()
+            }
+            if UserDefaults.standard.string(forKey: "role") == "teacher" {
+                window?.rootViewController = UITabBarController().buildTeachersTabBar()
+            }
+            if UserDefaults.standard.string(forKey: "role") == "parent" {
+                //            self.present(UITabBarController().buildStudentsTabBar(), animated: true)
+            }
         } else {
             window?.rootViewController = loginModule
         }
@@ -63,7 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enableAutoToolbar = false
         IQKeyboardManager.shared.keyboardDistanceFromTextField = 5
 
-        FPSCounter().startTracking()
+//        FPSCounter().startTracking()
 
         UINavigationBar.appearance().barTintColor = UIColor.ITMOBlue
         UINavigationBar.appearance().isTranslucent = false
@@ -102,15 +111,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 switch error {
                 case LAError.authenticationFailed?:
                     DispatchQueue.main.async {
-                        BiometricLayout.label.text = "Возникла ошибка"
+                        BiometricLayout.label.text = NSLocalizedString("Возникла ошибка", comment: "")
                     }
                 case LAError.userCancel?:
                     DispatchQueue.main.async {
-                        BiometricLayout.label.text = "Отменено пользователем"
+                        BiometricLayout.label.text = NSLocalizedString("Отменено пользователем", comment: "")
                     }
                 case LAError.userFallback?:
                     DispatchQueue.main.async {
-                        BiometricLayout.label.text = "Введите пароль"
+                        BiometricLayout.label.text = NSLocalizedString("Введите пароль", comment: "")
                     }
                 default:
                     showMessage(message: NSLocalizedString("Face ID/Touch ID не может настроиться", comment: ""), y: 16)

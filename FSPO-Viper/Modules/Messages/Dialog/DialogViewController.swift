@@ -162,7 +162,7 @@ class DialogViewController: UIViewController, DialogViewProtocol, UITextViewDele
             } else {
                 isMe = false
             }
-            layouts.append(DialogsLayout(text: item.text, isMe: isMe))
+            layouts.append(DialogsLayout(text: item.text, isMe: isMe, unread: !item.read))
         }
         return layouts
     }

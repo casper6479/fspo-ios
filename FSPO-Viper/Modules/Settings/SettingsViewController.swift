@@ -16,7 +16,7 @@ class SettingsViewController: UIViewController, SettingsViewProtocol, UITableVie
     var tableView = UITableView()
 	override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Настройки"
+        self.title = NSLocalizedString("Настройки", comment: "")
         tableView = UITableView(frame: view.bounds, style: .grouped)
         tableView.frame.size.height = Constants.safeHeight
         tableView.delegate = self
@@ -31,7 +31,7 @@ class SettingsViewController: UIViewController, SettingsViewProtocol, UITableVie
         return rowcount[section]
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let sectiontitles = ["Начальный экран", "Расписание", "Уведомления", "Аутентификация", "Кэш", "Связь с разработчиком", ""]
+        let sectiontitles = [NSLocalizedString("Начальный экран", comment: ""), NSLocalizedString("Расписание", comment: ""), NSLocalizedString("Уведомления", comment: ""), NSLocalizedString("Аутентификация", comment: ""), NSLocalizedString("Кэш", comment: ""), NSLocalizedString("Связь с разработчиком", comment: ""), ""]
         return sectiontitles[section]
     }
     // swiftlint:disable:next cyclomatic_complexity
@@ -42,22 +42,22 @@ class SettingsViewController: UIViewController, SettingsViewProtocol, UITableVie
         cell.textLabel?.textColor = UIColor.black
         if indexPath.section == 0 {
             if indexPath.row == 0 {
-                cell.textLabel!.text = "Новости"
+                cell.textLabel!.text = NSLocalizedString("Новости", comment: "")
             } else if indexPath.row == 1 {
-                cell.textLabel!.text = "Журнал"
+                cell.textLabel!.text = NSLocalizedString("Журнал", comment: "")
             } else if indexPath.row == 2 {
-                cell.textLabel!.text = "Сообщения"
+                cell.textLabel!.text = NSLocalizedString("Сообщения", comment: "")
             } else if indexPath.row == 3 {
-                cell.textLabel!.text = "Расписание"
+                cell.textLabel!.text = NSLocalizedString("Расписание", comment: "")
             } else if indexPath.row == 4 {
-                cell.textLabel!.text = "Профиль"
+                cell.textLabel!.text = NSLocalizedString("Профиль", comment: "")
             }
             if indexPath.row == UserDefaults.standard.integer(forKey: "firstScreen") {
                 cell.accessoryType = .checkmark
             }
         }
         if indexPath.section == 1 {
-            cell.textLabel!.text = "Прокрутка к сегодняшнему дню"
+            cell.textLabel!.text = NSLocalizedString("Прокрутка к сегодняшнему дню", comment: "")
             if !UserDefaults.standard.bool(forKey: "spring") {
                 cell.accessoryType = .checkmark
             } else {
@@ -66,17 +66,17 @@ class SettingsViewController: UIViewController, SettingsViewProtocol, UITableVie
         }
         if indexPath.section == 2 {
             if indexPath.row == 1 {
-                cell.textLabel!.text = "Очистить расписание уведомлений"
+                cell.textLabel!.text = NSLocalizedString("Очистить расписание уведомлений", comment: "")
                 cell.textLabel!.textColor = UIColor(red: 25/255, green: 70/255, blue: 186/255, alpha: 1.0)
                 cell.textLabel!.textAlignment = .center
             } else {
-                cell.textLabel!.text = "Настройки уведомлений"
+                cell.textLabel!.text = NSLocalizedString("Настройки уведомлений", comment: "")
                 cell.textLabel!.textColor = .black
                 cell.accessoryType = .disclosureIndicator
             }
         }
         if indexPath.section == 3 {
-            cell.textLabel!.text = "Подтверждение личности"
+            cell.textLabel!.text = NSLocalizedString("Подтверждение личности", comment: "")
             cell.textLabel!.textColor = .black
             if UserDefaults.standard.bool(forKey: "biometricEnabled") {
                 cell.accessoryType = .checkmark
@@ -85,17 +85,17 @@ class SettingsViewController: UIViewController, SettingsViewProtocol, UITableVie
             }
         }
         if indexPath.section == 4 {
-            cell.textLabel!.text = "Очистить кэш"
+            cell.textLabel!.text = NSLocalizedString("Очистить кэш", comment: "")
             cell.textLabel!.textColor = UIColor(red: 25/255, green: 70/255, blue: 186/255, alpha: 1.0)
             cell.textLabel!.textAlignment = .center
         }
         if indexPath.section == 5 {
-            cell.textLabel!.text = "Группа VK"
+            cell.textLabel!.text = NSLocalizedString("Группа VK", comment: "")
             cell.textLabel!.textColor = UIColor(red: 25/255, green: 70/255, blue: 186/255, alpha: 1.0)
             cell.textLabel!.textAlignment = .center
         }
         if indexPath.section == 6 {
-            cell.textLabel!.text = "Выход"
+            cell.textLabel!.text = NSLocalizedString("Выход", comment: "")
             cell.textLabel!.textColor = UIColor(red: 236/255, green: 11/255, blue: 67/255, alpha: 1.0)
             cell.textLabel!.textAlignment = .center
         }
@@ -120,12 +120,12 @@ class SettingsViewController: UIViewController, SettingsViewProtocol, UITableVie
             }
         } else if indexPath.section == 2 {
             if indexPath.row == 1 {
-                let alert = UIAlertController(title: "Очистить расписание?", message: nil, preferredStyle: .actionSheet)
+                let alert = UIAlertController(title: NSLocalizedString("Очистить расписание?", comment: ""), message: nil, preferredStyle: .actionSheet)
                 alert.addAction(UIAlertAction(title: NSLocalizedString("Очистить", comment: ""), style: .destructive, handler: { _ in
                     if #available(iOS 10, *) {
                         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
                     }
-                    showMessage(message: "Расписание уведомлений очищено", y: 8)
+                    showMessage(message: NSLocalizedString("Расписание уведомлений очищено", comment: ""), y: 8)
                 }))
                 alert.addAction(UIAlertAction(title: NSLocalizedString("Отмена", comment: ""), style: .cancel, handler: nil))
                 alert.popoverPresentationController?.sourceView = viewForPopOver
@@ -144,8 +144,8 @@ class SettingsViewController: UIViewController, SettingsViewProtocol, UITableVie
                 UserDefaults.standard.set(true, forKey: "biometricEnabled")
             }
         } else if indexPath.section == 4 {
-            let alert = UIAlertController(title: "Очистить кэш?", message: nil, preferredStyle: .actionSheet)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("Очистить", comment: "Выйти"), style: .destructive, handler: { _ in
+            let alert = UIAlertController(title: "\(NSLocalizedString("Очистить кэш", comment: ""))?", message: nil, preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Очистить", comment: ""), style: .destructive, handler: { _ in
                 let group = DispatchGroup()
                 group.enter()
                 storage?.async.removeAll(completion: { result in
@@ -154,7 +154,7 @@ class SettingsViewController: UIViewController, SettingsViewProtocol, UITableVie
                         group.leave()
                     case .error(let error):
                         DispatchQueue.main.async {
-                            showMessage(message: "Ошибка очистки: \(error)", y: 8)
+                            showMessage(message: "\(NSLocalizedString("Ошибка очистки", comment: "")): \(error)", y: 8)
                         }
                     }
                 })
@@ -164,18 +164,18 @@ class SettingsViewController: UIViewController, SettingsViewProtocol, UITableVie
                     group.leave()
                 } catch {
                     DispatchQueue.main.async {
-                        showMessage(message: "Ошибка очистки: \(error)", y: 8)
+                        showMessage(message: "\(NSLocalizedString("Ошибка очистки", comment: "")): \(error)", y: 8)
                     }
                 }
                 ImageCache.default.clearDiskCache()
                 ImageCache.default.clearMemoryCache()
                 group.notify(queue: DispatchQueue.main) {
                     DispatchQueue.main.async {
-                        showMessage(message: "Кэш очищен", y: 8)
+                        showMessage(message: NSLocalizedString("Кэш очищен", comment: ""), y: 8)
                     }
                 }
             }))
-            alert.addAction(UIAlertAction(title: NSLocalizedString("Отмена", comment: "Отмена"), style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Отмена", comment: ""), style: .cancel, handler: nil))
             alert.popoverPresentationController?.sourceView = viewForPopOver
             alert.popoverPresentationController?.sourceRect = rectForPopOver!
             self.present(alert, animated: true, completion: nil)
@@ -194,15 +194,15 @@ class SettingsViewController: UIViewController, SettingsViewProtocol, UITableVie
                 UIApplication.shared.openURL(safariurl)
             }
         } else if indexPath.section == 6 {
-            let alert = UIAlertController(title: "Точно выйти?", message: nil, preferredStyle: .actionSheet)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("Выйти", comment: "Выйти"), style: .destructive, handler: { _ in
+            let alert = UIAlertController(title: NSLocalizedString("Точно выйти?", comment: ""), message: nil, preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Выйти", comment: ""), style: .destructive, handler: { _ in
                 keychain["token"] = nil
                 UserDefaults.standard.set(0, forKey: "user_id")
                 UserDefaults.standard.set(false, forKey: "spring")
                 UserDefaults.standard.set(0, forKey: "notificationSound")
                 self.present(UINavigationController.init(rootViewController: LoginRouter.createModule()), animated: true)
             }))
-            alert.addAction(UIAlertAction(title: NSLocalizedString("Отмена", comment: "Отмена"), style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Отмена", comment: ""), style: .cancel, handler: nil))
             alert.popoverPresentationController?.sourceView = viewForPopOver
             alert.popoverPresentationController?.sourceRect = rectForPopOver!
             self.present(alert, animated: true, completion: nil)
@@ -215,13 +215,13 @@ class SettingsViewController: UIViewController, SettingsViewProtocol, UITableVie
             let authContex = LAContext()
             var authError: NSError?
             if !authContex.canEvaluatePolicy(.deviceOwnerAuthentication, error: &authError) {
-                footer = "Не поддерживается на Вашем устройстве"
+                footer = NSLocalizedString("Не поддерживается на Вашем устройстве", comment: "")
             }
         } else if section == 5 {
-            footer = "Разработчик: Борисов Николай"
+            footer = NSLocalizedString("Разработчик: Борисов Николай", comment: "")
         } else if section == 6 {
             let bundleShortVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String
-            footer = "Версия \(bundleShortVersion!)"
+            footer = "\(NSLocalizedString("Версия", comment: "")) \(bundleShortVersion!)"
         }
         return footer
     }

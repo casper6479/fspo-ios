@@ -11,7 +11,7 @@ import UIKit
 import LayoutKit
 
 open class StudentScheduleCellLayout: InsetLayout<View> {
-    public init(schedule: JSONDecoding.StudentScheduleApi.Weekdays.Periods, type: String) {
+    public init(schedule: JSONDecoding.StudentScheduleApi.Weekdays.Periods, type: String, isToday: Bool) {
         var scheduleCell = [Layout]()
         let paraCount = LabelLayout(text: "\(schedule.period)", font: (UIFont.ITMOFontBold?.withSize(23))!, alignment: .center, config: {label in
             label.backgroundColor = .white
@@ -22,7 +22,32 @@ open class StudentScheduleCellLayout: InsetLayout<View> {
         let timeEnd = LabelLayout(text: "\(schedule.period_end)", font: (UIFont.ITMOFont?.withSize(16))!, alignment: .center, config: {label in
             label.backgroundColor = .white
         })
-        let leftPart = SizeLayout(height: 63, sublayout: StackLayout(axis: .vertical, spacing: 4, sublayouts: [paraCount, timeBegin, timeEnd]))
+        var leftPartSublayouts: [Layout] = [StackLayout(
+            axis: .vertical,
+            spacing: 4,
+            sublayouts: [paraCount, timeBegin, timeEnd])]
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US")
+        dateFormatter.dateFormat = "HH:mm"
+        let start = dateFormatter.date(from: schedule.period_start)
+        let end = dateFormatter.date(from: schedule.period_end)
+        let start_time = Calendar.current.date(bySettingHour: Calendar.current.component(.hour, from: start!), minute: Calendar.current.component(.minute, from: start!), second: 0, of: Date())
+        let end_time = Calendar.current.date(bySettingHour: Calendar.current.component(.hour, from: end!), minute: Calendar.current.component(.minute, from: end!), second: 0, of: Date())
+        if Date() > start_time! && Date() < end_time! {
+            if isToday {
+                leftPartSublayouts.append(SizeLayout(width: 4, config: {view in
+                    view.backgroundColor = UIColor(red: 1, green: 222/255, blue: 23/255, alpha: 1.0)
+                    view.layer.cornerRadius = 2
+                }))
+            }
+        }
+        let leftPart = SizeLayout(
+            height: 63,
+            sublayout: StackLayout(
+                axis: .horizontal,
+                spacing: 8,
+                sublayouts: leftPartSublayouts)
+        )
         let leftPartSize = SizeLayout(width: 50, sublayout: leftPart)
         for item in schedule.schedule {
             var name = item.name

@@ -96,8 +96,18 @@ open class MoreLayout: InsetLayout<View> {
             axis: .vertical,
             spacing: 5,
             sublayouts: [presenseLabelStack, nonPresenseLabelStack])
+        var att = attestation
+        if attestation == "-1" {
+            att = "-"
+        }
+        if attestation == "1" {
+            att = "Незачёт"
+        }
+        if attestation == "1" {
+            att = "Зачёт"
+        }
         let attestationLabel = LabelLayout(
-            text: attestation,
+            text: att,
             font: UIFont.ITMOFont!,
             alignment: .center,
             config: { label in
@@ -116,8 +126,19 @@ open class MoreLayout: InsetLayout<View> {
             axis: .vertical,
             alignment: .centerTrailing,
             sublayouts: [attestationLabel, attestationLabelDescription])
+        var note = result
+        if result == "-1" {
+            note = "-"
+        }
+        if result == "1" {
+            note = "Незачёт"
+        }
+        if result == "1" {
+            note = "Зачёт"
+        }
+        
         let resultLabel = LabelLayout(
-            text: result,
+            text: note,
             font: UIFont.ITMOFont!,
             alignment: .center,
             config: { label in

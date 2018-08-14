@@ -10,7 +10,7 @@ import Foundation
 import LayoutKit
 
 open class DialogsLayout: InsetLayout<View> {
-    public init(text: String, isMe: Bool) {
+    public init(text: String, isMe: Bool, unread: Bool) {
         var backgroundColor: UIColor?
         var textColor: UIColor?
         var alignment: Alignment
@@ -70,9 +70,14 @@ open class DialogsLayout: InsetLayout<View> {
             config: { view in
                 view.backgroundColor = UIColor(red: 246/255, green: 251/255, blue: 254/255, alpha: 1)
         })
+        let unreadView = SizeLayout(size: CGSize(width: 10, height: 10), config: {view in
+            view.backgroundColor = UIColor.ITMOBlue.withAlphaComponent(0.7)
+            view.layer.cornerRadius = 5
+        })
+        let bubbleStack = StackLayout(axis: .horizontal, spacing: 8, alignment: alignment, sublayouts: isMe ? unread ? [unreadView, bubble] : [bubble] : [bubble])
         super.init(
             insets: UIEdgeInsets(top: 4, left: 8, bottom: 4, right: 8),
-            sublayout: bubble,
+            sublayout: bubbleStack,
             config: { view in
                 view.backgroundColor = UIColor(red: 246/255, green: 251/255, blue: 254/255, alpha: 1)
         })

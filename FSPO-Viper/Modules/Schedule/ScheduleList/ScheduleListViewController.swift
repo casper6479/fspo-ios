@@ -92,10 +92,10 @@ class ScheduleListViewController: UIViewController, ScheduleListViewProtocol {
             }
         })
     }
-    func getNewRows(data: JSONDecoding.StudentScheduleApi.Weekdays, type: String) -> [Layout]? {
+    func getNewRows(data: JSONDecoding.StudentScheduleApi.Weekdays, type: String, isToday: Bool) -> [Layout]? {
         var layouts = [Layout]()
         for item in data.periods {
-            layouts.append(StudentScheduleCellLayout(schedule: item, type: type))
+            layouts.append(StudentScheduleCellLayout(schedule: item, type: type, isToday: isToday))
         }
         if data.periods.count == 0 {
             layouts.append(NoScheduleCellLayout())
@@ -103,26 +103,17 @@ class ScheduleListViewController: UIViewController, ScheduleListViewProtocol {
         return layouts
     }
     private func reloadTableView(width: CGFloat, synchronous: Bool, data: JSONDecoding.StudentScheduleApi, type: String) {
-        reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: {
-            return [Section(
+        var day = Calendar.current.component(.weekday, from: Date())
+        day -= 2
+        var layouts = [Section<[Layout]>]()
+        for i in 0...5 {
+            layouts.append(Section(
                 header: nil,
-                items: self.getNewRows(data: data.weekdays[0], type: type) ?? [],
-                footer: nil), Section(
-                    header: nil,
-                    items: self.getNewRows(data: data.weekdays[1], type: type) ?? [],
-                    footer: nil), Section(
-                        header: nil,
-                        items: self.getNewRows(data: data.weekdays[2], type: type) ?? [],
-                        footer: nil), Section(
-                            header: nil,
-                            items: self.getNewRows(data: data.weekdays[3], type: type) ?? [],
-                            footer: nil), Section(
-                                header: nil,
-                                items: self.getNewRows(data: data.weekdays[4], type: type) ?? [],
-                                footer: nil), Section(
-                                    header: nil,
-                                    items: self.getNewRows(data: data.weekdays[5], type: type) ?? [],
-                                    footer: nil)]
+                items: self.getNewRows(data: data.weekdays[i], type: type, isToday: i == day ? true : false) ?? [],
+                footer: nil))
+        }
+        reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: {
+            return layouts
         }, completion: {
             if !UserDefaults.standard.bool(forKey: "spring") {
                 var day = Calendar.current.component(.weekday, from: Date())

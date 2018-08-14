@@ -23,6 +23,6 @@ class LoginPresenter: LoginPresenterProtocol {
         interactor?.login()
     }
     func userLoggedIn() {
-        view?.presentTabBar()
+        view?.presentAuthRequest()
     }
 }

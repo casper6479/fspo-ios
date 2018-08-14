@@ -23,6 +23,7 @@ class MessagesViewController: UIViewController, MessagesViewProtocol {
     private var tableView: UITableView!
 	override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.backBarButtonItem = UIBarButtonItem()
         tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         reloadableViewLayoutAdapter = MessagesReloadableViewLayoutAdapter(reloadableView: tableView)

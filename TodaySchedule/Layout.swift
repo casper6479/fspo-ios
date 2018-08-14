@@ -15,7 +15,26 @@ open class StudentScheduleCellLayout: InsetLayout<View> {
         let paraCount = LabelLayout(text: "\(schedule.period)", font: UIFont.boldSystemFont(ofSize: 15), alignment: .centerTrailing, config: {label in
             label.textColor = label.textColor.withAlphaComponent(0.8)
         })
-        let leftPartSize = SizeLayout(width: 16, sublayout: paraCount)
+        var leftPartSublayouts: [Layout] = [paraCount]
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US")
+        dateFormatter.dateFormat = "HH:mm"
+        let start = dateFormatter.date(from: schedule.period_start)
+        let end = dateFormatter.date(from: schedule.period_end)
+        let start_time = Calendar.current.date(bySettingHour: Calendar.current.component(.hour, from: start!), minute: Calendar.current.component(.minute, from: start!), second: 0, of: Date())
+        let end_time = Calendar.current.date(bySettingHour: Calendar.current.component(.hour, from: end!), minute: Calendar.current.component(.minute, from: end!), second: 0, of: Date())
+        var leftwidth: CGFloat = 16
+        if Date() > start_time! && Date() < end_time! {
+            leftPartSublayouts.append(SizeLayout(width: 4, config: {view in
+                view.backgroundColor = UIColor(red: 1, green: 222/255, blue: 23/255, alpha: 1.0)
+                view.layer.cornerRadius = 2
+            }))
+            leftwidth += 12
+        }
+        let leftPartSize = SizeLayout(width: leftwidth, sublayout: StackLayout(
+            axis: .horizontal,
+            spacing: 8,
+            sublayouts: leftPartSublayouts))
         for item in schedule.schedule {
             var name = item.name
             if item.group_part != 0 {
@@ -45,7 +64,7 @@ open class StudentScheduleCellLayout: InsetLayout<View> {
             })
             let middlePart = StackLayout(axis: .vertical, sublayouts: [paraName])
             let extensionWidth = UIScreen.main.bounds.width - 16
-            let middlePartSize = SizeLayout(width: extensionWidth - 90, sublayout: middlePart)
+            let middlePartSize = SizeLayout(width: extensionWidth - 74 - leftwidth, sublayout: middlePart)
             let rightPartSize = auditory
             scheduleCell.append(StackLayout(
                 axis: .horizontal,
