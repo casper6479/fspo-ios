@@ -19,7 +19,9 @@ class JournalPresenter: JournalPresenterProtocol {
         self.router = router
     }
     func updateView(cache: JSONDecoding.JournalApi?) {
-        interactor?.fetchJournal(cache: cache)
+        if Connectivity.isConnectedToInternet() {
+            interactor?.fetchJournal(cache: cache)
+        }
     }
     func journalFetched(data: JSONDecoding.JournalApi) {
         view?.fillView(data: data)

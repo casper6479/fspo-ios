@@ -19,7 +19,9 @@ class ProfilePresenter: ProfilePresenterProtocol {
         self.router = router
     }
     func updateView(cache: JSONDecoding.ProfileApi?) {
-        interactor?.fetchProfile(cache: cache)
+        if Connectivity.isConnectedToInternet() {
+            interactor?.fetchProfile(cache: cache)
+        }
     }
     func profileFetched(data: JSONDecoding.ProfileApi) {
         view?.fillView(data: data)

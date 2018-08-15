@@ -19,7 +19,9 @@ class MessagesPresenter: MessagesPresenterProtocol {
         self.router = router
     }
     func updateView(cache: JSONDecoding.MessagesApi?) {
-        interactor?.fetchMessages(cache: cache)
+        if Connectivity.isConnectedToInternet() {
+            interactor?.fetchMessages(cache: cache)
+        }
     }
     func messagesFetched(data: JSONDecoding.MessagesApi) {
         view?.showNewRows(source: data)

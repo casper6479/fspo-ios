@@ -22,7 +22,7 @@ func showMessage(message: String, y: CGFloat) {
     toastLabel.layer.cornerRadius = toastLabel.frame.height / 2
     toastLabel.clipsToBounds  =  true
     UIApplication.shared.keyWindow?.addSubview(toastLabel)
-    UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
+    UIView.animate(withDuration: 4.0, delay: 1, options: .curveEaseOut, animations: {
         toastLabel.alpha = 0.0
     }, completion: { _ in
         toastLabel.removeFromSuperview()

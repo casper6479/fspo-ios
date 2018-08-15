@@ -60,11 +60,11 @@ extension UITabBarController {
         Schedule.title = NSLocalizedString("Расписание", comment: "")
         Schedule.tabBarItem = UITabBarItem(title: NSLocalizedString("Расписание", comment: ""), image: UIImage(named: "schedule"), selectedImage: UIImage(named: "schedule-filled"))
         Schedule.tabBarItem.imageInsets = UIEdgeInsets(top: 2, left: 0, bottom: -2, right: 0)
-//        let Profile = ProfileRouter.createModule()
-//        Profile.title = NSLocalizedString("Профиль", comment: "")
-//        Profile.tabBarItem = UITabBarItem(title: NSLocalizedString("Профиль", comment: ""), image: UIImage(named: "profile"), selectedImage: UIImage(named: "profile-filled"))
+        let Profile = ProfileRouter.createModule()
+        Profile.title = NSLocalizedString("Профиль", comment: "")
+        Profile.tabBarItem = UITabBarItem(title: NSLocalizedString("Профиль", comment: ""), image: UIImage(named: "profile"), selectedImage: UIImage(named: "profile-filled"))
         let tabBarController = UITabBarController()
-        let controllers = [News, Messages, Schedule]
+        let controllers = [News, Messages, Schedule, Profile]
         let navigationControllers = controllers.map {UINavigationController(rootViewController: $0)}
         tabBarController.viewControllers = navigationControllers
         tabBarController.tabBar.backgroundColor = .white

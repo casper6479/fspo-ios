@@ -55,6 +55,7 @@ class MoreViewController: UIViewController, MoreViewProtocol {
         }
         for item in semester {
             layouts.append(MoreLayout(subject: item.name, presense: "\(item.student_ex_was)", nonPresense: "\(item.student_ex_not)", allPresense: "\(item.ex_all)", attestation: "\(item.student_validmark ?? -1)", result: "\(item.student_mark ?? -1)"))
+//            layouts.append(MoreLayout(subject: "Физико-Математическая", presense: "322222", nonPresense: "22279", allPresense: "112", attestation: "1", result: "0"))
         }
         if semester.count == 0 {
             layouts.append(SizeLayout(height: 0))

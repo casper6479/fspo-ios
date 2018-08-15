@@ -19,7 +19,9 @@ class MorePresenter: MorePresenterProtocol {
         self.router = router
     }
     func updateView(cache: JSONDecoding.MoreApi?) {
-        interactor?.fetchMore(cache: cache)
+        if Connectivity.isConnectedToInternet() {
+            interactor?.fetchMore(cache: cache)
+        }
     }
     func moreFetched(data: JSONDecoding.MoreApi) {
         view?.showNewRows(source: data)

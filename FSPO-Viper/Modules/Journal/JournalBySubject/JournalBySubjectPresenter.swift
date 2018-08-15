@@ -20,7 +20,9 @@ class JournalBySubjectPresenter: JournalBySubjectPresenterProtocol {
         self.router = router
     }
     func updateView(cache: JSONDecoding.JournalBySubjectsApi?) {
-        interactor?.fetchSubjects(cache: cache)
+        if Connectivity.isConnectedToInternet() {
+            interactor?.fetchSubjects(cache: cache)
+        }
     }
     func journalBySubjectFetched(data: JSONDecoding.JournalBySubjectsApi) {
         view?.showNewRows(source: data)

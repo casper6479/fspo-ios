@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Alamofire
 class NewsPresenter: NewsPresenterProtocol {
 
     weak private var view: NewsViewProtocol?
@@ -20,7 +20,9 @@ class NewsPresenter: NewsPresenterProtocol {
         self.router = router
     }
     func updateView(offset: Int, cache: [JSONDecoding.NewsApi.News]?) {
-        return (interactor?.fetchNews(offset: offset, cache: cache))!
+        if Connectivity.isConnectedToInternet() {
+            interactor?.fetchNews(offset: offset, cache: cache)
+        }
     }
     func updateData(data: JSONDecoding.NewsApi) {
         view?.showNews(source: data.news)

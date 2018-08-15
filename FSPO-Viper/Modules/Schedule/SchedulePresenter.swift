@@ -19,13 +19,19 @@ class SchedulePresenter: SchedulePresenterProtocol {
         self.router = router
     }
     func updateSchedule(cache: JSONDecoding.StudentScheduleApi?) {
-        interactor?.fetchStudentSchedule(week: "now", cache: cache)
+        if Connectivity.isConnectedToInternet() {
+            interactor?.fetchStudentSchedule(week: "now", cache: cache)
+        }
     }
     func updateGroups(cache: JSONDecoding.GetGroupsApi?) {
-        interactor?.fetchScheduleByGroups(cache: cache)
+        if Connectivity.isConnectedToInternet() {
+            interactor?.fetchScheduleByGroups(cache: cache)
+        }
     }
     func updateTeachers(cache: JSONDecoding.GetTeachersApi?) {
-        interactor?.fetchTeachers(cache: cache)
+        if Connectivity.isConnectedToInternet() {
+            interactor?.fetchTeachers(cache: cache)
+        }
     }
     func teachersFetched(data: JSONDecoding.GetTeachersApi) {
         view?.showNewTeacherRows(source: data)
@@ -37,6 +43,8 @@ class SchedulePresenter: SchedulePresenterProtocol {
         view?.showNewStudentScheduleRows(source: data)
     }
     func updateStudentSchedule(week: String, cache: JSONDecoding.StudentScheduleApi?) {
-        interactor?.fetchStudentSchedule(week: week, cache: cache)
+        if Connectivity.isConnectedToInternet() {
+            interactor?.fetchStudentSchedule(week: week, cache: cache)
+        }
     }
 }

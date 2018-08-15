@@ -40,6 +40,14 @@ class IdentityRequestViewController: UIViewController, IdentityRequestViewProtoc
     }
     @objc func disallowUpInside() {
         UserDefaults.standard.set(false, forKey: "biometricEnabled")
-        self.present(UITabBarController().buildStudentsTabBar(), animated: true)
+        if UserDefaults.standard.string(forKey: "role") == "student" {
+            self.present(UITabBarController().buildStudentsTabBar(), animated: true)
+        }
+        if UserDefaults.standard.string(forKey: "role") == "teacher" {
+            self.present(UITabBarController().buildTeachersTabBar(), animated: true)
+        }
+        if UserDefaults.standard.string(forKey: "role") == "parent" {
+            //            self.present(UITabBarController().buildStudentsTabBar(), animated: true)
+        }
     }
 }

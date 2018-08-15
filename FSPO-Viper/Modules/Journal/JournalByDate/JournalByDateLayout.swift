@@ -84,8 +84,24 @@ open class JournalLessonCellLayout: InsetLayout<View> {
         var sublayouts: [Layout] = [lessonNameLabel]
         var optionalTexts = ["\(String(describing: data.student_mark))", "\(String(describing: data.student_delay))", "\(data.student_dropout)", "\(String(describing: data.student_performance))"]
         if optionalTexts[0] != "nil" {
-            let noteLabel = LabelLayout(text: "\(NSLocalizedString("Оценка", comment: "")): \(data.student_mark!)", font: UIFont.ITMOFont!.withSize(15), config: { label in
-                    label.textColor = .black
+            var noteText = "\(NSLocalizedString("Оценка", comment: "")): \(data.student_mark!)"
+            var textColor: UIColor = .black
+            if data.student_mark! == 0 {
+                noteText = NSLocalizedString("Незачёт", comment: "")
+                textColor = .ITMORed
+            }
+            if data.student_mark! == 1 {
+                noteText = NSLocalizedString("Зачёт", comment: "")
+                textColor = UIColor(red: 0, green: 148/255, blue: 77/255, alpha: 1.0)
+            }
+            if data.student_mark! == 2 {
+                textColor = .ITMORed
+            }
+            if data.student_mark! == 5 {
+                textColor = UIColor(red: 0, green: 148/255, blue: 77/255, alpha: 1.0)
+            }
+            let noteLabel = LabelLayout(text: noteText, font: UIFont.ITMOFont!.withSize(15), config: { label in
+                    label.textColor = textColor
                     label.backgroundColor = .white
             })
             sublayouts.append(noteLabel)

@@ -20,7 +20,9 @@ class DialogPresenter: DialogPresenterProtocol {
         self.router = router
     }
     func updateView(cache: JSONDecoding.DialogsApi?) {
-        interactor?.fetchDialogs(cache: cache)
+        if Connectivity.isConnectedToInternet() {
+            interactor?.fetchDialogs(cache: cache)
+        }
     }
     func dialogsFetched(data: JSONDecoding.DialogsApi) {
         view?.showNewRows(source: data)

@@ -20,7 +20,9 @@ class ScheduleListPresenter: ScheduleListPresenterProtocol {
         self.router = router
     }
     func updateView(cache: JSONDecoding.StudentScheduleApi?) {
-        interactor?.fetchSchedule(week: "now", cache: cache)
+        if Connectivity.isConnectedToInternet() {
+            interactor?.fetchSchedule(week: "now", cache: cache)
+        }
     }
     func scheduleFetched(data: JSONDecoding.StudentScheduleApi, type: String) {
         view?.showNewScheduleRows(source: data, type: type)

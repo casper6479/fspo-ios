@@ -19,7 +19,9 @@ class ParentsPresenter: ParentsPresenterProtocol {
         self.router = router
     }
     func updateView() {
-        interactor?.fetchParents()
+        if Connectivity.isConnectedToInternet() {
+            interactor?.fetchParents()
+        }
     }
     func parentsFetched(firstname: String, lastname: String, middlename: String, email: String, phone: String, photo: String) {
         view?.fillView(firstname: firstname, lastname: lastname, middlename: middlename, email: email, phone: phone, photo: photo)

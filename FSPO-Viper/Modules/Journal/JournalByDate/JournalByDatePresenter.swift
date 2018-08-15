@@ -20,7 +20,9 @@ class JournalByDatePresenter: JournalByDatePresenterProtocol {
         self.router = router
     }
     func updateView(date: String) {
-        interactor?.fetchJournalByDate(date: date)
+        if Connectivity.isConnectedToInternet() {
+            interactor?.fetchJournalByDate(date: date)
+        }
     }
     func journalByDateFetched(data: JSONDecoding.JournalByDateAPI) {
         view?.updateTableView(source: data)

@@ -50,6 +50,7 @@
 		465182032123403000E88402 /* IdentityRequestProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465181FE2123403000E88402 /* IdentityRequestProtocols.swift */; };
 		465182042123403000E88402 /* IdentityRequestInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465181FF2123403000E88402 /* IdentityRequestInteractor.swift */; };
 		465182062123404A00E88402 /* IdentityRequestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465182052123404A00E88402 /* IdentityRequestLayout.swift */; };
+		465182082124418700E88402 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465182072124418700E88402 /* Connectivity.swift */; };
 		4660F8BC21136030005BF656 /* StudentScheduleCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660F8BB21136030005BF656 /* StudentScheduleCellLayout.swift */; };
 		46639AF920FBEB0A00F4616B /* StudentScheduleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46639AF820FBEB0A00F4616B /* StudentScheduleLayout.swift */; };
 		466CDF4E20EF72F700A86701 /* NewsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466CDF4820EF72F700A86701 /* NewsPresenter.swift */; };
@@ -225,6 +226,7 @@
 		465181FE2123403000E88402 /* IdentityRequestProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityRequestProtocols.swift; sourceTree = "<group>"; };
 		465181FF2123403000E88402 /* IdentityRequestInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityRequestInteractor.swift; sourceTree = "<group>"; };
 		465182052123404A00E88402 /* IdentityRequestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityRequestLayout.swift; sourceTree = "<group>"; };
+		465182072124418700E88402 /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
 		4660F8BB21136030005BF656 /* StudentScheduleCellLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentScheduleCellLayout.swift; sourceTree = "<group>"; };
 		46639AF820FBEB0A00F4616B /* StudentScheduleLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentScheduleLayout.swift; sourceTree = "<group>"; };
 		466CDF4820EF72F700A86701 /* NewsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPresenter.swift; sourceTree = "<group>"; };
@@ -482,6 +484,7 @@
 				466CDF6D20EFA4DB00A86701 /* TabBarBuilder.swift */,
 				4641E548211DBAF00015A425 /* BiometricLayout.swift */,
 				46FED983211E2F93007737EB /* CacheStorage.swift */,
+				465182072124418700E88402 /* Connectivity.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1131,6 +1134,7 @@
 				46B6D4CA210A5A3F00D83287 /* SettingsPresenter.swift in Sources */,
 				4621CE9720EFAB8200B17323 /* MessagesInteractor.swift in Sources */,
 				46B6D518210B25B500D83287 /* ParentsViewController.swift in Sources */,
+				465182082124418700E88402 /* Connectivity.swift in Sources */,
 				46BDD9AE21164D1D00C5CD94 /* DialogProtocols.swift in Sources */,
 				4621CEB320EFABC700B17323 /* JournalInteractor.swift in Sources */,
 				460E770021222AB600D0615A /* NotificationsSettingsViewController.swift in Sources */,

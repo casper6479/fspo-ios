@@ -94,8 +94,11 @@ public func updateNotificationContext() {
 //            showMessage(message: NSLocalizedString("Уведомления обновлены", comment: ""), y: 8)
         } catch {
             print(error)
-            print()
-            showMessage(message: "\(NSLocalizedString("Ошибка при обновлении уведомлений", comment: "")): \n\(error.localizedDescription)", y: 8)
+            if Connectivity.isConnectedToInternet() {
+                showMessage(message: "\(NSLocalizedString("Ошибка при обновлении уведомлений", comment: "")): \n\(error.localizedDescription)", y: 8)
+            } else {
+                showMessage(message: "\(NSLocalizedString("Ошибка при обновлении уведомлений", comment: "")): \n\(NSLocalizedString("Нет соединения с интернетом", comment: ""))", y: 8)
+            }
         }
     }
 }

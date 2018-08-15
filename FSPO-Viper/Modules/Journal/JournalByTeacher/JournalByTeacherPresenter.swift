@@ -20,7 +20,9 @@ class JournalByTeacherPresenter: JournalByTeacherPresenterProtocol {
         self.router = router
     }
     func updateView() {
-        interactor?.fetchLessons()
+        if Connectivity.isConnectedToInternet() {
+            interactor?.fetchLessons()
+        }
     }
     func journalByTeacherFetched(data: JSONDecoding.JournalByTeacherAPI) {
         view?.updateTableView(source: data)

@@ -20,7 +20,11 @@ class LoginPresenter: LoginPresenterProtocol {
         self.router = router
     }
     func loginUser() {
-        interactor?.login()
+        if Connectivity.isConnectedToInternet() {
+            interactor?.login()
+        } else {
+            showMessage(message: NSLocalizedString("Нет соединения с интернетом", comment: ""), y: 8)
+        }
     }
     func userLoggedIn() {
         view?.presentAuthRequest()
