@@ -172,8 +172,9 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollVi
     }
     func getStudentRows(data: JSONDecoding.StudentScheduleApi.Weekdays, isToday: Bool) -> [Layout]? {
         var layouts = [Layout]()
+        let type = UserDefaults.standard.string(forKey: "role") == "teacher" ? "teacher" : "group"
         for item in data.periods {
-            layouts.append(StudentScheduleCellLayout(schedule: item, type: "group", isToday: isToday))
+            layouts.append(StudentScheduleCellLayout(schedule: item, type: type, isToday: isToday))
         }
         if data.periods.count == 0 {
             layouts.append(NoScheduleCellLayout())

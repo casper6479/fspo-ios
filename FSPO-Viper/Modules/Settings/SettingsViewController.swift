@@ -103,9 +103,8 @@ class SettingsViewController: UIViewController, SettingsViewProtocol, UITableVie
     }
     // swiftlint:disable:next cyclomatic_complexity
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "")
         let viewForPopOver = tableView.cellForRow(at: indexPath)
-        let rectForPopOver = cell?.bounds
+        let rectForPopOver = tableView.cellForRow(at: indexPath)?.bounds
         if indexPath.section == 0 {
             tableView.cellForRow(at: IndexPath(row: UserDefaults.standard.integer(forKey: "firstScreen"), section: 0))?.accessoryType = .none
             UserDefaults.standard.set(indexPath.row, forKey: "firstScreen")
@@ -146,34 +145,7 @@ class SettingsViewController: UIViewController, SettingsViewProtocol, UITableVie
         } else if indexPath.section == 4 {
             let alert = UIAlertController(title: "\(NSLocalizedString("Очистить кэш", comment: ""))?", message: nil, preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: NSLocalizedString("Очистить", comment: ""), style: .destructive, handler: { _ in
-                let group = DispatchGroup()
-                group.enter()
-                storage?.async.removeAll(completion: { result in
-                    switch result {
-                    case .value:
-                        group.leave()
-                    case .error(let error):
-                        DispatchQueue.main.async {
-                            showMessage(message: "\(NSLocalizedString("Ошибка очистки", comment: "")): \(error)", y: 8)
-                        }
-                    }
-                })
-                group.enter()
-                do {
-                    try ScheduleStorage().storage?.removeAll()
-                    group.leave()
-                } catch {
-                    DispatchQueue.main.async {
-                        showMessage(message: "\(NSLocalizedString("Ошибка очистки", comment: "")): \(error)", y: 8)
-                    }
-                }
-                ImageCache.default.clearDiskCache()
-                ImageCache.default.clearMemoryCache()
-                group.notify(queue: DispatchQueue.main) {
-                    DispatchQueue.main.async {
-                        showMessage(message: NSLocalizedString("Кэш очищен", comment: ""), y: 8)
-                    }
-                }
+                self.clearCache()
             }))
             alert.addAction(UIAlertAction(title: NSLocalizedString("Отмена", comment: ""), style: .cancel, handler: nil))
             alert.popoverPresentationController?.sourceView = viewForPopOver
@@ -200,6 +172,7 @@ class SettingsViewController: UIViewController, SettingsViewProtocol, UITableVie
                 UserDefaults.standard.set(0, forKey: "user_id")
                 UserDefaults.standard.set(false, forKey: "spring")
                 UserDefaults.standard.set(0, forKey: "notificationSound")
+                self.clearCache()
                 self.present(UINavigationController.init(rootViewController: LoginRouter.createModule()), animated: true)
             }))
             alert.addAction(UIAlertAction(title: NSLocalizedString("Отмена", comment: ""), style: .cancel, handler: nil))
@@ -224,5 +197,35 @@ class SettingsViewController: UIViewController, SettingsViewProtocol, UITableVie
             footer = "\(NSLocalizedString("Версия", comment: "")) \(bundleShortVersion!)"
         }
         return footer
+    }
+    func clearCache() {
+        let group = DispatchGroup()
+        group.enter()
+        storage?.async.removeAll(completion: { result in
+            switch result {
+            case .value:
+                group.leave()
+            case .error(let error):
+                DispatchQueue.main.async {
+                    showMessage(message: "\(NSLocalizedString("Ошибка очистки", comment: "")): \(error)", y: 8)
+                }
+            }
+        })
+        group.enter()
+        do {
+            try ScheduleStorage().storage?.removeAll()
+            group.leave()
+        } catch {
+            DispatchQueue.main.async {
+                showMessage(message: "\(NSLocalizedString("Ошибка очистки", comment: "")): \(error)", y: 8)
+            }
+        }
+        ImageCache.default.clearDiskCache()
+        ImageCache.default.clearMemoryCache()
+        group.notify(queue: DispatchQueue.main) {
+            DispatchQueue.main.async {
+                showMessage(message: NSLocalizedString("Кэш очищен", comment: ""), y: 8)
+            }
+        }
     }
 }

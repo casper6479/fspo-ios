@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 import LayoutKit
-
 open class StudentScheduleCellLayout: InsetLayout<View> {
+    // swiftlint:disable:next cyclomatic_complexity
     public init(schedule: JSONDecoding.StudentScheduleApi.Weekdays.Periods, type: String, isToday: Bool) {
         var scheduleCell = [Layout]()
         let paraCount = LabelLayout(text: "\(schedule.period)", font: (UIFont.ITMOFontBold?.withSize(23))!, alignment: .center, config: {label in
@@ -88,7 +88,7 @@ open class StudentScheduleCellLayout: InsetLayout<View> {
                 label.textColor = color
                 label.backgroundColor = .white
             })
-            let middlePart = StackLayout(axis: .vertical, sublayouts: [paraName, teacher])
+            let middlePart = StackLayout(axis: .vertical, spacing: 8, sublayouts: [paraName, teacher])
             let rightPart = auditory
             let middlePartSize = SizeLayout(width: UIScreen.main.bounds.width - 120, sublayout: middlePart)
             let rightPartSize = SizeLayout(width: 70, sublayout: rightPart)

@@ -58,11 +58,14 @@ class ScheduleInteractor: ScheduleInteractorProtocol {
         }
     }
     func fetchStudentSchedule(week: String, cache: JSONDecoding.StudentScheduleApi?) {
-        let groupId = UserDefaults.standard.integer(forKey: "user_group_id")
+        let userGroupId = UserDefaults.standard.integer(forKey: "user_group_id")
+        let userID = UserDefaults.standard.integer(forKey: "user_id")
+        let id = UserDefaults.standard.string(forKey: "role") == "teacher" ? userID : userGroupId
+        let type = UserDefaults.standard.string(forKey: "role") == "teacher" ? "teacher" : "group"
         let params: Parameters = [
             "app_key": Constants.AppKey,
-            "type": "group",
-            "id": groupId,
+            "type": type,
+            "id": id,
             "week": week
         ]
         Alamofire.request(Constants.ScheduleURL, method: .get, parameters: params).responseJSON { (response) in

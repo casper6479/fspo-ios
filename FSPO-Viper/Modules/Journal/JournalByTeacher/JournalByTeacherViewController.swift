@@ -32,7 +32,7 @@ class JournalByTeacherViewController: UIViewController, JournalByTeacherViewProt
     func setupHeader(data: JSONDecoding.JournalByTeacherAPI.TeacherInfo) {
         let width = view.bounds.width
         DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
-            let journalByTeacher = JournalByTeacherHeaderLayout(firstname: data.firstname, lastname: data.lastname, middlename: data.middlename, email: "\(data.email ?? "Не указано")", phone: "Скрыто", photo: data.photo)
+            let journalByTeacher = JournalByTeacherHeaderLayout(firstname: data.firstname, lastname: data.lastname, middlename: data.middlename, email: "\(data.email ?? "Не указано")", phone: NSLocalizedString("Скрыто", comment: ""), photo: data.photo)
             let arrangement = journalByTeacher.arrangement(width: width)
             DispatchQueue.main.async(execute: {
                 arrangement.makeViews(in: self.tableView.tableHeaderView)

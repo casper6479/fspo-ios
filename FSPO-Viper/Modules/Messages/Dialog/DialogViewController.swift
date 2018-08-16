@@ -169,10 +169,12 @@ class DialogViewController: UIViewController, DialogViewProtocol, UITextViewDele
     private func reloadTableView(width: CGFloat, synchronous: Bool, data: JSONDecoding.DialogsApi) {
         reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
             return [Section(header: nil, items: self?.getNewRows(data: data) ?? [], footer: nil)]}, completion: {
-                    let lastRowIndex = self.tableView.numberOfRows(inSection: 0) - 1
-                    let pathToLastRow = IndexPath(row: lastRowIndex, section: 0)
-                    self.tableView.scrollToRow(at: pathToLastRow, at: .bottom, animated: false)
+                let lastRowIndex = self.tableView.numberOfRows(inSection: 0) - 1
+                let pathToLastRow = IndexPath(row: lastRowIndex, section: 0)
+                self.tableView.scrollToRow(at: pathToLastRow, at: .bottom, animated: false)
+                UIView.animate(withDuration: 0.2, animations: {
                     self.tableView.alpha = 1
+                })
         })
     }
     private func registerKeyboardNotifications() {
