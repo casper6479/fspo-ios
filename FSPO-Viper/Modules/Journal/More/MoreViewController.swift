@@ -16,7 +16,7 @@ class MoreViewController: UIViewController, MoreViewProtocol {
     private var tableView: UITableView!
     func showNewRows(source: JSONDecoding.MoreApi) {
         dataSource = source
-        self.reloadTableView(width: tableView.frame.width, synchronous: false)
+        self.reloadTableView(width: tableView.frame.width, synchronous: true)
     }
 	override func viewDidLoad() {
         super.viewDidLoad()

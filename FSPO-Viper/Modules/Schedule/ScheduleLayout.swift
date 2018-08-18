@@ -11,9 +11,9 @@ import LayoutKit
 
 open class ScheduleLayout: StackLayout<View> {
     public init(withMySchedule: Bool) {
-        let studentSchedule = StudentScheduleLayout()
-        let scheduleByGroups = ScheduleByGroupsLayout()
-        let teachersList = TeachersListLayout()
+        let studentSchedule = StudentScheduleLayout(withMy: withMySchedule)
+        let scheduleByGroups = ScheduleByGroupsLayout(withMy: withMySchedule)
+        let teachersList = TeachersListLayout(withMy: withMySchedule)
         var sublayouts = [scheduleByGroups, teachersList]
         if withMySchedule {
             sublayouts = [studentSchedule, scheduleByGroups, teachersList]
