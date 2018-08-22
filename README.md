@@ -1,4 +1,3 @@
-На время проектирования интерфейса VIPER не совсем правильно будет соблюдаться - для скорости.
 # ITMO FSPO App
 An official ITMO FSPO iOS Application.
 
@@ -11,13 +10,13 @@ Everything written according to the SwiftLint.
 # Now Available:
 - Profile Module
 - Journal Module
-- Schedule Module(80% done)
-- News Module (90% done)
-- Messages Module (95% done)
-- Dialogs Module (80% done)
-- Login Module (90% done)
+- Schedule Module
+- News Module
+- Messages Module
+- Dialogs Module
+- Login Module
 - Keychan-stored token
-- Settings Module (10% done)
+- Settings Module
 - English localization
 - Local Notifications
 - Biometric Guard
@@ -25,7 +24,8 @@ Everything written according to the SwiftLint.
 - Caching
 
 # TODO:
-- FIX DIALOG BUBBLE TRANSPARENT LABEL BACKGROUND & WIDTH BUG
+- Refactor
+- More VIPER code
 - Teacher & parents functionality
 - Remote Notifications
 - Good Animations
