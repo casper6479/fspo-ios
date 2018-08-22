@@ -63,9 +63,11 @@ public class JSONDecoding {
         }
     }
     public struct ParentsApi: Decodable {
-        let relatives: [ProfileApi]
+        let relatives: [ProfileApi]?
+        let students: [ProfileApi]?
     }
     public struct ProfileApi: Decodable, Equatable {
+        let user_id: String?
         let firstname: String
         let middlename: String
         let lastname: String

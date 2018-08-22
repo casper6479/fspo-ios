@@ -9,7 +9,7 @@
 import UIKit
 
 class Constants {
-    public static let KeychainService = "com.casper6479.fspo"
+    public static let KeychainService = "com.fspo.app"
     public static var safeHeight: CGFloat = 0.0
     public static let NewsURL = "https://ifspo.ifmo.ru/api/news"
     public static let AuthURL = "https://ifspo.ifmo.ru/api/authorization"

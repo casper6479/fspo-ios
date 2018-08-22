@@ -30,8 +30,10 @@ open class ProfileLayout: InsetLayout<View> {
             segrys = NSLocalizedString("Не обучался(лась) в Сегрисе", comment: "")
         }
         let email = data.email ?? NSLocalizedString("Не указано", comment: "")
-        let phone = data.phone ?? NSLocalizedString("Не указано", comment: "")
-        let birthday = data.birthday ?? NSLocalizedString("Не указано", comment: "")
+//        let phone = data.phone ?? NSLocalizedString("Не указано", comment: "")
+        let phone = NSLocalizedString("Не указано", comment: "")
+//        let birthday = data.birthday ?? NSLocalizedString("Не указано", comment: "")
+        let birthday = NSLocalizedString("Не указано", comment: "")
         let nationality = data.nationality ?? NSLocalizedString("Не указано", comment: "")
         var textCases = [email, phone, birthday, nationality, school, segrys]
         if role == "teacher" || role == "parent" {

@@ -13,7 +13,8 @@ class LoginInteractor: LoginInteractorProtocol {
     weak var presenter: LoginPresenterProtocol?
     private var token: String?
     private var userId: Int?
-    var defaults = UserDefaults(suiteName: "group.com.casper6479.fspo")
+    private var childUserId: Int?
+    var defaults = UserDefaults(suiteName: "group.com.fspo.app")
     func getGroupId(user_id: Int, token: String, completion: @escaping (Bool) -> Void) {
         let parameters: Parameters = [
             "user_id": user_id
@@ -29,6 +30,32 @@ class LoginInteractor: LoginInteractorProtocol {
                 self.defaults?.set(res.groups[res.groups.count-1].group_id, forKey: "user_group_id")
                 completion(true)
             } catch {
+                print(error)
+                self.presenter?.stopLoading()
+                keychain["token"] = nil
+                showMessage(message: "\(NSLocalizedString("Ошибка", comment: "")): \(error.localizedDescription)", y: 8)
+            }
+        }
+    }
+    func getChildId(user_id: Int, token: String, completion: @escaping (Bool) -> Void) {
+        let parameters: Parameters = [
+            "user_id": user_id
+        ]
+        let headers: HTTPHeaders = [
+            "token": token
+        ]
+        Alamofire.request(Constants.ProfileURL, method: .get, parameters: parameters, headers: headers).responseJSON { (response) in
+            let result = response.data
+            do {
+                let res = try JSONDecoder().decode(JSONDecoding.ParentsApi.self, from: result!)
+                self.childUserId = Int(res.students![0].user_id!)
+//                UserDefaults.standard.set(res.groups[res.groups.count-1].group_id, forKey: "user_group_id")
+//                self.defaults?.set(res.groups[res.groups.count-1].group_id, forKey: "user_group_id")
+                completion(true)
+            } catch {
+                print(error)
+                self.presenter?.stopLoading()
+                keychain["token"] = nil
                 showMessage(message: "\(NSLocalizedString("Ошибка", comment: "")): \(error.localizedDescription)", y: 8)
             }
         }
@@ -58,6 +85,8 @@ class LoginInteractor: LoginInteractorProtocol {
                 }
                 completion(true)
             } catch {
+                self.presenter?.stopLoading()
+                keychain["token"] = nil
                 showMessage(message: "\(NSLocalizedString("Ошибка", comment: "")): \(error.localizedDescription)", y: 8)
             }
         }
@@ -78,6 +107,7 @@ class LoginInteractor: LoginInteractorProtocol {
                 self.token = res.token
                 completion(true)
             } catch Swift.DecodingError.keyNotFound {
+                self.presenter?.stopLoading()
                 do {
                     let res = try JSONDecoder().decode(JSONDecoding.ApiError.self, from: result!)
                     if res.error_code == 6 {
@@ -89,6 +119,7 @@ class LoginInteractor: LoginInteractorProtocol {
                     print(error)
                 }
             } catch {
+                self.presenter?.stopLoading()
                 print("другая ошибка")
             }
         }
@@ -97,11 +128,21 @@ class LoginInteractor: LoginInteractorProtocol {
         let group = DispatchGroup()
         group.enter()
         getToken { _ in
-            self.getGroupId(user_id: self.userId!, token: self.token!) { _ in
-                group.leave()
-            }
-            group.enter()
             self.getRole(user_id: self.userId!, token: self.token!) { _ in
+                if UserDefaults.standard.string(forKey: "role") == "student" {
+                    group.enter()
+                    self.getGroupId(user_id: self.userId!, token: self.token!) { _ in
+                        group.leave()
+                    }
+                }
+                if UserDefaults.standard.string(forKey: "role") == "parent" {
+                    group.enter()
+                    self.getChildId(user_id: self.userId!, token: self.token!) { _ in
+                        self.getGroupId(user_id: self.childUserId!, token: self.token!) { _ in
+                            group.leave()
+                        }
+                    }
+                }
                 group.leave()
             }
         }

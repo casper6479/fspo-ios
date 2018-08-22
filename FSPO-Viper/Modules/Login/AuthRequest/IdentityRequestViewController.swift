@@ -35,7 +35,7 @@ class IdentityRequestViewController: UIViewController, IdentityRequestViewProtoc
             self.present(UITabBarController().buildTeachersTabBar(), animated: true)
         }
         if UserDefaults.standard.string(forKey: "role") == "parent" {
-//            self.present(UITabBarController().buildStudentsTabBar(), animated: true)
+            self.present(UITabBarController().buildStudentsTabBar(), animated: true)
         }
     }
     @objc func disallowUpInside() {
@@ -47,7 +47,7 @@ class IdentityRequestViewController: UIViewController, IdentityRequestViewProtoc
             self.present(UITabBarController().buildTeachersTabBar(), animated: true)
         }
         if UserDefaults.standard.string(forKey: "role") == "parent" {
-            //            self.present(UITabBarController().buildStudentsTabBar(), animated: true)
+            self.present(UITabBarController().buildStudentsTabBar(), animated: true)
         }
     }
 }

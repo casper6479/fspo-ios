@@ -6,7 +6,6 @@ def pods
 	pod 'SwiftLint'
 	pod 'Alamofire'
 	pod 'LayoutKit'
-	pod 'FPSCounter'
 	pod 'KeychainAccess'
 	pod 'IQKeyboardManagerSwift'
 	pod 'Kingfisher'
@@ -14,7 +13,8 @@ def pods
 	pod 'Fabric', '~> 1.7.9'
 	pod 'Crashlytics', '~> 3.10.5'
 	pod 'Cache'
-  end
+	pod 'lottie-ios'
+end
 
 target 'FSPO' do
 	pods

@@ -27,6 +27,9 @@ class LoginPresenter: LoginPresenterProtocol {
         }
     }
     func userLoggedIn() {
-        view?.presentAuthRequest()
+        view?.transiteToAuthRequest()
+    }
+    func stopLoading() {
+        view?.setDefaultState()
     }
 }

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FPSCounter
 import IQKeyboardManagerSwift
 import UserNotifications
 import LocalAuthentication
@@ -21,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let authContex = LAContext()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
         ScheduleStorage().setExludedFromBackup()
 
         UIApplication.shared.statusBarStyle = .lightContent
@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 window?.rootViewController = UITabBarController().buildTeachersTabBar()
             }
             if UserDefaults.standard.string(forKey: "role") == "parent" {
-                //            self.present(UITabBarController().buildStudentsTabBar(), animated: true)
+               window?.rootViewController = UITabBarController().buildStudentsTabBar()
             }
         } else {
             window?.rootViewController = loginModule
@@ -72,9 +72,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enableAutoToolbar = false
         IQKeyboardManager.shared.keyboardDistanceFromTextField = 5
 
-//        FPSCounter().startTracking()
-//        FPSCounter.showInStatusBar(UIApplication.shared)
-
         UINavigationBar.appearance().barTintColor = UIColor.ITMOBlue
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().tintColor = UIColor.white
@@ -88,6 +85,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return true
     }
+
     func showGuard(window: UIWindow) {
         biometricView = UIView(frame: window.bounds)
         biometricView.backgroundColor = .white

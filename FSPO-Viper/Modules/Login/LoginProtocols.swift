@@ -14,18 +14,20 @@ protocol LoginWireframeProtocol: class {
 protocol LoginPresenterProtocol: class {
     func loginUser()
     func userLoggedIn()
+    func stopLoading()
 }
 
 // MARK: Interactor -
 protocol LoginInteractorProtocol: class {
 
-  var presenter: LoginPresenterProtocol? { get set }
-  func login()
+    var presenter: LoginPresenterProtocol? { get set }
+    func login()
 }
 
 // MARK: View -
 protocol LoginViewProtocol: class {
 
-  var presenter: LoginPresenterProtocol? { get set }
-  func presentAuthRequest()
+    var presenter: LoginPresenterProtocol? { get set }
+    func transiteToAuthRequest()
+    func setDefaultState()
 }

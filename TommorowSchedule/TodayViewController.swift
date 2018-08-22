@@ -14,7 +14,7 @@ import Alamofire
 class TodayViewController: UIViewController, NCWidgetProviding {
     var reloadableViewLayoutAdapter: ReloadableViewLayoutAdapter!
     var tableView: UITableView!
-    var defaults = UserDefaults(suiteName: "group.com.casper6479.fspo")
+    var defaults = UserDefaults(suiteName: "group.com.fspo.app")
     override func viewDidLoad() {
         super.viewDidLoad()
         ScheduleStorage().setExludedFromBackup()

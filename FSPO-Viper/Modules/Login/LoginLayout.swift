@@ -13,6 +13,7 @@ private let JournalVC = JournalViewController()
 open class LoginLayout: InsetLayout<UIView> {
     static var loginTextField = UITextField()
     static var passwordTextField = UITextField()
+    static var loginButton = UIButton()
     public init() {
         let itmoLogo =  SizeLayout<UIImageView>(
             size: CGSize(width: 200, height: 150),
@@ -34,6 +35,7 @@ open class LoginLayout: InsetLayout<UIView> {
                 button.layer.masksToBounds = true
                 button.applyStyle()
                 button.addTarget(LoginViewController(), action: #selector(LoginViewController().loginUpInside), for: .touchUpInside)
+                LoginLayout.loginButton = button
         })
         let scheduleButton = ButtonLayout(
             type: .custom,

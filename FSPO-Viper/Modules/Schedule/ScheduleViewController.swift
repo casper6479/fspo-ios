@@ -8,6 +8,7 @@
 
 import UIKit
 import LayoutKit
+import Lottie
 
 class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollViewDelegate {
     static var publicGroupsDS: JSONDecoding.GetGroupsApi?
@@ -59,6 +60,17 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollVi
     private var scheduleByGroupsLayoutAdapter: ReloadableViewLayoutAdapter?
     private var teachersListLayoutAdapter: ReloadableViewLayoutAdapter?
     private var pageControl: UIPageControl!
+    func playSwipeAnim() {
+        let anim = LOTAnimationView(name: "swipe")
+        anim.isUserInteractionEnabled = false
+        anim.frame = view.bounds
+        anim.contentMode = .scaleAspectFit
+        view.addSubview(anim)
+        anim.play { _ in
+            anim.removeFromSuperview()
+            UserDefaults.standard.set(true, forKey: "swipeAnimSeen")
+        }
+    }
 	override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -68,6 +80,9 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollVi
         scrollView.isPagingEnabled = true
         scrollView.delegate = self
         view.addSubview(scrollView)
+        if !UserDefaults.standard.bool(forKey: "swipeAnimSeen") {
+            playSwipeAnim()
+        }
         pageControl = UIPageControl(frame: CGRect(origin: CGPoint(x: view.bounds.width / 2 - 100, y: Constants.safeHeight - 36), size: CGSize(width: 200, height: 20)))
         pageControl.currentPageIndicatorTintColor = UIColor.ITMOBlue
         pageControl.pageIndicatorTintColor = UIColor.ITMOBlue.withAlphaComponent(0.26)
@@ -218,20 +233,15 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollVi
             footer: nil)])
     }
     func reloadScheduleByGroups(data: JSONDecoding.GetGroupsApi) {
-        self.reloadTableView(width: self.view.bounds.width, synchronous: false, layoutAdapter:
-            self.scheduleByGroupsLayoutAdapter ?? ReloadableViewLayoutAdapter(reloadableView: UITableView()), ds: [Section(
+        var layouts = [Section<[Layout]>]()
+        for i in 0...3 {
+            layouts.append(Section(
                 header: nil,
-                items: getGroupsRows(data: data.courses[0]) ?? [],
-                footer: nil), Section(
-                    header: nil,
-                    items: getGroupsRows(data: data.courses[1]) ?? [],
-                    footer: nil), Section(
-                        header: nil,
-                        items: getGroupsRows(data: data.courses[2]) ?? [],
-                        footer: nil), Section(
-                            header: nil,
-                            items: getGroupsRows(data: data.courses[3]) ?? [],
-                            footer: nil)])
+                items: getGroupsRows(data: data.courses[i]) ?? [],
+                footer: nil))
+        }
+        self.reloadTableView(width: self.view.bounds.width, synchronous: false, layoutAdapter:
+            self.scheduleByGroupsLayoutAdapter ?? ReloadableViewLayoutAdapter(reloadableView: UITableView()), ds: layouts)
     }
     private func layoutView(width: CGFloat) {
         DispatchQueue.global(qos: DispatchQoS.QoSClass.userInteractive).async {

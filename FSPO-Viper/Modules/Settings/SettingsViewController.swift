@@ -172,6 +172,7 @@ class SettingsViewController: UIViewController, SettingsViewProtocol, UITableVie
                 UserDefaults.standard.set(0, forKey: "user_id")
                 UserDefaults.standard.set(false, forKey: "spring")
                 UserDefaults.standard.set(0, forKey: "notificationSound")
+                UserDefaults.standard.set(false, forKey: "swipeAnimSeen")
                 self.clearCache()
                 self.present(UINavigationController.init(rootViewController: LoginRouter.createModule()), animated: true)
             }))
