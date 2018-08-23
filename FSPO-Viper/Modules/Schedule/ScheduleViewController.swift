@@ -59,7 +59,6 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollVi
     private var studentScheduleLayoutAdapter: ReloadableViewLayoutAdapter?
     private var scheduleByGroupsLayoutAdapter: ReloadableViewLayoutAdapter?
     private var teachersListLayoutAdapter: ReloadableViewLayoutAdapter?
-    private var pageControl: UIPageControl!
     func playSwipeAnim() {
         let anim = LOTAnimationView(name: "swipe")
         anim.isUserInteractionEnabled = false
@@ -71,6 +70,7 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollVi
             UserDefaults.standard.set(true, forKey: "swipeAnimSeen")
         }
     }
+    let pageControlAnimation = LOTAnimationView(name: "pagecontrol")
 	override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -83,18 +83,23 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollVi
         if !UserDefaults.standard.bool(forKey: "swipeAnimSeen") {
             playSwipeAnim()
         }
-        pageControl = UIPageControl(frame: CGRect(origin: CGPoint(x: view.bounds.width / 2 - 100, y: Constants.safeHeight - 36), size: CGSize(width: 200, height: 20)))
-        pageControl.currentPageIndicatorTintColor = UIColor.ITMOBlue
-        pageControl.pageIndicatorTintColor = UIColor.ITMOBlue.withAlphaComponent(0.26)
-        pageControl.numberOfPages = withMy ? 3 : 2
-        pageControl.isUserInteractionEnabled = false
-        let pageBack = UIView(frame: pageControl.frame)
+        pageControlAnimation.frame = CGRect(origin: CGPoint(x: view.bounds.width / 2 - 95, y: Constants.safeHeight - 36), size: CGSize(width: 200, height: 20))
+        pageControlAnimation.isUserInteractionEnabled = false
+        pageControlAnimation.contentMode = .scaleAspectFill
+        let pageBack = UIView(frame: pageControlAnimation.frame)
         pageBack.backgroundColor = UIColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 0.75)
         pageBack.frame.size.width = 50
         pageBack.frame.origin.x = view.bounds.width / 2 - 25
         pageBack.layer.cornerRadius = 5
         view.addSubview(pageBack)
-        view.addSubview(pageControl)
+        pageControlAnimation.frame = CGRect(x: -50 - 19, y: 0, width: 200, height: 20)
+        if !withMy {
+            let keypath = LOTKeypath(string: "Shape Layer 2.Shape 3.Fill 1.Color")
+            let clearColorValue = LOTColorValueCallback(color: UIColor.clear.cgColor)
+            pageControlAnimation.setValueDelegate(clearColorValue, for: keypath)
+            pageControlAnimation.frame = CGRect(x: -50 - 13, y: 0, width: 200, height: 20)
+        }
+        pageBack.addSubview(pageControlAnimation)
         self.layoutView(width: self.view.bounds.width)
         do {
             let data = try ScheduleStorage().storage?.object(forKey: "schedulenow")
@@ -132,12 +137,12 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollVi
         })
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let width = view.bounds.width
-        pageControl.currentPage = 0
-        if scrollView.contentOffset.x > width / 2 + width {
-            pageControl.currentPage = 2
-        } else if scrollView.contentOffset.x > width / 2 {
-            pageControl.currentPage = 1
+        pageControlAnimation.animationProgress = scrollView.contentOffset.x / 3 / 100 / 3 * 1.33
+        if pageControlAnimation.animationProgress == 0 || pageControlAnimation.animationProgress < 0 {
+            pageControlAnimation.animationProgress = 0.01
+        }
+        if pageControlAnimation.animationProgress > 1 {
+            pageControlAnimation.animationProgress = 1
         }
     }
     @objc func segmentChanged(sender: UISegmentedControl) {

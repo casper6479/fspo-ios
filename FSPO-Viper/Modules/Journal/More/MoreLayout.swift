@@ -172,7 +172,7 @@ open class MoreLayout: InsetLayout<View> {
             axis: .vertical,
             alignment: .center,
             sublayouts: [resultLabel, resultLabelDescription])
-        width += 32
+        width += 48
         let subjectLabel = SizeLayout(
             width: UIScreen.main.bounds.width - width - 16,
             sublayout: LabelLayout(
@@ -187,7 +187,7 @@ open class MoreLayout: InsetLayout<View> {
             })
         )
         super.init(
-            insets: UIEdgeInsets(top: 12, left: 8, bottom: 12, right: 8),
+            insets: UIEdgeInsets(top: 12, left: 15, bottom: 12, right: 15),
             sublayout: StackLayout(
                 axis: .horizontal,
                 spacing: 8,

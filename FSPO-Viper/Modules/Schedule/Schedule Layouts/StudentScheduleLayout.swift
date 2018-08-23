@@ -20,6 +20,7 @@ open class StudentScheduleLayout: InsetLayout<View> {
                 config: {tab in
                     let footer = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
                     tab.tableFooterView = footer
+                    tab.separatorInset = UIEdgeInsets(top: 0, left: 65, bottom: 0, right: 0)
                     StudentScheduleLayout.tableView = tab
             }),
             config: { view in

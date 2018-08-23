@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0212571B49A68BEB1BA67E48 /* Pods_FSPO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB84AAE1C33C2AE5B4C9735 /* Pods_FSPO.framework */; };
 		4600829B212D924A0025CA8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4600829A212D924A0025CA8E /* GoogleService-Info.plist */; };
-		4600829E212DA6140025CA8E /* swipe.json in Resources */ = {isa = PBXBuildFile; fileRef = 4600829D212DA6140025CA8E /* swipe.json */; };
 		460082A0212DABD90025CA8E /* loginloader.json in Resources */ = {isa = PBXBuildFile; fileRef = 4600829F212DABD90025CA8E /* loginloader.json */; };
 		460C7FD9211D8BE200D94ECB /* NotificationsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C7FD8211D8BE200D94ECB /* NotificationsWorker.swift */; };
 		460E76F82122133200D0615A /* Cache Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460E76F72122133200D0615A /* Cache Helper.swift */; };
@@ -138,6 +137,8 @@
 		46C1561C20DBB2D700F2BA79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C1561B20DBB2D700F2BA79 /* AppDelegate.swift */; };
 		46C1562320DBB2D800F2BA79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46C1562220DBB2D800F2BA79 /* Assets.xcassets */; };
 		46C1562620DBB2D800F2BA79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C1562420DBB2D800F2BA79 /* LaunchScreen.storyboard */; };
+		46D9B62D212F62D2002E0DEE /* pagecontrol.json in Resources */ = {isa = PBXBuildFile; fileRef = 46D9B62C212F62D2002E0DEE /* pagecontrol.json */; };
+		46D9B62F212F66F0002E0DEE /* swipe.json in Resources */ = {isa = PBXBuildFile; fileRef = 46D9B62E212F66F0002E0DEE /* swipe.json */; };
 		46DF962420FC8FC500C4D901 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621CEB720EFABD700B17323 /* ScheduleViewController.swift */; };
 		46DF962620FC927B00C4D901 /* ScheduleByGroupsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DF962520FC927B00C4D901 /* ScheduleByGroupsLayout.swift */; };
 		46DF962820FC928700C4D901 /* TeachersListLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DF962720FC928700C4D901 /* TeachersListLayout.swift */; };
@@ -187,7 +188,6 @@
 		0FB1107598BF6C73CB5B9F89 /* Pods-FSPO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSPO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FSPO/Pods-FSPO.debug.xcconfig"; sourceTree = "<group>"; };
 		34E002B8332208310038B66F /* Pods-TodaySchedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaySchedule.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodaySchedule/Pods-TodaySchedule.release.xcconfig"; sourceTree = "<group>"; };
 		4600829A212D924A0025CA8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		4600829D212DA6140025CA8E /* swipe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = swipe.json; path = "FSPO-Viper/New Group/swipe.json"; sourceTree = SOURCE_ROOT; };
 		4600829F212DABD90025CA8E /* loginloader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loginloader.json; sourceTree = "<group>"; };
 		460C7FD8211D8BE200D94ECB /* NotificationsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsWorker.swift; sourceTree = "<group>"; };
 		460E76F72122133200D0615A /* Cache Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cache Helper.swift"; sourceTree = "<group>"; };
@@ -325,6 +325,8 @@
 		46C1561B20DBB2D700F2BA79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46C1562220DBB2D800F2BA79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46C1562520DBB2D800F2BA79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		46D9B62C212F62D2002E0DEE /* pagecontrol.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pagecontrol.json; sourceTree = "<group>"; };
+		46D9B62E212F66F0002E0DEE /* swipe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = swipe.json; sourceTree = "<group>"; };
 		46DF962520FC927B00C4D901 /* ScheduleByGroupsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleByGroupsLayout.swift; sourceTree = "<group>"; };
 		46DF962720FC928700C4D901 /* TeachersListLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersListLayout.swift; sourceTree = "<group>"; };
 		46ED1082210FABBF00B16737 /* ParentsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentsLayout.swift; sourceTree = "<group>"; };
@@ -391,8 +393,9 @@
 		4600829C212DA6050025CA8E /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				46D9B62C212F62D2002E0DEE /* pagecontrol.json */,
 				4600829F212DABD90025CA8E /* loginloader.json */,
-				4600829D212DA6140025CA8E /* swipe.json */,
+				46D9B62E212F66F0002E0DEE /* swipe.json */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -925,10 +928,11 @@
 				4621CEC920F01E4400B17323 /* ALSSchlangesans.otf in Resources */,
 				46C1562620DBB2D800F2BA79 /* LaunchScreen.storyboard in Resources */,
 				467C20912119C937000736A8 /* Calibri.ttf in Resources */,
-				4600829E212DA6140025CA8E /* swipe.json in Resources */,
+				46D9B62F212F66F0002E0DEE /* swipe.json in Resources */,
 				46F5BCAC21178C4A00913931 /* SFCompactRounded-Regular.ttf in Resources */,
 				467C20992119DB53000736A8 /* InfoPlist.strings in Resources */,
 				4600829B212D924A0025CA8E /* GoogleService-Info.plist in Resources */,
+				46D9B62D212F62D2002E0DEE /* pagecontrol.json in Resources */,
 				467EFDD521222FAB0049893B /* notify.caf in Resources */,
 				46C1562320DBB2D800F2BA79 /* Assets.xcassets in Resources */,
 				460082A0212DABD90025CA8E /* loginloader.json in Resources */,
@@ -1267,7 +1271,11 @@
 				DEVELOPMENT_TEAM = DX8WP5K42U;
 				INFOPLIST_FILE = TodaySchedule/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fspo.app.TodaySchedule;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1286,7 +1294,11 @@
 				DEVELOPMENT_TEAM = DX8WP5K42U;
 				INFOPLIST_FILE = TodaySchedule/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fspo.app.TodaySchedule;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1305,7 +1317,11 @@
 				DEVELOPMENT_TEAM = DX8WP5K42U;
 				INFOPLIST_FILE = TommorowSchedule/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fspo.app.TommorowSchedule;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1324,7 +1340,11 @@
 				DEVELOPMENT_TEAM = DX8WP5K42U;
 				INFOPLIST_FILE = TommorowSchedule/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fspo.app.TommorowSchedule;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1462,7 +1482,10 @@
 				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = "FSPO-Viper/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fspo.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1482,7 +1505,10 @@
 				ENABLE_TESTABILITY = NO;
 				INFOPLIST_FILE = "FSPO-Viper/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fspo.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

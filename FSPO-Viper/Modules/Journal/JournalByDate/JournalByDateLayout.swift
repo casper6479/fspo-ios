@@ -51,7 +51,7 @@ open class JournalLessonCellLayout: InsetLayout<View> {
         case "1":
             lessonTypeText = NSLocalizedString("лекция", comment: "")
         case "2":
-            lessonTypeText = NSLocalizedString("лабараторная", comment: "")
+            lessonTypeText = NSLocalizedString("лабораторная", comment: "")
         case "3":
             lessonTypeText = NSLocalizedString("аттестация", comment: "")
         case "4":
