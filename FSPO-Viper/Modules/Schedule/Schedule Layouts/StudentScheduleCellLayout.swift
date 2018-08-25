@@ -146,6 +146,9 @@ class StudentScheduleReloadableLayoutAdapter: ReloadableViewLayoutAdapter {
                         NSLocalizedString("Суббота", comment: "")]
         return weekdays[section]
     }
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 79
+    }
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header = view as? UITableViewHeaderFooterView
         header?.backgroundView?.backgroundColor = UIColor.ITMOBlue

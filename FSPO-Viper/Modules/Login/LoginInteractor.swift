@@ -27,6 +27,7 @@ class LoginInteractor: LoginInteractorProtocol {
             do {
                 let res = try JSONDecoder().decode(JSONDecoding.StudentHistoryApi.self, from: result!)
                 UserDefaults.standard.set(res.groups[res.groups.count-1].group_id, forKey: "user_group_id")
+                UserDefaults.standard.set(res.groups[res.groups.count-1].name, forKey: "user_group_name")
                 self.defaults?.set(res.groups[res.groups.count-1].group_id, forKey: "user_group_id")
                 completion(true)
             } catch {

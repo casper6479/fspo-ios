@@ -73,6 +73,7 @@ class ScheduleListViewController: UIViewController, ScheduleListViewProtocol {
         super.viewDidLoad()
         tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 66, bottom: 0, right: 0)
         reloadableViewLayoutAdapter = ScheduleReloadableLayoutAdapter(reloadableView: tableView)
         tableView.dataSource = reloadableViewLayoutAdapter
         tableView.delegate = reloadableViewLayoutAdapter
@@ -144,6 +145,9 @@ class ScheduleReloadableLayoutAdapter: ReloadableViewLayoutAdapter {
                         NSLocalizedString("Пятница", comment: ""),
                         NSLocalizedString("Суббота", comment: "")]
         return weekdays[section]
+    }
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 79
     }
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header = view as? UITableViewHeaderFooterView

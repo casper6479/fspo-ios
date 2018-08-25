@@ -90,9 +90,10 @@ open class StudentScheduleCellLayout: InsetLayout<View> {
 open class NoScheduleCellLayout: InsetLayout<View> {
     public init() {
         super.init(
-            insets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+            insets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 8),
             sublayout: SizeLayout(
                 size: CGSize(width: 200, height: 110),
+                alignment: .center,
                 sublayout: LabelLayout(
                     text: NSLocalizedString("Занятий нет", comment: ""),
                     font: UIFont.boldSystemFont(ofSize: 15),
