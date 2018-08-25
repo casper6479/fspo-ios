@@ -129,4 +129,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     @objc func againUpInside() {
         authUser()
     }
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey: Any] = [:]) -> Bool {
+        return true
+    }
 }

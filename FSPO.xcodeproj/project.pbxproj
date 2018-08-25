@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0212571B49A68BEB1BA67E48 /* Pods_FSPO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB84AAE1C33C2AE5B4C9735 /* Pods_FSPO.framework */; };
-		4600829B212D924A0025CA8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4600829A212D924A0025CA8E /* GoogleService-Info.plist */; };
 		460082A0212DABD90025CA8E /* loginloader.json in Resources */ = {isa = PBXBuildFile; fileRef = 4600829F212DABD90025CA8E /* loginloader.json */; };
 		460C7FD9211D8BE200D94ECB /* NotificationsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C7FD8211D8BE200D94ECB /* NotificationsWorker.swift */; };
 		460E76F82122133200D0615A /* Cache Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460E76F72122133200D0615A /* Cache Helper.swift */; };
@@ -187,7 +186,6 @@
 		0EB28521BED10455071BDC25 /* Pods-FSPOUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSPOUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FSPOUITests/Pods-FSPOUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0FB1107598BF6C73CB5B9F89 /* Pods-FSPO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSPO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FSPO/Pods-FSPO.debug.xcconfig"; sourceTree = "<group>"; };
 		34E002B8332208310038B66F /* Pods-TodaySchedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaySchedule.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodaySchedule/Pods-TodaySchedule.release.xcconfig"; sourceTree = "<group>"; };
-		4600829A212D924A0025CA8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4600829F212DABD90025CA8E /* loginloader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loginloader.json; sourceTree = "<group>"; };
 		460C7FD8211D8BE200D94ECB /* NotificationsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsWorker.swift; sourceTree = "<group>"; };
 		460E76F72122133200D0615A /* Cache Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cache Helper.swift"; sourceTree = "<group>"; };
@@ -758,7 +756,6 @@
 				4621CEC320F01D6300B17323 /* Resources */,
 				466CDF3220EF701500A86701 /* Modules */,
 				46C1561B20DBB2D700F2BA79 /* AppDelegate.swift */,
-				4600829A212D924A0025CA8E /* GoogleService-Info.plist */,
 				46C1562420DBB2D800F2BA79 /* LaunchScreen.storyboard */,
 				467C20952119DAAF000736A8 /* Info.plist */,
 				467C209B2119DB53000736A8 /* InfoPlist.strings */,
@@ -877,6 +874,9 @@
 							com.apple.Push = {
 								enabled = 0;
 							};
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
 						};
 					};
 				};
@@ -931,7 +931,6 @@
 				46D9B62F212F66F0002E0DEE /* swipe.json in Resources */,
 				46F5BCAC21178C4A00913931 /* SFCompactRounded-Regular.ttf in Resources */,
 				467C20992119DB53000736A8 /* InfoPlist.strings in Resources */,
-				4600829B212D924A0025CA8E /* GoogleService-Info.plist in Resources */,
 				46D9B62D212F62D2002E0DEE /* pagecontrol.json in Resources */,
 				467EFDD521222FAB0049893B /* notify.caf in Resources */,
 				46C1562320DBB2D800F2BA79 /* Assets.xcassets in Resources */,
@@ -1476,6 +1475,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FSPO.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = DX8WP5K42U;
@@ -1488,6 +1488,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fspo.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1500,6 +1501,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FSPO.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DX8WP5K42U;
 				ENABLE_TESTABILITY = NO;
@@ -1511,6 +1513,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fspo.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
