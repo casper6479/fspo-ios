@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MorePresenter: MorePresenterProtocol {
+final class MorePresenter: MorePresenterProtocol {
     weak private var view: MoreViewProtocol?
     var interactor: MoreInteractorProtocol?
     private let router: MoreWireframeProtocol

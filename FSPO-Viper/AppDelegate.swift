@@ -12,6 +12,7 @@ import UserNotifications
 import LocalAuthentication
 import Fabric
 import Crashlytics
+import Kingfisher
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -22,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         ScheduleStorage().setExludedFromBackup()
+
+        clearSessionOnce()
 
         UIApplication.shared.statusBarStyle = .lightContent
 
@@ -85,7 +88,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return true
     }
-
+    func clearSessionOnce() {
+        if !UserDefaults.standard.bool(forKey: "didLogOut") {
+            SettingsViewController().logOut()
+            UserDefaults.standard.set(true, forKey: "didLogOut")
+        }
+    }
     func showGuard(window: UIWindow) {
         biometricView = UIView(frame: window.bounds)
         biometricView.backgroundColor = .white
@@ -99,6 +107,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         window.addSubview(biometricView)
         authUser()
+    }
+    func clearCache() {
+        storage?.async.removeAll(completion: {_ in })
+        do {
+            try ScheduleStorage().storage?.removeAll()
+        } catch {
+            print(error)
+        }
+        ImageCache.default.clearDiskCache()
+        ImageCache.default.clearMemoryCache()
     }
     func authUser() {
         authContex.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: NSLocalizedString("Подтвердите личность", comment: "")) { (success, error) in

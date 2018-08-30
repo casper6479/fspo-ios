@@ -9,14 +9,14 @@
 import UIKit
 import LayoutKit
 
-class MoreViewController: UIViewController, MoreViewProtocol {
+final class MoreViewController: UIViewController, MoreViewProtocol {
     var dataSource: JSONDecoding.MoreApi?
 	var presenter: MorePresenterProtocol?
     private var reloadableViewLayoutAdapter: ReloadableViewLayoutAdapter!
     private var tableView: UITableView!
     func showNewRows(source: JSONDecoding.MoreApi) {
         dataSource = source
-        self.reloadTableView(width: tableView.frame.width, synchronous: true)
+        self.reloadTableView(width: tableView.frame.width, synchronous: false)
     }
 	override func viewDidLoad() {
         super.viewDidLoad()

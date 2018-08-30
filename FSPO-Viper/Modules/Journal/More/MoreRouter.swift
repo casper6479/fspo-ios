@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MoreRouter: MoreWireframeProtocol {
+final class MoreRouter: MoreWireframeProtocol {
     weak var viewController: UIViewController?
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI

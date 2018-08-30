@@ -45,6 +45,10 @@ open class JournalBySubjectLayout: InsetLayout<View> {
 }
 class JournalBySubjectReloadableLayoutAdapter: ReloadableViewLayoutAdapter {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller = tableView.controller() as? JournalBySubjectViewController
+        let lessonId = controller!.dataSource?.lessons[indexPath.row].lesson_id
+        let name = controller!.dataSource?.lessons[indexPath.row].name
+        tableView.navigationController()?.show(JournalByTeacherRouter.createModule(lessonId: Int(lessonId!)!, title: name!), sender: controller!)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

@@ -9,7 +9,7 @@
 import Foundation
 import LayoutKit
 
-open class MoreLayout: InsetLayout<View> {
+final class MoreLayout: InsetLayout<View> {
     public init(subject: String, presense: String, nonPresense: String, allPresense: String, attestation: String, result: String) {
 //        let width = wholeString.width(withConstrainedHeight: 10, font: UIFont.ITMOFont!.withSize(10)) + 50
         let presenseWidth = presense.width(withConstrainedHeight: 15, font: UIFont.ITMOFont!)
@@ -202,8 +202,19 @@ open class MoreLayout: InsetLayout<View> {
         })
     }
 }
-class MoreReloadableLayoutAdapter: ReloadableViewLayoutAdapter {
+final class MoreReloadableLayoutAdapter: ReloadableViewLayoutAdapter {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller = tableView.controller() as? MoreViewController
+        var lessonId: String?
+        var name: String?
+        if indexPath.section == 0 {
+            lessonId = controller!.dataSource?.lessons_now.lessons[indexPath.row].lesson_id
+            name = controller!.dataSource?.lessons_now.lessons[indexPath.row].name
+        } else {
+            lessonId = controller!.dataSource?.lessons_before.lessons[indexPath.row].lesson_id
+            name = controller!.dataSource?.lessons_before.lessons[indexPath.row].name
+        }
+        tableView.navigationController()?.show(JournalByTeacherRouter.createModule(lessonId: Int(lessonId!)!, title: name!), sender: controller!)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

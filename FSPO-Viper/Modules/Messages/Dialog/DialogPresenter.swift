@@ -28,9 +28,9 @@ class DialogPresenter: DialogPresenterProtocol {
         view?.showNewRows(source: data)
     }
     func prepareMessageForSend(message: String) {
-        interactor?.sendMessage(text: message)
+        interactor?.sendMessage(text: message, id: nil)
     }
-    func test() {
-        print("test")
+    func updateFailed(alertController: UIAlertController) {
+        view?.showError(alert: alertController)
     }
 }

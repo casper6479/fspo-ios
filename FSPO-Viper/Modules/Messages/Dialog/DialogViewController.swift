@@ -152,6 +152,10 @@ class DialogViewController: UIViewController, DialogViewProtocol, UITextViewDele
     @objc func tapOnTableView() {
         _ = growingTextView.resignFirstResponder()
     }
+    func showError(alert: UIAlertController) {
+        self.navigationController?.popViewController(animated: true)
+        present(alert, animated: true, completion: nil)
+    }
     func getNewRows(data: JSONDecoding.DialogsApi) -> [Layout] {
         var layouts = [Layout]()
         let user_id = UserDefaults.standard.integer(forKey: "user_id")

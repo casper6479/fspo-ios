@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class MoreInteractor: MoreInteractorProtocol {
+final class MoreInteractor: MoreInteractorProtocol {
 
     weak var presenter: MorePresenterProtocol?
     func fetchMore(cache: JSONDecoding.MoreApi?) {

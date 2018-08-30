@@ -168,11 +168,7 @@ class SettingsViewController: UIViewController, SettingsViewProtocol, UITableVie
         } else if indexPath.section == 6 {
             let alert = UIAlertController(title: NSLocalizedString("Точно выйти?", comment: ""), message: nil, preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: NSLocalizedString("Выйти", comment: ""), style: .destructive, handler: { _ in
-                keychain["token"] = nil
-                UserDefaults.standard.set(0, forKey: "user_id")
-                UserDefaults.standard.set(false, forKey: "spring")
-                UserDefaults.standard.set(0, forKey: "notificationSound")
-                UserDefaults.standard.set(false, forKey: "swipeAnimSeen")
+                self.logOut()
                 self.clearCache()
                 self.present(UINavigationController.init(rootViewController: LoginRouter.createModule()), animated: true)
             }))
@@ -182,6 +178,13 @@ class SettingsViewController: UIViewController, SettingsViewProtocol, UITableVie
             self.present(alert, animated: true, completion: nil)
         }
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    func logOut() {
+        keychain["token"] = nil
+        UserDefaults.standard.set(0, forKey: "user_id")
+        UserDefaults.standard.set(false, forKey: "spring")
+        UserDefaults.standard.set(0, forKey: "notificationSound")
+        UserDefaults.standard.set(false, forKey: "swipeAnimSeen")
     }
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         var footer = ""

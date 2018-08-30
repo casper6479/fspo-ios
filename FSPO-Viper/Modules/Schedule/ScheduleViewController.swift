@@ -75,8 +75,10 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollVi
 	override func viewDidLoad() {
         super.viewDidLoad()
         if withMy {
-            groupName = UserDefaults.standard.string(forKey: "user_group_name")
-            navigationController?.navigationBar.topItem?.title = groupName!
+            if UserDefaults.standard.string(forKey: "role") == "student" {
+                groupName = UserDefaults.standard.string(forKey: "user_group_name")
+                navigationController?.navigationBar.topItem?.title = groupName!
+            }
         }
         view.backgroundColor = .white
         scrollView = UIScrollView(frame: view.bounds)
@@ -145,11 +147,13 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollVi
         pageControlAnimation.animationProgress = scrollView.contentOffset.x / 3 / 100 / 3 * 1.33
         let width = UIScreen.main.bounds.width
         if withMy {
-            DispatchQueue.main.async {
-                if scrollView.contentOffset.x < width / 2 {
-                    self.navigationController?.navigationBar.topItem?.title = self.groupName!
-                } else if scrollView.contentOffset.x > width / 2 {
-                    self.navigationController?.navigationBar.topItem?.title = NSLocalizedString("Расписание", comment: "")
+            if UserDefaults.standard.string(forKey: "role") == "student" {
+                DispatchQueue.main.async {
+                    if scrollView.contentOffset.x < width / 2 {
+                        self.navigationController?.navigationBar.topItem?.title = self.groupName!
+                    } else if scrollView.contentOffset.x > width / 2 {
+                        self.navigationController?.navigationBar.topItem?.title = NSLocalizedString("Расписание", comment: "")
+                    }
                 }
             }
         }
