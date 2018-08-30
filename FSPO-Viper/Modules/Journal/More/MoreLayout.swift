@@ -217,4 +217,12 @@ final class MoreReloadableLayoutAdapter: ReloadableViewLayoutAdapter {
         tableView.navigationController()?.show(JournalByTeacherRouter.createModule(lessonId: Int(lessonId!)!, title: name!), sender: controller!)
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let item = currentArrangement[indexPath.section].items[indexPath.item]
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ReloadableViewLayoutAdapter.self), for: indexPath)
+        DispatchQueue.main.async {
+            item.makeViews(in: cell.contentView)
+        }
+        return cell
+    }
 }

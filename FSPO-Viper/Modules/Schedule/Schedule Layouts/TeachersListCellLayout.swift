@@ -53,6 +53,13 @@ open class TeachersListCellLayout: InsetLayout<View> {
     }
 }
 class TeacherListReloadableLayoutAdapter: ReloadableViewLayoutAdapter {
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        let controller = tableView.controller() as? ScheduleViewController
+        let names = controller!.teachersDS?.teachers.compactMap({
+            $0.firstname
+        })
+        return names
+    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let id = ScheduleViewController.publicTeachersDS?.teachers[indexPath.row].user_id
         let firstname = ScheduleViewController.publicTeachersDS?.teachers[indexPath.row].firstname

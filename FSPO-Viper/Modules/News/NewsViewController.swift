@@ -87,6 +87,17 @@ extension NewsReloadableViewLayoutAdapter {
             }
         }
     }
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return currentArrangement[indexPath.section].items[indexPath.item].frame.height
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let item = currentArrangement[indexPath.section].items[indexPath.item]
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ReloadableViewLayoutAdapter.self), for: indexPath)
+        DispatchQueue.main.async {
+            item.makeViews(in: cell.contentView)
+        }
+        return cell
+    }
     /*func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         /*DispatchQueue.global(qos: .userInitiated).async {
             return NewsViewController.publicDS[indexPath.row].text.height(withConstrainedWidth: UIScreen.main.bounds.width, font: (UIFont.ITMOFont?.withSize(17))!) + 74

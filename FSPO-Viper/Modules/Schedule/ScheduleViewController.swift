@@ -13,6 +13,7 @@ import Lottie
 class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollViewDelegate {
     static var publicGroupsDS: JSONDecoding.GetGroupsApi?
     static var publicTeachersDS: JSONDecoding.GetTeachersApi?
+    var teachersDS: JSONDecoding.GetTeachersApi?
     var withMy: Bool!
     private var groupName: String?
     func showNewStudentScheduleRows(source: JSONDecoding.StudentScheduleApi) {
@@ -31,6 +32,7 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollVi
     }
     func showNewTeacherRows(source: JSONDecoding.GetTeachersApi) {
         ScheduleViewController.publicTeachersDS = source
+        teachersDS = source
         DispatchQueue.main.async {
             self.reloadTeachers(data: source)
         }

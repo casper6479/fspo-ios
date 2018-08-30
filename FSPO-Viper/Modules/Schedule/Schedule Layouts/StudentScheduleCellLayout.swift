@@ -162,4 +162,12 @@ class StudentScheduleReloadableLayoutAdapter: ReloadableViewLayoutAdapter {
         }
         header?.textLabel?.textColor = .white
     }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let item = currentArrangement[indexPath.section].items[indexPath.item]
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ReloadableViewLayoutAdapter.self), for: indexPath)
+        DispatchQueue.main.async {
+            item.makeViews(in: cell.contentView)
+        }
+        return cell
+    }
 }
