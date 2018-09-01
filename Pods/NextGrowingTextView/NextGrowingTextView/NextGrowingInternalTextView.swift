@@ -93,7 +93,7 @@ internal class NextGrowingInternalTextView: UITextView {
 
     let targetRect = CGRect(
       x: 5 + textContainerInset.left,
-      y: 2 + textContainerInset.top,
+      y: textContainerInset.top,
       width: frame.size.width - (textContainerInset.left + textContainerInset.right),
       height: frame.size.height - (textContainerInset.top + textContainerInset.bottom)
     )

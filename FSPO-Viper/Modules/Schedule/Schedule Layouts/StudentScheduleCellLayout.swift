@@ -35,9 +35,9 @@ open class StudentScheduleCellLayout: InsetLayout<View> {
         let end_time = Calendar.current.date(bySettingHour: Calendar.current.component(.hour, from: end!), minute: Calendar.current.component(.minute, from: end!), second: 0, of: Date())
         if Date() > start_time! && Date() < end_time! {
             if isToday {
-                leftPartSublayouts.append(SizeLayout(width: 4, config: {view in
+                leftPartSublayouts.append(SizeLayout(width: 3, config: {view in
                     view.backgroundColor = UIColor(red: 1, green: 222/255, blue: 23/255, alpha: 1.0)
-                    view.layer.cornerRadius = 2
+                    view.layer.cornerRadius = 1.5
                 }))
             }
         }
@@ -45,7 +45,7 @@ open class StudentScheduleCellLayout: InsetLayout<View> {
             height: 63,
             sublayout: StackLayout(
                 axis: .horizontal,
-                spacing: 8,
+                spacing: 6,
                 sublayouts: leftPartSublayouts)
         )
         let leftPartSize = SizeLayout(width: 50, sublayout: leftPart)
@@ -101,10 +101,10 @@ open class StudentScheduleCellLayout: InsetLayout<View> {
                 }))
         }
         super.init(
-            insets: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8),
+            insets: UIEdgeInsets(top: 8, left: 6, bottom: 8, right: 6),
             sublayout: StackLayout(
                 axis: .horizontal,
-                spacing: 8,
+                spacing: 6,
                 sublayouts: [leftPartSize,
                              StackLayout(
                                 axis: .vertical,

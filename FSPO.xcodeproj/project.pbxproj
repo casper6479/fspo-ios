@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0212571B49A68BEB1BA67E48 /* Pods_FSPO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB84AAE1C33C2AE5B4C9735 /* Pods_FSPO.framework */; };
 		460082A0212DABD90025CA8E /* loginloader.json in Resources */ = {isa = PBXBuildFile; fileRef = 4600829F212DABD90025CA8E /* loginloader.json */; };
 		460C7FD9211D8BE200D94ECB /* NotificationsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C7FD8211D8BE200D94ECB /* NotificationsWorker.swift */; };
 		460E76F82122133200D0615A /* Cache Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460E76F72122133200D0615A /* Cache Helper.swift */; };
@@ -146,8 +145,9 @@
 		46F5BCAC21178C4A00913931 /* SFCompactRounded-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46F5BCA321178C4A00913931 /* SFCompactRounded-Regular.ttf */; };
 		46F5BCAE211792CC00913931 /* InsetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F5BCAD211792CC00913931 /* InsetView.swift */; };
 		46FED984211E2F93007737EB /* CacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FED983211E2F93007737EB /* CacheStorage.swift */; };
-		7D0875CBEE6743DAFADDAD96 /* Pods_TodaySchedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 543062F1A1FAEFA7D30BA97E /* Pods_TodaySchedule.framework */; };
-		BA40FD0A72E9F57725B4014E /* Pods_TommorowSchedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C21AC064A12FA16717FABEBE /* Pods_TommorowSchedule.framework */; };
+		900DF989F10496CBFEF95765 /* Pods_FSPO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CB2A31F07903F67E7187184 /* Pods_FSPO.framework */; };
+		B4B1EF6FBAA9101BA88DBFF0 /* Pods_TommorowSchedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E26D42F2BADF7EDC63A838BF /* Pods_TommorowSchedule.framework */; };
+		FEB9946A17A359778312AFC2 /* Pods_TodaySchedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DEB26E53693D5935D3A441A /* Pods_TodaySchedule.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,9 +183,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0EB28521BED10455071BDC25 /* Pods-FSPOUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSPOUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FSPOUITests/Pods-FSPOUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		0FB1107598BF6C73CB5B9F89 /* Pods-FSPO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSPO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FSPO/Pods-FSPO.debug.xcconfig"; sourceTree = "<group>"; };
-		34E002B8332208310038B66F /* Pods-TodaySchedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaySchedule.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodaySchedule/Pods-TodaySchedule.release.xcconfig"; sourceTree = "<group>"; };
+		26EBCF6E62E3420C44279E5A /* Pods-FSPO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSPO.release.xcconfig"; path = "Pods/Target Support Files/Pods-FSPO/Pods-FSPO.release.xcconfig"; sourceTree = "<group>"; };
+		3CB2A31F07903F67E7187184 /* Pods_FSPO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FSPO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4600829F212DABD90025CA8E /* loginloader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loginloader.json; sourceTree = "<group>"; };
 		460C7FD8211D8BE200D94ECB /* NotificationsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsWorker.swift; sourceTree = "<group>"; };
 		460E76F72122133200D0615A /* Cache Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cache Helper.swift"; sourceTree = "<group>"; };
@@ -332,15 +331,13 @@
 		46F5BCA321178C4A00913931 /* SFCompactRounded-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactRounded-Regular.ttf"; sourceTree = "<group>"; };
 		46F5BCAD211792CC00913931 /* InsetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetView.swift; sourceTree = "<group>"; };
 		46FED983211E2F93007737EB /* CacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheStorage.swift; sourceTree = "<group>"; };
-		543062F1A1FAEFA7D30BA97E /* Pods_TodaySchedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodaySchedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		547768368EBCD51AD0F8726C /* Pods_FSPOUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FSPOUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8AB84AAE1C33C2AE5B4C9735 /* Pods_FSPO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FSPO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		98F2198C9501845FB3E164BE /* Pods-TommorowSchedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TommorowSchedule.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TommorowSchedule/Pods-TommorowSchedule.debug.xcconfig"; sourceTree = "<group>"; };
-		AA46B36367B0FF72CBAC6737 /* Pods-TommorowSchedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TommorowSchedule.release.xcconfig"; path = "Pods/Target Support Files/Pods-TommorowSchedule/Pods-TommorowSchedule.release.xcconfig"; sourceTree = "<group>"; };
-		BC61A0DD6144705484A5D278 /* Pods-TodaySchedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaySchedule.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodaySchedule/Pods-TodaySchedule.debug.xcconfig"; sourceTree = "<group>"; };
-		BF4289B5E756B3EB9CC6C503 /* Pods-FSPO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSPO.release.xcconfig"; path = "Pods/Target Support Files/Pods-FSPO/Pods-FSPO.release.xcconfig"; sourceTree = "<group>"; };
-		C21AC064A12FA16717FABEBE /* Pods_TommorowSchedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TommorowSchedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8684DC6C579B2D06DA82249 /* Pods-FSPOUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSPOUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FSPOUITests/Pods-FSPOUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4D5EBC1C87BED2D80510CFA5 /* Pods-TodaySchedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaySchedule.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodaySchedule/Pods-TodaySchedule.debug.xcconfig"; sourceTree = "<group>"; };
+		50608914571A49E099986511 /* Pods-FSPO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSPO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FSPO/Pods-FSPO.debug.xcconfig"; sourceTree = "<group>"; };
+		5E84A196609A8EA433EEB944 /* Pods-TommorowSchedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TommorowSchedule.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TommorowSchedule/Pods-TommorowSchedule.debug.xcconfig"; sourceTree = "<group>"; };
+		7DEB26E53693D5935D3A441A /* Pods_TodaySchedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodaySchedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8939FCACFF480DBB7C0890BC /* Pods-TommorowSchedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TommorowSchedule.release.xcconfig"; path = "Pods/Target Support Files/Pods-TommorowSchedule/Pods-TommorowSchedule.release.xcconfig"; sourceTree = "<group>"; };
+		E26D42F2BADF7EDC63A838BF /* Pods_TommorowSchedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TommorowSchedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F63E9844E327BF9BB65F02AB /* Pods-TodaySchedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaySchedule.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodaySchedule/Pods-TodaySchedule.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -349,7 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4677E83C211E03600055517F /* NotificationCenter.framework in Frameworks */,
-				7D0875CBEE6743DAFADDAD96 /* Pods_TodaySchedule.framework in Frameworks */,
+				FEB9946A17A359778312AFC2 /* Pods_TodaySchedule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,7 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4677E854211E0F5C0055517F /* NotificationCenter.framework in Frameworks */,
-				BA40FD0A72E9F57725B4014E /* Pods_TommorowSchedule.framework in Frameworks */,
+				B4B1EF6FBAA9101BA88DBFF0 /* Pods_TommorowSchedule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,28 +363,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0212571B49A68BEB1BA67E48 /* Pods_FSPO.framework in Frameworks */,
+				900DF989F10496CBFEF95765 /* Pods_FSPO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		14CEABD73764EDBF7615C1EB /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				0FB1107598BF6C73CB5B9F89 /* Pods-FSPO.debug.xcconfig */,
-				BF4289B5E756B3EB9CC6C503 /* Pods-FSPO.release.xcconfig */,
-				0EB28521BED10455071BDC25 /* Pods-FSPOUITests.debug.xcconfig */,
-				F8684DC6C579B2D06DA82249 /* Pods-FSPOUITests.release.xcconfig */,
-				BC61A0DD6144705484A5D278 /* Pods-TodaySchedule.debug.xcconfig */,
-				34E002B8332208310038B66F /* Pods-TodaySchedule.release.xcconfig */,
-				98F2198C9501845FB3E164BE /* Pods-TommorowSchedule.debug.xcconfig */,
-				AA46B36367B0FF72CBAC6737 /* Pods-TommorowSchedule.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		4600829C212DA6050025CA8E /* Animations */ = {
 			isa = PBXGroup;
 			children = (
@@ -732,8 +714,8 @@
 				4677E83D211E03600055517F /* TodaySchedule */,
 				4677E855211E0F5C0055517F /* TommorowSchedule */,
 				46C1561920DBB2D700F2BA79 /* Products */,
-				14CEABD73764EDBF7615C1EB /* Pods */,
 				607951704E3601943721188E /* Frameworks */,
+				5776CF0E371E6D9FA2352590 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -764,14 +746,26 @@
 			path = "FSPO-Viper";
 			sourceTree = "<group>";
 		};
+		5776CF0E371E6D9FA2352590 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				50608914571A49E099986511 /* Pods-FSPO.debug.xcconfig */,
+				26EBCF6E62E3420C44279E5A /* Pods-FSPO.release.xcconfig */,
+				4D5EBC1C87BED2D80510CFA5 /* Pods-TodaySchedule.debug.xcconfig */,
+				F63E9844E327BF9BB65F02AB /* Pods-TodaySchedule.release.xcconfig */,
+				5E84A196609A8EA433EEB944 /* Pods-TommorowSchedule.debug.xcconfig */,
+				8939FCACFF480DBB7C0890BC /* Pods-TommorowSchedule.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		607951704E3601943721188E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8AB84AAE1C33C2AE5B4C9735 /* Pods_FSPO.framework */,
-				547768368EBCD51AD0F8726C /* Pods_FSPOUITests.framework */,
 				4677E83B211E03600055517F /* NotificationCenter.framework */,
-				543062F1A1FAEFA7D30BA97E /* Pods_TodaySchedule.framework */,
-				C21AC064A12FA16717FABEBE /* Pods_TommorowSchedule.framework */,
+				3CB2A31F07903F67E7187184 /* Pods_FSPO.framework */,
+				7DEB26E53693D5935D3A441A /* Pods_TodaySchedule.framework */,
+				E26D42F2BADF7EDC63A838BF /* Pods_TommorowSchedule.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -783,7 +777,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4677E847211E03600055517F /* Build configuration list for PBXNativeTarget "TodaySchedule" */;
 			buildPhases = (
-				D0A613138A6C6050238BB9BA /* [CP] Check Pods Manifest.lock */,
+				989AB8B549F822A5FAC14C9C /* [CP] Check Pods Manifest.lock */,
 				4677E836211E03600055517F /* Sources */,
 				4677E837211E03600055517F /* Frameworks */,
 				4677E838211E03600055517F /* Resources */,
@@ -801,7 +795,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4677E85F211E0F5C0055517F /* Build configuration list for PBXNativeTarget "TommorowSchedule" */;
 			buildPhases = (
-				5236A70CA86DBDE6781CC6BA /* [CP] Check Pods Manifest.lock */,
+				4AF010264C071B9D21A9F305 /* [CP] Check Pods Manifest.lock */,
 				4677E84F211E0F5C0055517F /* Sources */,
 				4677E850211E0F5C0055517F /* Frameworks */,
 				4677E851211E0F5C0055517F /* Resources */,
@@ -819,14 +813,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46C1562A20DBB2D800F2BA79 /* Build configuration list for PBXNativeTarget "FSPO" */;
 			buildPhases = (
-				D796C1618C42CA83218B1402 /* [CP] Check Pods Manifest.lock */,
+				939CA735F641846F317598F3 /* [CP] Check Pods Manifest.lock */,
 				46C1561420DBB2D700F2BA79 /* Sources */,
 				46C1561520DBB2D700F2BA79 /* Frameworks */,
 				46C1561620DBB2D700F2BA79 /* Resources */,
 				463A1F9020DC271400E04656 /* SwiftLint */,
-				E55DDFA49110363AB6C64EE1 /* [CP] Embed Pods Frameworks */,
-				4677E833211DF6120055517F /* Crashlytics */,
 				4677E84A211E03600055517F /* Embed App Extensions */,
+				4677E833211DF6120055517F /* Fabric */,
+				DC9D2A4F013F4ECF307D19F8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -955,21 +949,21 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
 		};
-		4677E833211DF6120055517F /* Crashlytics */ = {
+		4677E833211DF6120055517F /* Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = Crashlytics;
+			name = Fabric;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 184a1ada80a2b3fb49591ab01f62efdbff90c06c 52c5b161487f64200aa22766d1352488a32964341963c8392675d73586a4fc9d";
 		};
-		5236A70CA86DBDE6781CC6BA /* [CP] Check Pods Manifest.lock */ = {
+		4AF010264C071B9D21A9F305 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -987,25 +981,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D0A613138A6C6050238BB9BA /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TodaySchedule-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D796C1618C42CA83218B1402 /* [CP] Check Pods Manifest.lock */ = {
+		939CA735F641846F317598F3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1023,7 +999,25 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E55DDFA49110363AB6C64EE1 /* [CP] Embed Pods Frameworks */ = {
+		989AB8B549F822A5FAC14C9C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TodaySchedule-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC9D2A4F013F4ECF307D19F8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1262,7 +1256,7 @@
 /* Begin XCBuildConfiguration section */
 		4677E848211E03600055517F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BC61A0DD6144705484A5D278 /* Pods-TodaySchedule.debug.xcconfig */;
+			baseConfigurationReference = 4D5EBC1C87BED2D80510CFA5 /* Pods-TodaySchedule.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_ENTITLEMENTS = TodaySchedule/TodaySchedule.entitlements;
@@ -1285,7 +1279,7 @@
 		};
 		4677E849211E03600055517F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 34E002B8332208310038B66F /* Pods-TodaySchedule.release.xcconfig */;
+			baseConfigurationReference = F63E9844E327BF9BB65F02AB /* Pods-TodaySchedule.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_ENTITLEMENTS = TodaySchedule/TodaySchedule.entitlements;
@@ -1308,7 +1302,7 @@
 		};
 		4677E860211E0F5C0055517F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 98F2198C9501845FB3E164BE /* Pods-TommorowSchedule.debug.xcconfig */;
+			baseConfigurationReference = 5E84A196609A8EA433EEB944 /* Pods-TommorowSchedule.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_ENTITLEMENTS = TommorowSchedule/TommorowSchedule.entitlements;
@@ -1331,7 +1325,7 @@
 		};
 		4677E861211E0F5C0055517F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA46B36367B0FF72CBAC6737 /* Pods-TommorowSchedule.release.xcconfig */;
+			baseConfigurationReference = 8939FCACFF480DBB7C0890BC /* Pods-TommorowSchedule.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_ENTITLEMENTS = TommorowSchedule/TommorowSchedule.entitlements;
@@ -1470,7 +1464,7 @@
 		};
 		46C1562B20DBB2D800F2BA79 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0FB1107598BF6C73CB5B9F89 /* Pods-FSPO.debug.xcconfig */;
+			baseConfigurationReference = 50608914571A49E099986511 /* Pods-FSPO.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1496,7 +1490,7 @@
 		};
 		46C1562C20DBB2D800F2BA79 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF4289B5E756B3EB9CC6C503 /* Pods-FSPO.release.xcconfig */;
+			baseConfigurationReference = 26EBCF6E62E3420C44279E5A /* Pods-FSPO.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

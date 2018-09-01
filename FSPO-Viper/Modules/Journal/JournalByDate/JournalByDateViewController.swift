@@ -21,7 +21,7 @@ class JournalByDateViewController: UIViewController, JournalByDateViewProtocol {
     private let dateFormatter = DateFormatter()
 	override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .ITMOBlue
         title = NSLocalizedString("По дате", comment: "")
         let width = view.bounds.width
         DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {

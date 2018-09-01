@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import Crashlytics
 class LoginInteractor: LoginInteractorProtocol {
 
     weak var presenter: LoginPresenterProtocol?
@@ -26,10 +27,16 @@ class LoginInteractor: LoginInteractorProtocol {
             let result = response.data
             do {
                 let res = try JSONDecoder().decode(JSONDecoding.StudentHistoryApi.self, from: result!)
-                UserDefaults.standard.set(res.groups[res.groups.count-1].group_id, forKey: "user_group_id")
-                UserDefaults.standard.set(res.groups[res.groups.count-1].name, forKey: "user_group_name")
-                self.defaults?.set(res.groups[res.groups.count-1].group_id, forKey: "user_group_id")
-                completion(true)
+                if res.groups.count == 0 {
+                    showMessage(message: "Не найдено ни одной группы", y: 8)
+                    DialogInteractor(dialog_user_id: 1).sendMessage(text: "Не найдено групп у \(UserDefaults.standard.integer(forKey: "user_id"))", id: "1000364")
+                    completion(true)
+                } else {
+                    UserDefaults.standard.set(res.groups[res.groups.count-1].group_id, forKey: "user_group_id")
+                    UserDefaults.standard.set(res.groups[res.groups.count-1].name, forKey: "user_group_name")
+                    self.defaults?.set(res.groups[res.groups.count-1].group_id, forKey: "user_group_id")
+                    completion(true)
+                }
             } catch {
                 print(error)
                 self.presenter?.stopLoading()
@@ -106,6 +113,7 @@ class LoginInteractor: LoginInteractorProtocol {
                 UserDefaults.standard.set(res.user_id, forKey: "user_id")
                 self.userId = res.user_id
                 self.token = res.token
+                Crashlytics.sharedInstance().setUserIdentifier("\(res.user_id)")
                 completion(true)
             } catch Swift.DecodingError.keyNotFound {
                 self.presenter?.stopLoading()

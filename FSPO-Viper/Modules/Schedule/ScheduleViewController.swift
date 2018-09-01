@@ -79,8 +79,12 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollVi
         if withMy {
             if UserDefaults.standard.string(forKey: "role") == "student" {
                 groupName = UserDefaults.standard.string(forKey: "user_group_name")
-                navigationController?.navigationBar.topItem?.title = groupName!
+                if groupName != nil {
+                    navigationController?.navigationBar.topItem?.title = groupName!
+                }
             }
+        } else {
+            navigationController?.navigationBar.topItem?.title = NSLocalizedString("Расписание", comment: "")
         }
         view.backgroundColor = .white
         scrollView = UIScrollView(frame: view.bounds)

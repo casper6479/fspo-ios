@@ -89,9 +89,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     func clearSessionOnce() {
-        if !UserDefaults.standard.bool(forKey: "didLogOut") {
+        if !UserDefaults.standard.bool(forKey: "didLogOut1") {
             SettingsViewController().logOut()
-            UserDefaults.standard.set(true, forKey: "didLogOut")
+            UserDefaults.standard.set(true, forKey: "didLogOut1")
         }
     }
     func showGuard(window: UIWindow) {

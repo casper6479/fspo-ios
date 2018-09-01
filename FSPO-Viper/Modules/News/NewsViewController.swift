@@ -9,7 +9,6 @@
 import UIKit
 import LayoutKit
 import Cache
-
 class NewsViewController: UIViewController, NewsViewProtocol {
 
     var dataSource = [JSONDecoding.NewsApi.News]()

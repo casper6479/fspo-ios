@@ -34,7 +34,9 @@ open class ProfileLayout: InsetLayout<View> {
         let birthday = data.birthday ?? NSLocalizedString("Не указано", comment: "")
         let nationality = data.nationality ?? NSLocalizedString("Не указано", comment: "")
         var textCases = [email, phone, birthday, nationality, school, segrys]
+        var bottomButtonTitle = NSLocalizedString("Родители", comment: "")
         if role == "teacher" || role == "parent" {
+            bottomButtonTitle = NSLocalizedString("Студент", comment: "")
             textCases = [email, phone]
         }
         func profileIcon(image: UIImage) -> Layout {
@@ -94,7 +96,7 @@ open class ProfileLayout: InsetLayout<View> {
         })
         let namesStackLayout = StackLayout(axis: .vertical, spacing: 8, alignment: .center, sublayouts: [lastnameLabel, firstnameLabel, middlenameLabel])
         let nameAvatarLayout = StackLayout(axis: .horizontal, sublayouts: [photoLayout, namesStackLayout])
-        let bottomButton = Button().createButton(title: NSLocalizedString("Родители", comment: ""), width: UIScreen.main.bounds.width - 32, height: 40, alignment: .bottomCenter, target: ProfileViewController(), action: #selector(ProfileViewController().setNeedsShowParents))
+        let bottomButton = Button().createButton(title: bottomButtonTitle, width: UIScreen.main.bounds.width - 32, height: 40, alignment: .bottomCenter, target: ProfileViewController(), action: #selector(ProfileViewController().setNeedsShowParents))
         var mainStack = [
             SizeLayout(
                 size: CGSize(width: UIScreen.main.bounds.width, height: 132),

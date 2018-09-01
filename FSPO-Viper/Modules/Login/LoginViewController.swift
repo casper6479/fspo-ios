@@ -115,7 +115,9 @@ class LoginViewController: UIViewController, LoginViewProtocol, CAAnimationDeleg
     }
     @objc func loginUpInside() {
         dataFetched = nil
-        setLoadingState()
+        if Connectivity.isConnectedToInternet() {
+            setLoadingState()
+        }
         presenter?.loginUser()
     }
     @objc func scheduleUpInside() {
