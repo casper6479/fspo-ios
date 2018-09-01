@@ -57,6 +57,7 @@ class LoginInteractor: LoginInteractorProtocol {
             do {
                 let res = try JSONDecoder().decode(JSONDecoding.ParentsApi.self, from: result!)
                 self.childUserId = Int(res.students![0].user_id!)
+                UserDefaults.standard.set(self.childUserId!, forKey: "child_user_id")
 //                UserDefaults.standard.set(res.groups[res.groups.count-1].group_id, forKey: "user_group_id")
 //                self.defaults?.set(res.groups[res.groups.count-1].group_id, forKey: "user_group_id")
                 completion(true)

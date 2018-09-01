@@ -77,11 +77,9 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollVi
 	override func viewDidLoad() {
         super.viewDidLoad()
         if withMy {
-            if UserDefaults.standard.string(forKey: "role") == "student" {
-                groupName = UserDefaults.standard.string(forKey: "user_group_name")
-                if groupName != nil {
-                    navigationController?.navigationBar.topItem?.title = groupName!
-                }
+            groupName = UserDefaults.standard.string(forKey: "user_group_name")
+            if groupName != nil {
+                self.navigationController?.navigationBar.topItem?.title = self.groupName!
             }
         } else {
             navigationController?.navigationBar.topItem?.title = NSLocalizedString("Расписание", comment: "")
@@ -153,7 +151,7 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollVi
         pageControlAnimation.animationProgress = scrollView.contentOffset.x / 3 / 100 / 3 * 1.33
         let width = UIScreen.main.bounds.width
         if withMy {
-            if UserDefaults.standard.string(forKey: "role") == "student" {
+            if self.groupName != nil {
                 DispatchQueue.main.async {
                     if scrollView.contentOffset.x < width / 2 {
                         self.navigationController?.navigationBar.topItem?.title = self.groupName!

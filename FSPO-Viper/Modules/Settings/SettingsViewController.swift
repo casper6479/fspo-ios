@@ -67,10 +67,18 @@ class SettingsViewController: UIViewController, SettingsViewProtocol, UITableVie
         if indexPath.section == 2 {
             if indexPath.row == 1 {
                 cell.textLabel!.text = NSLocalizedString("Очистить расписание уведомлений", comment: "")
+                if UserDefaults.standard.string(forKey: "role") == "parent" {
+                    cell.isUserInteractionEnabled = false
+                    cell.textLabel!.isEnabled = false
+                }
                 cell.textLabel!.textColor = UIColor(red: 25/255, green: 70/255, blue: 186/255, alpha: 1.0)
                 cell.textLabel!.textAlignment = .center
             } else {
                 cell.textLabel!.text = NSLocalizedString("Настройки уведомлений", comment: "")
+                if UserDefaults.standard.string(forKey: "role") == "parent" {
+                    cell.isUserInteractionEnabled = false
+                    cell.textLabel!.isEnabled = false
+                }
                 cell.textLabel!.textColor = .black
                 cell.accessoryType = .disclosureIndicator
             }
@@ -181,10 +189,15 @@ class SettingsViewController: UIViewController, SettingsViewProtocol, UITableVie
     }
     func logOut() {
         keychain["token"] = nil
+        if #available(iOS 10, *) {
+            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        }
         UserDefaults.standard.set(0, forKey: "user_id")
         UserDefaults.standard.set(false, forKey: "spring")
         UserDefaults.standard.set(0, forKey: "notificationSound")
         UserDefaults.standard.set(false, forKey: "swipeAnimSeen")
+        UserDefaults.standard.removeObject(forKey: "user_group_name")
+        UserDefaults.standard.removeObject(forKey: "child_user_id")
     }
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         var footer = ""

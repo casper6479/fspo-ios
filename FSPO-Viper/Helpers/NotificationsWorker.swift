@@ -9,15 +9,16 @@ import Alamofire
 import UserNotifications
 // swiftlint:disable:next cyclomatic_complexity
 public func updateNotificationContext() {
-    var params: Parameters = ["app_key": Constants.AppKey]
-    if UserDefaults.standard.string(forKey: "user_group_id") != nil {
-        params = [
-            "app_key": Constants.AppKey,
-            "type": "group",
-            "id": UserDefaults.standard.string(forKey: "user_group_id")!,
-            "week": "now"
-        ]
-    }
+    let userGroupId = UserDefaults.standard.integer(forKey: "user_group_id")
+    let userID = UserDefaults.standard.integer(forKey: "user_id")
+    let id = UserDefaults.standard.string(forKey: "role") == "teacher" ? userID : userGroupId
+    let type = UserDefaults.standard.string(forKey: "role") == "teacher" ? "teacher" : "group"
+    let params: Parameters = [
+        "app_key": Constants.AppKey,
+        "type": type,
+        "id": id,
+        "week": "now"
+    ]
     Alamofire.request(Constants.ScheduleURL, method: .get, parameters: params).responseJSON { (response) in
         let result = response.data
         do {

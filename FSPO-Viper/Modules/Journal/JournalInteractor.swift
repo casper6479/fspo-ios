@@ -12,7 +12,10 @@ import Alamofire
 class JournalInteractor: JournalInteractorProtocol {
     weak var presenter: JournalPresenterProtocol?
     func fetchJournal(cache: JSONDecoding.JournalApi?) {
-        let user_id = UserDefaults.standard.string(forKey: "user_id")
+        var user_id = UserDefaults.standard.string(forKey: "user_id")
+        if let childId = UserDefaults.standard.string(forKey: "child_user_id") {
+            user_id = childId
+        }
         let headers: HTTPHeaders = [
             "token": keychain["token"]!
         ]

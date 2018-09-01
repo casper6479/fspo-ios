@@ -17,12 +17,15 @@ class JournalByTeacherInteractor: JournalByTeacherInteractorProtocol {
         self.lessonId = lessonId
     }
     func fetchLessons() {
-        let user_id = UserDefaults.standard.integer(forKey: "user_id")
+        var user_id = UserDefaults.standard.string(forKey: "user_id")
+        if let childId = UserDefaults.standard.string(forKey: "child_user_id") {
+            user_id = childId
+        }
         let headers: HTTPHeaders = [
             "token": keychain["token"]!
         ]
         let params: Parameters = [
-            "user_id": user_id,
+            "user_id": user_id!,
             "lesson_id": lessonId!
         ]
         Alamofire.request(Constants.JournalByTeacher, method: .get, parameters: params, headers: headers).responseJSON { (response) in

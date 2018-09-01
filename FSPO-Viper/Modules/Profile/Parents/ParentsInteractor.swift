@@ -23,39 +23,12 @@ class ParentsInteractor: ParentsInteractorProtocol {
             let result = response.data
             do {
                 let res = try JSONDecoder().decode(JSONDecoding.ParentsApi.self, from: result!)
-                self.presenter?.parentsFetched(firstname: res.relatives![0].firstname, lastname: res.relatives![0].lastname, middlename: res.relatives![0].middlename, email: res.relatives![0].email!, phone: res.relatives![0].phone!, photo: res.relatives![0].photo)
-                /*self.first.text = res.relatives[0].lastname
-                self.second.text = res.relatives[0].firstname
-                self.third.text = res.relatives[0].middlename
-                
-                if res.relatives[0].email == nil {
-                    self.email.text = "Не указано"
-                } else {
-                    self.email.text = res.relatives[0].email
+                if UserDefaults.standard.string(forKey: "role") == "student" {
+                    self.presenter?.parentsFetched(firstname: res.relatives![0].firstname, lastname: res.relatives![0].lastname, middlename: res.relatives![0].middlename, email: res.relatives![0].email!, phone: res.relatives![0].phone!, photo: res.relatives![0].photo)
                 }
-                
-                if res.relatives[0].phone == nil {
-                    self.phone.text = "Не указано"
-                } else {
-                    self.phone.text = res.relatives[0].phone
+                if UserDefaults.standard.string(forKey: "role") == "parent" {
+                    self.presenter?.parentsFetched(firstname: res.students![0].firstname, lastname: res.students![0].lastname, middlename: res.students![0].middlename, email: res.students![0].email!, phone: res.students![0].phone!, photo: res.students![0].photo)
                 }
-                var frame = self.emailImage.frame
-                frame.origin.x = 100
-                var labelframe = self.email.frame
-                labelframe.origin.x = -300
-                self.emailImage.alpha = 1
-                self.phoneImage.alpha = 1
-                UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
-                    //                    self.view.hideLoader()
-                    self.emailImage.frame = frame
-                    self.phoneImage.frame = frame
-                    self.email.frame = labelframe
-                    self.phone.frame = labelframe
-                }) { (true) in
-                }
-                let resource = ImageResource(downloadURL: URL(string: res.relatives[0].photo)!, cacheKey: res.relatives[0].photo)
-                self.fourth.kf.indicatorType = .activity
-                self.fourth.kf.setImage(with: resource)*/
             } catch {
                 print(error)
             }

@@ -39,7 +39,9 @@ extension UITabBarController {
             let center = UNUserNotificationCenter.current()
             center.getNotificationSettings { (settings) in
                 if settings.authorizationStatus == .authorized {
-                    updateNotificationContext()
+                    if UserDefaults.standard.string(forKey: "role") != "parent" {
+                        updateNotificationContext()
+                    }
                 }
             }
         }

@@ -13,12 +13,15 @@ final class MoreInteractor: MoreInteractorProtocol {
 
     weak var presenter: MorePresenterProtocol?
     func fetchMore(cache: JSONDecoding.MoreApi?) {
-        let user_id = UserDefaults.standard.integer(forKey: "user_id")
+        var user_id = UserDefaults.standard.string(forKey: "user_id")
+        if let childId = UserDefaults.standard.string(forKey: "child_user_id") {
+            user_id = childId
+        }
         let headers: HTTPHeaders = [
             "token": keychain["token"]!
         ]
         let params: Parameters = [
-            "user_id": user_id
+            "user_id": user_id!
         ]
         Alamofire.request(Constants.MoreURL, method: .get, parameters: params, headers: headers).responseJSON { (response) in
             let result = response.data
