@@ -110,10 +110,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         // If an error is encountered, use NCUpdateResult.Failed
         // If there's no update required, use NCUpdateResult.NoData
         // If there's an update, use NCUpdateResult.NewData
+        preferredContentSize = CGSize(width: view.bounds.width, height: tableView.contentSize.height)
         completionHandler(NCUpdateResult.newData)
     }
 }
 class ScheduleReloadableLayoutAdapter: ReloadableViewLayoutAdapter {
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return currentArrangement[indexPath.section].items[indexPath.row].frame.height
+    }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.selectionStyle = .none
     }
