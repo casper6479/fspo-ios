@@ -12,7 +12,7 @@ import NextGrowingTextView
 import IQKeyboardManagerSwift
 import Cache
 
-class DialogViewController: UIViewController, DialogViewProtocol, UITextViewDelegate {
+class DialogViewController: UIViewController, DialogViewProtocol, UITextViewDelegate, UITabBarControllerDelegate {
     func showNewRows(source: JSONDecoding.DialogsApi) {
         DispatchQueue.main.async {
             self.reloadTableView(width: self.view.bounds.width, synchronous: false, data: source)
@@ -45,8 +45,14 @@ class DialogViewController: UIViewController, DialogViewProtocol, UITextViewDele
     private var button: UIButton!
     var dialogId: Int!
     var overheight: CGFloat = 0
+    weak var cachedDelegate: UITabBarControllerDelegate?
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.delegate = cachedDelegate
+    }
 	override func viewDidLoad() {
         super.viewDidLoad()
+        cachedDelegate = self.tabBarController?.delegate
+        self.tabBarController?.delegate = self
         view.backgroundColor = UIColor(red: 246/255, green: 251/255, blue: 254/255, alpha: 1)
         tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

@@ -13,6 +13,7 @@ import Lottie
 class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollViewDelegate {
     static var publicGroupsDS: JSONDecoding.GetGroupsApi?
     static var publicTeachersDS: JSONDecoding.GetTeachersApi?
+    var currentPage = 0
     var teachersDS: JSONDecoding.GetTeachersApi?
     var withMy: Bool!
     private var groupName: String?
@@ -57,7 +58,7 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollVi
         header.addSubview(segmentedControl)
         return header
     }
-    private var scrollView: UIScrollView!
+    var scrollView: UIScrollView!
 	var presenter: SchedulePresenterProtocol?
     private var studentScheduleLayoutAdapter: ReloadableViewLayoutAdapter?
     private var scheduleByGroupsLayoutAdapter: ReloadableViewLayoutAdapter?
@@ -149,6 +150,13 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollVi
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         pageControlAnimation.animationProgress = scrollView.contentOffset.x / 3 / 100 / 3 * 1.33
+        if scrollView.contentOffset.x == 0 {
+            currentPage = 0
+        } else if scrollView.contentOffset.x == view.bounds.width {
+            currentPage = 1
+        } else if scrollView.contentOffset.x == view.bounds.width * 2 {
+            currentPage = 2
+        }
         let width = UIScreen.main.bounds.width
         if withMy {
             if self.groupName != nil {

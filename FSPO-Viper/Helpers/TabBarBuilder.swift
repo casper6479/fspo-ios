@@ -9,6 +9,59 @@
 import UIKit
 import UserNotifications
 
+class TabBarController: UITabBarController, UITabBarControllerDelegate {
+    var scrollEnabled: Bool = true
+    private var previousIndex = 0
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        delegate = self
+        tabBar.backgroundColor = .white
+        tabBar.tintColor = UIColor.ITMOBlue
+    }
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        guard scrollEnabled else {
+            return
+        }
+        guard let index = viewControllers?.index(of: viewController) else {
+            return
+        }
+        if index == previousIndex {
+            DispatchQueue.main.async {
+                [weak self] () in
+                guard let tableView = self?.iterateThroughSubviews(parentView: self?.view) else {
+                    return
+                }
+                tableView.setContentOffset(.zero, animated: true)
+            }
+        }
+        previousIndex = index
+    }
+    private func iterateThroughSubviews(parentView: UIView?) -> UITableView? {
+        guard let view = parentView else {
+            return nil
+        }
+        for subview in view.subviews {
+            if let tableView = subview as? UITableView, tableView.scrollsToTop == true {
+                if let parentVC = tableView.controller() as? ScheduleViewController {
+                    if parentVC.currentPage == 0 {
+                        return StudentScheduleLayout.tableView
+                    }
+                    if parentVC.currentPage == 1 {
+                        return ScheduleByGroupsLayout.tableView
+                    }
+                    if parentVC.currentPage == 2 {
+                        return TeachersListLayout.tableView
+                    }
+                }
+                return tableView
+            }
+            if let tableView = self.iterateThroughSubviews(parentView: subview) {
+                return tableView
+            }
+        }
+        return nil
+    }
+}
 extension UITabBarController {
     func buildStudentsTabBar() -> UITabBarController {
         let News = NewsRouter.createModule()
@@ -28,12 +81,10 @@ extension UITabBarController {
         let Profile = ProfileRouter.createModule()
         Profile.title = NSLocalizedString("Профиль", comment: "")
         Profile.tabBarItem = UITabBarItem(title: NSLocalizedString("Профиль", comment: ""), image: UIImage(named: "profile"), selectedImage: UIImage(named: "profile-filled"))
-        let tabBarController = UITabBarController()
+        let tabBarController = TabBarController()
         let controllers = [News, Journal, Messages, Schedule, Profile]
         let navigationControllers = controllers.map {UINavigationController(rootViewController: $0)}
         tabBarController.viewControllers = navigationControllers
-        tabBarController.tabBar.backgroundColor = .white
-        tabBarController.tabBar.tintColor = UIColor.ITMOBlue
         tabBarController.selectedIndex = UserDefaults.standard.integer(forKey: "firstScreen")
         if #available(iOS 10.0, *) {
             let center = UNUserNotificationCenter.current()
@@ -65,12 +116,10 @@ extension UITabBarController {
         let Profile = ProfileRouter.createModule()
         Profile.title = NSLocalizedString("Профиль", comment: "")
         Profile.tabBarItem = UITabBarItem(title: NSLocalizedString("Профиль", comment: ""), image: UIImage(named: "profile"), selectedImage: UIImage(named: "profile-filled"))
-        let tabBarController = UITabBarController()
+        let tabBarController = TabBarController()
         let controllers = [News, Messages, Schedule, Profile]
         let navigationControllers = controllers.map {UINavigationController(rootViewController: $0)}
         tabBarController.viewControllers = navigationControllers
-        tabBarController.tabBar.backgroundColor = .white
-        tabBarController.tabBar.tintColor = UIColor.ITMOBlue
         tabBarController.selectedIndex = UserDefaults.standard.integer(forKey: "firstScreen")
 //        if #available(iOS 10.0, *) {
 //            let center = UNUserNotificationCenter.current()

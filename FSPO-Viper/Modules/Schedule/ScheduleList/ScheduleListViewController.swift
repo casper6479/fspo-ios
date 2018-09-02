@@ -9,7 +9,7 @@
 import UIKit
 import LayoutKit
 
-class ScheduleListViewController: UIViewController, ScheduleListViewProtocol {
+class ScheduleListViewController: UIViewController, ScheduleListViewProtocol, UITabBarControllerDelegate {
     private var tableView: UITableView!
     private var reloadableViewLayoutAdapter: ReloadableViewLayoutAdapter!
     var scheduleType: String?
@@ -69,8 +69,14 @@ class ScheduleListViewController: UIViewController, ScheduleListViewProtocol {
             }
         })
     }
+    weak var cachedDelegate: UITabBarControllerDelegate?
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.delegate = cachedDelegate
+    }
 	override func viewDidLoad() {
         super.viewDidLoad()
+        cachedDelegate = self.tabBarController?.delegate
+        self.tabBarController?.delegate = self
         tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 66, bottom: 0, right: 0)
