@@ -34,6 +34,29 @@ class DateToString {
         }
         return finalString
     }
+    func formatDateJournal(_ dateString: String) -> String {
+        let calendar = Calendar.current
+        var finalString = ""
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd"
+        dateFormatterGet.locale = Locale(identifier: "en_US")
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale.current
+        let date: Date? = dateFormatterGet.date(from: dateString)
+        if calendar.isDateInToday(date!) {
+            finalString = NSLocalizedString("Сегодня", comment: "")
+        } else if calendar.isDateInYesterday(date!) {
+            finalString = NSLocalizedString("Вчера", comment: "")
+        } else {
+            if Calendar.current.component(.year, from: date!) == Calendar.current.component(.year, from: Date()) {
+                dateFormatter.dateFormat = "d MMMM"
+            } else {
+                dateFormatter.dateFormat = "dd.MM.yy"
+            }
+            finalString = dateFormatter.string(from: date!)
+        }
+        return finalString
+    }
     func formatDateMessages(_ dateString: String) -> String {
         let calendar = Calendar.current
         var finalString = ""

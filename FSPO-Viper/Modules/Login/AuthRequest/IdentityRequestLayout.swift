@@ -22,13 +22,13 @@ open class IdentityRequestLayout: InsetLayout<UIView> {
                 imageView.image = UIImage(named: "faceID")
                 imageView.contentMode = .scaleAspectFit
         })
-        let label = LabelLayout(
+        let label = InsetLayout(inset: 8, sublayout: LabelLayout(
             text: NSLocalizedString("Включить подтверждение личности при входе?", comment: ""),
             font: UIFont.ITMOFontBold!.withSize(17),
             alignment: .topCenter,
             config: {label in
                 label.textAlignment = .center
-        })
+        }))
         let iconsStack = StackLayout(axis: .vertical,
                                      spacing: 64,
                                      alignment: .center,

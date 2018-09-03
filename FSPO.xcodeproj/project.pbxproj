@@ -93,6 +93,12 @@
 		46A9F9B020F1744C008E2653 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9F9AA20F1744C008E2653 /* LoginProtocols.swift */; };
 		46A9F9B120F1744C008E2653 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9F9AB20F1744C008E2653 /* LoginInteractor.swift */; };
 		46A9F9C120F2BA7F008E2653 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9F9C020F2BA7F008E2653 /* Button.swift */; };
+		46AA2EDC213D0C27007B0B59 /* ConsultationsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AA2ED7213D0C27007B0B59 /* ConsultationsPresenter.swift */; };
+		46AA2EDD213D0C27007B0B59 /* ConsultationsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AA2ED8213D0C27007B0B59 /* ConsultationsRouter.swift */; };
+		46AA2EDE213D0C27007B0B59 /* ConsultationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AA2ED9213D0C27007B0B59 /* ConsultationsViewController.swift */; };
+		46AA2EDF213D0C27007B0B59 /* ConsultationsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AA2EDA213D0C27007B0B59 /* ConsultationsProtocols.swift */; };
+		46AA2EE0213D0C27007B0B59 /* ConsultationsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AA2EDB213D0C27007B0B59 /* ConsultationsInteractor.swift */; };
+		46AA2EE2213D120D007B0B59 /* ConsultationsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AA2EE1213D120D007B0B59 /* ConsultationsLayout.swift */; };
 		46B42006211D9CFB00AB93B6 /* ResponderChainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B42005211D9CFB00AB93B6 /* ResponderChainHelper.swift */; };
 		46B6D4C1210A44CD00D83287 /* QuickMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6D4C0210A44CD00D83287 /* QuickMessage.swift */; };
 		46B6D4C3210A4EEF00D83287 /* KeychainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6D4C2210A4EEF00D83287 /* KeychainController.swift */; };
@@ -278,6 +284,12 @@
 		46A9F9AA20F1744C008E2653 /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
 		46A9F9AB20F1744C008E2653 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		46A9F9C020F2BA7F008E2653 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		46AA2ED7213D0C27007B0B59 /* ConsultationsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationsPresenter.swift; sourceTree = "<group>"; };
+		46AA2ED8213D0C27007B0B59 /* ConsultationsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationsRouter.swift; sourceTree = "<group>"; };
+		46AA2ED9213D0C27007B0B59 /* ConsultationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationsViewController.swift; sourceTree = "<group>"; };
+		46AA2EDA213D0C27007B0B59 /* ConsultationsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationsProtocols.swift; sourceTree = "<group>"; };
+		46AA2EDB213D0C27007B0B59 /* ConsultationsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationsInteractor.swift; sourceTree = "<group>"; };
+		46AA2EE1213D120D007B0B59 /* ConsultationsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationsLayout.swift; sourceTree = "<group>"; };
 		46B42005211D9CFB00AB93B6 /* ResponderChainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderChainHelper.swift; sourceTree = "<group>"; };
 		46B6D4C0210A44CD00D83287 /* QuickMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickMessage.swift; sourceTree = "<group>"; };
 		46B6D4C2210A4EEF00D83287 /* KeychainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainController.swift; sourceTree = "<group>"; };
@@ -444,6 +456,7 @@
 		4621CE9C20EFAB9A00B17323 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
+				46AA2ED6213D0C0C007B0B59 /* Consultations */,
 				464D895F211C4FA300D2799B /* ScheduleList */,
 				4621CEB520EFABD700B17323 /* SchedulePresenter.swift */,
 				4621CEB620EFABD700B17323 /* ScheduleRouter.swift */,
@@ -625,6 +638,19 @@
 				46A9F9C020F2BA7F008E2653 /* Button.swift */,
 			);
 			path = "UI Components";
+			sourceTree = "<group>";
+		};
+		46AA2ED6213D0C0C007B0B59 /* Consultations */ = {
+			isa = PBXGroup;
+			children = (
+				46AA2ED7213D0C27007B0B59 /* ConsultationsPresenter.swift */,
+				46AA2ED8213D0C27007B0B59 /* ConsultationsRouter.swift */,
+				46AA2ED9213D0C27007B0B59 /* ConsultationsViewController.swift */,
+				46AA2EDA213D0C27007B0B59 /* ConsultationsProtocols.swift */,
+				46AA2EDB213D0C27007B0B59 /* ConsultationsInteractor.swift */,
+				46AA2EE1213D120D007B0B59 /* ConsultationsLayout.swift */,
+			);
+			path = Consultations;
 			sourceTree = "<group>";
 		};
 		46B6D4D0210A5A4800D83287 /* Settings */ = {
@@ -1027,6 +1053,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Kanna/Kanna.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/LayoutKit/LayoutKit.framework",
@@ -1038,6 +1065,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LayoutKit.framework",
@@ -1078,6 +1106,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46AA2EDC213D0C27007B0B59 /* ConsultationsPresenter.swift in Sources */,
 				46B6D4F0210B1E5700D83287 /* JournalBySubjectPresenter.swift in Sources */,
 				46C1561C20DBB2D700F2BA79 /* AppDelegate.swift in Sources */,
 				46B6D4CB210A5A3F00D83287 /* SettingsRouter.swift in Sources */,
@@ -1085,6 +1114,7 @@
 				46B6D50A210B1FC700D83287 /* MoreViewController.swift in Sources */,
 				46BDD9B221164D3300C5CD94 /* DialogLayout.swift in Sources */,
 				464B2759211CFF5F006DBA66 /* ScheduleListViewController.swift in Sources */,
+				46AA2EE2213D120D007B0B59 /* ConsultationsLayout.swift in Sources */,
 				4621CEAF20EFABC700B17323 /* JournalPresenter.swift in Sources */,
 				464D896A211C4FD500D2799B /* ScheduleListInteractor.swift in Sources */,
 				464D8969211C4FD500D2799B /* ScheduleListProtocols.swift in Sources */,
@@ -1132,6 +1162,7 @@
 				465182062123404A00E88402 /* IdentityRequestLayout.swift in Sources */,
 				46B6D4FC210B1E6D00D83287 /* JournalByDatePresenter.swift in Sources */,
 				4621CEBE20EFABD700B17323 /* ScheduleProtocols.swift in Sources */,
+				46AA2EDD213D0C27007B0B59 /* ConsultationsRouter.swift in Sources */,
 				467C20BD211A3438000736A8 /* JournalByTeacherInteractor.swift in Sources */,
 				466CDF4E20EF72F700A86701 /* NewsPresenter.swift in Sources */,
 				4621CEA520EFABBE00B17323 /* ProfileViewController.swift in Sources */,
@@ -1140,6 +1171,7 @@
 				46B6D500210B1E6D00D83287 /* JournalByDateInteractor.swift in Sources */,
 				46A9F99C20F02C27008E2653 /* Color.swift in Sources */,
 				46B6D51A210B25B500D83287 /* ParentsInteractor.swift in Sources */,
+				46AA2EE0213D0C27007B0B59 /* ConsultationsInteractor.swift in Sources */,
 				4621CEBB20EFABD700B17323 /* SchedulePresenter.swift in Sources */,
 				4621CEC220EFB08000B17323 /* NewsPostLayout.swift in Sources */,
 				46A9F9B120F1744C008E2653 /* LoginInteractor.swift in Sources */,
@@ -1148,6 +1180,7 @@
 				46B6D508210B1FC700D83287 /* MorePresenter.swift in Sources */,
 				466CDF5720EF7B3400A86701 /* JSONDecoding.swift in Sources */,
 				46A9F9A620F172B1008E2653 /* LoginLayout.swift in Sources */,
+				46AA2EDE213D0C27007B0B59 /* ConsultationsViewController.swift in Sources */,
 				4621CE9320EFAB8200B17323 /* MessagesPresenter.swift in Sources */,
 				465182022123403000E88402 /* IdentityRequestViewController.swift in Sources */,
 				4621CEBF20EFABD700B17323 /* ScheduleInteractor.swift in Sources */,
@@ -1177,6 +1210,7 @@
 				46A9F99E20F030B2008E2653 /* DateFormatter.swift in Sources */,
 				467C20C0211A3810000736A8 /* JournalByTeacherTeacherCellLayout.swift in Sources */,
 				46BDD9AF21164D1D00C5CD94 /* DialogInteractor.swift in Sources */,
+				46AA2EDF213D0C27007B0B59 /* ConsultationsProtocols.swift in Sources */,
 				46B6D4F4210B1E5700D83287 /* JournalBySubjectInteractor.swift in Sources */,
 				467C20BA211A3438000736A8 /* JournalByTeacherRouter.swift in Sources */,
 				465182012123403000E88402 /* IdentityRequestRouter.swift in Sources */,
@@ -1289,7 +1323,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DEVELOPMENT_TEAM = DX8WP5K42U;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = TodaySchedule/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1340,7 +1374,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DEVELOPMENT_TEAM = DX8WP5K42U;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = TommorowSchedule/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1484,6 +1518,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEPLOYMENT_POSTPROCESSING = NO;
 				DEVELOPMENT_TEAM = DX8WP5K42U;
+				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = "FSPO-Viper/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

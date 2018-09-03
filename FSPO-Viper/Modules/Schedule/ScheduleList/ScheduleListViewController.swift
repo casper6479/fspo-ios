@@ -79,7 +79,7 @@ class ScheduleListViewController: UIViewController, ScheduleListViewProtocol, UI
         self.tabBarController?.delegate = self
         tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        tableView.separatorInset = UIEdgeInsets(top: 0, left: 66, bottom: 0, right: 0)
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 62, bottom: 0, right: 0)
         reloadableViewLayoutAdapter = ScheduleReloadableLayoutAdapter(reloadableView: tableView)
         tableView.dataSource = reloadableViewLayoutAdapter
         tableView.delegate = reloadableViewLayoutAdapter

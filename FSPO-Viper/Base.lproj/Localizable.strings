@@ -114,3 +114,6 @@
 "Включить подтверждение личности при входе?" = "Allow the app to verify your identity on the startup?";
 "Сообщить об ошибке" = "Report a bug";
 "Студент" = "Student";
+"Консультации" = "Consultations";
+"Сегодня" = "Today";
+"Вчера" = "Yesterday";

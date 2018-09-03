@@ -32,6 +32,7 @@ class JournalByDateInteractor: JournalByDateInteractorProtocol {
                     self.presenter?.journalByDateShowNoLessons()
                 } else {
                     self.presenter?.journalByDateFetched(data: res)
+                    self.presenter?.jounalByDateHideNoLessons()
                 }
                 /*self.arr = res.exercises
                 self.excount = res.count_ex

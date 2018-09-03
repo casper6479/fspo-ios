@@ -35,6 +35,7 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollVi
         ScheduleViewController.publicTeachersDS = source
         teachersDS = source
         DispatchQueue.main.async {
+            TeachersListLayout.tableView?.tableHeaderView = self.buildHeaderForTeachersList()
             self.reloadTeachers(data: source)
         }
     }
@@ -57,6 +58,21 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollVi
         segmentedControl.addTarget(self, action: #selector(self.segmentChanged), for: .valueChanged)
         header.addSubview(segmentedControl)
         return header
+    }
+    func buildHeaderForTeachersList() -> UIView {
+        let header = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 32))
+        let button = UIButton(frame: CGRect(x: view.bounds.width / 2 - 100, y: 8, width: 200, height: 22))
+        button.titleLabel?.font = UIFont.ITMOFontBold?.withSize(15)
+        button.setTitleColor(.ITMOBlue, for: .normal)
+        button.setTitleColor(UIColor.ITMOBlue.withAlphaComponent(0.5), for: .highlighted)
+        button.setTitle(NSLocalizedString("Консультации", comment: ""), for: .normal)
+        button.addTarget(self, action: #selector(consultationsUpInside), for: .touchUpInside)
+        header.addSubview(button)
+        header.backgroundColor = .white
+        return header
+    }
+    @objc func consultationsUpInside() {
+        navigationController?.show(ConsultationsRouter.createModule(), sender: self)
     }
     var scrollView: UIScrollView!
 	var presenter: SchedulePresenterProtocol?

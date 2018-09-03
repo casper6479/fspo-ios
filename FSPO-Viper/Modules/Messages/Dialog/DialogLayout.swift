@@ -61,7 +61,19 @@ open class DialogsLayout: InsetLayout<View> {
                 sublayout: subText,
                 config: { inse in
                     inse.backgroundColor = backgroundColor
+//                    inse.backgroundColor = .clear
+//                    let rectShape = CAShapeLayer()
+//                    rectShape.path = UIBezierPath(roundedRect: inse.bounds,
+//                                                  byRoundingCorners: [.allCorners],
+//                                                  cornerRadii: CGSize(width: 16, height: 16)).cgPath
+//                    let maskLayer = CAShapeLayer()
+//                    maskLayer.fillColor = backgroundColor?.cgColor
+//                    maskLayer.frame = inse.bounds
+//                    maskLayer.path = rectShape.path
+//                    inse.layer.mask = rectShape
+//                    inse.layer.addSublayer(maskLayer)
                     inse.layer.cornerRadius = 16
+//                    inse.layer.masksToBounds = true
                     inse.layer.shadowColor = textColor?.cgColor
                     inse.layer.shadowOffset = CGSize(width: 0, height: 2)
                     inse.layer.shadowRadius = 2

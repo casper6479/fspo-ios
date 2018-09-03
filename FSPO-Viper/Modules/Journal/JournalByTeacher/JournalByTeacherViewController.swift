@@ -26,6 +26,7 @@ class JournalByTeacherViewController: UIViewController, JournalByTeacherViewProt
         tableView.backgroundColor = .white
         tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 229))
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
+        tableView.allowsSelection = false
         view.addSubview(tableView)
         presenter?.updateView()
     }
@@ -40,7 +41,6 @@ class JournalByTeacherViewController: UIViewController, JournalByTeacherViewProt
         }
     }
     func getNewRows(data: JSONDecoding.JournalByTeacherAPI.Days) -> [Layout] {
-//        let shit = JSONDecoding.JournalByDateAPI.Exercises.init(ex_period: "1", ex_topic: "Отличная тема", ex_type: "6", lesson_name: "s", student_presence: false, student_mark: 5, lesson_id: "s", student_performance: "2", student_dropout: true, student_delay: "3")
         var layouts = [Layout]()
         for item in data.exercises {
             let source = JSONDecoding.JournalByDateAPI.Exercises.init(ex_period: item.ex_period, ex_topic: item.ex_topic, ex_type: item.ex_type, lesson_name: "", student_presence: item.student_presence, student_mark: item.student_mark, lesson_id: "", student_performance: item.student_performance, student_dropout: item.student_dropout, student_delay: item.student_delay)
@@ -48,15 +48,15 @@ class JournalByTeacherViewController: UIViewController, JournalByTeacherViewProt
         }
         return layouts
     }
-    func getHeader(lesson: String) -> Layout {
-        let layouts = HeaderLayout(text: "Header", inset: 40)
+    func getHeader(date: String) -> Layout {
+        let layouts = HeaderLayout(text: date, inset: 40)
         return layouts
     }
     private func reloadTableView(width: CGFloat, synchronous: Bool, data: JSONDecoding.JournalByTeacherAPI) {
         var dataSource = [Section<[Layout]>]()
         for item in data.days {
             dataSource.append(Section(
-                header: getHeader(lesson: "item.lesson_name"),
+                header: getHeader(date: DateToString().formatDateJournal(item.ddate)),
                 items: self.getNewRows(data: item),
                 footer: nil))
         }

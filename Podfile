@@ -14,6 +14,7 @@ def pods
 	pod 'Crashlytics', '~> 3.10.5'
 	pod 'Cache'
 	pod 'lottie-ios'
+	pod 'Kanna'
 end
 
 target 'FSPO' do

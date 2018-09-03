@@ -30,4 +30,7 @@ class JournalByDatePresenter: JournalByDatePresenterProtocol {
     func journalByDateShowNoLessons() {
         view?.showNoLessons()
     }
+    func jounalByDateHideNoLessons() {
+        view?.hideNoLessons()
+    }
 }

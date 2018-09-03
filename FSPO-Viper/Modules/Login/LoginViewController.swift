@@ -115,6 +115,7 @@ class LoginViewController: UIViewController, LoginViewProtocol, CAAnimationDeleg
     }
     @objc func loginUpInside() {
         dataFetched = nil
+        self.view.endEditing(true)
         if Connectivity.isConnectedToInternet() {
             setLoadingState()
         }
@@ -127,6 +128,7 @@ class LoginViewController: UIViewController, LoginViewProtocol, CAAnimationDeleg
         if sender == LoginLayout.loginTextField {
             LoginLayout.passwordTextField.becomeFirstResponder()
         } else {
+            loginUpInside()
             sender.resignFirstResponder()
         }
     }
