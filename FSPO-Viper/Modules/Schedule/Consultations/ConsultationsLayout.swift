@@ -9,7 +9,7 @@
 import LayoutKit
 
 final class ConsultationsLayout: InsetLayout<View> {
-    public init(data: Dictionary<String, Any>) {
+    public init(data: [String: Any]) {
         var updatedText = ""
         if let updated = data["update"] as? String {
             updatedText = updated

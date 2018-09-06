@@ -146,6 +146,7 @@
 		46DF962420FC8FC500C4D901 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621CEB720EFABD700B17323 /* ScheduleViewController.swift */; };
 		46DF962620FC927B00C4D901 /* ScheduleByGroupsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DF962520FC927B00C4D901 /* ScheduleByGroupsLayout.swift */; };
 		46DF962820FC928700C4D901 /* TeachersListLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DF962720FC928700C4D901 /* TeachersListLayout.swift */; };
+		46E737DD214054EC00D7D908 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46E737DC214054EC00D7D908 /* GoogleService-Info.plist */; };
 		46ED1083210FABBF00B16737 /* ParentsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ED1082210FABBF00B16737 /* ParentsLayout.swift */; };
 		46F5BC9A21173D6E00913931 /* JournalByDateLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F5BC9921173D6E00913931 /* JournalByDateLayout.swift */; };
 		46F5BCAC21178C4A00913931 /* SFCompactRounded-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46F5BCA321178C4A00913931 /* SFCompactRounded-Regular.ttf */; };
@@ -338,6 +339,7 @@
 		46D9B62E212F66F0002E0DEE /* swipe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = swipe.json; sourceTree = "<group>"; };
 		46DF962520FC927B00C4D901 /* ScheduleByGroupsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleByGroupsLayout.swift; sourceTree = "<group>"; };
 		46DF962720FC928700C4D901 /* TeachersListLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersListLayout.swift; sourceTree = "<group>"; };
+		46E737DC214054EC00D7D908 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		46ED1082210FABBF00B16737 /* ParentsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentsLayout.swift; sourceTree = "<group>"; };
 		46F5BC9921173D6E00913931 /* JournalByDateLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalByDateLayout.swift; sourceTree = "<group>"; };
 		46F5BCA321178C4A00913931 /* SFCompactRounded-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactRounded-Regular.ttf"; sourceTree = "<group>"; };
@@ -765,6 +767,7 @@
 				466CDF3220EF701500A86701 /* Modules */,
 				46C1561B20DBB2D700F2BA79 /* AppDelegate.swift */,
 				46C1562420DBB2D800F2BA79 /* LaunchScreen.storyboard */,
+				46E737DC214054EC00D7D908 /* GoogleService-Info.plist */,
 				467C20952119DAAF000736A8 /* Info.plist */,
 				467C209B2119DB53000736A8 /* InfoPlist.strings */,
 				46B6D4E5210A75D800D83287 /* Localizable.strings */,
@@ -943,6 +946,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46E737DD214054EC00D7D908 /* GoogleService-Info.plist in Resources */,
 				46B6D4E3210A75D800D83287 /* Localizable.strings in Resources */,
 				4621CECA20F01E4400B17323 /* ALSSchlangesans-Bold.otf in Resources */,
 				4621CEC920F01E4400B17323 /* ALSSchlangesans.otf in Resources */,
@@ -1052,6 +1056,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-FSPO/Pods-FSPO-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kanna/Kanna.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
@@ -1059,11 +1064,13 @@
 				"${BUILT_PRODUCTS_DIR}/LayoutKit/LayoutKit.framework",
 				"${BUILT_PRODUCTS_DIR}/NextGrowingTextView/NextGrowingTextView.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
@@ -1071,6 +1078,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LayoutKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NextGrowingTextView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1300,11 +1308,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = TodaySchedule/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fspo.app.TodaySchedule;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1326,11 +1330,7 @@
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = TodaySchedule/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fspo.app.TodaySchedule;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1351,11 +1351,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = TommorowSchedule/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fspo.app.TommorowSchedule;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1377,11 +1373,7 @@
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = TommorowSchedule/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fspo.app.TommorowSchedule;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1522,10 +1514,7 @@
 				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = "FSPO-Viper/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fspo.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1548,10 +1537,7 @@
 				ENABLE_TESTABILITY = NO;
 				INFOPLIST_FILE = "FSPO-Viper/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fspo.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

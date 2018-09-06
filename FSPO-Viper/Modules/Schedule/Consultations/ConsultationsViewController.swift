@@ -13,7 +13,7 @@ class ConsultationsViewController: UIViewController, ConsultationsViewProtocol {
 	var presenter: ConsultationsPresenterProtocol?
     private var reloadableViewLayoutAdapter: ReloadableViewLayoutAdapter!
     private var tableView: UITableView!
-    func showNewRows(data: [Dictionary<String, Any>]) {
+    func showNewRows(data: [[String: Any]]) {
         self.reloadTableView(width: tableView.frame.width, synchronous: false, data: data)
     }
 	override func viewDidLoad() {
@@ -34,14 +34,14 @@ class ConsultationsViewController: UIViewController, ConsultationsViewProtocol {
         tableView.tableFooterView = footer
         view.addSubview(tableView)
     }
-    func getNewsRows(data: [Dictionary<String, Any>]) -> [Layout] {
+    func getNewsRows(data: [[String: Any]]) -> [Layout] {
         var layouts = [Layout]()
         for item in data {
             layouts.append(ConsultationsLayout(data: item))
         }
         return layouts
     }
-    private func reloadTableView(width: CGFloat, synchronous: Bool, data: [Dictionary<String, Any>]) {
+    private func reloadTableView(width: CGFloat, synchronous: Bool, data: [[String: Any]]) {
         reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
             return [Section(header: nil, items: self?.getNewsRows(data: data) ?? [], footer: nil)]
         })

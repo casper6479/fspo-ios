@@ -13,6 +13,7 @@ import LocalAuthentication
 import Fabric
 import Crashlytics
 import Kingfisher
+import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -21,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let authContex = LAContext()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
+        FirebaseApp.configure()
 
         ScheduleStorage().setExludedFromBackup()
 

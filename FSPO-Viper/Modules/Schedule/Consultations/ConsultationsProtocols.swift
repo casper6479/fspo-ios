@@ -15,7 +15,7 @@ protocol ConsultationsWireframeProtocol: class {
 // MARK: Presenter -
 protocol ConsultationsPresenterProtocol: class {
     func updateView()
-    func consultationsFetched(data: [Dictionary<String, Any>])
+    func consultationsFetched(data: [[String: Any]])
 }
 
 // MARK: Interactor -
@@ -27,6 +27,6 @@ protocol ConsultationsInteractorProtocol: class {
 
 // MARK: View -
 protocol ConsultationsViewProtocol: class {
-    func showNewRows(data: [Dictionary<String, Any>])
+    func showNewRows(data: [[String: Any]])
     var presenter: ConsultationsPresenterProtocol? { get set }
 }

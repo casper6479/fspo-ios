@@ -15,6 +15,7 @@ def pods
 	pod 'Cache'
 	pod 'lottie-ios'
 	pod 'Kanna'
+	pod 'Firebase/Core'
 end
 
 target 'FSPO' do

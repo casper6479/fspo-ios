@@ -24,7 +24,7 @@ class ConsultationsPresenter: ConsultationsPresenterProtocol {
             interactor?.fetchConsultations()
         }
     }
-    func consultationsFetched(data: [Dictionary<String, Any>]) {
+    func consultationsFetched(data: [[String: Any]]) {
         view?.showNewRows(data: data)
     }
 
