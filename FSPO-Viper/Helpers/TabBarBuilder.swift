@@ -31,7 +31,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
                 guard let tableView = self?.iterateThroughSubviews(parentView: self?.view) else {
                     return
                 }
-                tableView.setContentOffset(.zero, animated: true)
+                tableView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 1, height: 1), animated: true)
             }
         }
         previousIndex = index
@@ -65,7 +65,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
 extension UITabBarController {
     func buildStudentsTabBar() -> UITabBarController {
         let News = NewsRouter.createModule()
-        News.title = NSLocalizedString("Изменения в расписании", comment: "")
+        News.title = NSLocalizedString("Новости", comment: "")
         News.tabBarItem = UITabBarItem(title: NSLocalizedString("Новости", comment: ""), image: UIImage(named: "news"), selectedImage: UIImage(named: "news-filled"))
         let Journal = JournalRouter.createModule()
         Journal.title = NSLocalizedString("Журнал", comment: "")
@@ -84,6 +84,12 @@ extension UITabBarController {
         let tabBarController = TabBarController()
         let controllers = [News, Journal, Messages, Schedule, Profile]
         let navigationControllers = controllers.map {UINavigationController(rootViewController: $0)}
+        if #available(iOS 11.0, *) {
+            navigationControllers[0].navigationBar.prefersLargeTitles = true
+            navigationControllers[0].navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+            navigationControllers[2].navigationBar.prefersLargeTitles = true
+            navigationControllers[2].navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        }
         tabBarController.viewControllers = navigationControllers
         tabBarController.selectedIndex = UserDefaults.standard.integer(forKey: "firstScreen")
         if #available(iOS 10.0, *) {
@@ -100,12 +106,12 @@ extension UITabBarController {
     }
     func buildTeachersTabBar() -> UITabBarController {
         let News = NewsRouter.createModule()
-        News.title = NSLocalizedString("Изменения в расписании", comment: "")
+        News.title = NSLocalizedString("Новости", comment: "")
         News.tabBarItem = UITabBarItem(title: NSLocalizedString("Новости", comment: ""), image: UIImage(named: "news"), selectedImage: UIImage(named: "news-filled"))
-//        let Journal = JournalRouter.createModule()
-//        Journal.title = NSLocalizedString("Журнал", comment: "")
-//        Journal.tabBarItem = UITabBarItem(title: NSLocalizedString("Журнал", comment: ""), image: UIImage(named: "notes"), selectedImage: UIImage(named: "notes-filled"))
-//        Journal.tabBarItem.imageInsets = UIEdgeInsets(top: 2, left: 0, bottom: -2, right: 0)
+        let Journal = TeacherStuffRouter.createModule()
+        Journal.title = NSLocalizedString("Препод", comment: "")
+        Journal.tabBarItem = UITabBarItem(title: NSLocalizedString("Препод", comment: ""), image: UIImage(named: "notes"), selectedImage: UIImage(named: "notes-filled"))
+        Journal.tabBarItem.imageInsets = UIEdgeInsets(top: 2, left: 0, bottom: -2, right: 0)
         let Messages = MessagesRouter.createModule()
         Messages.title = NSLocalizedString("Сообщения", comment: "")
         Messages.tabBarItem = UITabBarItem(title: NSLocalizedString("Сообщения", comment: ""), image: UIImage(named: "messages"), selectedImage: UIImage(named: "messages-filled"))
@@ -117,8 +123,14 @@ extension UITabBarController {
         Profile.title = NSLocalizedString("Профиль", comment: "")
         Profile.tabBarItem = UITabBarItem(title: NSLocalizedString("Профиль", comment: ""), image: UIImage(named: "profile"), selectedImage: UIImage(named: "profile-filled"))
         let tabBarController = TabBarController()
-        let controllers = [News, Messages, Schedule, Profile]
+        let controllers = [News, Journal, Messages, Schedule, Profile]
         let navigationControllers = controllers.map {UINavigationController(rootViewController: $0)}
+        if #available(iOS 11.0, *) {
+            navigationControllers[0].navigationBar.prefersLargeTitles = true
+            navigationControllers[0].navigationBar.largeTitleTextAttributes = [ NSAttributedStringKey.foregroundColor: UIColor.white]
+            navigationControllers[2].navigationBar.prefersLargeTitles = true
+            navigationControllers[2].navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        }
         tabBarController.viewControllers = navigationControllers
         tabBarController.selectedIndex = UserDefaults.standard.integer(forKey: "firstScreen")
 //        if #available(iOS 10.0, *) {

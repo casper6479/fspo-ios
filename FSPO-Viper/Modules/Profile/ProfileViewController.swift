@@ -10,7 +10,6 @@ import UIKit
 
 class ProfileViewController: UIViewController, ProfileViewProtocol {
 	var presenter: ProfilePresenterProtocol?
-
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
@@ -53,5 +52,14 @@ class ProfileViewController: UIViewController, ProfileViewProtocol {
     }
     @objc func setNeedsShowParents() {
         presenter?.showParents()
+    }
+}
+extension UINavigationBar{
+    var largeTitleHeight: CGFloat {
+        let maxSize = self.subviews
+            .filter { $0.frame.origin.y > 0 }
+            .max { $0.frame.origin.y < $1.frame.origin.y }
+            .map { $0.frame.size }
+        return maxSize?.height ?? 0
     }
 }

@@ -26,6 +26,22 @@ class Button {
         })
         return button
     }
+    func createUnactiveButton(title: String, width: CGFloat, height: CGFloat, alignment: Alignment) -> SizeLayout<UIButton> {
+        let button = SizeLayout<UIButton>(
+            size: CGSize(width: width, height: height),
+            alignment: alignment,
+            config: { button in
+                button.setTitle(title, for: .normal)
+                button.backgroundColor = .gray
+                button.setTitleColor(.white, for: .normal)
+                button.setTitleColor(UIColor.white.withAlphaComponent(0.5), for: .highlighted)
+                button.titleLabel?.font = UIFont.ITMOFontBold?.withSize(17)
+                button.layer.cornerRadius = button.frame.height / 2
+                button.layer.masksToBounds = true
+                button.isUserInteractionEnabled = false
+        })
+        return button
+    }
 }
 
 extension UIButton {

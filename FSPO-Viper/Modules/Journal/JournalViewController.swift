@@ -42,7 +42,7 @@ class JournalViewController: UIViewController, JournalViewProtocol, UITextFieldD
     }
     func fillView(data: JSONDecoding.JournalApi) {
         let width = view.bounds.width
-        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
+        DispatchQueue.global(qos: .userInteractive).async {
             var journalLayout = JournalLayout(
                 dolgs: "\(data.debts)",
                 percent: "\(data.visits) %",

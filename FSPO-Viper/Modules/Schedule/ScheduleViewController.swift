@@ -72,7 +72,7 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollVi
         return header
     }
     @objc func consultationsUpInside() {
-        navigationController?.show(ConsultationsRouter.createModule(), sender: self)
+        self.navigationController?.show(ConsultationsRouter.createModule(), sender: self)
     }
     var scrollView: UIScrollView!
 	var presenter: SchedulePresenterProtocol?
@@ -99,7 +99,7 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollVi
                 self.navigationController?.navigationBar.topItem?.title = self.groupName!
             }
         } else {
-            navigationController?.navigationBar.topItem?.title = NSLocalizedString("Расписание", comment: "")
+            title = NSLocalizedString("Расписание", comment: "")
         }
         view.backgroundColor = .white
         scrollView = UIScrollView(frame: view.bounds)

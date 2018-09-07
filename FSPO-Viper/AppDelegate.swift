@@ -22,7 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let authContex = LAContext()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
+        // TODO:
+        UserDefaults.standard.set("teacher", forKey: "role")
         FirebaseApp.configure()
 
         ScheduleStorage().setExludedFromBackup()
@@ -77,7 +78,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false
         IQKeyboardManager.shared.keyboardDistanceFromTextField = 5
-
         UINavigationBar.appearance().barTintColor = UIColor.ITMOBlue
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().tintColor = UIColor.white

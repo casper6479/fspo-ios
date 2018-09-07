@@ -87,7 +87,17 @@ final class ConsultationsLayout: InsetLayout<View> {
                     return []
                 }
             }
-            dateText = date.condenseWhitespacesAndNewLines()
+            var formatedDate = date.condenseWhitespacesAndNewLines().split(separator: "\n")
+            for a in 0...formatedDate.count-1 {
+                if formatedDate[a] == " " && formatedDate[a+1] == " " {
+                    formatedDate[a] = "\n"
+                    formatedDate[a+1] = ""
+                }
+            }
+            let mappedDate = formatedDate.map { (test) -> String in
+                return test.trimmingCharacters(in: .whitespaces)
+            }
+            dateText = mappedDate.joined()
         }
         let dateLabel = LabelLayout(
             text: dateText,

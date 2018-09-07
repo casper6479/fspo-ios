@@ -195,4 +195,17 @@ public class JSONDecoding {
             }
         }
     }
+    struct SearchAPI: Decodable {
+        struct User: Decodable {
+            let user_id: String
+            let photo: String
+            let lastname: String
+            let firstname: String
+            let middlename: String
+            let email: String?
+            let phone: String?
+        }
+        let teachers: [User]
+        let students: [User]
+    }
 }

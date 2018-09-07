@@ -9,6 +9,7 @@
 import UIKit
 import LayoutKit
 import Cache
+import IO
 class NewsViewController: UIViewController, NewsViewProtocol {
 
     var dataSource = [JSONDecoding.NewsApi.News]()
@@ -29,8 +30,13 @@ class NewsViewController: UIViewController, NewsViewProtocol {
 	var presenter: NewsPresenterProtocol?
     var reloadableViewLayoutAdapter: ReloadableViewLayoutAdapter!
     var tableView: UITableView!
+    let refreshControl = UIRefreshControl()
+    @objc func refresh(_ refreshControl: UIRefreshControl) {
+        self.presenter?.updateView(offset: 0, cache: nil)
+    }
 	override func viewDidLoad() {
         super.viewDidLoad()
+        self.extendedLayoutIncludesOpaqueBars = true
         storage?.async.object(forKey: "news", completion: { result in
             switch result {
             case .value(let data):
@@ -45,6 +51,13 @@ class NewsViewController: UIViewController, NewsViewProtocol {
             }
         })
         tableView = UITableView(frame: view.bounds, style: .plain)
+        refreshControl.tintColor = .white
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.backgroundView = refreshControl
+        }
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         reloadableViewLayoutAdapter = NewsReloadableViewLayoutAdapter(reloadableView: tableView)
         tableView.dataSource = reloadableViewLayoutAdapter
@@ -70,6 +83,8 @@ class NewsViewController: UIViewController, NewsViewProtocol {
                 header: nil,
                 items: self?.getNewsRows() ?? [],
                 footer: nil)]
+            }, completion: {
+                self.refreshControl.endRefreshing()
         })
     }
 }

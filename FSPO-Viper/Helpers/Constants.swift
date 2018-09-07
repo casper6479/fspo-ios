@@ -28,4 +28,5 @@ class Constants {
     public static let GroupsURL = "https://ifspo.ifmo.ru/api/groups"
     public static let ScheduleURL = "https://ifspo.ifmo.ru/api/schedule"
     public static let ConsultationsURL = "https://ifspo.ifmo.ru/schedule/getallconsultations?type=active"
+    public static let SearchURL = "https://ifspo.ifmo.ru/api/search"
 }

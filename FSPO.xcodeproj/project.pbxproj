@@ -100,6 +100,18 @@
 		46AA2EE0213D0C27007B0B59 /* ConsultationsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AA2EDB213D0C27007B0B59 /* ConsultationsInteractor.swift */; };
 		46AA2EE2213D120D007B0B59 /* ConsultationsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AA2EE1213D120D007B0B59 /* ConsultationsLayout.swift */; };
 		46B42006211D9CFB00AB93B6 /* ResponderChainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B42005211D9CFB00AB93B6 /* ResponderChainHelper.swift */; };
+		46B457AE21416496001E861F /* TeacherStuffPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B457A921416496001E861F /* TeacherStuffPresenter.swift */; };
+		46B457AF21416496001E861F /* TeacherStuffRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B457AA21416496001E861F /* TeacherStuffRouter.swift */; };
+		46B457B021416496001E861F /* TeacherStuffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B457AB21416496001E861F /* TeacherStuffViewController.swift */; };
+		46B457B121416496001E861F /* TeacherStuffProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B457AC21416496001E861F /* TeacherStuffProtocols.swift */; };
+		46B457B221416496001E861F /* TeacherStuffInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B457AD21416496001E861F /* TeacherStuffInteractor.swift */; };
+		46B457B421416506001E861F /* TeacherStuffLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B457B321416506001E861F /* TeacherStuffLayout.swift */; };
+		46B457BB2141C79E001E861F /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B457B62141C79E001E861F /* SearchPresenter.swift */; };
+		46B457BC2141C79E001E861F /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B457B72141C79E001E861F /* SearchRouter.swift */; };
+		46B457BD2141C79E001E861F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B457B82141C79E001E861F /* SearchViewController.swift */; };
+		46B457BE2141C79E001E861F /* SearchProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B457B92141C79E001E861F /* SearchProtocols.swift */; };
+		46B457BF2141C79E001E861F /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B457BA2141C79E001E861F /* SearchInteractor.swift */; };
+		46B457C12141C7AB001E861F /* SearchLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B457C02141C7AB001E861F /* SearchLayout.swift */; };
 		46B6D4C1210A44CD00D83287 /* QuickMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6D4C0210A44CD00D83287 /* QuickMessage.swift */; };
 		46B6D4C3210A4EEF00D83287 /* KeychainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6D4C2210A4EEF00D83287 /* KeychainController.swift */; };
 		46B6D4CA210A5A3F00D83287 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6D4C4210A5A3F00D83287 /* SettingsPresenter.swift */; };
@@ -292,6 +304,18 @@
 		46AA2EDB213D0C27007B0B59 /* ConsultationsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationsInteractor.swift; sourceTree = "<group>"; };
 		46AA2EE1213D120D007B0B59 /* ConsultationsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationsLayout.swift; sourceTree = "<group>"; };
 		46B42005211D9CFB00AB93B6 /* ResponderChainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderChainHelper.swift; sourceTree = "<group>"; };
+		46B457A921416496001E861F /* TeacherStuffPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherStuffPresenter.swift; sourceTree = "<group>"; };
+		46B457AA21416496001E861F /* TeacherStuffRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherStuffRouter.swift; sourceTree = "<group>"; };
+		46B457AB21416496001E861F /* TeacherStuffViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherStuffViewController.swift; sourceTree = "<group>"; };
+		46B457AC21416496001E861F /* TeacherStuffProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherStuffProtocols.swift; sourceTree = "<group>"; };
+		46B457AD21416496001E861F /* TeacherStuffInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherStuffInteractor.swift; sourceTree = "<group>"; };
+		46B457B321416506001E861F /* TeacherStuffLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherStuffLayout.swift; sourceTree = "<group>"; };
+		46B457B62141C79E001E861F /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		46B457B72141C79E001E861F /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
+		46B457B82141C79E001E861F /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		46B457B92141C79E001E861F /* SearchProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProtocols.swift; sourceTree = "<group>"; };
+		46B457BA2141C79E001E861F /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
+		46B457C02141C7AB001E861F /* SearchLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLayout.swift; sourceTree = "<group>"; };
 		46B6D4C0210A44CD00D83287 /* QuickMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickMessage.swift; sourceTree = "<group>"; };
 		46B6D4C2210A4EEF00D83287 /* KeychainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainController.swift; sourceTree = "<group>"; };
 		46B6D4C4210A5A3F00D83287 /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
@@ -413,6 +437,7 @@
 		4621CE9920EFAB8A00B17323 /* Messages */ = {
 			isa = PBXGroup;
 			children = (
+				46B457B52141C793001E861F /* Search */,
 				46BDD9A421164D0F00C5CD94 /* Dialog */,
 				461FDAA620FA1AA30081C678 /* MessagesLayout.swift */,
 				4621CE8D20EFAB8200B17323 /* MessagesPresenter.swift */,
@@ -544,6 +569,7 @@
 		466CDF3220EF701500A86701 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				46B457A821416466001E861F /* Teacher Stuff */,
 				46B6D4D0210A5A4800D83287 /* Settings */,
 				46A9F9B320F17452008E2653 /* Login */,
 				4621CE9C20EFAB9A00B17323 /* Schedule */,
@@ -653,6 +679,32 @@
 				46AA2EE1213D120D007B0B59 /* ConsultationsLayout.swift */,
 			);
 			path = Consultations;
+			sourceTree = "<group>";
+		};
+		46B457A821416466001E861F /* Teacher Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				46B457A921416496001E861F /* TeacherStuffPresenter.swift */,
+				46B457AA21416496001E861F /* TeacherStuffRouter.swift */,
+				46B457AB21416496001E861F /* TeacherStuffViewController.swift */,
+				46B457AC21416496001E861F /* TeacherStuffProtocols.swift */,
+				46B457AD21416496001E861F /* TeacherStuffInteractor.swift */,
+				46B457B321416506001E861F /* TeacherStuffLayout.swift */,
+			);
+			path = "Teacher Stuff";
+			sourceTree = "<group>";
+		};
+		46B457B52141C793001E861F /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				46B457B62141C79E001E861F /* SearchPresenter.swift */,
+				46B457B72141C79E001E861F /* SearchRouter.swift */,
+				46B457B82141C79E001E861F /* SearchViewController.swift */,
+				46B457B92141C79E001E861F /* SearchProtocols.swift */,
+				46B457BA2141C79E001E861F /* SearchInteractor.swift */,
+				46B457C02141C7AB001E861F /* SearchLayout.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		46B6D4D0210A5A4800D83287 /* Settings */ = {
@@ -1121,9 +1173,11 @@
 				46B6D4FF210B1E6D00D83287 /* JournalByDateProtocols.swift in Sources */,
 				46B6D50A210B1FC700D83287 /* MoreViewController.swift in Sources */,
 				46BDD9B221164D3300C5CD94 /* DialogLayout.swift in Sources */,
+				46B457B121416496001E861F /* TeacherStuffProtocols.swift in Sources */,
 				464B2759211CFF5F006DBA66 /* ScheduleListViewController.swift in Sources */,
 				46AA2EE2213D120D007B0B59 /* ConsultationsLayout.swift in Sources */,
 				4621CEAF20EFABC700B17323 /* JournalPresenter.swift in Sources */,
+				46B457BE2141C79E001E861F /* SearchProtocols.swift in Sources */,
 				464D896A211C4FD500D2799B /* ScheduleListInteractor.swift in Sources */,
 				464D8969211C4FD500D2799B /* ScheduleListProtocols.swift in Sources */,
 				46A9F9AD20F1744C008E2653 /* LoginPresenter.swift in Sources */,
@@ -1159,6 +1213,7 @@
 				464D8967211C4FD500D2799B /* ScheduleListRouter.swift in Sources */,
 				46B6D517210B25B500D83287 /* ParentsRouter.swift in Sources */,
 				4641E549211DBAF00015A425 /* BiometricLayout.swift in Sources */,
+				46B457C12141C7AB001E861F /* SearchLayout.swift in Sources */,
 				46B6D51F210C6C3C00D83287 /* MoreLayout.swift in Sources */,
 				46B6D4F3210B1E5700D83287 /* JournalBySubjectProtocols.swift in Sources */,
 				46F5BCAE211792CC00913931 /* InsetView.swift in Sources */,
@@ -1171,6 +1226,7 @@
 				46B6D4FC210B1E6D00D83287 /* JournalByDatePresenter.swift in Sources */,
 				4621CEBE20EFABD700B17323 /* ScheduleProtocols.swift in Sources */,
 				46AA2EDD213D0C27007B0B59 /* ConsultationsRouter.swift in Sources */,
+				46B457B221416496001E861F /* TeacherStuffInteractor.swift in Sources */,
 				467C20BD211A3438000736A8 /* JournalByTeacherInteractor.swift in Sources */,
 				466CDF4E20EF72F700A86701 /* NewsPresenter.swift in Sources */,
 				4621CEA520EFABBE00B17323 /* ProfileViewController.swift in Sources */,
@@ -1178,6 +1234,7 @@
 				4621CEA620EFABBE00B17323 /* ProfileProtocols.swift in Sources */,
 				46B6D500210B1E6D00D83287 /* JournalByDateInteractor.swift in Sources */,
 				46A9F99C20F02C27008E2653 /* Color.swift in Sources */,
+				46B457BC2141C79E001E861F /* SearchRouter.swift in Sources */,
 				46B6D51A210B25B500D83287 /* ParentsInteractor.swift in Sources */,
 				46AA2EE0213D0C27007B0B59 /* ConsultationsInteractor.swift in Sources */,
 				4621CEBB20EFABD700B17323 /* SchedulePresenter.swift in Sources */,
@@ -1185,11 +1242,13 @@
 				46A9F9B120F1744C008E2653 /* LoginInteractor.swift in Sources */,
 				4621CEB220EFABC700B17323 /* JournalProtocols.swift in Sources */,
 				464D8966211C4FD500D2799B /* ScheduleListPresenter.swift in Sources */,
+				46B457B421416506001E861F /* TeacherStuffLayout.swift in Sources */,
 				46B6D508210B1FC700D83287 /* MorePresenter.swift in Sources */,
 				466CDF5720EF7B3400A86701 /* JSONDecoding.swift in Sources */,
 				46A9F9A620F172B1008E2653 /* LoginLayout.swift in Sources */,
 				46AA2EDE213D0C27007B0B59 /* ConsultationsViewController.swift in Sources */,
 				4621CE9320EFAB8200B17323 /* MessagesPresenter.swift in Sources */,
+				46B457BF2141C79E001E861F /* SearchInteractor.swift in Sources */,
 				465182022123403000E88402 /* IdentityRequestViewController.swift in Sources */,
 				4621CEBF20EFABD700B17323 /* ScheduleInteractor.swift in Sources */,
 				46B6D4CA210A5A3F00D83287 /* SettingsPresenter.swift in Sources */,
@@ -1198,6 +1257,7 @@
 				465182082124418700E88402 /* Connectivity.swift in Sources */,
 				46BDD9AE21164D1D00C5CD94 /* DialogProtocols.swift in Sources */,
 				4621CEB320EFABC700B17323 /* JournalInteractor.swift in Sources */,
+				46B457AE21416496001E861F /* TeacherStuffPresenter.swift in Sources */,
 				460E770021222AB600D0615A /* NotificationsSettingsViewController.swift in Sources */,
 				461FDAA720FA1AA30081C678 /* MessagesLayout.swift in Sources */,
 				46BDD9AD21164D1D00C5CD94 /* DialogViewController.swift in Sources */,
@@ -1214,17 +1274,21 @@
 				4621CEA420EFABBE00B17323 /* ProfileRouter.swift in Sources */,
 				4621CEBC20EFABD700B17323 /* ScheduleRouter.swift in Sources */,
 				4621CE9420EFAB8200B17323 /* MessagesRouter.swift in Sources */,
+				46B457BD2141C79E001E861F /* SearchViewController.swift in Sources */,
 				46A9F9B020F1744C008E2653 /* LoginProtocols.swift in Sources */,
 				46A9F99E20F030B2008E2653 /* DateFormatter.swift in Sources */,
 				467C20C0211A3810000736A8 /* JournalByTeacherTeacherCellLayout.swift in Sources */,
+				46B457BB2141C79E001E861F /* SearchPresenter.swift in Sources */,
 				46BDD9AF21164D1D00C5CD94 /* DialogInteractor.swift in Sources */,
 				46AA2EDF213D0C27007B0B59 /* ConsultationsProtocols.swift in Sources */,
 				46B6D4F4210B1E5700D83287 /* JournalBySubjectInteractor.swift in Sources */,
 				467C20BA211A3438000736A8 /* JournalByTeacherRouter.swift in Sources */,
+				46B457B021416496001E861F /* TeacherStuffViewController.swift in Sources */,
 				465182012123403000E88402 /* IdentityRequestRouter.swift in Sources */,
 				46BDD9AB21164D1D00C5CD94 /* DialogPresenter.swift in Sources */,
 				46B6D4C3210A4EEF00D83287 /* KeychainController.swift in Sources */,
 				4621CEB020EFABC700B17323 /* JournalRouter.swift in Sources */,
+				46B457AF21416496001E861F /* TeacherStuffRouter.swift in Sources */,
 				461FDAAC20FAA0A60081C678 /* ScheduleLayout.swift in Sources */,
 				4660F8BC21136030005BF656 /* StudentScheduleCellLayout.swift in Sources */,
 				4621CE9620EFAB8200B17323 /* MessagesProtocols.swift in Sources */,
@@ -1308,7 +1372,11 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = TodaySchedule/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fspo.app.TodaySchedule;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1330,7 +1398,11 @@
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = TodaySchedule/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fspo.app.TodaySchedule;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1351,7 +1423,11 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = TommorowSchedule/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fspo.app.TommorowSchedule;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1373,7 +1449,11 @@
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = TommorowSchedule/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fspo.app.TommorowSchedule;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1514,7 +1594,10 @@
 				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = "FSPO-Viper/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fspo.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1537,7 +1620,10 @@
 				ENABLE_TESTABILITY = NO;
 				INFOPLIST_FILE = "FSPO-Viper/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fspo.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

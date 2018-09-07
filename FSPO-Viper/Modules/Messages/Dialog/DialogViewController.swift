@@ -51,6 +51,9 @@ class DialogViewController: UIViewController, DialogViewProtocol, UITextViewDele
     }
 	override func viewDidLoad() {
         super.viewDidLoad()
+        if #available(iOS 11.0, *) {
+            navigationItem.largeTitleDisplayMode = .never
+        }
         cachedDelegate = self.tabBarController?.delegate
         self.tabBarController?.delegate = self
         view.backgroundColor = UIColor(red: 246/255, green: 251/255, blue: 254/255, alpha: 1)
@@ -181,7 +184,9 @@ class DialogViewController: UIViewController, DialogViewProtocol, UITextViewDele
             return [Section(header: nil, items: self?.getNewRows(data: data) ?? [], footer: nil)]}, completion: {
                 let lastRowIndex = self.tableView.numberOfRows(inSection: 0) - 1
                 let pathToLastRow = IndexPath(row: lastRowIndex, section: 0)
-                self.tableView.scrollToRow(at: pathToLastRow, at: .bottom, animated: false)
+                if data.messages.count > 0 {
+                    self.tableView.scrollToRow(at: pathToLastRow, at: .bottom, animated: false)
+                }
                 UIView.animate(withDuration: 0.2, animations: {
                     self.tableView.alpha = 1
                 })
