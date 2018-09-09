@@ -7,22 +7,33 @@
 //
 
 import LayoutKit
+import Lottie
 
-class SearchViewController: UIViewController, SearchViewProtocol, UISearchResultsUpdating{
+class SearchViewController: UIViewController, SearchViewProtocol, UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         presenter?.updateView(query: searchController.searchBar.text!)
     }
     var publicDS: JSONDecoding.SearchAPI?
     func showNewRows(source: JSONDecoding.SearchAPI) {
         publicDS = source
-        DispatchQueue.main.async {
-            self.reloadTableView(width: self.tableView.frame.width, synchronous: false, data: source)
+        if source.students.count != 0 || source.teachers.count != 0 {
+            hideEmptyView(completion: {
+                DispatchQueue.main.async {
+                    self.reloadTableView(width: self.tableView.frame.width, synchronous: false, data: source)
+                }
+            })
+        } else {
+            showEmptyView()
+            DispatchQueue.main.async {
+                self.reloadTableView(width: self.tableView.frame.width, synchronous: false, data: source)
+            }
         }
     }
 	var presenter: SearchPresenterProtocol?
     private var reloadableViewLayoutAdapter: ReloadableViewLayoutAdapter!
     private var tableView: UITableView!
     let searchController = UISearchController(searchResultsController: nil)
+    let emptyView = LOTAnimationView(name: "empty")
 	override func viewDidLoad() {
         super.viewDidLoad()
         title = NSLocalizedString("Поиск", comment: "")
@@ -35,6 +46,20 @@ class SearchViewController: UIViewController, SearchViewProtocol, UISearchResult
         tableView.separatorColor = .clear
         tableView.backgroundColor = .backgroundGray
         view.addSubview(tableView)
+        emptyView.frame = tableView.bounds
+        emptyView.frame.origin.y -= 90
+        emptyView.loopAnimation = true
+        let emptyText = UILabel(frame: CGRect(x: 8, y: emptyView.frame.height / 4, width: view.bounds.width - 16, height: 20))
+        emptyText.frame.origin.y += 20
+        emptyText.text = NSLocalizedString("Не найдено", comment: "")
+        emptyText.font = UIFont.ITMOFontBold?.withSize(15)
+        emptyText.textColor = UIColor(red: 171/255, green: 171/255, blue: 194/255, alpha: 1)
+        emptyText.textAlignment = .center
+        emptyView.play()
+        emptyView.isUserInteractionEnabled = false
+        emptyView.contentMode = .scaleAspectFit
+        tableView.addSubview(emptyView)
+        emptyView.addSubview(emptyText)
         searchController.searchResultsUpdater = self
         searchController.searchBar.barTintColor = .ITMOBlue
         searchController.searchBar.tintColor = .white
@@ -50,6 +75,18 @@ class SearchViewController: UIViewController, SearchViewProtocol, UISearchResult
         } else {
             tableView.tableHeaderView = searchController.searchBar
         }
+    }
+    func showEmptyView() {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.emptyView.alpha = 1
+        })
+    }
+    func hideEmptyView(completion: @escaping() -> Void) {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.emptyView.alpha = 0
+        }, completion: { _ in
+            completion()
+        })
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

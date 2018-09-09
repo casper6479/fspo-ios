@@ -46,7 +46,6 @@
 		19A52FD5D998349290B654BFFD08E31B /* LOTRenderNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 080DBDB3A4833C7EA7210D33C3B94549 /* LOTRenderNode.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		1A4FAEFD0C132CAFB960BB0D6908A2B2 /* FIRLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F4EAAFF0593883D88879291C743F52 /* FIRLogger.m */; };
 		1AB9F759C45363D3857FC11519A73B27 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2F0F758A49CA2DFC15344B96B37CDB /* CoreGraphics.framework */; };
-		1AC06FB88B9616799654EAA37E8CEA02 /* Pods-TommorowSchedule-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DFB42D129618E04682A9384068041A1B /* Pods-TommorowSchedule-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1AEEDEED59DF9CC6B52C9AD258B4B422 /* GULNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD6467E4B5A781163BA98425312D35 /* GULNetwork.m */; };
 		1B9EDEDC964E6B08F78920B4F4B9DB84 /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BCE086593A5FD53727D59C22F13ABCB1 /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1BFABFC73768C92BC0BF0DFC90A4864C /* libxmlParserOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B61432965EA1741DEE2940289E158FA /* libxmlParserOption.swift */; };
@@ -73,7 +72,7 @@
 		2DCE38A457CAFC33A369A1B78BD1558D /* LayoutArrangement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFBB41D2B48365AF3CB5F72CA627D73 /* LayoutArrangement.swift */; };
 		30A4A5165BEEDD1D47A6F3F23CAC0B68 /* GULSwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = E9FA84D658C9D20BB864330D41F2D5F5 /* GULSwizzler.m */; };
 		30C88626308F45A93B10C0536D128A95 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4C1B6352B8DD8926B1081FF7F615FCE /* Foundation.framework */; };
-		30EC9E16D96183722BFA64A0C4A36EEB /* Pods-FSPO-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 14044FFA0265C1999B4B5BAF0F24D0EC /* Pods-FSPO-dummy.m */; };
+		30EC9E16D96183722BFA64A0C4A36EEB /* Pods-FSPO-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CDE805CD949F3B0BBEC4DC04960CA9C /* Pods-FSPO-dummy.m */; };
 		3285188513F859E100A7BBE29B36599D /* IQUIView+IQKeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8830D9EED2A25E8EB47C729133605E44 /* IQUIView+IQKeyboardToolbar.swift */; };
 		32B47DAC9DC3F35E42D1835BFEF81526 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB45BEC82F8B89921186675A8C6807B /* Text.swift */; };
 		32EBE34979AFAE0F78FC4154E8384909 /* CFAbsoluteTimeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2277101C86E71612036352E4F40B6AE /* CFAbsoluteTimeExtension.swift */; };
@@ -113,7 +112,6 @@
 		491955E1AAF7899722B127A2A53F073C /* LOTFillRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2740A527240E2445CF5829B9E5A05649 /* LOTFillRenderer.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		498DC29155467AC093701C1AF5EE3807 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F05F2D94B3CD97F71827B760A23CCC /* Placeholder.swift */; };
 		4B0F9347718263C67557054C2E15DE61 /* IQTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8FEE7878DFAD4D58486675AFA38C14 /* IQTextView.swift */; };
-		4E01A55E050257FDE29C17F8D2BCEEE7 /* Pods-TommorowSchedule-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2099E50444DAE75901DBD999D3AF4F9C /* Pods-TommorowSchedule-dummy.m */; };
 		4F6FB9B041AAA8AE2E7392DBB7166F2E /* FirebaseCore-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E6425A4C6C0BF3C1FCCEA5DFE2C1D028 /* FirebaseCore-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5068CB30342CE1B889BC8919C369FDFC /* Kanna.h in Headers */ = {isa = PBXBuildFile; fileRef = DB3F41439789FAC143AA1BEE7079CA75 /* Kanna.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		509A5621DAB44B06929B30ACCA7CA598 /* Kingfisher-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 084F9AFA9FD79A689527E616F6536DC7 /* Kingfisher-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -142,7 +140,7 @@
 		5EFF980ECF83838DBC0B9D6D06ED0F22 /* Deprecated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D2D93DA4BEE0F13401BF3457A3AFBA /* Deprecated.swift */; };
 		5FBEFB32B8A0D82C90FAA91E2854233F /* LOTShapeGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = F2443E31925DAC20A24C590ED833BD2C /* LOTShapeGroup.m */; };
 		61200D01A1855D7920CEF835C8BE00B0 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFDF7E8A11018D912E7D8A125255FB4 /* DispatchQueue+Alamofire.swift */; };
-		6262C9125243B3F5F82EAF2831127C3E /* Pods-FSPO-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 910E0352B664C471DDA236983A4A6347 /* Pods-FSPO-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6262C9125243B3F5F82EAF2831127C3E /* Pods-FSPO-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 45604E0B13C33DC3D0540FB70D7C6DBB /* Pods-FSPO-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		62B75FDA2F810EB97B599042E3AB0540 /* FIROptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6627BCF534363D4D78F19DC369E7EBC6 /* FIROptions.m */; };
 		62F65AD8DC4F0F9610F4B8B4738EC094 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64390ADD3101EB59C2AC66A1B7C74531 /* ServerTrustPolicy.swift */; };
 		6486781D756A9D71FE5C6E56CC9A343F /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C7CDBE7314229E5DE3E63B252942 /* ImageCache.swift */; };
@@ -247,7 +245,7 @@
 		A3975877F5E2C7FBBD2A86E4F7315194 /* LOTShapeTransform.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F15DD9D8D14A448B23FE0F754FC829B /* LOTShapeTransform.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		A6CBD8037815E87C8C9F96C5615852AB /* FIRLoggerLevel.h in Headers */ = {isa = PBXBuildFile; fileRef = C7AF4BAB6B191FA34B176CE23E2C7E8D /* FIRLoggerLevel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A7B424217D3D79BB6B77531BEF2436F0 /* LOTComposition.m in Sources */ = {isa = PBXBuildFile; fileRef = A6AC3B6DBBEECD91DF6992CE17EE7129 /* LOTComposition.m */; };
-		A8061A9D2FA7B1797457B96B561BDA65 /* Pods-TodaySchedule-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D45F58F7059525007E331E21F598B2F3 /* Pods-TodaySchedule-dummy.m */; };
+		A8061A9D2FA7B1797457B96B561BDA65 /* Pods-TodaySchedule-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 08ACC09B2C84E3BE5825636C786802D7 /* Pods-TodaySchedule-dummy.m */; };
 		A84BFE6F3AFE5C107EF920E6F14ADD91 /* LOTCircleAnimator.h in Headers */ = {isa = PBXBuildFile; fileRef = B94AB090E86BF978FFF6DCA903C4AFD2 /* LOTCircleAnimator.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		A89B2CDFBAEF6FDB514701C70BEACCA5 /* FIRComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = FCD844460EFD262DFB1FEEA4EBC16CB9 /* FIRComponent.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A8A79840E81BFA3D8DCC29BE71F1AEC4 /* KingfisherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAECAD06EA1B6C75DC0F2F75123CC98 /* KingfisherManager.swift */; };
@@ -324,7 +322,7 @@
 		D2E8791DBDD02A11AC7A9ADF4F6F85C8 /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C461BEDB6BCAFFDDCB55A8AE860C9A /* Transformer.swift */; };
 		D370BBE7013082C69F8E53F6241ADE25 /* LOTLayerContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 34DCBF1C7F9667D67C845CEE9089A9DC /* LOTLayerContainer.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		D5AF5C2BD150D436DECB7200A9BD8273 /* LOTAnimationView_Compat.h in Headers */ = {isa = PBXBuildFile; fileRef = F57EE7BD53615A5EED0BA9D9CF1AFEBE /* LOTAnimationView_Compat.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D654CFFF1202770C948B2B7CD2948D5F /* Pods-TodaySchedule-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A06A73AC15239AA333527291182C059 /* Pods-TodaySchedule-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D654CFFF1202770C948B2B7CD2948D5F /* Pods-TodaySchedule-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D5DB2A7FD887FFB827B278A27793086 /* Pods-TodaySchedule-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D68E2DDBE23A5E2E1B0E0380610B395B /* FIRLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C3E97B608F46B17D0A8FC61BC3BE5F6 /* FIRLogger.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		D6CF09E07492E55023EBD036B9339871 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D8246091B1E931332A7D304B28CADD /* Animation.swift */; };
 		D70AE85D0EA5CEBEC005E27067AAAAC4 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798C1A6FA811F49A8A5946873D0955AF /* Storage.swift */; };
@@ -393,13 +391,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0830B32E2FCA5F145FF034940DE18288 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 46D20134B382A035F41010867787ABAD;
-			remoteInfo = LayoutKit;
-		};
 		37A391C7097481E7E70284B1ACC33F00 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
@@ -428,13 +419,6 @@
 			remoteGlobalIDString = 25622BDCA24151D7C101C916DCD4C64D;
 			remoteInfo = Kanna;
 		};
-		6814F1F36214364BC44A855745D9A92B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 12D98225D819CF4F0A4DF48700C10D43;
-			remoteInfo = Cache;
-		};
 		68F23D39772492938ED0152E76A4E061 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
@@ -462,13 +446,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = EF9C1C66EC3371988D38D8C9FC027AD7;
 			remoteInfo = GoogleUtilities;
-		};
-		A78DD5D95A35924626BD2AD6D79FCC62 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 88E9EC28B8B46C3631E6B242B50F4442;
-			remoteInfo = Alamofire;
 		};
 		AB3476F362C985C694A5E7154390BE62 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -530,15 +507,14 @@
 
 /* Begin PBXFileReference section */
 		0016D4B9CA2BDBD10EEBACAE65DA2646 /* ImageProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageProcessor.swift; path = Sources/ImageProcessor.swift; sourceTree = "<group>"; };
-		008F47822A6B50180D52EF1303D40AC8 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = IQKeyboardManagerSwift.framework; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		00AB2EA108EFACFD56F8A97284444FD2 /* DataSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataSerializer.swift; path = Source/Shared/Library/DataSerializer.swift; sourceTree = "<group>"; };
+		00C114AF1A506FC1255EEF42D4E548D1 /* Lottie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Lottie.framework; path = "lottie-ios.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00CE53E357C9F9A47D5B2B8BB89926E3 /* FIRAnalyticsConfiguration+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FIRAnalyticsConfiguration+Internal.h"; path = "Firebase/Core/Private/FIRAnalyticsConfiguration+Internal.h"; sourceTree = "<group>"; };
 		015134192B7B633EC109AC9A3A47FF74 /* LOTValueInterpolator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LOTValueInterpolator.m; path = "lottie-ios/Classes/RenderSystem/InterpolatorNodes/LOTValueInterpolator.m"; sourceTree = "<group>"; };
 		0185C333F84392804B0538B49764847D /* LayoutAdapterCollectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutAdapterCollectionView.swift; path = Sources/Views/LayoutAdapterCollectionView.swift; sourceTree = "<group>"; };
 		01FFAD0468FD9E2D6A3A4E6C045C5068 /* FirebaseCore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FirebaseCore.xcconfig; sourceTree = "<group>"; };
 		0231D5E6735930DCAA023CA3232CCAF9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03044CAA5BFFD49E877989CDFDD241F9 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
-		031B87C681D6CB17F87840C6B04DE4EF /* Cache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Cache.framework; path = Cache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0361C3102BCCD4F5F0D4B4615F7A8D1A /* LOTPathInterpolator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTPathInterpolator.h; path = "lottie-ios/Classes/RenderSystem/InterpolatorNodes/LOTPathInterpolator.h"; sourceTree = "<group>"; };
 		040804D37F0EE66BD6F0B91F7AAA15B7 /* Kanna.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Kanna.swift; path = Sources/Kanna/Kanna.swift; sourceTree = "<group>"; };
 		04267517824954D1487633D08AB556DC /* pb_encode.c */ = {isa = PBXFileReference; includeInIndex = 1; path = pb_encode.c; sourceTree = "<group>"; };
@@ -550,16 +526,18 @@
 		078181BF6F4CC8B7810C5D6C6392F22B /* LOTTrimPathNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LOTTrimPathNode.m; path = "lottie-ios/Classes/RenderSystem/ManipulatorNodes/LOTTrimPathNode.m"; sourceTree = "<group>"; };
 		080DBDB3A4833C7EA7210D33C3B94549 /* LOTRenderNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTRenderNode.h; path = "lottie-ios/Classes/RenderSystem/LOTRenderNode.h"; sourceTree = "<group>"; };
 		084F9AFA9FD79A689527E616F6536DC7 /* Kingfisher-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-umbrella.h"; sourceTree = "<group>"; };
+		08833CA830CB8AE5DD6BA629CDD7DBAF /* Pods-TodaySchedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TodaySchedule.debug.xcconfig"; sourceTree = "<group>"; };
+		08ACC09B2C84E3BE5825636C786802D7 /* Pods-TodaySchedule-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TodaySchedule-dummy.m"; sourceTree = "<group>"; };
 		095BB489D9B54061AC8907556A06A611 /* StackView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StackView.swift; path = Sources/Views/StackView.swift; sourceTree = "<group>"; };
 		09C461BEDB6BCAFFDDCB55A8AE860C9A /* Transformer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Transformer.swift; path = Source/Shared/Library/Transformer.swift; sourceTree = "<group>"; };
 		09E43C2F111A694DE19F4B34CA89F6FA /* LOTMask.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LOTMask.m; path = "lottie-ios/Classes/Models/LOTMask.m"; sourceTree = "<group>"; };
 		0ABD6467E4B5A781163BA98425312D35 /* GULNetwork.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GULNetwork.m; path = GoogleUtilities/Network/GULNetwork.m; sourceTree = "<group>"; };
+		0AD579FE0737D5BE0F4B04E922CBCCA3 /* Pods-TodaySchedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TodaySchedule.release.xcconfig"; sourceTree = "<group>"; };
 		0AF9F723D75CEF090B7F33ACD8D03969 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B25E6772D00DDE68E8DFD5A940EF149 /* LOTShapeGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTShapeGroup.h; path = "lottie-ios/Classes/Models/LOTShapeGroup.h"; sourceTree = "<group>"; };
 		0B61432965EA1741DEE2940289E158FA /* libxmlParserOption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = libxmlParserOption.swift; path = Sources/Kanna/libxmlParserOption.swift; sourceTree = "<group>"; };
 		0C88F266D9C304642EA227FDFE1F4AB2 /* LOTShapePath.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LOTShapePath.m; path = "lottie-ios/Classes/Models/LOTShapePath.m"; sourceTree = "<group>"; };
 		0CEDFDB74F8A6711491B739F2731DB46 /* lottie-ios-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "lottie-ios-umbrella.h"; sourceTree = "<group>"; };
-		0D87515F2AB22D000C87A855DDF44DE5 /* Pods-TodaySchedule.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TodaySchedule.modulemap"; sourceTree = "<group>"; };
 		0DD667DCC075C4AB877FDBA571431230 /* IQKeyboardManagerConstantsInternal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstantsInternal.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstantsInternal.swift; sourceTree = "<group>"; };
 		0DD68989F42C247624BBEA344C0BA963 /* LOTPointInterpolator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LOTPointInterpolator.m; path = "lottie-ios/Classes/RenderSystem/InterpolatorNodes/LOTPointInterpolator.m"; sourceTree = "<group>"; };
 		0E2808C0C8A2F9B79CB7E13A8C32849E /* CLSStackFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSStackFrame.h; path = iOS/Crashlytics.framework/Headers/CLSStackFrame.h; sourceTree = "<group>"; };
@@ -567,19 +545,16 @@
 		0E59E0A89A295A6AE905411D04F8615C /* GULMutableDictionary.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GULMutableDictionary.m; path = GoogleUtilities/Network/GULMutableDictionary.m; sourceTree = "<group>"; };
 		100F072796F8222C4C098659ACBDF4CE /* FIRDependency.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRDependency.h; path = Firebase/Core/Private/FIRDependency.h; sourceTree = "<group>"; };
 		10620205B6EC57AAC41B5FD1090B1CA8 /* GULNetwork.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GULNetwork.h; path = GoogleUtilities/Network/Private/GULNetwork.h; sourceTree = "<group>"; };
-		116F261F71BDF92F5093EBBF6AD7F988 /* KeychainAccess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KeychainAccess.framework; path = KeychainAccess.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11B1B679AF7E0C7D2DA54446ED76C491 /* IQUIScrollView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIScrollView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIScrollView+Additions.swift"; sourceTree = "<group>"; };
 		11B3D1186B91D64DC6CAC816F2E4D9A0 /* MeasurementNanoPB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MeasurementNanoPB.framework; path = Frameworks/MeasurementNanoPB.framework; sourceTree = "<group>"; };
+		11F5531A98F9CC3002F9A27FA85BBE24 /* Pods-FSPO-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FSPO-acknowledgements.plist"; sourceTree = "<group>"; };
 		12407B2317BBC8A9AA9D3C0E3E32929B /* Axis.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Axis.swift; path = Sources/Axis.swift; sourceTree = "<group>"; };
 		13998666F54001ED508D7AD0F3BF9691 /* LayoutKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LayoutKit-dummy.m"; sourceTree = "<group>"; };
 		13D3D9C97D4DACF288B5E59A71930506 /* GULAppDelegateSwizzler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GULAppDelegateSwizzler.h; path = GoogleUtilities/AppDelegateSwizzler/Private/GULAppDelegateSwizzler.h; sourceTree = "<group>"; };
-		14044FFA0265C1999B4B5BAF0F24D0EC /* Pods-FSPO-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FSPO-dummy.m"; sourceTree = "<group>"; };
 		1421D7B41446E852668D11BC4AD1715A /* FIRComponentType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRComponentType.h; path = Firebase/Core/Private/FIRComponentType.h; sourceTree = "<group>"; };
 		148D23E10F676427027BD61F41965F2E /* lottie-ios.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "lottie-ios.xcconfig"; sourceTree = "<group>"; };
 		14AFD71793D95D5180A4CDD1866C6D29 /* InsetLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InsetLayout.swift; path = Sources/Layouts/InsetLayout.swift; sourceTree = "<group>"; };
 		14D8246091B1E931332A7D304B28CADD /* Animation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Animation.swift; path = Sources/Animation.swift; sourceTree = "<group>"; };
-		1546BA2ED53DA7B2CE95AA69A71CBA73 /* Pods-FSPO.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FSPO.modulemap"; sourceTree = "<group>"; };
-		157F1F6736B9DCFA60B2770362B7D0E7 /* Pods-TommorowSchedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TommorowSchedule.release.xcconfig"; sourceTree = "<group>"; };
 		1595A8D4DFE596DF224EBB4A0A1F5993 /* FIROptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIROptions.h; path = Firebase/Core/Public/FIROptions.h; sourceTree = "<group>"; };
 		169DF5243D12526B5C074D252C56635A /* LOTGradientFillRender.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LOTGradientFillRender.m; path = "lottie-ios/Classes/RenderSystem/RenderNodes/LOTGradientFillRender.m"; sourceTree = "<group>"; };
 		16C0AED1DD6686E4149EE758A8AD544C /* TransformerFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformerFactory.swift; path = Source/Shared/Library/TransformerFactory.swift; sourceTree = "<group>"; };
@@ -590,24 +565,28 @@
 		185D5A35943373393E96E569BF76E55C /* Kingfisher.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kingfisher.xcconfig; sourceTree = "<group>"; };
 		18C3F10B684546BFE739B3E05B804F93 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1917F87DC04E6C15BAA3BD854046B47F /* Answers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Answers.h; path = iOS/Crashlytics.framework/Headers/Answers.h; sourceTree = "<group>"; };
+		193526BE906C66D1D0EBDB11A3F490E1 /* Pods-TodaySchedule-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TodaySchedule-resources.sh"; sourceTree = "<group>"; };
 		198FD4A0A9408D120517B508D10F863A /* UIColor+Expanded.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+Expanded.h"; path = "lottie-ios/Classes/Extensions/UIColor+Expanded.h"; sourceTree = "<group>"; };
 		1A0A5FDD638A86C6E74AD33592DF759A /* KeychainAccess-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KeychainAccess-prefix.pch"; sourceTree = "<group>"; };
 		1A1EF7B9E7FA4DA0FDA98DEFE5016385 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
 		1AEFFDBD5DA342D32EFFEFE904418DE4 /* nanopb.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = nanopb.modulemap; sourceTree = "<group>"; };
+		1B763ED1210C3F24BD486BD940468EF8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BDA94FC64E903A4673984B7FA94CEAF /* Expiry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expiry.swift; path = Source/Shared/Library/Expiry.swift; sourceTree = "<group>"; };
 		1CE8886A1F5AA67DB5C346CEFE37A14F /* OverlayLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OverlayLayout.swift; path = Sources/Layouts/OverlayLayout.swift; sourceTree = "<group>"; };
 		1D5109F9F4F4AC5FF7A69519365DF1C3 /* GULAppDelegateSwizzler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GULAppDelegateSwizzler.m; path = GoogleUtilities/AppDelegateSwizzler/GULAppDelegateSwizzler.m; sourceTree = "<group>"; };
 		1D603C064AF9E402997A0D8A60985E2D /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQNSArray+Sort.swift"; path = "IQKeyboardManagerSwift/Categories/IQNSArray+Sort.swift"; sourceTree = "<group>"; };
 		1F5B9430D23BF17DB5FFF733DDC4CA36 /* libxmlHTMLDocument.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = libxmlHTMLDocument.swift; path = Sources/Kanna/libxmlHTMLDocument.swift; sourceTree = "<group>"; };
+		1FACBA5F2A1759B3D06E2C39E9EC08CB /* Pods-TodaySchedule-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TodaySchedule-acknowledgements.plist"; sourceTree = "<group>"; };
 		206D7ECF8495DB932262314D9747A1C2 /* LOTPathAnimator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LOTPathAnimator.m; path = "lottie-ios/Classes/RenderSystem/AnimatorNodes/LOTPathAnimator.m"; sourceTree = "<group>"; };
-		2099E50444DAE75901DBD999D3AF4F9C /* Pods-TommorowSchedule-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TommorowSchedule-dummy.m"; sourceTree = "<group>"; };
 		20B3AD35167A3601BEF43BD2DB2D10EA /* BaseLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BaseLayout.swift; path = Sources/Layouts/BaseLayout.swift; sourceTree = "<group>"; };
 		21119254D80630D8287B903C0FD999E6 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
 		214B7F7DB764D37092496E372643116E /* nanopb-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "nanopb-umbrella.h"; sourceTree = "<group>"; };
 		2289EDA62D40ADDE09FB17E8D28F8524 /* CGSizeExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CGSizeExtension.swift; path = Sources/Internal/CGSizeExtension.swift; sourceTree = "<group>"; };
 		22F7F0BCEE12E9D3A590BFCAA62D60FA /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = IQKeyboardManager.bundle; path = IQKeyboardManagerSwift/Resources/IQKeyboardManager.bundle; sourceTree = "<group>"; };
+		231616CAAD0B62B57C847030F27DC8AA /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = IQKeyboardManagerSwift.framework; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23BD4B7A5F9761D9C7BAFDD19B4DE11A /* FIRAppAssociationRegistration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRAppAssociationRegistration.m; path = Firebase/Core/FIRAppAssociationRegistration.m; sourceTree = "<group>"; };
 		23F107BA27FA7FCB17EF5B63AF967BE4 /* Kanna-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kanna-umbrella.h"; sourceTree = "<group>"; };
+		25265C9051DE5E0665F4EA7163DCFF7D /* LayoutKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LayoutKit.framework; path = LayoutKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		271689FBA26207FD62F08612E149AD37 /* LayoutKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LayoutKit.xcconfig; sourceTree = "<group>"; };
 		2740A527240E2445CF5829B9E5A05649 /* LOTFillRenderer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTFillRenderer.h; path = "lottie-ios/Classes/RenderSystem/RenderNodes/LOTFillRenderer.h"; sourceTree = "<group>"; };
 		28A1087F91E9CD884E15EAEA3F2AAC90 /* JSONDecoder+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "JSONDecoder+Extensions.swift"; path = "Source/Shared/Extensions/JSONDecoder+Extensions.swift"; sourceTree = "<group>"; };
@@ -622,10 +601,12 @@
 		2F15DD9D8D14A448B23FE0F754FC829B /* LOTShapeTransform.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTShapeTransform.h; path = "lottie-ios/Classes/Models/LOTShapeTransform.h"; sourceTree = "<group>"; };
 		2FF546BD99D33F2B9BB5D968DD3B5A07 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		302EE9406735399F055CC29AE59EC453 /* GULReachabilityChecker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GULReachabilityChecker.m; path = GoogleUtilities/Reachability/GULReachabilityChecker.m; sourceTree = "<group>"; };
+		30F5121B9B33A4C891B5AD60BAEA3CB0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31047C1F352597A275C242BCEA172273 /* LOTCompositionContainer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTCompositionContainer.h; path = "lottie-ios/Classes/AnimatableLayers/LOTCompositionContainer.h"; sourceTree = "<group>"; };
 		31A7DF52153AF42CCA5992FF40989A97 /* LOTPointInterpolator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTPointInterpolator.h; path = "lottie-ios/Classes/RenderSystem/InterpolatorNodes/LOTPointInterpolator.h"; sourceTree = "<group>"; };
 		32728457CE5AE94050C0A17D45EFF9CB /* JSONArrayWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONArrayWrapper.swift; path = Source/Shared/Library/JSONArrayWrapper.swift; sourceTree = "<group>"; };
 		32A4A7E64161A540B79431E6E4C87913 /* Keychain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Keychain.swift; path = Lib/KeychainAccess/Keychain.swift; sourceTree = "<group>"; };
+		337311B0940A75B173E5190BF3E1AEE1 /* Pods-FSPO-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FSPO-acknowledgements.markdown"; sourceTree = "<group>"; };
 		34207BA0CC13726932A3372BE7CFC498 /* FIRAnalyticsConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRAnalyticsConfiguration.m; path = Firebase/Core/FIRAnalyticsConfiguration.m; sourceTree = "<group>"; };
 		34DCBF1C7F9667D67C845CEE9089A9DC /* LOTLayerContainer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTLayerContainer.h; path = "lottie-ios/Classes/AnimatableLayers/LOTLayerContainer.h"; sourceTree = "<group>"; };
 		3543E23951B72F386AA919350D67A196 /* UIColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = UIColor.m; path = "lottie-ios/Classes/MacCompatability/UIColor.m"; sourceTree = "<group>"; };
@@ -633,13 +614,13 @@
 		35D05AB694A03D72DB951B8A2EBE9938 /* LOTHelpers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTHelpers.h; path = "lottie-ios/Classes/Extensions/LOTHelpers.h"; sourceTree = "<group>"; };
 		3642F5EBC368B8D63118F00B64A9B561 /* FIRAppInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRAppInternal.h; path = Firebase/Core/Private/FIRAppInternal.h; sourceTree = "<group>"; };
 		3656218B81E35F53E4F44FCE646C396A /* IQBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQBarButtonItem.swift; path = IQKeyboardManagerSwift/IQToolbar/IQBarButtonItem.swift; sourceTree = "<group>"; };
+		366064FD4A9882971C0F2C00FE0FEFD3 /* KeychainAccess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KeychainAccess.framework; path = KeychainAccess.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		372154917107EC685499F6A05D6691C1 /* LOTAsset.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LOTAsset.m; path = "lottie-ios/Classes/Models/LOTAsset.m"; sourceTree = "<group>"; };
 		3740F8AF7C5D16E4309204046FB902B2 /* LOTShapeRepeater.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LOTShapeRepeater.m; path = "lottie-ios/Classes/Models/LOTShapeRepeater.m"; sourceTree = "<group>"; };
 		3776A00986FA0B9D10F8BC9230A4DF2B /* FIRAnalyticsConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRAnalyticsConfiguration.h; path = Firebase/Core/Public/FIRAnalyticsConfiguration.h; sourceTree = "<group>"; };
 		37D2D93DA4BEE0F13401BF3457A3AFBA /* Deprecated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Deprecated.swift; path = Sources/Kanna/Deprecated.swift; sourceTree = "<group>"; };
 		3A81CDE0D4EE722ADC7AD0044AFD9426 /* CALayer+Compat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CALayer+Compat.m"; path = "lottie-ios/Classes/MacCompatability/CALayer+Compat.m"; sourceTree = "<group>"; };
 		3AD6290FBB0C56E3D484F46F7C59E2B2 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
-		3B77ABB7F27DCCB8F580E6FE94613C4A /* Pods-TodaySchedule-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TodaySchedule-acknowledgements.plist"; sourceTree = "<group>"; };
 		3BEC5D4FAD34841A277863F3C23B1878 /* FIRCoreConfigurable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRCoreConfigurable.h; path = Firebase/Core/Private/FIRCoreConfigurable.h; sourceTree = "<group>"; };
 		3CE7423B6F6D23CC45492816E487884B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D11FC14E82185B74CB17C12444DB8BF /* LayoutAdapterTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutAdapterTableView.swift; path = Sources/Views/LayoutAdapterTableView.swift; sourceTree = "<group>"; };
@@ -647,13 +628,11 @@
 		3D50FBF681474C307D0C01F4ECEC8D67 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		3D8E4DAD86DE24B3E1FBBAC5F785FE6F /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
 		3D932E78D71103A3EAD93574A2FEF792 /* ReloadableViewLayoutAdapter+UITableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ReloadableViewLayoutAdapter+UITableView.swift"; path = "Sources/Views/ReloadableViewLayoutAdapter+UITableView.swift"; sourceTree = "<group>"; };
-		3E28B8F5EFC91806EBF8BFFE08C2530F /* Pods-TommorowSchedule-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TommorowSchedule-acknowledgements.plist"; sourceTree = "<group>"; };
 		3E3DA20AF70DFAE1C5ABBED061C30CBA /* LOTRenderGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LOTRenderGroup.m; path = "lottie-ios/Classes/RenderSystem/RenderNodes/LOTRenderGroup.m"; sourceTree = "<group>"; };
 		3E3DFBAF242A4022FE169A9762AEE4E5 /* GULMutableDictionary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GULMutableDictionary.h; path = GoogleUtilities/Network/Private/GULMutableDictionary.h; sourceTree = "<group>"; };
 		3EC1A6078194754318DF2ED5376A1275 /* FIRVersion.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRVersion.m; path = Firebase/Core/FIRVersion.m; sourceTree = "<group>"; };
 		3EC72D788189974E5E6F50605E00227B /* GoogleUtilities.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GoogleUtilities.modulemap; sourceTree = "<group>"; };
 		3F8C5C5B1B181E8966045FE82DA923F5 /* GULAppEnvironmentUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GULAppEnvironmentUtil.h; path = GoogleUtilities/Environment/third_party/GULAppEnvironmentUtil.h; sourceTree = "<group>"; };
-		3F9619BA53513779FCAEA8F25DC00633 /* Pods-TommorowSchedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TommorowSchedule.debug.xcconfig"; sourceTree = "<group>"; };
 		403C5475437A103D6C2116620F2AA8C4 /* NextGrowingTextView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NextGrowingTextView-dummy.m"; sourceTree = "<group>"; };
 		409DC15BDFA4274C2211F892B556B06D /* LOTShapeGradientFill.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTShapeGradientFill.h; path = "lottie-ios/Classes/Models/LOTShapeGradientFill.h"; sourceTree = "<group>"; };
 		40B0B9566F15C7DBE5F6A9E2940DE3DB /* JSONDictionaryWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONDictionaryWrapper.swift; path = Source/Shared/Library/JSONDictionaryWrapper.swift; sourceTree = "<group>"; };
@@ -664,12 +643,12 @@
 		42C0D4166C1B0A2BA175165B9ED3D5A8 /* Optional+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Optional+Extension.swift"; path = "Source/Shared/Library/Optional+Extension.swift"; sourceTree = "<group>"; };
 		43362EF8CC21A46E009D61011975961C /* FIRApp.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRApp.m; path = Firebase/Core/FIRApp.m; sourceTree = "<group>"; };
 		43D12495A07B354C27D53CE0CC25D8FE /* lottie-ios-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "lottie-ios-prefix.pch"; sourceTree = "<group>"; };
-		43E6B73BE32BC613F5FA626403F396E9 /* Kanna.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Kanna.framework; path = Kanna.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44591F66DB2A148833F439AB41D014FE /* LOTShapeStroke.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LOTShapeStroke.m; path = "lottie-ios/Classes/Models/LOTShapeStroke.m"; sourceTree = "<group>"; };
 		447B2CE19F28CB4E93B97D61A7FD8700 /* Cache-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cache-prefix.pch"; sourceTree = "<group>"; };
 		4484A61CAF98F1C5977CC0F8A0F7ACB5 /* FIRComponentType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRComponentType.m; path = Firebase/Core/FIRComponentType.m; sourceTree = "<group>"; };
 		44E109D858FFC705549852499B1E61DE /* LOTMaskContainer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTMaskContainer.h; path = "lottie-ios/Classes/AnimatableLayers/LOTMaskContainer.h"; sourceTree = "<group>"; };
 		450F1250FCBDF6ED73702F72810374E8 /* Kingfisher-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-prefix.pch"; sourceTree = "<group>"; };
+		45604E0B13C33DC3D0540FB70D7C6DBB /* Pods-FSPO-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FSPO-umbrella.h"; sourceTree = "<group>"; };
 		45D85824AEF37722DC0BCC2F8886959B /* FIRConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRConfiguration.h; path = Firebase/Core/Public/FIRConfiguration.h; sourceTree = "<group>"; };
 		47954C6F685B47144ED84376350A15E4 /* NextGrowingTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NextGrowingTextView.swift; path = NextGrowingTextView/NextGrowingTextView.swift; sourceTree = "<group>"; };
 		4885665DA6B4E578D7F1084B201D641C /* IQKeyboardManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManager.swift; path = IQKeyboardManagerSwift/IQKeyboardManager.swift; sourceTree = "<group>"; };
@@ -681,17 +660,16 @@
 		4BEE514D8B1027E689BA231034F36F03 /* GULNetworkMessageCode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GULNetworkMessageCode.h; path = GoogleUtilities/Network/Private/GULNetworkMessageCode.h; sourceTree = "<group>"; };
 		4C576563020FCB9203C324CA5AFA73C7 /* AxisSize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AxisSize.swift; path = Sources/Math/AxisSize.swift; sourceTree = "<group>"; };
 		4C5ED2386B7142BA239DA1A38B9377AD /* LOTRadialGradientLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LOTRadialGradientLayer.m; path = "lottie-ios/Classes/Extensions/LOTRadialGradientLayer.m"; sourceTree = "<group>"; };
-		4CD498411E835F1EC5A632E5A0FF2E29 /* Pods-TommorowSchedule-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TommorowSchedule-resources.sh"; sourceTree = "<group>"; };
+		4CDE805CD949F3B0BBEC4DC04960CA9C /* Pods-FSPO-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FSPO-dummy.m"; sourceTree = "<group>"; };
 		4D2FCC39F668A7B91CC65AFE7385FC08 /* TypeWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TypeWrapper.swift; path = Source/Shared/Library/TypeWrapper.swift; sourceTree = "<group>"; };
 		4D6E0C81F3A5B4D79F7ECF6E068C43C0 /* LOTRoundedRectAnimator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LOTRoundedRectAnimator.m; path = "lottie-ios/Classes/RenderSystem/AnimatorNodes/LOTRoundedRectAnimator.m"; sourceTree = "<group>"; };
+		4EC56B7254AD9087CF0B1E7DB43E08FD /* Kanna.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Kanna.framework; path = Kanna.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F01DC339AE308377CB9819F0CD0FC66 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCoreDiagnostics.framework; path = Frameworks/FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
 		4F1919D39212A83C784C192D02533E18 /* ImageView+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ImageView+Kingfisher.swift"; path = "Sources/ImageView+Kingfisher.swift"; sourceTree = "<group>"; };
 		4F379DB829B9AB15D604185DA05E55C3 /* GoogleUtilities-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleUtilities-prefix.pch"; sourceTree = "<group>"; };
-		4F4D48E1C80BE494FFEB63428C1E6CC8 /* Pods-TodaySchedule-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TodaySchedule-acknowledgements.markdown"; sourceTree = "<group>"; };
 		5059B244040A04EF6B163D9A8A686240 /* IQUIView+Hierarchy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIView+Hierarchy.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIView+Hierarchy.swift"; sourceTree = "<group>"; };
 		5137F7EB00E4FF66EB9ECE57505BFC51 /* LOTTrimPathNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTTrimPathNode.h; path = "lottie-ios/Classes/RenderSystem/ManipulatorNodes/LOTTrimPathNode.h"; sourceTree = "<group>"; };
 		51D0F6C5CE51D5D11DD86A7EB2F9D4CE /* LOTBezierData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTBezierData.h; path = "lottie-ios/Classes/AnimatableProperties/LOTBezierData.h"; sourceTree = "<group>"; };
-		522084DB2CF8CDB636C8200377231382 /* Pods_TommorowSchedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TommorowSchedule.framework; path = "Pods-TommorowSchedule.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52ED0F6C9809408DE4ABBDA11527DD6D /* nanopb.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = nanopb.xcconfig; sourceTree = "<group>"; };
 		5328B2005B9014C29A771EA106C75029 /* GULNSData+zlib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GULNSData+zlib.m"; path = "GoogleUtilities/NSData+zlib/GULNSData+zlib.m"; sourceTree = "<group>"; };
 		53A3D28A156620AEB2E4EC4D38901B5C /* GULAppEnvironmentUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GULAppEnvironmentUtil.m; path = GoogleUtilities/Environment/third_party/GULAppEnvironmentUtil.m; sourceTree = "<group>"; };
@@ -714,7 +692,7 @@
 		5A8FEE7878DFAD4D58486675AFA38C14 /* IQTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTextView.swift; path = IQKeyboardManagerSwift/IQTextView/IQTextView.swift; sourceTree = "<group>"; };
 		5AFE3FD3E246751B351E2B4BAAC55008 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
 		5BC6B83220FC3236DC83C97CC96734CD /* MemoryCapsule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MemoryCapsule.swift; path = Source/Shared/Library/MemoryCapsule.swift; sourceTree = "<group>"; };
-		5F9FEFBAF01971F92A88A660E92E4A12 /* Pods-TodaySchedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TodaySchedule.debug.xcconfig"; sourceTree = "<group>"; };
+		5D5DB2A7FD887FFB827B278A27793086 /* Pods-TodaySchedule-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TodaySchedule-umbrella.h"; sourceTree = "<group>"; };
 		60EE65B1F7AE9AD0E2C12FE16465DED7 /* AsyncStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncStorage.swift; path = Source/Shared/Storage/AsyncStorage.swift; sourceTree = "<group>"; };
 		612E965C4569279D509A1AEE0545BA20 /* UIBezierPath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UIBezierPath.h; path = "lottie-ios/Classes/MacCompatability/UIBezierPath.h"; sourceTree = "<group>"; };
 		614807D6A423EE6127A4063CEEFBEC07 /* NextGrowingInternalTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NextGrowingInternalTextView.swift; path = NextGrowingTextView/NextGrowingInternalTextView.swift; sourceTree = "<group>"; };
@@ -728,14 +706,12 @@
 		648C8A2F0504D1CE346FA059B2D57230 /* GULNetworkLoggerProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GULNetworkLoggerProtocol.h; path = GoogleUtilities/Network/Private/GULNetworkLoggerProtocol.h; sourceTree = "<group>"; };
 		65B00FAD8EA4E211AFE1E8305F8E1CD6 /* LOTAnimationCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LOTAnimationCache.m; path = "lottie-ios/Classes/Private/LOTAnimationCache.m"; sourceTree = "<group>"; };
 		6627BCF534363D4D78F19DC369E7EBC6 /* FIROptions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIROptions.m; path = Firebase/Core/FIROptions.m; sourceTree = "<group>"; };
-		666312B4113BAD99E735282B01BA93EE /* GoogleUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GoogleUtilities.framework; path = GoogleUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6698BB7DA8EF8C97BD877434F5291EAE /* FIRVersion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRVersion.h; path = Firebase/Core/Private/FIRVersion.h; sourceTree = "<group>"; };
 		6713009F23FE3E27943B9E1294C72B58 /* ImageWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageWrapper.swift; path = Source/Shared/Library/ImageWrapper.swift; sourceTree = "<group>"; };
 		67209B287BD1386805B298149C6EAD91 /* KeychainAccess.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KeychainAccess.xcconfig; sourceTree = "<group>"; };
 		6756B51147C1C8858F8E43282991604D /* UIKitSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIKitSupport.swift; path = Sources/UIKitSupport.swift; sourceTree = "<group>"; };
-		6A06A73AC15239AA333527291182C059 /* Pods-TodaySchedule-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TodaySchedule-umbrella.h"; sourceTree = "<group>"; };
+		6B71EEA5A80FDB0CE2558B4996ADA518 /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FirebaseCore.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B948D9E5312095B3558BCB8E82135F3 /* FIRComponentContainerInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRComponentContainerInternal.h; path = Firebase/Core/Private/FIRComponentContainerInternal.h; sourceTree = "<group>"; };
-		6BA469CBE9ADA1439652104546D6B83E /* Pods-TodaySchedule-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TodaySchedule-resources.sh"; sourceTree = "<group>"; };
 		6BB45BEC82F8B89921186675A8C6807B /* Text.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Text.swift; path = Sources/Text.swift; sourceTree = "<group>"; };
 		6CBFAFE5C64DED0077E3C4DB822C1F52 /* FirebaseCore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FirebaseCore.h; path = Firebase/Core/Public/FirebaseCore.h; sourceTree = "<group>"; };
 		6CDB2B204C6AE803C308B8F6B0AC3D47 /* UIColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UIColor.h; path = "lottie-ios/Classes/MacCompatability/UIColor.h"; sourceTree = "<group>"; };
@@ -745,30 +721,25 @@
 		6F9BDA84FE9B8999B0636549939D98B5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		7065F874610BAF0732226D05021B3F29 /* TextViewDefaultFont.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextViewDefaultFont.swift; path = Sources/Internal/TextViewDefaultFont.swift; sourceTree = "<group>"; };
 		715E29BC87C9AA03012B1DC5E02DB5A1 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = CoreOnly/Sources/Firebase.h; sourceTree = "<group>"; };
-		738E6FF5478C40EA23F657627B97F404 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7391A2FFDF5641B3D7D5FB5ADC4A6628 /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
 		73D52EE309F16CF773A3F472A22C09EB /* IQKeyboardManagerSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManagerSwift-prefix.pch"; sourceTree = "<group>"; };
-		74414A6A97F83E2F4EECF478698FF634 /* Pods-FSPO-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FSPO-acknowledgements.plist"; sourceTree = "<group>"; };
 		75E3AAF8400910188F12D2424A8DDFF7 /* StackLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StackLayout.swift; path = Sources/Layouts/StackLayout.swift; sourceTree = "<group>"; };
-		766364D44493FEDB6E54C6BF722671DD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7688287380DDDE298B6D3E341F599C5C /* IQKeyboardManagerConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstants.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstants.swift; sourceTree = "<group>"; };
 		768828C43AA292251D8B332D3B88A575 /* FIRAppAssociationRegistration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRAppAssociationRegistration.h; path = Firebase/Core/Private/FIRAppAssociationRegistration.h; sourceTree = "<group>"; };
 		76890E72B7731083A891A677EF552B57 /* LOTKeypath.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LOTKeypath.m; path = "lottie-ios/Classes/Private/LOTKeypath.m"; sourceTree = "<group>"; };
-		7692551A7A5C784E09A4182FA404015E /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FirebaseCore.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7764241B63BA2AE668A35AF874D9796F /* ConfigurableLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConfigurableLayout.swift; path = Sources/ConfigurableLayout.swift; sourceTree = "<group>"; };
 		77ABCBA08F0937925CF453C5978CE371 /* Storage+Transform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Storage+Transform.swift"; path = "Source/Shared/Storage/Storage+Transform.swift"; sourceTree = "<group>"; };
-		782EA9DA38F2C0C69F88299F981DD4F8 /* Lottie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Lottie.framework; path = "lottie-ios.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78DA1045483BE9618E6CA6DE11292CF6 /* LOTInterpolatorCallback.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LOTInterpolatorCallback.m; path = "lottie-ios/Classes/Private/LOTInterpolatorCallback.m"; sourceTree = "<group>"; };
 		7973B6644EF39AF446150880110A07D3 /* ReloadableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReloadableView.swift; path = Sources/Views/ReloadableView.swift; sourceTree = "<group>"; };
 		798C1A6FA811F49A8A5946873D0955AF /* Storage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Storage.swift; path = Source/Shared/Storage/Storage.swift; sourceTree = "<group>"; };
 		79C75842E8283A3F42CB1A8FA398FBEF /* LOTStrokeRenderer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LOTStrokeRenderer.m; path = "lottie-ios/Classes/RenderSystem/RenderNodes/LOTStrokeRenderer.m"; sourceTree = "<group>"; };
-		7A5637ED43DA91B47C6670FA0FA879E3 /* Pods-FSPO-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FSPO-acknowledgements.markdown"; sourceTree = "<group>"; };
 		7AEA1B31E8BFF760E889EB7FA2FEAEA0 /* CLSLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSLogging.h; path = iOS/Crashlytics.framework/Headers/CLSLogging.h; sourceTree = "<group>"; };
 		7B4C373C0A5035E3D7DC5D2F95EDEC0D /* LOTInterpolatorCallback.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTInterpolatorCallback.h; path = "lottie-ios/Classes/PublicHeaders/LOTInterpolatorCallback.h"; sourceTree = "<group>"; };
 		7B7F130D495672F88D5034775FF7F68D /* NSValue+Compat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSValue+Compat.m"; path = "lottie-ios/Classes/MacCompatability/NSValue+Compat.m"; sourceTree = "<group>"; };
 		7C592B420144145E614856055BA24BCF /* Cache.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Cache.modulemap; sourceTree = "<group>"; };
 		7D495D4214C44F7BCBBE3797662DBF75 /* MemoryConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MemoryConfig.swift; path = Source/Shared/Configuration/MemoryConfig.swift; sourceTree = "<group>"; };
 		7DF9CE61F8C5C3A8B931E497A2B00586 /* GULLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GULLogger.m; path = GoogleUtilities/Logger/GULLogger.m; sourceTree = "<group>"; };
+		7E562DAD613DA0444532B6CCC1086B0C /* GoogleUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GoogleUtilities.framework; path = GoogleUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EA39537C5AC0720B19EA7508F684F6A /* LOTComposition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTComposition.h; path = "lottie-ios/Classes/PublicHeaders/LOTComposition.h"; sourceTree = "<group>"; };
 		7EAECAD06EA1B6C75DC0F2F75123CC98 /* KingfisherManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherManager.swift; path = Sources/KingfisherManager.swift; sourceTree = "<group>"; };
 		7F71F31F819AC7F41D27CC115459D892 /* Resource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Resource.swift; path = Sources/Resource.swift; sourceTree = "<group>"; };
@@ -780,7 +751,6 @@
 		81D71551BD6092528DA865D4CE238B33 /* LOTShapeRectangle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LOTShapeRectangle.m; path = "lottie-ios/Classes/Models/LOTShapeRectangle.m"; sourceTree = "<group>"; };
 		81F53872264DF47046D094314B934ED7 /* FormatIndicatedCacheSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormatIndicatedCacheSerializer.swift; path = Sources/FormatIndicatedCacheSerializer.swift; sourceTree = "<group>"; };
 		829AB3E877A7E2AD3DAE4CA8B20C7735 /* LOTAssetGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LOTAssetGroup.m; path = "lottie-ios/Classes/Models/LOTAssetGroup.m"; sourceTree = "<group>"; };
-		84175B6AFB676FB32A941B3A257D4E45 /* Pods-FSPO-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FSPO-resources.sh"; sourceTree = "<group>"; };
 		852EBDECAFFB2F85D5ED1459D22D467C /* LOTCompositionContainer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LOTCompositionContainer.m; path = "lottie-ios/Classes/AnimatableLayers/LOTCompositionContainer.m"; sourceTree = "<group>"; };
 		85924242522FC5B6480A6DDAEADC47AB /* LOTCacheProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LOTCacheProvider.m; path = "lottie-ios/Classes/Private/LOTCacheProvider.m"; sourceTree = "<group>"; };
 		85A42818A2EB8B37A0D42847AC04755F /* LOTMaskContainer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LOTMaskContainer.m; path = "lottie-ios/Classes/AnimatableLayers/LOTMaskContainer.m"; sourceTree = "<group>"; };
@@ -789,6 +759,7 @@
 		877775ACADD2F6F9A79371DAF3426B24 /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
 		87F2324049E2DB33CB805471022C1F15 /* pb_common.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = pb_common.h; sourceTree = "<group>"; };
 		8830D9EED2A25E8EB47C729133605E44 /* IQUIView+IQKeyboardToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIView+IQKeyboardToolbar.swift"; path = "IQKeyboardManagerSwift/IQToolbar/IQUIView+IQKeyboardToolbar.swift"; sourceTree = "<group>"; };
+		883170C606C896727B7DA9FDDA107A8D /* Pods-FSPO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FSPO.debug.xcconfig"; sourceTree = "<group>"; };
 		88A2E388985FF954F194974B429F8765 /* LOTBlockCallback.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LOTBlockCallback.m; path = "lottie-ios/Classes/Private/LOTBlockCallback.m"; sourceTree = "<group>"; };
 		89015DA5FA0BD5369DB652FEA877F306 /* LayoutKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LayoutKit.modulemap; sourceTree = "<group>"; };
 		898EAEFEA3229D650D3BBB681CA45A44 /* CGFloatExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CGFloatExtension.swift; path = Sources/Internal/CGFloatExtension.swift; sourceTree = "<group>"; };
@@ -800,16 +771,17 @@
 		8B248948626CE947BB37165BB59DD98A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BE53C6100B220E97AE73E553BCBDE8E /* LOTPlatformCompat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTPlatformCompat.h; path = "lottie-ios/Classes/MacCompatability/LOTPlatformCompat.h"; sourceTree = "<group>"; };
 		8C3E97B608F46B17D0A8FC61BC3BE5F6 /* FIRLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRLogger.h; path = Firebase/Core/Private/FIRLogger.h; sourceTree = "<group>"; };
+		8D5FAC7A7C8B29B36F5C1E6D3D66CFE1 /* Pods-TodaySchedule.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TodaySchedule.modulemap"; sourceTree = "<group>"; };
+		8E605650D505777244797FD2083145E6 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EA682933C4DEA4468F05963956EE371 /* FirebaseCore-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FirebaseCore-dummy.m"; sourceTree = "<group>"; };
 		8F06E5D6D703F9A5CE5F4B3C74C6A546 /* Box.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Box.swift; path = Sources/Box.swift; sourceTree = "<group>"; };
 		8F3C6FE55812126E92E341F385BE315A /* nanopb-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "nanopb-prefix.pch"; sourceTree = "<group>"; };
 		8FA8BCF8E699F41821236635517B7853 /* Cache-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cache-umbrella.h"; sourceTree = "<group>"; };
 		9004E6687B55D493BC5120AE9748AF9B /* NextGrowingTextView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NextGrowingTextView.xcconfig; sourceTree = "<group>"; };
 		901262CF9FD24E70A464CA015DE273A5 /* FIRComponentContainer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRComponentContainer.h; path = Firebase/Core/Private/FIRComponentContainer.h; sourceTree = "<group>"; };
-		910E0352B664C471DDA236983A4A6347 /* Pods-FSPO-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FSPO-umbrella.h"; sourceTree = "<group>"; };
+		9015EB8FCA4C1712134EB2881B3CB214 /* Pods-FSPO.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FSPO.modulemap"; sourceTree = "<group>"; };
 		918C17AF9A65ADB85BB8F4CBF33DD291 /* FIRBundleUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRBundleUtil.m; path = Firebase/Core/FIRBundleUtil.m; sourceTree = "<group>"; };
 		926809A90C00ECBC6BEB3C40759BF3F4 /* Kanna-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kanna-prefix.pch"; sourceTree = "<group>"; };
-		9362DED2ECF954E9A2E17B6C247A675C /* Pods-TodaySchedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TodaySchedule.release.xcconfig"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		940255CF5F9718C4B92AB0B74BCA3D7A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95019AA5E05C3FAF58CB374FE7ECA0EB /* Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Kingfisher.swift; path = Sources/Kingfisher.swift; sourceTree = "<group>"; };
@@ -823,14 +795,12 @@
 		9A76C0E72D0938D996C38BCEFEB20843 /* BatchUpdates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BatchUpdates.swift; path = Sources/Views/BatchUpdates.swift; sourceTree = "<group>"; };
 		9A8608BF59C7A414E6C48F74A501106E /* Kanna-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Kanna-dummy.m"; sourceTree = "<group>"; };
 		9ACE0E24A3C69DC57D1A0022E689317D /* LOTFillRenderer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LOTFillRenderer.m; path = "lottie-ios/Classes/RenderSystem/RenderNodes/LOTFillRenderer.m"; sourceTree = "<group>"; };
-		9AFEB6F328C842A0E8D1D966695635DA /* Pods-FSPO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FSPO.debug.xcconfig"; sourceTree = "<group>"; };
 		9B6CBA87BF7DF0CC2BE27BC9ECE12D12 /* StorageAware.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StorageAware.swift; path = Source/Shared/Storage/StorageAware.swift; sourceTree = "<group>"; };
 		9B72EB8C6FFEC570E44CBDF7B1CAD4D1 /* LOTStrokeRenderer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTStrokeRenderer.h; path = "lottie-ios/Classes/RenderSystem/RenderNodes/LOTStrokeRenderer.h"; sourceTree = "<group>"; };
 		9B7B7B33A3967DAF2A40ED0F2A894F19 /* LayoutKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LayoutKit-umbrella.h"; sourceTree = "<group>"; };
 		9C6B8D5C12D1B5EDAC27FAA1FB79C7C1 /* GULNetworkURLSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GULNetworkURLSession.h; path = GoogleUtilities/Network/Private/GULNetworkURLSession.h; sourceTree = "<group>"; };
 		9CD1AB04ABB5249651F98282B8FACC9E /* MD5.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MD5.swift; path = Source/Shared/Library/MD5.swift; sourceTree = "<group>"; };
 		9E2F0F758A49CA2DFC15344B96B37CDB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		9EF3DFCB05500C0EA7C026717E7EFA8A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F5EF9B70AEF2F1450F6EB5B69C58089 /* LayoutMeasurement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutMeasurement.swift; path = Sources/LayoutMeasurement.swift; sourceTree = "<group>"; };
 		A030F7CB121363C54036CC396F6C1951 /* GULNetworkConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GULNetworkConstants.h; path = GoogleUtilities/Network/Private/GULNetworkConstants.h; sourceTree = "<group>"; };
 		A07D97F625A8A2A27448418DC262624A /* LOTAnimatedControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTAnimatedControl.h; path = "lottie-ios/Classes/PublicHeaders/LOTAnimatedControl.h"; sourceTree = "<group>"; };
@@ -846,10 +816,8 @@
 		AA830ABD9C13464547C81346D41BD0D6 /* LOTKeyframe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LOTKeyframe.m; path = "lottie-ios/Classes/AnimatableProperties/LOTKeyframe.m"; sourceTree = "<group>"; };
 		AB2863BEC85F98DC09AD1D3D791748B8 /* NSValue+Compat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSValue+Compat.h"; path = "lottie-ios/Classes/MacCompatability/NSValue+Compat.h"; sourceTree = "<group>"; };
 		AB4D00373BEC7E9B98E37C9F2DF522B0 /* CGGeometry+LOTAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CGGeometry+LOTAdditions.m"; path = "lottie-ios/Classes/Extensions/CGGeometry+LOTAdditions.m"; sourceTree = "<group>"; };
-		AB4D1FB8121BBE2E1C518AE9F95169C5 /* Pods-FSPO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FSPO.release.xcconfig"; sourceTree = "<group>"; };
 		ABD66DBCAB509281DEDBF4A2C81584BB /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
 		AD0BE0F3E893103CC1BE7B5A4D1F2617 /* ViewRecycler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewRecycler.swift; path = Sources/ViewRecycler.swift; sourceTree = "<group>"; };
-		ADC76AE785D5019FDEFFF89239EB791D /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Kingfisher.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE582D920B48552C9B3B6052BE816834 /* UIBezierPath.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = UIBezierPath.m; path = "lottie-ios/Classes/MacCompatability/UIBezierPath.m"; sourceTree = "<group>"; };
 		AE9418751AC8E46DD3411E3A743130C7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEABD9F1C163FEF9C19AD4F43CA55356 /* SizeLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SizeLayout.swift; path = Sources/Layouts/SizeLayout.swift; sourceTree = "<group>"; };
@@ -873,13 +841,13 @@
 		B7EF2EA88AA250DD50F46C038CD42ADE /* LOTAnimationView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LOTAnimationView.m; path = "lottie-ios/Classes/Private/LOTAnimationView.m"; sourceTree = "<group>"; };
 		B915641F100C1696D5AAD8AD9003EF95 /* CGGeometry+LOTAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CGGeometry+LOTAdditions.h"; path = "lottie-ios/Classes/Extensions/CGGeometry+LOTAdditions.h"; sourceTree = "<group>"; };
 		B94AB090E86BF978FFF6DCA903C4AFD2 /* LOTCircleAnimator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTCircleAnimator.h; path = "lottie-ios/Classes/RenderSystem/AnimatorNodes/LOTCircleAnimator.h"; sourceTree = "<group>"; };
-		B9E8C0F4A2E72FE1CB116ACC2D3AF056 /* Pods-FSPO-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FSPO-frameworks.sh"; sourceTree = "<group>"; };
 		BAA244C43FE3179E4F011D1EE5B6CB78 /* LOTShapeCircle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LOTShapeCircle.m; path = "lottie-ios/Classes/Models/LOTShapeCircle.m"; sourceTree = "<group>"; };
+		BC702DA40C8B459AE1265829DEE6504F /* Pods-FSPO-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FSPO-resources.sh"; sourceTree = "<group>"; };
 		BCD10218875992FAFF82A7693D301119 /* Kingfisher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Kingfisher.h; path = Sources/Kingfisher.h; sourceTree = "<group>"; };
 		BCE086593A5FD53727D59C22F13ABCB1 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
 		BD757A47C0B67D6C2D040AD4630CA1DF /* AxisPoint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AxisPoint.swift; path = Sources/Math/AxisPoint.swift; sourceTree = "<group>"; };
+		BD96B84FB000598B3F4720F1CB341FA3 /* Pods-FSPO-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FSPO-frameworks.sh"; sourceTree = "<group>"; };
 		BDA98E3A35F966BFC6D4E4286E631FA2 /* LOTBezierPath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTBezierPath.h; path = "lottie-ios/Classes/Extensions/LOTBezierPath.h"; sourceTree = "<group>"; };
-		BDC77CE9E51B3BF74D5A88696F578A5F /* Pods-TommorowSchedule.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TommorowSchedule.modulemap"; sourceTree = "<group>"; };
 		BDF135BF6CA312681D5EBDD45286CA6F /* LOTShapeStroke.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTShapeStroke.h; path = "lottie-ios/Classes/Models/LOTShapeStroke.h"; sourceTree = "<group>"; };
 		BE70BDC18825AA5BF60B72D43B312F47 /* IQKeyboardReturnKeyHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardReturnKeyHandler.swift; path = IQKeyboardManagerSwift/IQKeyboardReturnKeyHandler.swift; sourceTree = "<group>"; };
 		BF99AB1CA214FC58EDD1D009F67EA412 /* FIRConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRConfiguration.m; path = Firebase/Core/FIRConfiguration.m; sourceTree = "<group>"; };
@@ -887,6 +855,7 @@
 		C15A32F010344554E9111F3926D3AAF0 /* IQPreviousNextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQPreviousNextView.swift; path = IQKeyboardManagerSwift/IQToolbar/IQPreviousNextView.swift; sourceTree = "<group>"; };
 		C1731366B11B9861C8D54492C66D1D35 /* FIRDependency.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRDependency.m; path = Firebase/Core/FIRDependency.m; sourceTree = "<group>"; };
 		C189E8A96119B86A93FA9B9859D31702 /* LOTColorInterpolator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTColorInterpolator.h; path = "lottie-ios/Classes/RenderSystem/InterpolatorNodes/LOTColorInterpolator.h"; sourceTree = "<group>"; };
+		C2182B54D49AB9A004D30F5457DBE962 /* NextGrowingTextView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = NextGrowingTextView.framework; path = NextGrowingTextView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2F05F2D94B3CD97F71827B760A23CCC /* Placeholder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Placeholder.swift; path = Sources/Placeholder.swift; sourceTree = "<group>"; };
 		C31F249097E4F3EC5BCA9EF734C66F80 /* pb_decode.c */ = {isa = PBXFileReference; includeInIndex = 1; path = pb_decode.c; sourceTree = "<group>"; };
 		C32A28F1C6EF477B87DF9C1ACF492831 /* LOTShapeRepeater.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTShapeRepeater.h; path = "lottie-ios/Classes/Models/LOTShapeRepeater.h"; sourceTree = "<group>"; };
@@ -895,7 +864,6 @@
 		C520F7175768CBFC22E694FE50176ADA /* AnimatedImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedImageView.swift; path = Sources/AnimatedImageView.swift; sourceTree = "<group>"; };
 		C648B14855F87BB4EF0851511D4A7552 /* Indicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Indicator.swift; path = Sources/Indicator.swift; sourceTree = "<group>"; };
 		C7AF4BAB6B191FA34B176CE23E2C7E8D /* FIRLoggerLevel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRLoggerLevel.h; path = Firebase/Core/Public/FIRLoggerLevel.h; sourceTree = "<group>"; };
-		C7F1901D68D7EF13869EE3A514EDDB38 /* Pods_FSPO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FSPO.framework; path = "Pods-FSPO.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C1535EAEEFF69B701F0D128BB6499B /* LOTValueCallback.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTValueCallback.h; path = "lottie-ios/Classes/PublicHeaders/LOTValueCallback.h"; sourceTree = "<group>"; };
 		CA86D7ED426B50F51AF7E7E7F5FB549D /* IQKeyboardManagerSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = IQKeyboardManagerSwift.modulemap; sourceTree = "<group>"; };
 		CB066CF618140DE48754951DF7367FC3 /* NextGrowingTextView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NextGrowingTextView-prefix.pch"; sourceTree = "<group>"; };
@@ -905,17 +873,16 @@
 		CCCE6FDCD0AAED58A49FAFDC0236169C /* LOTShapePath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTShapePath.h; path = "lottie-ios/Classes/Models/LOTShapePath.h"; sourceTree = "<group>"; };
 		CD479492990152337883782661831830 /* Date+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+Extensions.swift"; path = "Source/Shared/Extensions/Date+Extensions.swift"; sourceTree = "<group>"; };
 		CE308713C2176CDC0848D1E698463ED8 /* KeychainAccess-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KeychainAccess-umbrella.h"; sourceTree = "<group>"; };
+		CFBE8C04E75FE766241284B1E86E8A95 /* Pods-TodaySchedule-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TodaySchedule-acknowledgements.markdown"; sourceTree = "<group>"; };
 		CFC878F1953F88E3CBE6298F3DD9A95F /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
 		D118EC5B51884218F30AAFC9333A11C0 /* IQKeyboardManagerSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManagerSwift-umbrella.h"; sourceTree = "<group>"; };
 		D18D265D4A1A5F104FFEC078F56CE1A3 /* LOTRoundedRectAnimator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTRoundedRectAnimator.h; path = "lottie-ios/Classes/RenderSystem/AnimatorNodes/LOTRoundedRectAnimator.h"; sourceTree = "<group>"; };
 		D206FFD5BF1CC7D5236D2923ADD70358 /* RequestModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestModifier.swift; path = Sources/RequestModifier.swift; sourceTree = "<group>"; };
-		D2535C7897DDD66A44A26EE7F33E240B /* NextGrowingTextView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = NextGrowingTextView.framework; path = NextGrowingTextView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F0F289943BC654FEA8C51BF2B937CC /* IQKeyboardManagerSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "IQKeyboardManagerSwift-dummy.m"; sourceTree = "<group>"; };
 		D303C50CCCB94CD4F4B0C09A19216896 /* LOTLayerGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTLayerGroup.h; path = "lottie-ios/Classes/Models/LOTLayerGroup.h"; sourceTree = "<group>"; };
 		D33C77F24BDAB77478EB726D23912208 /* FIRComponent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRComponent.m; path = Firebase/Core/FIRComponent.m; sourceTree = "<group>"; };
 		D3F4EAAFF0593883D88879291C743F52 /* FIRLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRLogger.m; path = Firebase/Core/FIRLogger.m; sourceTree = "<group>"; };
 		D433C0029E7C0F3633F29F795EDFE901 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		D45F58F7059525007E331E21F598B2F3 /* Pods-TodaySchedule-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TodaySchedule-dummy.m"; sourceTree = "<group>"; };
 		D5289EAB5D8C52D11ADD65DF1EC4E075 /* FIRErrors.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRErrors.m; path = Firebase/Core/FIRErrors.m; sourceTree = "<group>"; };
 		D5BCACFA0C31BD1E8FEAF1095C0BE1A2 /* LOTAnimatedSwitch.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTAnimatedSwitch.h; path = "lottie-ios/Classes/PublicHeaders/LOTAnimatedSwitch.h"; sourceTree = "<group>"; };
 		D636296AC47E6B740B530523E5131EFE /* ReloadableViewUpdateManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReloadableViewUpdateManager.swift; path = Sources/Views/ReloadableViewUpdateManager.swift; sourceTree = "<group>"; };
@@ -927,6 +894,7 @@
 		D73F6D62FB01650002E12D34C0883DC8 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
 		D84046A3019AF90B30B486DC2FB34EEB /* KeychainAccess.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KeychainAccess.modulemap; sourceTree = "<group>"; };
 		D84CC836939CA802F9F236856E86109D /* Filter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Sources/Filter.swift; sourceTree = "<group>"; };
+		D8B743E5DA0EE2998B1CB789EFA9B913 /* Pods_FSPO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FSPO.framework; path = "Pods-FSPO.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D91FE7713F6D9C8923C26895CAADA488 /* FIROptionsInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIROptionsInternal.h; path = Firebase/Core/Private/FIROptionsInternal.h; sourceTree = "<group>"; };
 		D9610417100EFBF1634CC4CDDF8C227A /* LOTKeypath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTKeypath.h; path = "lottie-ios/Classes/PublicHeaders/LOTKeypath.h"; sourceTree = "<group>"; };
 		D9DBFCEEF7419936F673AF44D9C7E9DF /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
@@ -936,8 +904,8 @@
 		DCC427A45B1361C6BCB668DF46F5B410 /* GULSwizzler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GULSwizzler.h; path = GoogleUtilities/MethodSwizzler/Private/GULSwizzler.h; sourceTree = "<group>"; };
 		DE43B54735A757D016DB6506FCCEC97C /* LOTCacheProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTCacheProvider.h; path = "lottie-ios/Classes/PublicHeaders/LOTCacheProvider.h"; sourceTree = "<group>"; };
 		DF2AECED66314AAA87DBD5423EFF5744 /* Cache-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Cache-dummy.m"; sourceTree = "<group>"; };
-		DFB42D129618E04682A9384068041A1B /* Pods-TommorowSchedule-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TommorowSchedule-umbrella.h"; sourceTree = "<group>"; };
 		DFD5D5398F8A958CDB905693FB0E050B /* Kingfisher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Kingfisher-dummy.m"; sourceTree = "<group>"; };
+		E0780970B9BC05F5313A2440356280DA /* Pods_TodaySchedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TodaySchedule.framework; path = "Pods-TodaySchedule.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E093B02F9E96FF87F91D3FF54DBB1B0F /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
 		E272B682BE0149737F74FDD4DACD45E3 /* LOTTransformInterpolator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LOTTransformInterpolator.m; path = "lottie-ios/Classes/RenderSystem/InterpolatorNodes/LOTTransformInterpolator.m"; sourceTree = "<group>"; };
 		E298E9FAD026E2FB22D586118B26D43D /* LOTAnimatorNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTAnimatorNode.h; path = "lottie-ios/Classes/RenderSystem/LOTAnimatorNode.h"; sourceTree = "<group>"; };
@@ -949,18 +917,17 @@
 		E55E4AF38C6E248D5F74B205E71EF3E6 /* FIRErrorCode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRErrorCode.h; path = Firebase/Core/Private/FIRErrorCode.h; sourceTree = "<group>"; };
 		E6425A4C6C0BF3C1FCCEA5DFE2C1D028 /* FirebaseCore-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FirebaseCore-umbrella.h"; sourceTree = "<group>"; };
 		E642EDBDB4F8D8CF6659E590B3C2D03B /* LOTAnimatorNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LOTAnimatorNode.m; path = "lottie-ios/Classes/RenderSystem/LOTAnimatorNode.m"; sourceTree = "<group>"; };
-		E7897AD744EC0E38A02F73BE426364B5 /* Pods_TodaySchedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TodaySchedule.framework; path = "Pods-TodaySchedule.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7F4AE875269BFC9707E1554F2C2B53C /* Cache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Cache.framework; path = Cache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E833347ED9EBB044FDA358CC7D866787 /* ANSCompatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ANSCompatibility.h; path = iOS/Crashlytics.framework/Headers/ANSCompatibility.h; sourceTree = "<group>"; };
 		E88A3891430E625A5BC9746B8D1D2457 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		E93AE650A10ECAE4FB156576F86D01D8 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Kingfisher.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9FA84D658C9D20BB864330D41F2D5F5 /* GULSwizzler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GULSwizzler.m; path = GoogleUtilities/MethodSwizzler/GULSwizzler.m; sourceTree = "<group>"; };
 		E9FE11812AE08540F7186368DEF6FF11 /* FIRApp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRApp.h; path = Firebase/Core/Public/FIRApp.h; sourceTree = "<group>"; };
 		EAD91C819F826BE0716A3B1E8420F573 /* pb_encode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = pb_encode.h; sourceTree = "<group>"; };
-		EBDAF41C34AF82F84C34E8AC077E74E9 /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = nanopb.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC154ED187E7E4E3C53CF0EA004B7F19 /* LOTAnimationCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTAnimationCache.h; path = "lottie-ios/Classes/PublicHeaders/LOTAnimationCache.h"; sourceTree = "<group>"; };
 		EC23AD7D560227E90D2B4BFE31BF1D63 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
 		EC74ABA6BA8751CAFD34379E94A27F90 /* LOTGradientFillRender.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTGradientFillRender.h; path = "lottie-ios/Classes/RenderSystem/RenderNodes/LOTGradientFillRender.h"; sourceTree = "<group>"; };
 		EC8A092D6543E48C40BE09B7AA72A5C1 /* pb_decode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = pb_decode.h; sourceTree = "<group>"; };
-		ECAFF53BA79E285672C16A1CEA952D6E /* LayoutKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LayoutKit.framework; path = LayoutKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE702B94EEE6EE7C7CF417B53C5E5BDD /* LOTRepeaterRenderer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTRepeaterRenderer.h; path = "lottie-ios/Classes/RenderSystem/RenderNodes/LOTRepeaterRenderer.h"; sourceTree = "<group>"; };
 		EF3299541D5977D00B8B6CE837262E83 /* IQKeyboardManagerSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IQKeyboardManagerSwift.xcconfig; sourceTree = "<group>"; };
 		EF4CBB587C26D3FCE9C15E89DDB04B19 /* lottie-ios.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "lottie-ios.modulemap"; sourceTree = "<group>"; };
@@ -974,7 +941,7 @@
 		F2E7F7D48E66F1D3FFEFF2C3F73390F8 /* Types.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Types.swift; path = Source/Shared/Library/Types.swift; sourceTree = "<group>"; };
 		F3152DF46510E7F7F0C90533C38ADADC /* Alignment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alignment.swift; path = Sources/Alignment.swift; sourceTree = "<group>"; };
 		F3227F9DEF6D5D8E9AB13090630E9F2E /* HybridStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HybridStorage.swift; path = Source/Shared/Storage/HybridStorage.swift; sourceTree = "<group>"; };
-		F43D35AE44E8EEA1D7D640C7517A48F3 /* Pods-TommorowSchedule-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TommorowSchedule-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F47D204EB974A2AC6E0D5B6E2CD7CA14 /* Pods-FSPO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FSPO.release.xcconfig"; sourceTree = "<group>"; };
 		F4A263B2F8F4967A58757A84E4B3F296 /* LOTArrayInterpolator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LOTArrayInterpolator.m; path = "lottie-ios/Classes/RenderSystem/InterpolatorNodes/LOTArrayInterpolator.m"; sourceTree = "<group>"; };
 		F5211010223EDE8941F87C7342142C8B /* LOTAsset.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTAsset.h; path = "lottie-ios/Classes/Models/LOTAsset.h"; sourceTree = "<group>"; };
 		F565C1F75F9FDA852B92EA49D7558539 /* GULReachabilityMessageCode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GULReachabilityMessageCode.h; path = GoogleUtilities/Reachability/Private/GULReachabilityMessageCode.h; sourceTree = "<group>"; };
@@ -985,9 +952,9 @@
 		F751C6EF204E4A2CC2AA520128E1B3F9 /* DiskStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiskStorage.swift; path = Source/Shared/Storage/DiskStorage.swift; sourceTree = "<group>"; };
 		F7A22AE97045434EBF76032DA383DD41 /* LOTLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LOTLayer.m; path = "lottie-ios/Classes/Models/LOTLayer.m"; sourceTree = "<group>"; };
 		F7F19EA00CE9A077D4BF87C48261017C /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOS/Crashlytics.framework; sourceTree = "<group>"; };
-		F82DB4FED2D6236DBFE0042998100AD4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F85BE7540315288EAE899C69608A456F /* LOTNumberInterpolator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTNumberInterpolator.h; path = "lottie-ios/Classes/RenderSystem/InterpolatorNodes/LOTNumberInterpolator.h"; sourceTree = "<group>"; };
 		F8C2E577BCF2F8DA0655228FF9A564B9 /* LOTValueInterpolator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTValueInterpolator.h; path = "lottie-ios/Classes/RenderSystem/InterpolatorNodes/LOTValueInterpolator.h"; sourceTree = "<group>"; };
+		FA91100B15919433CB7C4346890871B8 /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = nanopb.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA99D50507EBE98B36FAAC2F35F8F009 /* Crashlytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Crashlytics.h; path = iOS/Crashlytics.framework/Headers/Crashlytics.h; sourceTree = "<group>"; };
 		FAA70A2C3C3A4CADBF914F3FCB80D726 /* KeychainAccess-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KeychainAccess-dummy.m"; sourceTree = "<group>"; };
 		FAFBB41D2B48365AF3CB5F72CA627D73 /* LayoutArrangement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutArrangement.swift; path = Sources/LayoutArrangement.swift; sourceTree = "<group>"; };
@@ -1040,13 +1007,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				67633B64BF545DCCECFC8E0AE699E33B /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		76F7CB9EAFB638F922BD13C94E995F06 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1140,6 +1100,15 @@
 			path = GoogleAppMeasurement;
 			sourceTree = "<group>";
 		};
+		1166015227804A068A9BED00A3BF3922 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CB7E0C53829B8572E7E60F07CE362FC9 /* Pods-FSPO */,
+				6B5CF91B7C9149CA8B5755D9D69539A6 /* Pods-TodaySchedule */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
 		131FF3A267994172CF49915A4E21A1BE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1208,28 +1177,6 @@
 			);
 			name = LayoutKit;
 			path = LayoutKit;
-			sourceTree = "<group>";
-		};
-		28C7AAD81D60060A315E84B12BF96B7B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				738E6FF5478C40EA23F657627B97F404 /* Alamofire.framework */,
-				031B87C681D6CB17F87840C6B04DE4EF /* Cache.framework */,
-				7692551A7A5C784E09A4182FA404015E /* FirebaseCore.framework */,
-				666312B4113BAD99E735282B01BA93EE /* GoogleUtilities.framework */,
-				008F47822A6B50180D52EF1303D40AC8 /* IQKeyboardManagerSwift.framework */,
-				43E6B73BE32BC613F5FA626403F396E9 /* Kanna.framework */,
-				116F261F71BDF92F5093EBBF6AD7F988 /* KeychainAccess.framework */,
-				ADC76AE785D5019FDEFFF89239EB791D /* Kingfisher.framework */,
-				ECAFF53BA79E285672C16A1CEA952D6E /* LayoutKit.framework */,
-				782EA9DA38F2C0C69F88299F981DD4F8 /* Lottie.framework */,
-				EBDAF41C34AF82F84C34E8AC077E74E9 /* nanopb.framework */,
-				D2535C7897DDD66A44A26EE7F33E240B /* NextGrowingTextView.framework */,
-				C7F1901D68D7EF13869EE3A514EDDB38 /* Pods_FSPO.framework */,
-				E7897AD744EC0E38A02F73BE426364B5 /* Pods_TodaySchedule.framework */,
-				522084DB2CF8CDB636C8200377231382 /* Pods_TommorowSchedule.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		29BA4EC976BDF0EDBB4749511E074E7D /* Support Files */ = {
@@ -1355,6 +1302,27 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/KeychainAccess";
+			sourceTree = "<group>";
+		};
+		56F43C77F2BEDBCA09951C0A6602BA37 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8E605650D505777244797FD2083145E6 /* Alamofire.framework */,
+				E7F4AE875269BFC9707E1554F2C2B53C /* Cache.framework */,
+				6B71EEA5A80FDB0CE2558B4996ADA518 /* FirebaseCore.framework */,
+				7E562DAD613DA0444532B6CCC1086B0C /* GoogleUtilities.framework */,
+				231616CAAD0B62B57C847030F27DC8AA /* IQKeyboardManagerSwift.framework */,
+				4EC56B7254AD9087CF0B1E7DB43E08FD /* Kanna.framework */,
+				366064FD4A9882971C0F2C00FE0FEFD3 /* KeychainAccess.framework */,
+				E93AE650A10ECAE4FB156576F86D01D8 /* Kingfisher.framework */,
+				25265C9051DE5E0665F4EA7163DCFF7D /* LayoutKit.framework */,
+				00C114AF1A506FC1255EEF42D4E548D1 /* Lottie.framework */,
+				FA91100B15919433CB7C4346890871B8 /* nanopb.framework */,
+				C2182B54D49AB9A004D30F5457DBE962 /* NextGrowingTextView.framework */,
+				D8B743E5DA0EE2998B1CB789EFA9B913 /* Pods_FSPO.framework */,
+				E0780970B9BC05F5313A2440356280DA /* Pods_TodaySchedule.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		5771F0F257EC421F413EEFFAFFF850B8 /* Cache */ = {
@@ -1518,6 +1486,23 @@
 			path = GoogleUtilities;
 			sourceTree = "<group>";
 		};
+		6B5CF91B7C9149CA8B5755D9D69539A6 /* Pods-TodaySchedule */ = {
+			isa = PBXGroup;
+			children = (
+				1B763ED1210C3F24BD486BD940468EF8 /* Info.plist */,
+				8D5FAC7A7C8B29B36F5C1E6D3D66CFE1 /* Pods-TodaySchedule.modulemap */,
+				CFBE8C04E75FE766241284B1E86E8A95 /* Pods-TodaySchedule-acknowledgements.markdown */,
+				1FACBA5F2A1759B3D06E2C39E9EC08CB /* Pods-TodaySchedule-acknowledgements.plist */,
+				08ACC09B2C84E3BE5825636C786802D7 /* Pods-TodaySchedule-dummy.m */,
+				193526BE906C66D1D0EBDB11A3F490E1 /* Pods-TodaySchedule-resources.sh */,
+				5D5DB2A7FD887FFB827B278A27793086 /* Pods-TodaySchedule-umbrella.h */,
+				08833CA830CB8AE5DD6BA629CDD7DBAF /* Pods-TodaySchedule.debug.xcconfig */,
+				0AD579FE0737D5BE0F4B04E922CBCCA3 /* Pods-TodaySchedule.release.xcconfig */,
+			);
+			name = "Pods-TodaySchedule";
+			path = "Target Support Files/Pods-TodaySchedule";
+			sourceTree = "<group>";
+		};
 		7491CEB4829C7DAF2350EF8F2ADEC856 /* SwiftLint */ = {
 			isa = PBXGroup;
 			children = (
@@ -1538,23 +1523,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/NextGrowingTextView";
-			sourceTree = "<group>";
-		};
-		752E4E120EEA669878CC6AAB527A5470 /* Pods-TodaySchedule */ = {
-			isa = PBXGroup;
-			children = (
-				9EF3DFCB05500C0EA7C026717E7EFA8A /* Info.plist */,
-				0D87515F2AB22D000C87A855DDF44DE5 /* Pods-TodaySchedule.modulemap */,
-				4F4D48E1C80BE494FFEB63428C1E6CC8 /* Pods-TodaySchedule-acknowledgements.markdown */,
-				3B77ABB7F27DCCB8F580E6FE94613C4A /* Pods-TodaySchedule-acknowledgements.plist */,
-				D45F58F7059525007E331E21F598B2F3 /* Pods-TodaySchedule-dummy.m */,
-				6BA469CBE9ADA1439652104546D6B83E /* Pods-TodaySchedule-resources.sh */,
-				6A06A73AC15239AA333527291182C059 /* Pods-TodaySchedule-umbrella.h */,
-				5F9FEFBAF01971F92A88A660E92E4A12 /* Pods-TodaySchedule.debug.xcconfig */,
-				9362DED2ECF954E9A2E17B6C247A675C /* Pods-TodaySchedule.release.xcconfig */,
-			);
-			name = "Pods-TodaySchedule";
-			path = "Target Support Files/Pods-TodaySchedule";
 			sourceTree = "<group>";
 		};
 		7C057925DDCE356126918FCCB90C2D26 /* Reachability */ = {
@@ -1583,8 +1551,8 @@
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				F4CDA5FA9197A41E0081E84F932906EB /* Frameworks */,
 				636BEDBF646182C8D065C47551AD6768 /* Pods */,
-				28C7AAD81D60060A315E84B12BF96B7B /* Products */,
-				D661FDB42585B00A38561F3F0CBC7A9E /* Targets Support Files */,
+				56F43C77F2BEDBCA09951C0A6602BA37 /* Products */,
+				1166015227804A068A9BED00A3BF3922 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1628,24 +1596,6 @@
 				54C3C27F56B4D69F1C51BB82CA26A819 /* GULLoggerCodes.h */,
 			);
 			name = AppDelegateSwizzler;
-			sourceTree = "<group>";
-		};
-		904BEADE5272DB760F00CCECB69A8C76 /* Pods-FSPO */ = {
-			isa = PBXGroup;
-			children = (
-				766364D44493FEDB6E54C6BF722671DD /* Info.plist */,
-				1546BA2ED53DA7B2CE95AA69A71CBA73 /* Pods-FSPO.modulemap */,
-				7A5637ED43DA91B47C6670FA0FA879E3 /* Pods-FSPO-acknowledgements.markdown */,
-				74414A6A97F83E2F4EECF478698FF634 /* Pods-FSPO-acknowledgements.plist */,
-				14044FFA0265C1999B4B5BAF0F24D0EC /* Pods-FSPO-dummy.m */,
-				B9E8C0F4A2E72FE1CB116ACC2D3AF056 /* Pods-FSPO-frameworks.sh */,
-				84175B6AFB676FB32A941B3A257D4E45 /* Pods-FSPO-resources.sh */,
-				910E0352B664C471DDA236983A4A6347 /* Pods-FSPO-umbrella.h */,
-				9AFEB6F328C842A0E8D1D966695635DA /* Pods-FSPO.debug.xcconfig */,
-				AB4D1FB8121BBE2E1C518AE9F95169C5 /* Pods-FSPO.release.xcconfig */,
-			);
-			name = "Pods-FSPO";
-			path = "Target Support Files/Pods-FSPO";
 			sourceTree = "<group>";
 		};
 		914DCE5F9C026A6881F5EEB046C6CB87 /* Support Files */ = {
@@ -1893,6 +1843,24 @@
 			name = Network;
 			sourceTree = "<group>";
 		};
+		CB7E0C53829B8572E7E60F07CE362FC9 /* Pods-FSPO */ = {
+			isa = PBXGroup;
+			children = (
+				30F5121B9B33A4C891B5AD60BAEA3CB0 /* Info.plist */,
+				9015EB8FCA4C1712134EB2881B3CB214 /* Pods-FSPO.modulemap */,
+				337311B0940A75B173E5190BF3E1AEE1 /* Pods-FSPO-acknowledgements.markdown */,
+				11F5531A98F9CC3002F9A27FA85BBE24 /* Pods-FSPO-acknowledgements.plist */,
+				4CDE805CD949F3B0BBEC4DC04960CA9C /* Pods-FSPO-dummy.m */,
+				BD96B84FB000598B3F4720F1CB341FA3 /* Pods-FSPO-frameworks.sh */,
+				BC702DA40C8B459AE1265829DEE6504F /* Pods-FSPO-resources.sh */,
+				45604E0B13C33DC3D0540FB70D7C6DBB /* Pods-FSPO-umbrella.h */,
+				883170C606C896727B7DA9FDDA107A8D /* Pods-FSPO.debug.xcconfig */,
+				F47D204EB974A2AC6E0D5B6E2CD7CA14 /* Pods-FSPO.release.xcconfig */,
+			);
+			name = "Pods-FSPO";
+			path = "Target Support Files/Pods-FSPO";
+			sourceTree = "<group>";
+		};
 		D2EDFFAEEC3AD3CD026888D25E971EA1 /* NextGrowingTextView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1902,16 +1870,6 @@
 			);
 			name = NextGrowingTextView;
 			path = NextGrowingTextView;
-			sourceTree = "<group>";
-		};
-		D661FDB42585B00A38561F3F0CBC7A9E /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				904BEADE5272DB760F00CCECB69A8C76 /* Pods-FSPO */,
-				752E4E120EEA669878CC6AAB527A5470 /* Pods-TodaySchedule */,
-				E4B06A55CE80FB20E9795535324FF7C0 /* Pods-TommorowSchedule */,
-			);
-			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		D7BFFEEB921E0B5ECF74224790EFFDE9 /* Kanna */ = {
@@ -1961,23 +1919,6 @@
 				11B3D1186B91D64DC6CAC816F2E4D9A0 /* MeasurementNanoPB.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E4B06A55CE80FB20E9795535324FF7C0 /* Pods-TommorowSchedule */ = {
-			isa = PBXGroup;
-			children = (
-				F82DB4FED2D6236DBFE0042998100AD4 /* Info.plist */,
-				BDC77CE9E51B3BF74D5A88696F578A5F /* Pods-TommorowSchedule.modulemap */,
-				F43D35AE44E8EEA1D7D640C7517A48F3 /* Pods-TommorowSchedule-acknowledgements.markdown */,
-				3E28B8F5EFC91806EBF8BFFE08C2530F /* Pods-TommorowSchedule-acknowledgements.plist */,
-				2099E50444DAE75901DBD999D3AF4F9C /* Pods-TommorowSchedule-dummy.m */,
-				4CD498411E835F1EC5A632E5A0FF2E29 /* Pods-TommorowSchedule-resources.sh */,
-				DFB42D129618E04682A9384068041A1B /* Pods-TommorowSchedule-umbrella.h */,
-				3F9619BA53513779FCAEA8F25DC00633 /* Pods-TommorowSchedule.debug.xcconfig */,
-				157F1F6736B9DCFA60B2770362B7D0E7 /* Pods-TommorowSchedule.release.xcconfig */,
-			);
-			name = "Pods-TommorowSchedule";
-			path = "Target Support Files/Pods-TommorowSchedule";
 			sourceTree = "<group>";
 		};
 		E815BD213D10EEF1D9A11B6F7E1FE100 /* IQKeyboardManagerSwift */ = {
@@ -2090,14 +2031,6 @@
 			files = (
 				958603139AA7BC0E80A2A604523087D3 /* Kanna-umbrella.h in Headers */,
 				5068CB30342CE1B889BC8919C369FDFC /* Kanna.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		03791187DD79B9BB40385D8C7BDCED35 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1AC06FB88B9616799654EAA37E8CEA02 /* Pods-TommorowSchedule-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2335,7 +2268,7 @@
 			);
 			name = Cache;
 			productName = Cache;
-			productReference = 031B87C681D6CB17F87840C6B04DE4EF /* Cache.framework */;
+			productReference = E7F4AE875269BFC9707E1554F2C2B53C /* Cache.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		25622BDCA24151D7C101C916DCD4C64D /* Kanna */ = {
@@ -2352,7 +2285,7 @@
 			);
 			name = Kanna;
 			productName = Kanna;
-			productReference = 43E6B73BE32BC613F5FA626403F396E9 /* Kanna.framework */;
+			productReference = 4EC56B7254AD9087CF0B1E7DB43E08FD /* Kanna.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		380EE29802F0F0E9863341BC159AADB5 /* Pods-TodaySchedule */ = {
@@ -2372,7 +2305,7 @@
 			);
 			name = "Pods-TodaySchedule";
 			productName = "Pods-TodaySchedule";
-			productReference = E7897AD744EC0E38A02F73BE426364B5 /* Pods_TodaySchedule.framework */;
+			productReference = E0780970B9BC05F5313A2440356280DA /* Pods_TodaySchedule.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		409F121502B45429ABAA2BDBB957095B /* NextGrowingTextView */ = {
@@ -2389,7 +2322,7 @@
 			);
 			name = NextGrowingTextView;
 			productName = NextGrowingTextView;
-			productReference = D2535C7897DDD66A44A26EE7F33E240B /* NextGrowingTextView.framework */;
+			productReference = C2182B54D49AB9A004D30F5457DBE962 /* NextGrowingTextView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		46D20134B382A035F41010867787ABAD /* LayoutKit */ = {
@@ -2406,7 +2339,7 @@
 			);
 			name = LayoutKit;
 			productName = LayoutKit;
-			productReference = ECAFF53BA79E285672C16A1CEA952D6E /* LayoutKit.framework */;
+			productReference = 25265C9051DE5E0665F4EA7163DCFF7D /* LayoutKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		4F87037150ABE2C9238B54E8F6E33F36 /* Kingfisher */ = {
@@ -2423,7 +2356,7 @@
 			);
 			name = Kingfisher;
 			productName = Kingfisher;
-			productReference = ADC76AE785D5019FDEFFF89239EB791D /* Kingfisher.framework */;
+			productReference = E93AE650A10ECAE4FB156576F86D01D8 /* Kingfisher.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		68FBB954F8F821E47445D5FE66A66713 /* FirebaseCore */ = {
@@ -2441,27 +2374,7 @@
 			);
 			name = FirebaseCore;
 			productName = FirebaseCore;
-			productReference = 7692551A7A5C784E09A4182FA404015E /* FirebaseCore.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		7D49DFA4586B5E3D1CBD4FE83F930DA5 /* Pods-TommorowSchedule */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BB7C0B5DD9897505BDA6E5D800BC46FC /* Build configuration list for PBXNativeTarget "Pods-TommorowSchedule" */;
-			buildPhases = (
-				82827E6799C9BCA436EFEA7A935B69B2 /* Sources */,
-				76F7CB9EAFB638F922BD13C94E995F06 /* Frameworks */,
-				03791187DD79B9BB40385D8C7BDCED35 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7C21B7F8C1B9787AFD8B29903EB05FB8 /* PBXTargetDependency */,
-				4A46CD4FB49E229D1F47401A24231B54 /* PBXTargetDependency */,
-				84B25FAC7FF4D7A7796EBFEED03A5A51 /* PBXTargetDependency */,
-			);
-			name = "Pods-TommorowSchedule";
-			productName = "Pods-TommorowSchedule";
-			productReference = 522084DB2CF8CDB636C8200377231382 /* Pods_TommorowSchedule.framework */;
+			productReference = 6B71EEA5A80FDB0CE2558B4996ADA518 /* FirebaseCore.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		88E9EC28B8B46C3631E6B242B50F4442 /* Alamofire */ = {
@@ -2478,7 +2391,7 @@
 			);
 			name = Alamofire;
 			productName = Alamofire;
-			productReference = 738E6FF5478C40EA23F657627B97F404 /* Alamofire.framework */;
+			productReference = 8E605650D505777244797FD2083145E6 /* Alamofire.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		8905DB6521F8FDC34752B69DEE3FDEB7 /* KeychainAccess */ = {
@@ -2495,7 +2408,7 @@
 			);
 			name = KeychainAccess;
 			productName = KeychainAccess;
-			productReference = 116F261F71BDF92F5093EBBF6AD7F988 /* KeychainAccess.framework */;
+			productReference = 366064FD4A9882971C0F2C00FE0FEFD3 /* KeychainAccess.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		8EEA87EC20A241510DE48460AC208D2F /* lottie-ios */ = {
@@ -2512,7 +2425,7 @@
 			);
 			name = "lottie-ios";
 			productName = "lottie-ios";
-			productReference = 782EA9DA38F2C0C69F88299F981DD4F8 /* Lottie.framework */;
+			productReference = 00C114AF1A506FC1255EEF42D4E548D1 /* Lottie.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		974F557990D12226DB9656EC0F7713B6 /* Pods-FSPO */ = {
@@ -2541,7 +2454,7 @@
 			);
 			name = "Pods-FSPO";
 			productName = "Pods-FSPO";
-			productReference = C7F1901D68D7EF13869EE3A514EDDB38 /* Pods_FSPO.framework */;
+			productReference = D8B743E5DA0EE2998B1CB789EFA9B913 /* Pods_FSPO.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		C235F77E101E742652CCF98FFDFA5182 /* IQKeyboardManagerSwift */ = {
@@ -2559,7 +2472,7 @@
 			);
 			name = IQKeyboardManagerSwift;
 			productName = IQKeyboardManagerSwift;
-			productReference = 008F47822A6B50180D52EF1303D40AC8 /* IQKeyboardManagerSwift.framework */;
+			productReference = 231616CAAD0B62B57C847030F27DC8AA /* IQKeyboardManagerSwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		E4DD95323C54A78F879DAB0F1508B8E7 /* nanopb */ = {
@@ -2576,7 +2489,7 @@
 			);
 			name = nanopb;
 			productName = nanopb;
-			productReference = EBDAF41C34AF82F84C34E8AC077E74E9 /* nanopb.framework */;
+			productReference = FA91100B15919433CB7C4346890871B8 /* nanopb.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		EF9C1C66EC3371988D38D8C9FC027AD7 /* GoogleUtilities */ = {
@@ -2593,7 +2506,7 @@
 			);
 			name = GoogleUtilities;
 			productName = GoogleUtilities;
-			productReference = 666312B4113BAD99E735282B01BA93EE /* GoogleUtilities.framework */;
+			productReference = 7E562DAD613DA0444532B6CCC1086B0C /* GoogleUtilities.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -2613,7 +2526,7 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 28C7AAD81D60060A315E84B12BF96B7B /* Products */;
+			productRefGroup = 56F43C77F2BEDBCA09951C0A6602BA37 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -2631,7 +2544,6 @@
 				409F121502B45429ABAA2BDBB957095B /* NextGrowingTextView */,
 				974F557990D12226DB9656EC0F7713B6 /* Pods-FSPO */,
 				380EE29802F0F0E9863341BC159AADB5 /* Pods-TodaySchedule */,
-				7D49DFA4586B5E3D1CBD4FE83F930DA5 /* Pods-TommorowSchedule */,
 			);
 		};
 /* End PBXProject section */
@@ -2809,14 +2721,6 @@
 				3EDA7575644614ACD562D23759D18DE8 /* IQUIView+Hierarchy.swift in Sources */,
 				3285188513F859E100A7BBE29B36599D /* IQUIView+IQKeyboardToolbar.swift in Sources */,
 				7FE321828ECA1D78CCF8A2892A30438B /* IQUIViewController+Additions.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		82827E6799C9BCA436EFEA7A935B69B2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4E01A55E050257FDE29C17F8D2BCEEE7 /* Pods-TommorowSchedule-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3012,12 +2916,6 @@
 			target = EF9C1C66EC3371988D38D8C9FC027AD7 /* GoogleUtilities */;
 			targetProxy = A037AB36B67E020F818B465AEEF8B9E4 /* PBXContainerItemProxy */;
 		};
-		4A46CD4FB49E229D1F47401A24231B54 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Cache;
-			target = 12D98225D819CF4F0A4DF48700C10D43 /* Cache */;
-			targetProxy = 6814F1F36214364BC44A855745D9A92B /* PBXContainerItemProxy */;
-		};
 		53DCB0E81F5B2B7C8FA9784134E47EAF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Kanna;
@@ -3042,23 +2940,11 @@
 			target = E4DD95323C54A78F879DAB0F1508B8E7 /* nanopb */;
 			targetProxy = E51F32512DB9B8DB3ABB83614325264C /* PBXContainerItemProxy */;
 		};
-		7C21B7F8C1B9787AFD8B29903EB05FB8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			target = 88E9EC28B8B46C3631E6B242B50F4442 /* Alamofire */;
-			targetProxy = A78DD5D95A35924626BD2AD6D79FCC62 /* PBXContainerItemProxy */;
-		};
 		814C581D8397A8F3F0641FD8CEE36E2E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FirebaseCore;
 			target = 68FBB954F8F821E47445D5FE66A66713 /* FirebaseCore */;
 			targetProxy = F6CEB7C1EB3D55C3CAF1834CE9289FC7 /* PBXContainerItemProxy */;
-		};
-		84B25FAC7FF4D7A7796EBFEED03A5A51 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = LayoutKit;
-			target = 46D20134B382A035F41010867787ABAD /* LayoutKit */;
-			targetProxy = 0830B32E2FCA5F145FF034940DE18288 /* PBXContainerItemProxy */;
 		};
 		8799CFECD82BDC030F28D65646D810D4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3140,7 +3026,7 @@
 		};
 		07DB5642EF7F97E32E90A7F45D6CB96D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F9FEFBAF01971F92A88A660E92E4A12 /* Pods-TodaySchedule.debug.xcconfig */;
+			baseConfigurationReference = 08833CA830CB8AE5DD6BA629CDD7DBAF /* Pods-TodaySchedule.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				APPLICATION_EXTENSION_API_ONLY = YES;
@@ -3240,7 +3126,7 @@
 		};
 		1383E653E8BAB87AE7763AE5D9D44B9B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9AFEB6F328C842A0E8D1D966695635DA /* Pods-FSPO.debug.xcconfig */;
+			baseConfigurationReference = 883170C606C896727B7DA9FDDA107A8D /* Pods-FSPO.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -3465,81 +3351,9 @@
 			};
 			name = Debug;
 		};
-		51F4DB0550975AA9E384342E5040FB79 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 157F1F6736B9DCFA60B2770362B7D0E7 /* Pods-TommorowSchedule.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TommorowSchedule/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TommorowSchedule/Pods-TommorowSchedule.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		687E356B9DB9BA0B9F7026FB80F7D908 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3F9619BA53513779FCAEA8F25DC00633 /* Pods-TommorowSchedule.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TommorowSchedule/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TommorowSchedule/Pods-TommorowSchedule.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		6B084F1E714EB107EEF2D4C919C87386 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9362DED2ECF954E9A2E17B6C247A675C /* Pods-TodaySchedule.release.xcconfig */;
+			baseConfigurationReference = 0AD579FE0737D5BE0F4B04E922CBCCA3 /* Pods-TodaySchedule.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				APPLICATION_EXTENSION_API_ONLY = YES;
@@ -3606,7 +3420,7 @@
 		};
 		7CC2761D275EC3DC06B19F27348744AF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB4D1FB8121BBE2E1C518AE9F95169C5 /* Pods-FSPO.release.xcconfig */;
+			baseConfigurationReference = F47D204EB974A2AC6E0D5B6E2CD7CA14 /* Pods-FSPO.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -4287,15 +4101,6 @@
 			buildConfigurations = (
 				A9E26F4D0BA9708A07BF1A0136E8CDD6 /* Debug */,
 				80140B1EEC203F51D2378885C5117919 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BB7C0B5DD9897505BDA6E5D800BC46FC /* Build configuration list for PBXNativeTarget "Pods-TommorowSchedule" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				687E356B9DB9BA0B9F7026FB80F7D908 /* Debug */,
-				51F4DB0550975AA9E384342E5040FB79 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

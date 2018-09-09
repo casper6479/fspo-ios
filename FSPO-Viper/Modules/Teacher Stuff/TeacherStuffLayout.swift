@@ -30,19 +30,25 @@ final class TeacherStuffLayout: InsetLayout<View> {
             width: journalTitle.width(withConstrainedHeight: 17, font: font) + 30,
             height: 40,
             alignment: .center)
-        let studentsListButton = Button().createButton(
+        let studentsListButton = Button().createUnactiveButton(
             title: studentsListTitle,
             width: studentsListTitle.width(withConstrainedHeight: 17, font: font) + 30,
             height: 40,
+            alignment: .center)
+        let whatButton = Button().createButton(
+            title: "?",
+            width: 40,
+            height: 40,
             alignment: .center,
             target: TeacherStuffViewController(),
-            action: #selector(TeacherStuffViewController().studentsListUpInside))
-        let spacing = (Constants.safeHeight - 160 - 128) / 3
+            action: #selector(TeacherStuffViewController().whatUpInside))
+        let sublayouts = [createButton, pastLessonsButton, journalButton, studentsListButton, whatButton]
+        let spacing = (Constants.safeHeight - 160 - 128) / CGFloat(sublayouts.count - 1)
         let buttonsStack = StackLayout(
             axis: .vertical,
             spacing: spacing,
             alignment: .center,
-            sublayouts: [createButton, pastLessonsButton, journalButton, studentsListButton])
+            sublayouts: sublayouts)
         let sizeLayout = SizeLayout(
             size: CGSize(width: UIScreen.main.bounds.width, height: Constants.safeHeight),
             sublayout: buttonsStack)

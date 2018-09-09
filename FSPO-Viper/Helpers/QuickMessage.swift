@@ -19,7 +19,7 @@ func showMessage(message: String, y: CGFloat) {
     toastLabel.font = UIFont(name: "ALSSchlangesans-Bold", size: 12.0)
     toastLabel.text = message
     toastLabel.alpha = 1.0
-    toastLabel.layer.cornerRadius = toastLabel.frame.height / 2
+    toastLabel.layer.cornerRadius = 14
     toastLabel.clipsToBounds  =  true
     UIApplication.shared.keyWindow?.addSubview(toastLabel)
     UIView.animate(withDuration: 4.0, delay: 1, options: .curveEaseOut, animations: {

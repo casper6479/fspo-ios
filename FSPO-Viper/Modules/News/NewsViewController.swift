@@ -9,7 +9,7 @@
 import UIKit
 import LayoutKit
 import Cache
-import IO
+
 class NewsViewController: UIViewController, NewsViewProtocol {
 
     var dataSource = [JSONDecoding.NewsApi.News]()
@@ -36,6 +36,7 @@ class NewsViewController: UIViewController, NewsViewProtocol {
     }
 	override func viewDidLoad() {
         super.viewDidLoad()
+        StoreReviewHelper.checkAndAskForReview()
         self.extendedLayoutIncludesOpaqueBars = true
         storage?.async.object(forKey: "news", completion: { result in
             switch result {

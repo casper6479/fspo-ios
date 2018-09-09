@@ -26,11 +26,6 @@ target 'TodaySchedule' do
 	pod 'LayoutKit'
 	pod 'Cache'
 end
-target 'TommorowSchedule' do
-	pod 'Alamofire'
-	pod 'LayoutKit'
-	pod 'Cache'
-end
 
 post_install do |installer|
     podsTargets = installer.pods_project.targets.find_all { |target| target.name.start_with?('Pods') }

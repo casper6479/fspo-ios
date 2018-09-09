@@ -20,15 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var biometricView: UIView!
     let authContex = LAContext()
-
+    var defaults = UserDefaults(suiteName: "group.com.fspo.app")
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // TODO:
-        UserDefaults.standard.set("teacher", forKey: "role")
+
+        StoreReviewHelper.incrementAppOpenedCount()
+
         FirebaseApp.configure()
 
         ScheduleStorage().setExludedFromBackup()
 
-        clearSessionOnce()
+//        clearSessionOnce()
 
         UIApplication.shared.statusBarStyle = .lightContent
 
@@ -40,6 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 window?.rootViewController = UITabBarController().buildStudentsTabBar()
             }
             if UserDefaults.standard.string(forKey: "role") == "teacher" {
+                if defaults?.integer(forKey: "user_id") == 0 {
+                    defaults?.set(UserDefaults.standard.integer(forKey: "user_id"), forKey: "user_id")
+                }
                 window?.rootViewController = UITabBarController().buildTeachersTabBar()
             }
             if UserDefaults.standard.string(forKey: "role") == "parent" {
@@ -92,9 +96,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     func clearSessionOnce() {
-        if !UserDefaults.standard.bool(forKey: "didLogOut1") {
+        if !UserDefaults.standard.bool(forKey: "logout1.0.2") {
             SettingsViewController().logOut()
-            UserDefaults.standard.set(true, forKey: "didLogOut1")
+            UserDefaults.standard.set(true, forKey: "logout1.0.2")
         }
     }
     func showGuard(window: UIWindow) {

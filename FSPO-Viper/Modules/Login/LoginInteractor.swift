@@ -112,6 +112,7 @@ class LoginInteractor: LoginInteractorProtocol {
                 let res = try JSONDecoder().decode(JSONDecoding.AuthApi.self, from: result!)
                 keychain["token"] = res.token
                 UserDefaults.standard.set(res.user_id, forKey: "user_id")
+                self.defaults?.set(res.user_id, forKey: "user_id")
                 self.userId = res.user_id
                 self.token = res.token
                 Crashlytics.sharedInstance().setUserIdentifier("\(res.user_id)")

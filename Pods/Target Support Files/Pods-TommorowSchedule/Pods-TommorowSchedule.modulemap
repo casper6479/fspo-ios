@@ -1,6 +1,0 @@
-framework module Pods_TommorowSchedule {
-  umbrella header "Pods-TommorowSchedule-umbrella.h"
-
-  export *
-  module * { export * }
-}

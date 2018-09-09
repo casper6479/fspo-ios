@@ -22,7 +22,6 @@ class SearchPresenter: SearchPresenterProtocol {
     func updateView(query: String) {
         interactor?.fetchSearch(query: query)
     }
-    
     func searchFetched(data: JSONDecoding.SearchAPI) {
         view?.showNewRows(source: data)
     }
