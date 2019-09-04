@@ -180,7 +180,7 @@ class DialogViewController: UIViewController, DialogViewProtocol, UITextViewDele
         return layouts
     }
     private func reloadTableView(width: CGFloat, synchronous: Bool, data: JSONDecoding.DialogsApi) {
-        reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
+        reloadableViewLayoutAdapter.reload(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
             return [Section(header: nil, items: self?.getNewRows(data: data) ?? [], footer: nil)]}, completion: {
                 let lastRowIndex = self.tableView.numberOfRows(inSection: 0) - 1
                 let pathToLastRow = IndexPath(row: lastRowIndex, section: 0)

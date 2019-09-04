@@ -161,7 +161,7 @@ class MessagesViewController: UIViewController, MessagesViewProtocol {
         return searchController.isActive && !searchBarIsEmpty()
     }
     private func reloadTableView(width: CGFloat, synchronous: Bool, data: JSONDecoding.MessagesApi) {
-        reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
+        reloadableViewLayoutAdapter.reload(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
             return [Section(header: nil, items: self?.getNewRows(data: data) ?? [], footer: nil)]
             }, completion: {
                 self.refreshControl.endRefreshing()

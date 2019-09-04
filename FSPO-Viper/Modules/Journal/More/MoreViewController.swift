@@ -71,7 +71,7 @@ final class MoreViewController: UIViewController, MoreViewProtocol {
         return layouts
     }
     private func reloadTableView(width: CGFloat, synchronous: Bool) {
-        reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
+        reloadableViewLayoutAdapter.reload(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
             return [Section(header: self?.getHeader(lesson: "\(self?.dataSource?.lessons_now.semester ?? 0) \(NSLocalizedString("семестр", comment: ""))"), items: self?.getNowRows(first: true) ?? [], footer: nil), Section(header: self?.getHeader(lesson: "\(self?.dataSource?.lessons_before.semester ?? 0) \(NSLocalizedString("семестр", comment: ""))"), items: self?.getNowRows(first: false) ?? [], footer: nil)]
         })
     }

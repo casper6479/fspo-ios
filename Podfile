@@ -1,5 +1,7 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '9.0'
+plugin 'cocoapods-binary'
+all_binary!
 use_frameworks!
 
 def pods
@@ -35,6 +37,13 @@ post_install do |installer|
                 if configuration.name.include?("Debug") then
                     configuration.build_settings['ONLY_ACTIVE_ARCH'] = 'YES'
                 end
+            end
+        end
+    end
+    installer.pods_project.targets.each do |target|
+            if target.name == 'LayoutKit'
+                target.build_configurations.each do |config|
+                    config.build_settings['SWIFT_VERSION'] = '4.0'
             end
         end
     end

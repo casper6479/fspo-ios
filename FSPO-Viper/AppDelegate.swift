@@ -15,13 +15,6 @@ import Crashlytics
 import Kingfisher
 import Firebase
 
-class RemoteCfg {
-    static var isISUApi = true
-    static var ISULogin = "ifmo01"
-    static var ISUPassword = "01ifmo04"
-    static var ISUModule = "schedule_lessons"
-}
-
 var remoteConfig: RemoteConfig!//c78bf5636f9cf36763b511184c572e8f9341cb08
 var remoteDict: [String: NSObject] = ["app_key": "b13f556af4ed3da2f8d484a617fee76d78be1166" as NSString,
                                       "remote_message": "none" as NSString,
@@ -48,8 +41,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         remoteConfig = RemoteConfig.remoteConfig()
         remoteConfig.setDefaults(remoteDict)
         Constants.AppKey = remoteConfig.configValue(forKey: "app_key").stringValue!
+        RemoteCfg.isISUApi = remoteConfig.configValue(forKey: "isISUApi").boolValue
+        RemoteCfg.ISULogin = remoteConfig.configValue(forKey: "ISULogin").stringValue!
+        RemoteCfg.ISUPassword = remoteConfig.configValue(forKey: "ISUPassword").stringValue!
+        RemoteCfg.ISUModule = remoteConfig.configValue(forKey: "ISUModule").stringValue!
+        defaults?.set(RemoteCfg.isISUApi, forKey: "isISUApi")
+        defaults?.set(RemoteCfg.ISULogin, forKey: "ISULogin")
+        defaults?.set(RemoteCfg.ISUPassword, forKey: "ISUPassword")
+        defaults?.set(RemoteCfg.ISUModule, forKey: "ISUModule")
         print(Constants.AppKey)
-        remoteConfig.fetch(withExpirationDuration: 60*30) { (status, error) in
+        remoteConfig.fetch(withExpirationDuration: 60*30) { [unowned self] (status, error) in
             if status == .success {
                 print("Config fetched!")
                 remoteConfig.activateFetched()
@@ -58,6 +59,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 RemoteCfg.ISULogin = remoteConfig.configValue(forKey: "ISULogin").stringValue!
                 RemoteCfg.ISUPassword = remoteConfig.configValue(forKey: "ISUPassword").stringValue!
                 RemoteCfg.ISUModule = remoteConfig.configValue(forKey: "ISUModule").stringValue!
+                self.defaults?.set(RemoteCfg.isISUApi, forKey: "isISUApi")
+                self.defaults?.set(RemoteCfg.ISULogin, forKey: "ISULogin")
+                self.defaults?.set(RemoteCfg.ISUPassword, forKey: "ISUPassword")
+                self.defaults?.set(RemoteCfg.ISUModule, forKey: "ISUModule")
             } else {
                 print("Config not fetched")
                 print("Error: \(error?.localizedDescription ?? "No error available.")")

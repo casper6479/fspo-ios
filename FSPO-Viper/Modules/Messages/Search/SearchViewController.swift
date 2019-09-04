@@ -34,7 +34,7 @@ class SearchViewController: UIViewController, SearchViewProtocol, UISearchResult
     private var reloadableViewLayoutAdapter: ReloadableViewLayoutAdapter!
     private var tableView: UITableView!
     let searchController = UISearchController(searchResultsController: nil)
-    let emptyView = LOTAnimationView(name: "empty")
+    let emptyView = AnimationView(name: "empty")
 	override func viewDidLoad() {
         super.viewDidLoad()
         title = NSLocalizedString("Поиск", comment: "")
@@ -49,7 +49,7 @@ class SearchViewController: UIViewController, SearchViewProtocol, UISearchResult
         view.addSubview(tableView)
         emptyView.frame = tableView.bounds
         emptyView.frame.origin.y -= 90
-        emptyView.loopAnimation = true
+        emptyView.loopMode = .loop
         let emptyText = UILabel(frame: CGRect(x: 8, y: emptyView.frame.height / 4, width: view.bounds.width - 16, height: 20))
         emptyText.frame.origin.y += 20
         emptyText.text = NSLocalizedString("Не найдено", comment: "")
@@ -163,7 +163,7 @@ class SearchViewController: UIViewController, SearchViewProtocol, UISearchResult
         return sections
     }
     private func reloadTableView(width: CGFloat, synchronous: Bool, data: JSONDecoding.SearchAPI) {
-        reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
+        reloadableViewLayoutAdapter.reload(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
             return self!.getNewRows(data: data)
             })
     }

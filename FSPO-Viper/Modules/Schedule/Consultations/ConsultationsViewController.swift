@@ -42,7 +42,7 @@ class ConsultationsViewController: UIViewController, ConsultationsViewProtocol {
         return layouts
     }
     private func reloadTableView(width: CGFloat, synchronous: Bool, data: [[String: Any]]) {
-        reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
+        reloadableViewLayoutAdapter.reload(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
             return [Section(header: nil, items: self?.getNewsRows(data: data) ?? [], footer: nil)]
         })
     }

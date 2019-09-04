@@ -8,14 +8,14 @@
 
 import UIKit
 import Alamofire
-import Kanna
+//import Kanna
 
 class ConsultationsInteractor: ConsultationsInteractorProtocol {
 
     weak var presenter: ConsultationsPresenterProtocol?
 
     func fetchConsultations() {
-        var dataSource = [[String: Any]]()
+        /*var dataSource = [[String: Any]]()
         Alamofire.request(Constants.ConsultationsURL)
             .responseString { response in
                 let html = response.result.value
@@ -70,6 +70,6 @@ class ConsultationsInteractor: ConsultationsInteractorProtocol {
                         self.presenter?.consultationsFetched(data: dataSource)
                     }
                 }
-        }
+        }*/
     }
 }

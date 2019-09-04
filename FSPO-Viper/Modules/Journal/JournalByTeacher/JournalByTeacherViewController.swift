@@ -60,7 +60,7 @@ class JournalByTeacherViewController: UIViewController, JournalByTeacherViewProt
                 items: self.getNewRows(data: item),
                 footer: nil))
         }
-        reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: { () in
+        reloadableViewLayoutAdapter.reload(width: width, synchronous: synchronous, layoutProvider: { () in
             return dataSource
         })
     }

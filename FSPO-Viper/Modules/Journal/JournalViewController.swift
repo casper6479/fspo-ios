@@ -447,11 +447,11 @@ class TipNode: ASCellNode {
         }
     }
     func setupGradientAnimation() {
-        self.gradientAnimation = LOTAnimationView(name: "gradient")
+        self.gradientAnimation = AnimationView(name: "gradient")
         self.gradientAnimation.frame = self.gradient.bounds
         self.gradientAnimation.contentMode = .center
         self.gradientAnimation.play()
-        self.gradientAnimation.loopAnimation = true
+        self.gradientAnimation.loopMode = .loop
         self.gradientAnimation.layer.cornerRadius = 15
         self.gradientNode.view.addSubview(self.gradientAnimation)
         let bestStats = BestStats(gradientNode: self.gradientNode)
@@ -489,8 +489,8 @@ class TipNode: ASCellNode {
         self.addSubnode(lowPresence)
     }
     var gradientNode = ASDisplayNode()
-    var gradientAnimation: LOTAnimationView!
-    var trophyAnimation: LOTAnimationView!
+    var gradientAnimation: AnimationView!
+    var trophyAnimation: AnimationView!
     var gradient = CAGradientLayer()
     var type: CellType
     public init(type: CellType, textValue: String = "") {

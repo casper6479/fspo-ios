@@ -1,4 +1,1 @@
-module Firebase {
-  export *
-  header "Firebase.h"
-}
+../../../_Prebuild/GeneratedFrameworks/Firebase/CoreOnly/Sources/module.modulemap

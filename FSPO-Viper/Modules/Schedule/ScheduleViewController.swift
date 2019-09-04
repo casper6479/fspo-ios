@@ -81,7 +81,7 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollVi
     private var scheduleByGroupsLayoutAdapter: ReloadableViewLayoutAdapter?
     private var teachersListLayoutAdapter: ReloadableViewLayoutAdapter?
     func playSwipeAnim() {
-        let anim = LOTAnimationView(name: "swipe")
+        let anim = AnimationView(name: "swipe")
         anim.isUserInteractionEnabled = false
         anim.frame = view.bounds
         anim.contentMode = .scaleAspectFit
@@ -91,7 +91,7 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollVi
             UserDefaults.standard.set(true, forKey: "swipeAnimSeen")
         }
     }
-    let pageControlAnimation = LOTAnimationView(name: "pagecontrol")
+    let pageControlAnimation = AnimationView(name: "pagecontrol")
 	override func viewDidLoad() {
         super.viewDidLoad()
         if withMy {
@@ -123,9 +123,12 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollVi
         view.addSubview(pageBack)
         pageControlAnimation.frame = CGRect(x: -50 - 19, y: 0, width: 200, height: 20)
         if !withMy {
-            let keypath = LOTKeypath(string: "Shape Layer 2.Shape 3.Fill 1.Color")
-            let clearColorValue = LOTColorValueCallback(color: UIColor.clear.cgColor)
-            pageControlAnimation.setValueDelegate(clearColorValue, for: keypath)
+            let fillKeypath = AnimationKeypath(keypath: "Shape Layer 2.Shape 3.Fill 1.Color")
+            let clearColorValue = ColorValueProvider(Color(r: 1, g: 1, b: 1, a: 0))
+            pageControlAnimation.setValueProvider(clearColorValue, keypath: fillKeypath)
+//            let keypath = KeyPath(string: "Shape Layer 2.Shape 3.Fill 1.Color")
+//            let clearColorValue = ColorValueCallback(color: UIColor.clear.cgColor)
+//            pageControlAnimation.setValueDelegate(clearColorValue, for: keypath)
             pageControlAnimation.frame = CGRect(x: -50 - 13, y: 0, width: 200, height: 20)
         }
         pageBack.addSubview(pageControlAnimation)
@@ -171,7 +174,8 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollVi
         easteregg.text = "🥴"
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        pageControlAnimation.animationProgress = scrollView.contentOffset.x / 3 / 100 / 3 * 1.33
+        
+        pageControlAnimation.currentProgress = scrollView.contentOffset.x / 3 / 100 / 3 * 1.33
         if scrollView.contentOffset.x == 0 {
             currentPage = 0
         } else if scrollView.contentOffset.x == view.bounds.width {
@@ -191,11 +195,11 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollVi
                 }
             }
         }
-        if pageControlAnimation.animationProgress == 0 || pageControlAnimation.animationProgress < 0 {
-            pageControlAnimation.animationProgress = 0.01
+        if pageControlAnimation.currentProgress == 0 || pageControlAnimation.currentProgress < 0 {
+            pageControlAnimation.currentProgress = 0.01
         }
-        if pageControlAnimation.animationProgress > 1 {
-            pageControlAnimation.animationProgress = 1
+        if pageControlAnimation.currentProgress > 1 {
+            pageControlAnimation.currentProgress = 1
         }
     }
     @objc func segmentChanged(sender: UISegmentedControl) {
@@ -225,7 +229,7 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollVi
         return layouts
     }
     private func reloadTableView(width: CGFloat, synchronous: Bool, layoutAdapter: ReloadableViewLayoutAdapter, ds: [Section<[Layout]>]) {
-        layoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: {
+        layoutAdapter.reload(width: width, synchronous: synchronous, layoutProvider: {
             return ds
         }, completion: {
             if layoutAdapter == self.studentScheduleLayoutAdapter {

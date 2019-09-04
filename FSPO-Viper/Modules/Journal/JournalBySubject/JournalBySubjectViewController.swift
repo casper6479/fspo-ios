@@ -58,7 +58,7 @@ class JournalBySubjectViewController: UIViewController, JournalBySubjectViewProt
         return layouts
     }
     private func reloadTableView(width: CGFloat, synchronous: Bool) {
-        reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
+        reloadableViewLayoutAdapter.reload(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
             return [Section(header: nil, items: self?.getNewRows() ?? [], footer: nil)]
         })
     }

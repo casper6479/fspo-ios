@@ -83,7 +83,7 @@ class NewsViewController: UIViewController, NewsViewProtocol {
 //        NavigationBarBlurer().updateImageWithGradient(navigationController: navigationController!)
 //    }
     func reloadTableView(width: CGFloat, synchronous: Bool) {
-        reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
+        reloadableViewLayoutAdapter.reload(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
             return [Section(
                 header: nil,
                 items: self?.getNewsRows() ?? [],

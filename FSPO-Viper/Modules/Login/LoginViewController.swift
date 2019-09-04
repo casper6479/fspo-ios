@@ -13,7 +13,7 @@ import Lottie
 class LoginViewController: UIViewController, LoginViewProtocol, CAAnimationDelegate {
 	var presenter: LoginPresenterProtocol?
     var defaultButtonState: CGRect!
-    let loaderAnimation = LOTAnimationView(name: "loginloader")
+    let loaderAnimation = AnimationView(name: "loginloader")
     override func viewDidLoad() {
         super.viewDidLoad()
         loaderOrigin = self.view.bounds.width / 2 - buttonWidth / 2
@@ -45,7 +45,7 @@ class LoginViewController: UIViewController, LoginViewProtocol, CAAnimationDeleg
                 LoginLayout.loginButton.backgroundColor = .white
                 self.loaderAnimation.frame = LoginLayout.loginButton.frame
                 self.view.addSubview(self.loaderAnimation)
-                self.loaderAnimation.loopAnimation = true
+                self.loaderAnimation.loopMode = .loop
                 self.loaderAnimation.play()
             }
         })
@@ -80,7 +80,7 @@ class LoginViewController: UIViewController, LoginViewProtocol, CAAnimationDeleg
             })
         } else {
             loaderAnimation.pause()
-            loaderAnimation.loopAnimation = false
+            loaderAnimation.loopMode = .playOnce
             loaderAnimation.play(toProgress: 1) { _ in
                 self.loaderAnimation.removeFromSuperview()
                 self.loaderAnimation.stop()
@@ -104,7 +104,7 @@ class LoginViewController: UIViewController, LoginViewProtocol, CAAnimationDeleg
             })
         } else {
             loaderAnimation.pause()
-            loaderAnimation.loopAnimation = false
+            loaderAnimation.loopMode = .playOnce
             loaderAnimation.play(toProgress: 1) { _ in
                 self.loaderAnimation.removeFromSuperview()
                 self.loaderAnimation.stop()

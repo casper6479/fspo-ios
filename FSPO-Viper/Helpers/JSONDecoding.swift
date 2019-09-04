@@ -121,6 +121,25 @@ public class JSONDecoding {
             }
         }
     }
+    public struct ISUResponse: Codable {
+        let week_number: Int
+        let schedule: [ISUSchedule]
+    }
+    public struct ISUSchedule: Codable {
+        let time1: String
+        let time2: String
+        let day_week: String
+        let week_type: String
+        let room: String
+        let place: String
+        let title: String
+        let status: String
+        let status_color: String
+        let note: String
+        let pid: Int
+        let person: String
+        let bld_id: String
+    }
     public struct StudentScheduleApi: Decodable, Equatable {
         let week: String?
         let weekdays: [Weekdays]

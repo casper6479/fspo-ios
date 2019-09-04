@@ -119,7 +119,7 @@ class ScheduleListViewController: UIViewController, ScheduleListViewProtocol, UI
                 items: self.getNewRows(data: data.weekdays[i], type: type, isToday: i == day ? true : false) ?? [],
                 footer: nil))
         }
-        reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: {
+        reloadableViewLayoutAdapter.reload(width: width, synchronous: synchronous, layoutProvider: {
             return layouts
         }, completion: {
             if !UserDefaults.standard.bool(forKey: "spring") {

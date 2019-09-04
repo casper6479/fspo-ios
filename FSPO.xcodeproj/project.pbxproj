@@ -175,6 +175,8 @@
 		46F6BAF52158E83C0001E082 /* LowPresence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F6BAF42158E83C0001E082 /* LowPresence.swift */; };
 		46FED984211E2F93007737EB /* CacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FED983211E2F93007737EB /* CacheStorage.swift */; };
 		900DF989F10496CBFEF95765 /* Pods_FSPO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CB2A31F07903F67E7187184 /* Pods_FSPO.framework */; };
+		CF04EE2823207BE700DF28EB /* RemoteCfg.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF04EE2723207BE700DF28EB /* RemoteCfg.swift */; };
+		CF04EE2B23207C3E00DF28EB /* RemoteCfg.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF04EE2723207BE700DF28EB /* RemoteCfg.swift */; };
 		FEB9946A17A359778312AFC2 /* Pods_TodaySchedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DEB26E53693D5935D3A441A /* Pods_TodaySchedule.framework */; };
 /* End PBXBuildFile section */
 
@@ -382,6 +384,7 @@
 		5E84A196609A8EA433EEB944 /* Pods-TommorowSchedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TommorowSchedule.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TommorowSchedule/Pods-TommorowSchedule.debug.xcconfig"; sourceTree = "<group>"; };
 		7DEB26E53693D5935D3A441A /* Pods_TodaySchedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodaySchedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8939FCACFF480DBB7C0890BC /* Pods-TommorowSchedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TommorowSchedule.release.xcconfig"; path = "Pods/Target Support Files/Pods-TommorowSchedule/Pods-TommorowSchedule.release.xcconfig"; sourceTree = "<group>"; };
+		CF04EE2723207BE700DF28EB /* RemoteCfg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCfg.swift; sourceTree = "<group>"; };
 		E26D42F2BADF7EDC63A838BF /* Pods_TommorowSchedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TommorowSchedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F63E9844E327BF9BB65F02AB /* Pods-TodaySchedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaySchedule.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodaySchedule/Pods-TodaySchedule.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -545,6 +548,7 @@
 				4622C4992142A74B001BED9B /* StoreReviewHelper.swift */,
 				46769052214B860A00A97D43 /* LogOutHelper.swift */,
 				460FCDA42238175D0090197F /* Dictionary+JSON.swift */,
+				CF04EE2723207BE700DF28EB /* RemoteCfg.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1082,6 +1086,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46DFC583222D7B8D00E342B2 /* Constants.swift in Sources */,
+				CF04EE2B23207C3E00DF28EB /* RemoteCfg.swift in Sources */,
 				4677E83F211E03600055517F /* TodayViewController.swift in Sources */,
 				460E76F82122133200D0615A /* Cache Helper.swift in Sources */,
 				460FCDA622381DA70090197F /* Dictionary+JSON.swift in Sources */,
@@ -1150,6 +1155,7 @@
 				4621CEB120EFABC700B17323 /* JournalViewController.swift in Sources */,
 				46B6D4CC210A5A3F00D83287 /* SettingsViewController.swift in Sources */,
 				46A9F9AE20F1744C008E2653 /* LoginRouter.swift in Sources */,
+				CF04EE2823207BE700DF28EB /* RemoteCfg.swift in Sources */,
 				4621CEC620F01D9D00B17323 /* Font.swift in Sources */,
 				466CDF6E20EFA4DB00A86701 /* TabBarBuilder.swift in Sources */,
 				46F6BAF121578D400001E082 /* MidStats.swift in Sources */,

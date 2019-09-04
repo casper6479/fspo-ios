@@ -40,6 +40,7 @@ class LoginInteractor: LoginInteractorProtocol {
                     UserDefaults.standard.set(res.groups[res.groups.count-1].group_id, forKey: "user_group_id")
                     UserDefaults.standard.set(res.groups[res.groups.count-1].name, forKey: "user_group_name")
                     self.defaults?.set(res.groups[res.groups.count-1].group_id, forKey: "user_group_id")
+                    self.defaults?.set(res.groups[res.groups.count-1].name, forKey: "user_group_name")
                     completion(true)
                 }
             } catch {

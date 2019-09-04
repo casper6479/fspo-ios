@@ -14,7 +14,7 @@ class ScheduleListRouter: ScheduleListWireframeProtocol {
 
     static func createModule(id: Int, type: String, title: String) -> UIViewController {
         let view = ScheduleListViewController()
-        let interactor = ScheduleListInteractor(id: id, type: type)
+        let interactor = ScheduleListInteractor(id: id, type: type, name: title)
         let router = ScheduleListRouter()
         let presenter = ScheduleListPresenter(interface: view, interactor: interactor, router: router)
         view.title = title
