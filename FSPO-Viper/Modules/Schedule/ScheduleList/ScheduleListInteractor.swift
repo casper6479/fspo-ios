@@ -19,11 +19,15 @@ class ScheduleListInteractor: ScheduleListInteractorProtocol {
     weak var presenter: ScheduleListPresenterProtocol?
 
     func fetchSchedule(week: String, cache: JSONDecoding.StudentScheduleApi?) {
-        let params: Parameters = [
+        let parameters: Parameters = [
             "app_key": Constants.AppKey,
             "type": type!,
             "id": id!,
             "week": week
+        ]
+        let jsonParams = parameters.jsonStringRepresentaiton ?? ""
+        let params = [
+            "jsondata": jsonParams
         ]
         Alamofire.request("https://ifspo.ifmo.ru/api/schedule", method: .get, parameters: params).responseJSON { (response) in
             let result = response.data

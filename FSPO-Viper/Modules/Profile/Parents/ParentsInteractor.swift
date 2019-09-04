@@ -13,11 +13,15 @@ class ParentsInteractor: ParentsInteractorProtocol {
     weak var presenter: ParentsPresenterProtocol?
     func fetchParents() {
         let user_id = UserDefaults.standard.integer(forKey: "user_id")
-        let params: Parameters = [
+        let parameters: Parameters = [
             "user_id": user_id
         ]
         let headers: HTTPHeaders = [
             "token": keychain["token"]!
+        ]
+        let jsonParams = parameters.jsonStringRepresentaiton ?? ""
+        let params = [
+            "jsondata": jsonParams
         ]
         Alamofire.request(Constants.ProfileURL, method: .get, parameters: params, headers: headers).responseJSON { (response) in
             let result = response.data

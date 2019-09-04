@@ -35,7 +35,7 @@ internal class NextGrowingInternalTextView: UITextView {
   override init(frame: CGRect, textContainer: NSTextContainer?) {
     super.init(frame: frame, textContainer: textContainer)
 
-    NotificationCenter.default.addObserver(self, selector: #selector(NextGrowingInternalTextView.textDidChangeNotification(_ :)), name: NSNotification.Name.UITextViewTextDidChange, object: self)
+    NotificationCenter.default.addObserver(self, selector: #selector(NextGrowingInternalTextView.textDidChangeNotification(_ :)), name: UITextView.textDidChangeNotification, object: self)
   }
 
   required init?(coder aDecoder: NSCoder) {
@@ -119,6 +119,6 @@ internal class NextGrowingInternalTextView: UITextView {
   }
 
   private func updatePlaceholder() {
-    displayPlaceholder = text.count == 0
+    displayPlaceholder = text.isEmpty
   }
 }

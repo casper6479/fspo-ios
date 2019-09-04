@@ -28,7 +28,7 @@ public class JSONDecoding {
         let parent: Bool
         let teacher: Bool
     }
-    struct JournalApi: Decodable, Equatable {
+    struct JournalApi: Codable, Equatable {
         let avg_score: Double
         let debts: Int
         let visits: Int

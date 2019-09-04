@@ -16,12 +16,20 @@ class JournalInteractor: JournalInteractorProtocol {
         if let childId = UserDefaults.standard.string(forKey: "child_user_id") {
             user_id = childId
         }
+        guard let token = keychain["token"] else {
+            presenter?.logOut()
+            return
+        }
         let headers: HTTPHeaders = [
-            "token": keychain["token"]!
+            "token": token
         ]
-        let params: Parameters = [
+        let parameters: Parameters = [
             "user_id": user_id!
             ]
+        let jsonParams = parameters.jsonStringRepresentaiton ?? ""
+        let params = [
+            "jsondata": jsonParams
+        ]
         Alamofire.request(Constants.JournalURL, method: .get, parameters: params, headers: headers).responseJSON { (response) in
             let result = response.data
             do {

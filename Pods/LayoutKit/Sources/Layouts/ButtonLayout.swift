@@ -22,11 +22,11 @@ import UIKit
  */
 open class ButtonLayout<Button: UIButton>: BaseLayout<Button>, ConfigurableLayout {
 
-    open let type: ButtonLayoutType
-    open let title: Text
-    open let image: ButtonLayoutImage
-    open let font: UIFont?
-    open let contentEdgeInsets: UIEdgeInsets
+    public let type: ButtonLayoutType
+    public let title: Text
+    public let image: ButtonLayoutImage
+    public let font: UIFont?
+    public let contentEdgeInsets: UIEdgeInsets
 
     public init(type: ButtonLayoutType,
                 title: String, // TODO: support attributed text once we figure out how to get tests to pass
@@ -292,7 +292,7 @@ public enum ButtonLayoutType {
     case infoDark
     case contactAdd
 
-    public var buttonType: UIButtonType {
+    public var buttonType: UIButton.ButtonType {
         switch (self) {
         case .custom:
             return .custom

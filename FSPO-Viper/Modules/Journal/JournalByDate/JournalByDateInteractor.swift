@@ -19,9 +19,13 @@ class JournalByDateInteractor: JournalByDateInteractorProtocol {
         let headers: HTTPHeaders = [
             "token": keychain["token"]!
         ]
-        let params: Parameters = [
+        let parameters: Parameters = [
             "user_id": user_id!,
             "vdate": date
+        ]
+        let jsonParams = parameters.jsonStringRepresentaiton ?? ""
+        let params = [
+            "jsondata": jsonParams
         ]
         Alamofire.request(Constants.JournalByDateURL, method: .get, parameters: params, headers: headers).responseJSON { (response) in
             let result = response.data

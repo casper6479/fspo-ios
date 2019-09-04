@@ -36,6 +36,7 @@ class NewsViewController: UIViewController, NewsViewProtocol {
     }
 	override func viewDidLoad() {
         super.viewDidLoad()
+//        navigationController?.navigationBar.setGradientBackground(colors: [UIColor.ITMOBlue, UIColor.ITMOBlue.withAlphaComponent(0.7)])
         StoreReviewHelper.checkAndAskForReview()
         self.extendedLayoutIncludesOpaqueBars = true
         storage?.async.object(forKey: "news", completion: { result in
@@ -64,8 +65,8 @@ class NewsViewController: UIViewController, NewsViewProtocol {
         tableView.dataSource = reloadableViewLayoutAdapter
         tableView.delegate = reloadableViewLayoutAdapter
         tableView.separatorColor = .clear
-        tableView.backgroundColor = UIColor.backgroundGray
-        let activity = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        tableView.backgroundColor = .groupTableViewBackground
+        let activity = UIActivityIndicatorView(style: .gray)
         activity.startAnimating()
         activity.frame = CGRect(origin: .zero, size: CGSize(width: tableView.bounds.width, height: 44))
         tableView.tableFooterView = activity
@@ -78,6 +79,9 @@ class NewsViewController: UIViewController, NewsViewProtocol {
         }
         return layouts
     }
+//    override func viewDidAppear(_ animated: Bool) {
+//        NavigationBarBlurer().updateImageWithGradient(navigationController: navigationController!)
+//    }
     func reloadTableView(width: CGFloat, synchronous: Bool) {
         reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: { [weak self] in
             return [Section(
@@ -89,6 +93,7 @@ class NewsViewController: UIViewController, NewsViewProtocol {
         })
     }
 }
+
 extension NewsReloadableViewLayoutAdapter {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.selectionStyle = .none

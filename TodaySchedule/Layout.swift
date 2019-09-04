@@ -10,7 +10,7 @@ import UIKit
 import LayoutKit
 
 open class StudentScheduleCellLayout: InsetLayout<View> {
-    public init(schedule: JSONDecoding.StudentScheduleApi.Weekdays.Periods, type: String) {
+    public init(schedule: JSONDecoding.StudentScheduleApi.Weekdays.Periods, type: String, isToday: Bool) {
         var scheduleCell = [Layout]()
         let paraCount = LabelLayout(text: "\(schedule.period)", font: UIFont.boldSystemFont(ofSize: 15), alignment: .centerTrailing, config: {label in
             label.textColor = label.textColor.withAlphaComponent(0.8)
@@ -25,13 +25,15 @@ open class StudentScheduleCellLayout: InsetLayout<View> {
         let end_time = Calendar.current.date(bySettingHour: Calendar.current.component(.hour, from: end!), minute: Calendar.current.component(.minute, from: end!), second: 0, of: Date())
         var leftwidth: CGFloat = 16
         var mainSpacing: CGFloat = 13
-        if Date() > start_time! && Date() < end_time! {
-            leftPartSublayouts.append(SizeLayout(width: 4, config: {view in
-                view.backgroundColor = UIColor(red: 1, green: 222/255, blue: 23/255, alpha: 1.0)
-                view.layer.cornerRadius = 2
-            }))
-            leftwidth += 12
-            mainSpacing = 8
+        if isToday {
+            if Date() > start_time! && Date() < end_time! {
+                leftPartSublayouts.append(SizeLayout(width: 4, config: {view in
+                    view.backgroundColor = UIColor(red: 1, green: 222/255, blue: 23/255, alpha: 1.0)
+                    view.layer.cornerRadius = 2
+                }))
+                leftwidth += 12
+                mainSpacing = 8
+            }
         }
         let leftPartSize = SizeLayout(width: leftwidth, sublayout: StackLayout(
             axis: .horizontal,

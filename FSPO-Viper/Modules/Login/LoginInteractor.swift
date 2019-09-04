@@ -15,7 +15,7 @@ class LoginInteractor: LoginInteractorProtocol {
     private var token: String?
     private var userId: Int?
     private var childUserId: Int?
-    var defaults = UserDefaults(suiteName: "group.com.fspo.app")
+    var defaults = UserDefaults(suiteName: "group.itmo.fspo.app")
     func getGroupId(user_id: Int, token: String, completion: @escaping (Bool) -> Void) {
         let parameters: Parameters = [
             "user_id": user_id
@@ -23,8 +23,13 @@ class LoginInteractor: LoginInteractorProtocol {
         let headers: HTTPHeaders = [
             "token": token
         ]
-        Alamofire.request(Constants.StudentHistoryURL, method: .get, parameters: parameters, headers: headers).responseJSON { (response) in
+        let jsonParams = parameters.jsonStringRepresentaiton ?? ""
+        let params = [
+            "jsondata": jsonParams
+        ]
+        Alamofire.request(Constants.StudentHistoryURL, method: .get, parameters: params, headers: headers).responseJSON { (response) in
             let result = response.data
+            print("--- ggid", response.description)
             do {
                 let res = try JSONDecoder().decode(JSONDecoding.StudentHistoryApi.self, from: result!)
                 if res.groups.count == 0 {
@@ -52,7 +57,11 @@ class LoginInteractor: LoginInteractorProtocol {
         let headers: HTTPHeaders = [
             "token": token
         ]
-        Alamofire.request(Constants.ProfileURL, method: .get, parameters: parameters, headers: headers).responseJSON { (response) in
+        let jsonParams = parameters.jsonStringRepresentaiton ?? ""
+        let params = [
+            "jsondata": jsonParams
+        ]
+        Alamofire.request(Constants.ProfileURL, method: .get, parameters: params, headers: headers).responseJSON { (response) in
             let result = response.data
             do {
                 let res = try JSONDecoder().decode(JSONDecoding.ParentsApi.self, from: result!)
@@ -76,7 +85,11 @@ class LoginInteractor: LoginInteractorProtocol {
         let headers: HTTPHeaders = [
             "token": token
         ]
-        Alamofire.request(Constants.RolesURL, method: .get, parameters: parameters, headers: headers).responseJSON { (response) in
+        let jsonParams = parameters.jsonStringRepresentaiton ?? ""
+        let params = [
+            "jsondata": jsonParams
+        ]
+        Alamofire.request(Constants.RolesURL, method: .get, parameters: params, headers: headers).responseJSON { (response) in
             let result = response.data
             do {
                 let res = try JSONDecoder().decode(JSONDecoding.RolesApi.self, from: result!)
@@ -101,12 +114,17 @@ class LoginInteractor: LoginInteractorProtocol {
         }
     }
     func getToken(completion: @escaping (Bool) -> Void) {
-        let params: Parameters = [
+        let parameters: Parameters = [
             "login": LoginLayout.loginTextField.text!,
             "password": LoginLayout.passwordTextField.text!,
             "app_key": Constants.AppKey
         ]
+        let jsonParams = parameters.jsonStringRepresentaiton ?? ""
+        let params = [
+            "jsondata": jsonParams
+        ]
         Alamofire.request(Constants.AuthURL, method: .post, parameters: params).responseJSON { (response) in
+//            print("---", response.request!.url?.absoluteString)
             let result = response.data
             do {
                 let res = try JSONDecoder().decode(JSONDecoding.AuthApi.self, from: result!)

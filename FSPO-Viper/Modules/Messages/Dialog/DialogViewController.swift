@@ -81,7 +81,7 @@ class DialogViewController: UIViewController, DialogViewProtocol, UITextViewDele
         growingTextView.textView.textContainerInset = UIEdgeInsets(top: 10, left: 8, bottom: 8, right: 34)
         growingTextView.placeholderAttributedText = NSAttributedString(
             string: NSLocalizedString("Сообщение", comment: ""),
-            attributes: [NSAttributedStringKey.font: self.growingTextView.textView.font!, NSAttributedStringKey.foregroundColor: UIColor.gray
+            attributes: [NSAttributedString.Key.font: self.growingTextView.textView.font!, NSAttributedString.Key.foregroundColor: UIColor.gray
             ]
         )
         growingTextView.maxNumberOfLines = 6
@@ -193,12 +193,12 @@ class DialogViewController: UIViewController, DialogViewProtocol, UITextViewDele
         })
     }
     private func registerKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     private func unRegisterKeyboardNotifications() {
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     var inset: CGFloat = 0
     var cachedOverheight: CGFloat!
@@ -206,7 +206,7 @@ class DialogViewController: UIViewController, DialogViewProtocol, UITextViewDele
     var cachedKeyboardSize: CGFloat!
     @objc private func keyboardShow(notification: NSNotification) {
         let info: NSDictionary = notification.userInfo! as NSDictionary
-        let value: NSValue = (info.value(forKey: UIKeyboardFrameEndUserInfoKey) as? NSValue)!
+        let value: NSValue = (info.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as? NSValue)!
         let keyboardSize: CGSize = value.cgRectValue.size
         if !keyboardDidShow {
             if #available(iOS 11, *) {

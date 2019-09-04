@@ -23,7 +23,7 @@ extension UIImage {
   /// Convert to data
   func cache_toData() -> Data? {
     return hasAlpha
-      ? UIImagePNGRepresentation(self)
+        ? UIImagePNGRepresentation(self)
       : UIImageJPEGRepresentation(self, 1.0)
   }
 }

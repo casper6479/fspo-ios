@@ -19,7 +19,7 @@ class ConsultationsInteractor: ConsultationsInteractorProtocol {
         Alamofire.request(Constants.ConsultationsURL)
             .responseString { response in
                 let html = response.result.value
-                if let doc = try? HTML(html: html!, encoding: .utf8) {
+                if let doc = try? HTML(html: html ?? "", encoding: .utf8) {
                     var item: [String: Any] = [
                         "teacher": String(),
                         "update": String(),

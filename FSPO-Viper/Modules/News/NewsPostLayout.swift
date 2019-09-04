@@ -7,14 +7,16 @@
 //
 import UIKit
 import LayoutKit
+//import AsyncDisplayKit
 
 open class NewsPostLayout: InsetLayout<View> {
     public init(body: String, time: String) {
         let bodyLayout = LabelLayout(
-            text: body,
+            text: body.trimmingCharacters(in: .whitespacesAndNewlines),
             font: (UIFont.LongTextFont?.withSize(16))!,
             config: { label in
                 label.backgroundColor = .white
+                label.textColor = .black
                 label.preferredMaxLayoutWidth = UIScreen.main.bounds.width - 32
             })
         let timeLabel = LabelLayout(
@@ -60,10 +62,25 @@ open class NewsPostLayout: InsetLayout<View> {
                     view.backgroundColor = .white
                 }),
             config: { view in
-                view.backgroundColor = UIColor.backgroundGray
+                view.backgroundColor = .groupTableViewBackground
             })
     }
 }
-
+//final class NewsCellNode: ASCellNode {
+//    var authorLabel = ASTextNode()
+//    var bodyLabel = ASTextNode()
+//    var timeLabel = ASInsetLayoutSpec()
+//    public init(body: String, time: String) {
+//        super.init()
+//        authorLabel.attributedText = NSAttributedString(string: NSLocalizedString("Завилейская Анастасия", comment: ""))
+//        bodyLabel.attributedText = NSAttributedString(string: body.trimmingCharacters(in: .whitespacesAndNewlines))
+//    }
+//    override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
+//        let verticalStack = ASStackLayoutSpec.vertical()
+//        verticalStack.spacing = 5
+//        verticalStack.children = [authorLabel, bodyLabel]
+//        return verticalStack
+//    }
+//}
 class NewsReloadableViewLayoutAdapter: ReloadableViewLayoutAdapter {
 }

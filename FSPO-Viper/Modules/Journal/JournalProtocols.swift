@@ -20,6 +20,7 @@ protocol JournalPresenterProtocol: class {
     func showByDate()
     func showBySubject()
     func showMore()
+    func logOut()
 }
 
 // MARK: Interactor -
@@ -33,4 +34,5 @@ protocol JournalViewProtocol: class {
     var presenter: JournalPresenterProtocol? { get set }
     func fillView(data: JSONDecoding.JournalApi)
     func show(vc: UIViewController)
+    func logOut()
 }

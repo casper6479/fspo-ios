@@ -13,7 +13,7 @@ class Constants {
     public static var safeHeight: CGFloat = 0.0
     public static let NewsURL = "https://ifspo.ifmo.ru/api/news"
     public static let AuthURL = "https://ifspo.ifmo.ru/api/authorization"
-    public static let AppKey = "c78bf5636f9cf36763b511184c572e8f9341cb07"
+    public static var AppKey = "b13f556af4ed3da2f8d484a617fee76d78be1166"
     public static let RolesURL = "https://ifspo.ifmo.ru/api/roles"
     public static let StudentHistoryURL = "https://ifspo.ifmo.ru/api/studentHistory"
     public static let JournalURL = "https://ifspo.ifmo.ru/api/eduInfo"
@@ -27,6 +27,7 @@ class Constants {
     public static let TeachersURL = "https://ifspo.ifmo.ru/api/teachers"
     public static let GroupsURL = "https://ifspo.ifmo.ru/api/groups"
     public static let ScheduleURL = "https://ifspo.ifmo.ru/api/schedule"
+    public static let ISUScheduleURL = "http://orir.ifmo.ru/mobile/API2.0/index.php"
     public static let ConsultationsURL = "https://ifspo.ifmo.ru/schedule/getallconsultations?type=active"
     public static let SearchURL = "https://ifspo.ifmo.ru/api/search"
 }

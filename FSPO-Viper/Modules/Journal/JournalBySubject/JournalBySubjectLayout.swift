@@ -17,7 +17,7 @@ open class JournalBySubjectLayout: InsetLayout<View> {
             font: UIFont.ITMOFont!,
             alignment: .center,
             config: { label in
-                label.textColor = .gray
+                label.textColor = .lightGray
                 label.backgroundColor = .white
         })
         let subjectLabel = LabelLayout(

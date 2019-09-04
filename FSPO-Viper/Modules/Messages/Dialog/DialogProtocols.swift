@@ -26,7 +26,7 @@ protocol DialogInteractorProtocol: class {
     var dialog_user_id: Int? { get set }
     func fetchDialogs(cache: JSONDecoding.DialogsApi?)
     func sendMessage(text: String, id: String?)
-  var presenter: DialogPresenterProtocol? { get set }
+    var presenter: DialogPresenterProtocol? { get set }
 }
 
 // MARK: View -

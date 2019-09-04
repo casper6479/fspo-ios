@@ -10,6 +10,7 @@ import UIKit
 
 class ProfileViewController: UIViewController, ProfileViewProtocol {
 	var presenter: ProfilePresenterProtocol?
+    static var sharedPhoto = UIImageView()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
@@ -40,9 +41,28 @@ class ProfileViewController: UIViewController, ProfileViewProtocol {
             let profileLayout = ProfileLayout(data: data)
             let arrangement = profileLayout.arrangement(width: width)
             DispatchQueue.main.async(execute: {
+                self.leraImageView = UIImageView()
+                self.leraImageView.contentMode = .scaleAspectFill
+                self.leraImageView.backgroundColor = UIColor.gray.withAlphaComponent(0.5)
                 arrangement.makeViews(in: self.view)
+                let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
+                tap.numberOfTapsRequired = 10
+                ProfileViewController.sharedPhoto.addGestureRecognizer(tap)
             })
         }
+    }
+    var leraImageView: UIImageView!
+    @objc func handleTap() {
+        leraImageView.frame = UIScreen.main.bounds
+        leraImageView.image = UIImage(named: "lera")
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleDismiss))
+        leraImageView.isUserInteractionEnabled = true
+        tap.numberOfTapsRequired = 3
+        leraImageView.addGestureRecognizer(tap)
+        UIApplication.shared.keyWindow?.addSubview(leraImageView)
+    }
+    @objc func handleDismiss() {
+        leraImageView.removeFromSuperview()
     }
     func show(vc: UIViewController) {
         navigationController?.show(vc, sender: self)

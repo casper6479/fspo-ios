@@ -8,6 +8,7 @@
 
 import LayoutKit
 import Lottie
+import IQKeyboardManagerSwift
 
 class SearchViewController: UIViewController, SearchViewProtocol, UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
@@ -75,6 +76,7 @@ class SearchViewController: UIViewController, SearchViewProtocol, UISearchResult
         } else {
             tableView.tableHeaderView = searchController.searchBar
         }
+        registerKeyboardNotifications()
     }
     func showEmptyView() {
         UIView.animate(withDuration: 0.2, animations: {
@@ -92,7 +94,7 @@ class SearchViewController: UIViewController, SearchViewProtocol, UISearchResult
         super.viewDidAppear(animated)
         if #available(iOS 11, *) {
             if let textfield = searchController.searchBar.value(forKey: "searchField") as? UITextField {
-                textfield.attributedPlaceholder = NSAttributedString(string: textfield.placeholder ?? "", attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+                textfield.attributedPlaceholder = NSAttributedString(string: textfield.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
                 if let leftView = textfield.leftView as? UIImageView {
                     leftView.image = leftView.image?.withRenderingMode(.alwaysTemplate)
                     leftView.tintColor = UIColor.white
@@ -102,6 +104,41 @@ class SearchViewController: UIViewController, SearchViewProtocol, UISearchResult
         DispatchQueue.main.async {
             self.searchController.searchBar.becomeFirstResponder()
         }
+        IQKeyboardManager.shared.enable = false
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        IQKeyboardManager.shared.enable = true
+        unRegisterKeyboardNotifications()
+    }
+    private func registerKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    private func unRegisterKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    var keyboardDidShow = false
+    var inset: CGFloat = 0
+    @objc final func keyboardShow(notification: NSNotification) {
+        let info: NSDictionary = notification.userInfo! as NSDictionary
+        let value: NSValue = (info.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as? NSValue)!
+        let keyboardSize: CGSize = value.cgRectValue.size
+        if !keyboardDidShow {
+            if #available(iOS 11, *) {
+                let safeInset = UIApplication.shared.delegate?.window??.safeAreaInsets.bottom
+                inset = keyboardSize.height - UITabBarController().tabBar.frame.height - safeInset!
+            } else {
+                inset = keyboardSize.height - UITabBarController().tabBar.frame.height
+            }
+            tableView.contentInset.bottom += inset
+            keyboardDidShow = true
+        }
+    }
+    @objc final func keyboardHide(notification: NSNotification) {
+        tableView.contentInset.bottom -= inset
+        keyboardDidShow = false
     }
     func getHeader(lesson: String) -> Layout {
         let layouts = HeaderLayout(text: lesson, inset: 15)

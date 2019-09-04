@@ -24,9 +24,13 @@ class JournalByTeacherInteractor: JournalByTeacherInteractorProtocol {
         let headers: HTTPHeaders = [
             "token": keychain["token"]!
         ]
-        let params: Parameters = [
+        let parameters: Parameters = [
             "user_id": user_id!,
             "lesson_id": lessonId!
+        ]
+        let jsonParams = parameters.jsonStringRepresentaiton ?? ""
+        let params = [
+            "jsondata": jsonParams
         ]
         Alamofire.request(Constants.JournalByTeacher, method: .get, parameters: params, headers: headers).responseJSON { (response) in
             let result = response.data

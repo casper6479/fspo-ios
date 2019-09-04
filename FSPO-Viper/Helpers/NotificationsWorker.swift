@@ -13,11 +13,15 @@ public func updateNotificationContext() {
     let userID = UserDefaults.standard.integer(forKey: "user_id")
     let id = UserDefaults.standard.string(forKey: "role") == "teacher" ? userID : userGroupId
     let type = UserDefaults.standard.string(forKey: "role") == "teacher" ? "teacher" : "group"
-    let params: Parameters = [
+    let parameters: Parameters = [
         "app_key": Constants.AppKey,
         "type": type,
         "id": id,
         "week": "now"
+    ]
+    let jsonParams = parameters.jsonStringRepresentaiton ?? ""
+    let params = [
+        "jsondata": jsonParams
     ]
     Alamofire.request(Constants.ScheduleURL, method: .get, parameters: params).responseJSON { (response) in
         let result = response.data
@@ -60,7 +64,7 @@ public func updateNotificationContext() {
                         }
                         content.body = "\(u.schedule[0].name) \(place)"
                         //                        if UserDefaults.standard.string(forKey: "user_id") == "1000369" {
-                        let sounds: [UNNotificationSound] = [UNNotificationSound(named: "notify.caf"), .default()]
+                        let sounds: [UNNotificationSound] = [UNNotificationSound(named: convertToUNNotificationSoundName("notify.caf")), .default]
                         content.sound = sounds[UserDefaults.standard.integer(forKey: "notificationSound")]
                         let datestring = "\(days[wd]):\(u.period_start)"
                         let date = dateFormatter.date(from: datestring)
@@ -102,4 +106,9 @@ public func updateNotificationContext() {
             }
         }
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+private func convertToUNNotificationSoundName(_ input: String) -> UNNotificationSoundName {
+	return UNNotificationSoundName(rawValue: input)
 }

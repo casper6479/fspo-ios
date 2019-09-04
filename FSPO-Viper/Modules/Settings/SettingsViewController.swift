@@ -164,10 +164,10 @@ class SettingsViewController: UIViewController, SettingsViewProtocol, UITableVie
             let url = URL(string: path)!
             if #available(iOS 10, *) {
                 if UIApplication.shared.canOpenURL(url) {
-                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
                 } else {
                     let safariurl = URL(string: "https://vk.com/fspoapp")!
-                    UIApplication.shared.open(safariurl, options: [:], completionHandler: nil)
+                    UIApplication.shared.open(safariurl, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
                 }
             } else {
                 let safariurl = URL(string: "https://vk.com/fspoapp")!
@@ -177,8 +177,7 @@ class SettingsViewController: UIViewController, SettingsViewProtocol, UITableVie
             let alert = UIAlertController(title: NSLocalizedString("Точно выйти?", comment: ""), message: nil, preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: NSLocalizedString("Выйти", comment: ""), style: .destructive, handler: { _ in
                 self.logOut()
-                self.clearCache()
-                self.present(UINavigationController.init(rootViewController: LoginRouter.createModule()), animated: true)
+                self.present(NavigationController(rootViewController: LoginRouter.createModule()), animated: true, completion: nil)
             }))
             alert.addAction(UIAlertAction(title: NSLocalizedString("Отмена", comment: ""), style: .cancel, handler: nil))
             alert.popoverPresentationController?.sourceView = viewForPopOver
@@ -245,4 +244,9 @@ class SettingsViewController: UIViewController, SettingsViewProtocol, UITableVie
             }
         }
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+private func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

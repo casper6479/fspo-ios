@@ -36,7 +36,7 @@ class ScheduleListViewController: UIViewController, ScheduleListViewProtocol, UI
         header.backgroundColor = UIColor.ITMOBlue
         let items = [first, second, NSLocalizedString("Все", comment: "")]
         let segmentedControl = UISegmentedControl(items: items)
-        segmentedControl.setTitleTextAttributes([NSAttributedStringKey.font: UIFont.ITMOFont!],
+        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.ITMOFont!],
                                                 for: .normal)
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.frame = CGRect(origin: CGPoint(x: 4, y: 4), size: CGSize(width: UIScreen.main.bounds.width - 8, height: 28))

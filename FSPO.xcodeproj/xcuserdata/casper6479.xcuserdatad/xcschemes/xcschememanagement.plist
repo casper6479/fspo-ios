@@ -12,7 +12,12 @@
 		<key>TodaySchedule.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>15</integer>
+			<integer>26</integer>
+		</dict>
+		<key>TodaySchedule.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>29</integer>
 		</dict>
 		<key>TommorowSchedule.xcscheme</key>
 		<dict>

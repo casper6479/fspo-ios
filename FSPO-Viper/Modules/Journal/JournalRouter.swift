@@ -11,7 +11,8 @@ import UIKit
 class JournalRouter: JournalWireframeProtocol {
     weak var viewController: UIViewController?
     static func createModule() -> UIViewController {
-        let view = JournalViewController()
+//        let view = JournalViewController()
+        let view = TestJournalViewController()
         let interactor = JournalInteractor()
         let router = JournalRouter()
         let presenter = JournalPresenter(interface: view, interactor: interactor, router: router)

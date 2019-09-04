@@ -23,6 +23,9 @@ class JournalPresenter: JournalPresenterProtocol {
             interactor?.fetchJournal(cache: cache)
         }
     }
+    func logOut() {
+        view?.logOut()
+    }
     func journalFetched(data: JSONDecoding.JournalApi) {
         view?.fillView(data: data)
     }

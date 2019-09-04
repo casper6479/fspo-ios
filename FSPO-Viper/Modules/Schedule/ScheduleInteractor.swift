@@ -12,9 +12,13 @@ import Alamofire
 class ScheduleInteractor: ScheduleInteractorProtocol {
     weak var presenter: SchedulePresenterProtocol?
     func fetchTeachers(cache: JSONDecoding.GetTeachersApi?) {
-        let params: Parameters = [
+        let parameters: Parameters = [
             "app_key": Constants.AppKey
             ]
+        let jsonParams = parameters.jsonStringRepresentaiton ?? ""
+        let params = [
+            "jsondata": jsonParams
+        ]
         Alamofire.request(Constants.TeachersURL, method: .get, parameters: params).responseJSON { (response) in
             let result = response.data
             do {
@@ -35,9 +39,13 @@ class ScheduleInteractor: ScheduleInteractorProtocol {
         }
     }
     func fetchScheduleByGroups(cache: JSONDecoding.GetGroupsApi?) {
-        let params: Parameters = [
+        let parameters: Parameters = [
             "app_key": Constants.AppKey
             ]
+        let jsonParams = parameters.jsonStringRepresentaiton ?? ""
+        let params = [
+            "jsondata": jsonParams
+        ]
         Alamofire.request(Constants.GroupsURL, method: .get, parameters: params).responseJSON { (response) in
             let result = response.data
             do {
@@ -58,36 +66,57 @@ class ScheduleInteractor: ScheduleInteractorProtocol {
         }
     }
     func fetchStudentSchedule(week: String, cache: JSONDecoding.StudentScheduleApi?) {
-        let userGroupId = UserDefaults.standard.integer(forKey: "user_group_id")
-        let userID = UserDefaults.standard.integer(forKey: "user_id")
-        let id = UserDefaults.standard.string(forKey: "role") == "teacher" ? userID : userGroupId
-        let type = UserDefaults.standard.string(forKey: "role") == "teacher" ? "teacher" : "group"
-        let params: Parameters = [
-            "app_key": Constants.AppKey,
-            "type": type,
-            "id": id,
-            "week": week
-        ]
-        Alamofire.request(Constants.ScheduleURL, method: .get, parameters: params).responseJSON { (response) in
-            let result = response.data
-            do {
-                let res = try JSONDecoder().decode(JSONDecoding.StudentScheduleApi.self, from: result!)
-                if let safeCache = cache {
-                    if safeCache != res {
-                        print("cache is deprecated")
-                        ScheduleStorage().clearDisk(forKey: "schedule\(week)")
+        let userGroupName = UserDefaults.standard.string(forKey: "user_group_name")
+        //TODO: Если нет имени группы то что делать
+        print("isu api", RemoteCfg.isISUApi)
+        if RemoteCfg.isISUApi {
+            let params: Parameters = [
+                "gr": userGroupName ?? "",
+                "login": RemoteCfg.ISULogin,
+                "pass": RemoteCfg.ISUPassword,
+                "module": RemoteCfg.ISUModule
+            ]
+            print(params)
+            Alamofire.request(Constants.ISUScheduleURL, method: .post, parameters: params).response { (response) in
+                print(response.data!.count)
+                print(String(data: response.data!, encoding: .utf8), "data test")
+            }
+        } else {
+            let userGroupId = UserDefaults.standard.integer(forKey: "user_group_id")
+            let userID = UserDefaults.standard.integer(forKey: "user_id")
+            let id = UserDefaults.standard.string(forKey: "role") == "teacher" ? userID : userGroupId
+            let type = UserDefaults.standard.string(forKey: "role") == "teacher" ? "teacher" : "group"
+            let parameters: Parameters = [
+                "app_key": Constants.AppKey,
+                "type": type,
+                "id": id,
+                "week": week
+            ]
+            let jsonParams = parameters.jsonStringRepresentaiton ?? ""
+            let params = [
+                "jsondata": jsonParams
+            ]
+            Alamofire.request(Constants.ScheduleURL, method: .get, parameters: params).responseJSON { (response) in
+                let result = response.data
+                do {
+                    let res = try JSONDecoder().decode(JSONDecoding.StudentScheduleApi.self, from: result!)
+                    if let safeCache = cache {
+                        if safeCache != res {
+                            print("cache is deprecated")
+                            ScheduleStorage().clearDisk(forKey: "schedule\(week)")
+                            ScheduleStorage().updateDisk(with: result!, forKey: "schedule\(week)")
+                            self.presenter?.studentScheduleFetched(data: res)
+                        } else {
+                            print("found in cache")
+                        }
+                    } else {
+                        print("cache is empty")
                         ScheduleStorage().updateDisk(with: result!, forKey: "schedule\(week)")
                         self.presenter?.studentScheduleFetched(data: res)
-                    } else {
-                        print("found in cache")
                     }
-                } else {
-                    print("cache is empty")
-                    ScheduleStorage().updateDisk(with: result!, forKey: "schedule\(week)")
-                    self.presenter?.studentScheduleFetched(data: res)
+                } catch {
+                    print(error)
                 }
-            } catch {
-                print(error)
             }
         }
     }

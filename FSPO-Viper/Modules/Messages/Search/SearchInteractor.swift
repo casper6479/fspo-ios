@@ -15,8 +15,12 @@ class SearchInteractor: SearchInteractorProtocol {
         let headers: HTTPHeaders = [
             "token": keychain["token"]!
         ]
-        let params: Parameters = [
+        let parameters: Parameters = [
             "query": query
+        ]
+        let jsonParams = parameters.jsonStringRepresentaiton ?? ""
+        let params = [
+            "jsondata": jsonParams
         ]
         SearchInteractor.test.cancel()
         SearchInteractor.test = Alamofire.request(Constants.SearchURL, method: .get, parameters: params, headers: headers).responseJSON { (response) in

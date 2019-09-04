@@ -156,9 +156,7 @@ public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
      */
     @objc public var keyboardShowing: Bool {
         
-        get {
-            return _privateIsKeyboardShowing
-        }
+        return _privateIsKeyboardShowing
     }
     
     /**
@@ -166,9 +164,7 @@ public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
      */
     @objc public var movedDistance: CGFloat {
         
-        get {
-            return _privateMovedDistance
-        }
+        return _privateMovedDistance
     }
 
     /**
@@ -289,13 +285,17 @@ public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
     @objc public var previousNextDisplayMode = IQPreviousNextDisplayMode.Default
 
     /**
-     Toolbar done button icon, If nothing is provided then check toolbarDoneBarButtonItemText to draw done button.
+     Toolbar previous/next/done button icon, If nothing is provided then check toolbarDoneBarButtonItemText to draw done button.
      */
+    @objc public var toolbarPreviousBarButtonItemImage : UIImage?
+    @objc public var toolbarNextBarButtonItemImage : UIImage?
     @objc public var toolbarDoneBarButtonItemImage : UIImage?
-    
+
     /**
-     Toolbar done button text, If nothing is provided then system default 'UIBarButtonSystemItemDone' will be used.
+     Toolbar previous/next/done button text, If nothing is provided then system default 'UIBarButtonSystemItemDone' will be used.
      */
+    @objc public var toolbarPreviousBarButtonItemText : String?
+    @objc public var toolbarNextBarButtonItemText : String?
     @objc public var toolbarDoneBarButtonItemText : String?
 
     /**
@@ -369,7 +369,7 @@ public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
     @objc public var shouldResignOnTouchOutside = false {
         
         didSet {
-            _tapGesture.isEnabled = privateShouldResignOnTouchOutside()
+            resignFirstResponderGesture.isEnabled = privateShouldResignOnTouchOutside()
             
             let shouldResign = shouldResignOnTouchOutside ? "Yes" : "NO"
             
@@ -378,12 +378,14 @@ public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
     }
     
     /** TapGesture to resign keyboard on view's touch. It's a readonly property and exposed only for adding/removing dependencies if your added gesture does have collision with this one */
-    private var _tapGesture: UITapGestureRecognizer!
-    @objc public var resignFirstResponderGesture: UITapGestureRecognizer {
-        get {
-            return _tapGesture
-        }
-    }
+    @objc lazy public var resignFirstResponderGesture: UITapGestureRecognizer = {
+
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapRecognized(_:)))
+        tapGesture.cancelsTouchesInView = false
+        tapGesture.delegate = self
+
+        return tapGesture
+    }()
     
     /*******************************************/
     
@@ -592,7 +594,7 @@ public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
                 //Handling search bar special case
                 do {
                     if let searchBar = textFieldRetain.searchBar() {
-                        invocation = searchBar.keyboardToolbar.previousBarButton.invocation;
+                        invocation = searchBar.keyboardToolbar.previousBarButton.invocation
                     }
                 }
 
@@ -621,7 +623,7 @@ public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
                 //Handling search bar special case
                 do {
                     if let searchBar = textFieldRetain.searchBar() {
-                        invocation = searchBar.keyboardToolbar.nextBarButton.invocation;
+                        invocation = searchBar.keyboardToolbar.nextBarButton.invocation
                     }
                 }
 
@@ -649,7 +651,7 @@ public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
             //Handling search bar special case
             do {
                 if let searchBar = textFieldRetain.searchBar() {
-                    invocation = searchBar.keyboardToolbar.doneBarButton.invocation;
+                    invocation = searchBar.keyboardToolbar.doneBarButton.invocation
                 }
             }
 
@@ -816,7 +818,11 @@ public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
     
     /** To save rootViewController.view.frame.origin. */
     private var         _topViewBeginOrigin = IQKeyboardManager.kIQCGPointInvalid
-    
+
+    /** To overcome with popGestureRecognizer issue Bug ID: #1361 */
+    private weak var    _rootViewControllerWhilePopGestureRecognizerActive: UIViewController?
+    private var         _topViewBeginOriginWhilePopGestureRecognizerActive = IQKeyboardManager.kIQCGPointInvalid
+
     /** To save rootViewController */
     private weak var    _rootViewController: UIViewController?
     
@@ -879,10 +885,7 @@ public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
         self.registerAllNotifications()
 
         //Creating gesture for @shouldResignOnTouchOutside. (Enhancement ID: #14)
-        _tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapRecognized(_:)))
-        _tapGesture.cancelsTouchesInView = false
-        _tapGesture.delegate = self
-        _tapGesture.isEnabled = shouldResignOnTouchOutside
+        resignFirstResponderGesture.isEnabled = shouldResignOnTouchOutside
         
         //Loading IQToolbar, IQTitleBarButtonItem, IQBarButtonItem to fix first time keyboard appearance delay (Bug ID: #550)
         //If you experience exception breakpoint issue at below line then try these solutions https://stackoverflow.com/questions/27375640/all-exception-break-point-is-stopping-for-no-reason-on-simulator
@@ -984,15 +987,17 @@ public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
             let newKeyboardDistanceFromTextField = (specialKeyboardDistanceFromTextField == kIQUseDefaultKeyboardDistance) ? keyboardDistanceFromTextField : specialKeyboardDistanceFromTextField
             var kbSize = _kbSize
             kbSize.height += newKeyboardDistanceFromTextField
-            
-            let topLayoutGuide : CGFloat = rootController.view.layoutMargins.top + 5
-            
-            var move : CGFloat = 0.0
+
+            let navigationBarAreaHeight : CGFloat = UIApplication.shared.statusBarFrame.height + ( rootController.navigationController?.navigationBar.frame.height ?? 0)
+            let layoutAreaHeight : CGFloat = rootController.view.layoutMargins.bottom
+
+            let topLayoutGuide : CGFloat = max(navigationBarAreaHeight, layoutAreaHeight) + 5
+            let bottomLayoutGuide : CGFloat = (textFieldView is UITextView) ? 0 : rootController.view.layoutMargins.bottom  //Validation of textView for case where there is a tab bar at the bottom or running on iPhone X and textView is at the bottom.
+
             //  Move positive = textField is hidden.
             //  Move negative = textField is showing.
-            
             //  Calculating move position.
-            move = min(textFieldViewRectInRootSuperview.minY-(topLayoutGuide), textFieldViewRectInWindow.maxY-(window.frame.height-kbSize.height))
+            var move : CGFloat = min(textFieldViewRectInRootSuperview.minY-(topLayoutGuide), textFieldViewRectInWindow.maxY-(window.frame.height-kbSize.height)+bottomLayoutGuide)
             
             showLog("Need to move: \(move)")
             
@@ -1286,7 +1291,7 @@ public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
             }
         
             let elapsedTime = CACurrentMediaTime() - startTime
-            showLog("****** \(#function) ended: \(elapsedTime) seconds ******")
+            showLog("****** \(#function) ended: \(elapsedTime) seconds ******\n")
         }
     }
 
@@ -1302,7 +1307,7 @@ public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
                 //Used UIViewAnimationOptionBeginFromCurrentState to minimize strange animations.
                 UIView.animate(withDuration: _animationDuration, delay: 0, options: _animationCurve.union(.beginFromCurrentState), animations: { () -> Void in
                     
-                    self.showLog("Restoring \(rootViewController._IQDescription()) frame to : \(self._topViewBeginOrigin)")
+                    self.showLog("Restoring \(rootViewController._IQDescription()) origin to : \(self._topViewBeginOrigin)")
                     
                     //  Setting it's new frame
                     var rect = rootViewController.view.frame
@@ -1310,6 +1315,11 @@ public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
                     rootViewController.view.frame = rect
                     
                     self._privateMovedDistance = 0
+
+                    if rootViewController.navigationController?.interactivePopGestureRecognizer?.state == .began {
+                        self._rootViewControllerWhilePopGestureRecognizerActive = rootViewController
+                        self._topViewBeginOriginWhilePopGestureRecognizerActive = self._topViewBeginOrigin
+                    }
                     
                     //Animating content if needed (Bug ID: #204)
                     if self.layoutIfNeededOnUpdate == true {
@@ -1416,7 +1426,17 @@ public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
             //  keyboard is not showing(At the beginning only). We should save rootViewRect.
             _rootViewController = textFieldView.parentContainerViewController()
             if let controller = _rootViewController {
-                _topViewBeginOrigin = controller.view.frame.origin
+                
+                if _rootViewControllerWhilePopGestureRecognizerActive == controller {
+                    _topViewBeginOrigin = _topViewBeginOriginWhilePopGestureRecognizerActive
+                } else {
+                    _topViewBeginOrigin = controller.view.frame.origin
+                }
+
+                _rootViewControllerWhilePopGestureRecognizerActive = nil
+                _topViewBeginOriginWhilePopGestureRecognizerActive = IQKeyboardManager.kIQCGPointInvalid
+                
+                self.showLog("Saving \(controller._IQDescription()) beginning origin : \(self._topViewBeginOrigin)")
             }
         }
 
@@ -1435,7 +1455,7 @@ public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
         }
         
         let elapsedTime = CACurrentMediaTime() - startTime
-        showLog("****** \(#function) ended: \(elapsedTime) seconds ******")
+        showLog("****** \(#function) ended: \(elapsedTime) seconds ******\n")
     }
 
     /*  UIKeyboardDidShowNotification. */
@@ -1456,7 +1476,7 @@ public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
         }
         
         let elapsedTime = CACurrentMediaTime() - startTime
-        showLog("****** \(#function) ended: \(elapsedTime) seconds ******")
+        showLog("****** \(#function) ended: \(elapsedTime) seconds ******\n")
     }
 
     /*  UIKeyboardWillHideNotification. So setting rootViewController to it's default frame. */
@@ -1545,7 +1565,7 @@ public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
         //    topViewBeginRect = CGRectZero    //Commented due to #82
 
         let elapsedTime = CACurrentMediaTime() - startTime
-        showLog("****** \(#function) ended: \(elapsedTime) seconds ******")
+        showLog("****** \(#function) ended: \(elapsedTime) seconds ******\n")
     }
 
     @objc internal func keyboardDidHide(_ notification:Notification) {
@@ -1558,7 +1578,7 @@ public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
         _kbSize = CGSize.zero
 
         let elapsedTime = CACurrentMediaTime() - startTime
-        showLog("****** \(#function) ended: \(elapsedTime) seconds ******")
+        showLog("****** \(#function) ended: \(elapsedTime) seconds ******\n")
     }
     
     ///-------------------------------------------
@@ -1626,7 +1646,17 @@ public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
                 _rootViewController = _textFieldView?.parentContainerViewController()
 
                 if let controller = _rootViewController {
-                    _topViewBeginOrigin = controller.view.frame.origin
+                    
+                    if _rootViewControllerWhilePopGestureRecognizerActive == controller {
+                        _topViewBeginOrigin = _topViewBeginOriginWhilePopGestureRecognizerActive
+                    } else {
+                        _topViewBeginOrigin = controller.view.frame.origin
+                    }
+                    
+                    _rootViewControllerWhilePopGestureRecognizerActive = nil
+                    _topViewBeginOriginWhilePopGestureRecognizerActive = IQKeyboardManager.kIQCGPointInvalid
+
+                    self.showLog("Saving \(controller._IQDescription()) beginning origin : \(self._topViewBeginOrigin)")
                 }
             }
             
@@ -1642,7 +1672,7 @@ public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
         }
 
         let elapsedTime = CACurrentMediaTime() - startTime
-        showLog("****** \(#function) ended: \(elapsedTime) seconds ******")
+        showLog("****** \(#function) ended: \(elapsedTime) seconds ******\n")
     }
     
     /**  UITextFieldTextDidEndEditingNotification, UITextViewTextDidEndEditingNotification. Removing fetched object. */
@@ -1678,7 +1708,7 @@ public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
         _textFieldView = nil
 
         let elapsedTime = CACurrentMediaTime() - startTime
-        showLog("****** \(#function) ended: \(elapsedTime) seconds ******")
+        showLog("****** \(#function) ended: \(elapsedTime) seconds ******\n")
     }
 
     ///---------------------------------------
@@ -1713,7 +1743,7 @@ public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
         restorePosition()
 
         let elapsedTime = CACurrentMediaTime() - startTime
-        showLog("****** \(#function) ended: \(elapsedTime) seconds ******")
+        showLog("****** \(#function) ended: \(elapsedTime) seconds ******\n")
     }
     
     ///------------------
@@ -1779,34 +1809,47 @@ public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
                         textField.inputAccessoryView?.tag == IQKeyboardManager.kIQPreviousNextButtonToolbarTag ||
                         textField.inputAccessoryView?.tag == IQKeyboardManager.kIQDoneButtonToolbarTag {
                         
+                        let rightConfiguration : IQBarButtonItemConfiguration
+                        
+                        if let doneBarButtonItemImage = toolbarDoneBarButtonItemImage {
+                            rightConfiguration = IQBarButtonItemConfiguration(image: doneBarButtonItemImage, action: #selector(self.doneAction(_:)))
+                        } else if let doneBarButtonItemText = toolbarDoneBarButtonItemText {
+                            rightConfiguration = IQBarButtonItemConfiguration(title: doneBarButtonItemText, action: #selector(self.doneAction(_:)))
+                        } else {
+                            rightConfiguration = IQBarButtonItemConfiguration(barButtonSystemItem: .done, action: #selector(self.doneAction(_:)))
+                        }
+                        
                         //	If only one object is found, then adding only Done button.
                         if (siblings.count == 1 && previousNextDisplayMode == .Default) || previousNextDisplayMode == .alwaysHide {
                             
-                            if let doneBarButtonItemImage = toolbarDoneBarButtonItemImage {
-                                textField.addRightButtonOnKeyboardWithImage(doneBarButtonItemImage, target: self, action: #selector(self.doneAction(_:)), shouldShowPlaceholder: shouldShowToolbarPlaceholder)
-                            }
-                                //Supporting Custom Done button text (Enhancement ID: #209, #411, Bug ID: #376)
-                            else if let doneBarButtonItemText = toolbarDoneBarButtonItemText {
-                                textField.addRightButtonOnKeyboardWithText(doneBarButtonItemText, target: self, action: #selector(self.doneAction(_:)), shouldShowPlaceholder: shouldShowToolbarPlaceholder)
-                            } else {
-                                //Now adding textField placeholder text as title of IQToolbar  (Enhancement ID: #27)
-                                textField.addDoneOnKeyboardWithTarget(self, action: #selector(self.doneAction(_:)), shouldShowPlaceholder: shouldShowToolbarPlaceholder)
-                            }
+                            textField.addKeyboardToolbarWithTarget(target: self, titleText: (shouldShowToolbarPlaceholder ? textField.drawingToolbarPlaceholder : nil), rightBarButtonConfiguration: rightConfiguration, previousBarButtonConfiguration: nil, nextBarButtonConfiguration: nil)
+
                             textField.inputAccessoryView?.tag = IQKeyboardManager.kIQDoneButtonToolbarTag //  (Bug ID: #78)
                             
                         } else if (siblings.count > 1 && previousNextDisplayMode == .Default) || previousNextDisplayMode == .alwaysShow {
                             
-                            //Supporting Custom Done button image (Enhancement ID: #366)
-                            if let doneBarButtonItemImage = toolbarDoneBarButtonItemImage {
-                                textField.addPreviousNextRightOnKeyboardWithTarget(self, rightButtonImage: doneBarButtonItemImage, previousAction: #selector(self.previousAction(_:)), nextAction: #selector(self.nextAction(_:)), rightButtonAction: #selector(self.doneAction(_:)), shouldShowPlaceholder: shouldShowToolbarPlaceholder)
-                            }
-                                //Supporting Custom Done button text (Enhancement ID: #209, #411, Bug ID: #376)
-                            else if let doneBarButtonItemText = toolbarDoneBarButtonItemText {
-                                textField.addPreviousNextRightOnKeyboardWithTarget(self, rightButtonTitle: doneBarButtonItemText, previousAction: #selector(self.previousAction(_:)), nextAction: #selector(self.nextAction(_:)), rightButtonAction: #selector(self.doneAction(_:)), shouldShowPlaceholder: shouldShowToolbarPlaceholder)
+                            let prevConfiguration : IQBarButtonItemConfiguration
+                            
+                            if let doneBarButtonItemImage = toolbarPreviousBarButtonItemImage {
+                                prevConfiguration = IQBarButtonItemConfiguration(image: doneBarButtonItemImage, action: #selector(self.previousAction(_:)))
+                            } else if let doneBarButtonItemText = toolbarPreviousBarButtonItemText {
+                                prevConfiguration = IQBarButtonItemConfiguration(title: doneBarButtonItemText, action: #selector(self.previousAction(_:)))
                             } else {
-                                //Now adding textField placeholder text as title of IQToolbar  (Enhancement ID: #27)
-                                textField.addPreviousNextDoneOnKeyboardWithTarget(self, previousAction: #selector(self.previousAction(_:)), nextAction: #selector(self.nextAction(_:)), doneAction: #selector(self.doneAction(_:)), shouldShowPlaceholder: shouldShowToolbarPlaceholder)
+                                prevConfiguration = IQBarButtonItemConfiguration(image: (UIImage.keyboardPreviousImage() ?? UIImage()), action: #selector(self.previousAction(_:)))
                             }
+
+                            let nextConfiguration : IQBarButtonItemConfiguration
+                            
+                            if let doneBarButtonItemImage = toolbarNextBarButtonItemImage {
+                                nextConfiguration = IQBarButtonItemConfiguration(image: doneBarButtonItemImage, action: #selector(self.nextAction(_:)))
+                            } else if let doneBarButtonItemText = toolbarNextBarButtonItemText {
+                                nextConfiguration = IQBarButtonItemConfiguration(title: doneBarButtonItemText, action: #selector(self.nextAction(_:)))
+                            } else {
+                                nextConfiguration = IQBarButtonItemConfiguration(image: (UIImage.keyboardNextImage() ?? UIImage()), action: #selector(self.nextAction(_:)))
+                            }
+
+                            textField.addKeyboardToolbarWithTarget(target: self, titleText: (shouldShowToolbarPlaceholder ? textField.drawingToolbarPlaceholder : nil), rightBarButtonConfiguration: rightConfiguration, previousBarButtonConfiguration: prevConfiguration, nextBarButtonConfiguration: nextConfiguration)
+
                             textField.inputAccessoryView?.tag = IQKeyboardManager.kIQPreviousNextButtonToolbarTag //  (Bug ID: #78)
                         }
 
@@ -1818,7 +1861,7 @@ public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
                             //Bar style according to keyboard appearance
                             switch _textField.keyboardAppearance {
                                 
-                            case UIKeyboardAppearance.dark:
+                            case .dark:
                                 toolbar.barStyle = UIBarStyle.black
                                 toolbar.tintColor = UIColor.white
                                 toolbar.barTintColor = nil
@@ -1840,7 +1883,7 @@ public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
                             //Bar style according to keyboard appearance
                             switch _textView.keyboardAppearance {
                                 
-                            case UIKeyboardAppearance.dark:
+                            case .dark:
                                 toolbar.barStyle = UIBarStyle.black
                                 toolbar.tintColor = UIColor.white
                                 toolbar.barTintColor = nil
@@ -1911,7 +1954,7 @@ public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
         }
 
         let elapsedTime = CACurrentMediaTime() - startTime
-        showLog("****** \(#function) ended: \(elapsedTime) seconds ******")
+        showLog("****** \(#function) ended: \(elapsedTime) seconds ******\n")
     }
     
     /** Remove any toolbar if it is IQToolbar. */
@@ -1946,7 +1989,7 @@ public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
         }
 
         let elapsedTime = CACurrentMediaTime() - startTime
-        showLog("****** \(#function) ended: \(elapsedTime) seconds ******")
+        showLog("****** \(#function) ended: \(elapsedTime) seconds ******\n")
     }
     
     /**	reloadInputViews to reload toolbar buttons enable/disable state on the fly Enhancement ID #434. */

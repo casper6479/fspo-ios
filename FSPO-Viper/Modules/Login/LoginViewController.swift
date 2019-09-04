@@ -62,7 +62,7 @@ class LoginViewController: UIViewController, LoginViewProtocol, CAAnimationDeleg
         expandAnim.toValue = 26.0
         expandAnim.timingFunction = CAMediaTimingFunction(controlPoints: 0.95, 0.02, 1, 0.05)
         expandAnim.duration = 0.3
-        expandAnim.fillMode = kCAFillModeForwards
+        expandAnim.fillMode = CAMediaTimingFillMode.forwards
         expandAnim.isRemovedOnCompletion = false
         button.layer.add(expandAnim, forKey: expandAnim.keyPath)
     }
@@ -75,7 +75,7 @@ class LoginViewController: UIViewController, LoginViewProtocol, CAAnimationDeleg
             UIView.animate(withDuration: 0.1, animations: {
                 LoginLayout.loginButton.frame = self.defaultButtonState
             }, completion: { _ in
-                LoginLayout.loginButton.backgroundColor = .ITMOBlue
+                LoginLayout.loginButton.backgroundColor = .clear
                 LoginLayout.loginButton.setTitle(NSLocalizedString("Вход", comment: ""), for: .normal)
             })
         } else {
@@ -84,7 +84,7 @@ class LoginViewController: UIViewController, LoginViewProtocol, CAAnimationDeleg
             loaderAnimation.play(toProgress: 1) { _ in
                 self.loaderAnimation.removeFromSuperview()
                 self.loaderAnimation.stop()
-                LoginLayout.loginButton.backgroundColor = .ITMOBlue
+                LoginLayout.loginButton.backgroundColor = .clear
                 UIView.animate(withDuration: 0.2, animations: {
                     LoginLayout.loginButton.frame = self.defaultButtonState
                 }, completion: { _ in
@@ -99,7 +99,7 @@ class LoginViewController: UIViewController, LoginViewProtocol, CAAnimationDeleg
             UIView.animate(withDuration: 0.1, animations: {
                 self.setLoadingFrame()
             }, completion: { _ in
-                LoginLayout.loginButton.backgroundColor = .ITMOBlue
+                LoginLayout.loginButton.backgroundColor = .clear
                 self.expand(button: LoginLayout.loginButton)
             })
         } else {
@@ -108,7 +108,7 @@ class LoginViewController: UIViewController, LoginViewProtocol, CAAnimationDeleg
             loaderAnimation.play(toProgress: 1) { _ in
                 self.loaderAnimation.removeFromSuperview()
                 self.loaderAnimation.stop()
-                LoginLayout.loginButton.backgroundColor = .ITMOBlue
+                LoginLayout.loginButton.backgroundColor = .clear
                 self.expand(button: LoginLayout.loginButton)
             }
         }

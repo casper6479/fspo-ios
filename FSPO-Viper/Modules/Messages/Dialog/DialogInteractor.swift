@@ -18,11 +18,16 @@ class DialogInteractor: DialogInteractorProtocol {
         let headers: HTTPHeaders = [
             "token": keychain["token"]!
         ]
-        let params: Parameters = [
+        let parameters: Parameters = [
             "user_id": dialog_user_id!
+        ]
+        let jsonParams = parameters.jsonStringRepresentaiton ?? ""
+        let params = [
+            "jsondata": jsonParams
         ]
         Alamofire.request("https://ifspo.ifmo.ru/api/messagesHistory", method: .get, parameters: params, headers: headers).responseJSON { (response) in
             let result = response.data
+            print("---", response.description)
             do {
                 let res = try JSONDecoder().decode(JSONDecoding.DialogsApi.self, from: result!)
                 if let safeCache = cache {
@@ -36,6 +41,7 @@ class DialogInteractor: DialogInteractorProtocol {
                     self.presenter?.dialogsFetched(data: res)
                 }
             } catch {
+    
                 let alert = UIAlertController(title: NSLocalizedString("Ошибка при получении данных", comment: ""), message: error.localizedDescription, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: NSLocalizedString("Сообщить об ошибке", comment: ""), style: .default, handler: {_ in
                     self.sendMessage(text: "Ошибка в сообщениях у \(UserDefaults.standard.integer(forKey: "user_id")) \n error:\(error)", id: "1000364")
@@ -49,9 +55,13 @@ class DialogInteractor: DialogInteractorProtocol {
         let headers: HTTPHeaders = [
             "token": keychain["token"]!
         ]
-        let params: Parameters = [
+        let parameters: Parameters = [
             "user_id": id != nil ? id! : dialog_user_id!,
             "text": text
+        ]
+        let jsonParams = parameters.jsonStringRepresentaiton ?? ""
+        let params = [
+            "jsondata": jsonParams
         ]
         Alamofire.request("https://ifspo.ifmo.ru/api/sendMessage", method: .post, parameters: params, headers: headers)
                 .responseJSON { _ in

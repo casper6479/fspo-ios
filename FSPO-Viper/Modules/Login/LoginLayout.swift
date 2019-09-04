@@ -27,13 +27,20 @@ open class LoginLayout: InsetLayout<UIView> {
             alignment: .center,
             config: { button in
                 button.setTitle(NSLocalizedString("Вход", comment: ""), for: .normal)
-                button.backgroundColor = UIColor.ITMOBlue
+                button.backgroundColor = .clear
                 button.setTitleColor(.white, for: .normal)
                 button.setTitleColor(UIColor.white.withAlphaComponent(0.5), for: .highlighted)
                 button.titleLabel?.font = UIFont.ITMOFontBold?.withSize(17)
                 button.layer.cornerRadius = button.frame.height / 2
                 button.layer.masksToBounds = true
                 button.applyStyle()
+                let gradient = CAGradientLayer()
+                gradient.colors = [UIColor.ITMOBlue.cgColor, UIColor.ITMOBlue.withAlphaComponent(0.7).cgColor]
+                gradient.locations = [0, 1]
+                gradient.startPoint = CGPoint(x: 0, y: 0.5)
+                gradient.endPoint = CGPoint(x: 1, y: 0.5)
+                gradient.frame = button.layer.bounds
+                button.layer.insertSublayer(gradient, at: 0)
                 button.addTarget(LoginViewController(), action: #selector(LoginViewController().loginUpInside), for: .touchUpInside)
                 LoginLayout.loginButton = button
         })

@@ -20,8 +20,12 @@ final class MoreInteractor: MoreInteractorProtocol {
         let headers: HTTPHeaders = [
             "token": keychain["token"]!
         ]
-        let params: Parameters = [
+        let parameters: Parameters = [
             "user_id": user_id!
+        ]
+        let jsonParams = parameters.jsonStringRepresentaiton ?? ""
+        let params = [
+            "jsondata": jsonParams
         ]
         Alamofire.request(Constants.MoreURL, method: .get, parameters: params, headers: headers).responseJSON { (response) in
             let result = response.data

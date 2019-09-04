@@ -15,7 +15,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     var reloadableViewLayoutAdapter: ReloadableViewLayoutAdapter!
     var secondReloadableViewLayoutAdapter: ReloadableViewLayoutAdapter!
     var tableView: UITableView!
-    var defaults = UserDefaults(suiteName: "group.com.fspo.app")
+    var defaults = UserDefaults(suiteName: "group.itmo.fspo.app")
     var activeTableView: UITableView!
     let toolbar: UIView = {
         let toolbar = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 36))
@@ -153,10 +153,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func getNewRows(data: JSONDecoding.StudentScheduleApi.Weekdays, type: String) -> [Layout]? {
+    func getNewRows(data: JSONDecoding.StudentScheduleApi.Weekdays, type: String, isToday: Bool) -> [Layout]? {
         var layouts = [Layout]()
         for item in data.periods {
-            layouts.append(StudentScheduleCellLayout(schedule: item, type: type))
+            layouts.append(StudentScheduleCellLayout(schedule: item, type: type, isToday: isToday))
         }
         if data.periods.count == 0 {
             layouts.append(NoScheduleCellLayout())
@@ -171,13 +171,13 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: {
                 return [Section(
                     header: nil,
-                    items: self.getNewRows(data: data, type: type) ?? [],
+                    items: self.getNewRows(data: data, type: type, isToday: true) ?? [],
                     footer: nil)]
             })} else {
             reloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: {
                 return [Section(
                     header: nil,
-                    items: self.getNewRows(data: data.weekdays[day], type: type) ?? [],
+                    items: self.getNewRows(data: data.weekdays[day], type: type, isToday: true) ?? [],
                     footer: nil)]
             })
         }
@@ -188,23 +188,27 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             secondReloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: {
                 return [Section(
                     header: nil,
-                    items: self.getNewRows(data: data, type: type) ?? [],
+                    items: self.getNewRows(data: data, type: type, isToday: false) ?? [],
                     footer: nil)]
             })} else {
             secondReloadableViewLayoutAdapter.reloading(width: width, synchronous: synchronous, layoutProvider: {
                 return [Section(
                     header: nil,
-                    items: self.getNewRows(data: data.weekdays[tommorow], type: type) ?? [],
+                    items: self.getNewRows(data: data.weekdays[tommorow], type: type, isToday: false) ?? [],
                     footer: nil)]
             })
         }
     }
     func downloadJSON(type: String, id: Int, cache: JSONDecoding.StudentScheduleApi?) {
-        let params: Parameters = [
-            "app_key": "c78bf5636f9cf36763b511184c572e8f9341cb07",
+        let parameters: Parameters = [
+            "app_key": Constants.AppKey,
             "type": type,
             "id": id,
             "week": "now"
+        ]
+        let jsonParams = parameters.jsonStringRepresentaiton ?? ""
+        let params = [
+            "jsondata": jsonParams
         ]
         Alamofire.request("https://ifspo.ifmo.ru/api/schedule", method: .get, parameters: params).responseJSON { (response) in
             let result = response.data

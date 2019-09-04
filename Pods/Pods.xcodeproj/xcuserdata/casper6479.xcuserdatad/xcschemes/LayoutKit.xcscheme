@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "46D20134B382A035F41010867787ABAD"
+               BlueprintIdentifier = "8E60382F5F645C531DA24A1E85350F74"
+               BuildableName = "LayoutKit.framework"
                BlueprintName = "LayoutKit"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "LayoutKit.framework">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

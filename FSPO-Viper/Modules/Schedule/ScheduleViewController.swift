@@ -35,7 +35,7 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollVi
         ScheduleViewController.publicTeachersDS = source
         teachersDS = source
         DispatchQueue.main.async {
-            TeachersListLayout.tableView?.tableHeaderView = self.buildHeaderForTeachersList()
+//            TeachersListLayout.tableView?.tableHeaderView = self.buildHeaderForTeachersList()
             self.reloadTeachers(data: source)
         }
     }
@@ -50,7 +50,7 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollVi
         header.backgroundColor = UIColor.ITMOBlue
         let items = [first, second, NSLocalizedString("Все", comment: "")]
         let segmentedControl = UISegmentedControl(items: items)
-        segmentedControl.setTitleTextAttributes([NSAttributedStringKey.font: UIFont.ITMOFont!],
+        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.ITMOFont!],
                                                 for: .normal)
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.frame = CGRect(origin: CGPoint(x: 4, y: 4), size: CGSize(width: UIScreen.main.bounds.width - 8, height: 28))
@@ -61,14 +61,15 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollVi
     }
     func buildHeaderForTeachersList() -> UIView {
         let header = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 32))
-        let button = UIButton(frame: CGRect(x: view.bounds.width / 2 - 100, y: 8, width: 200, height: 22))
-        button.titleLabel?.font = UIFont.ITMOFontBold?.withSize(15)
-        button.setTitleColor(.ITMOBlue, for: .normal)
-        button.setTitleColor(UIColor.ITMOBlue.withAlphaComponent(0.5), for: .highlighted)
-        button.setTitle(NSLocalizedString("Консультации", comment: ""), for: .normal)
-        button.addTarget(self, action: #selector(consultationsUpInside), for: .touchUpInside)
-        header.addSubview(button)
-        header.backgroundColor = .white
+        //TODO: Консультации
+//        let button = UIButton(frame: CGRect(x: view.bounds.width / 2 - 100, y: 8, width: 200, height: 22))
+//        button.titleLabel?.font = UIFont.ITMOFontBold?.withSize(15)
+//        button.setTitleColor(.ITMOBlue, for: .normal)
+//        button.setTitleColor(UIColor.ITMOBlue.withAlphaComponent(0.5), for: .highlighted)
+//        button.setTitle(NSLocalizedString("Консультации", comment: ""), for: .normal)
+//        button.addTarget(self, action: #selector(consultationsUpInside), for: .touchUpInside)
+//        header.addSubview(button)
+//        header.backgroundColor = .white
         return header
     }
     @objc func consultationsUpInside() {
@@ -163,6 +164,11 @@ class ScheduleViewController: UIViewController, ScheduleViewProtocol, UIScrollVi
                 self.presenter?.updateTeachers(cache: nil)
             }
         })
+        let easteregg = UILabel(frame: CGRect(x: -UIScreen.main.bounds.width, y: (UIScreen.main.bounds.height / 2) - 150, width: UIScreen.main.bounds.width / 2, height: 100))
+        scrollView.addSubview(easteregg)
+        easteregg.font = UIFont.systemFont(ofSize: 100)
+        easteregg.textAlignment = .center
+        easteregg.text = "🥴"
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         pageControlAnimation.animationProgress = scrollView.contentOffset.x / 3 / 100 / 3 * 1.33

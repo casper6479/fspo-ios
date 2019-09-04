@@ -93,6 +93,8 @@ open class ProfileLayout: InsetLayout<View> {
                 avatar.contentMode = .scaleAspectFill
                 avatar.layer.cornerRadius = avatar.frame.height / 2
                 avatar.clipsToBounds = true
+                avatar.isUserInteractionEnabled = true
+                ProfileViewController.sharedPhoto = avatar
         })
         let namesStackLayout = StackLayout(axis: .vertical, spacing: 8, alignment: .center, sublayouts: [lastnameLabel, firstnameLabel, middlenameLabel])
         let nameAvatarLayout = StackLayout(axis: .horizontal, sublayouts: [photoLayout, namesStackLayout])
@@ -122,4 +124,5 @@ open class ProfileLayout: InsetLayout<View> {
                 view.backgroundColor = .white
         })
     }
+    
 }

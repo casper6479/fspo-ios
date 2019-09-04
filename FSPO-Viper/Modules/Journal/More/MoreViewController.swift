@@ -26,6 +26,10 @@ final class MoreViewController: UIViewController, MoreViewProtocol {
         reloadableViewLayoutAdapter = MoreReloadableLayoutAdapter(reloadableView: tableView)
         tableView.dataSource = reloadableViewLayoutAdapter
         tableView.delegate = reloadableViewLayoutAdapter
+        if #available(iOS 11, *) {
+            navigationItem.largeTitleDisplayMode = .never
+        }
+//        tableView.separatorColor = UIColor(white: 0.2, alpha: 1)
         tableView.backgroundColor = .white
 //        tableView.separatorInset = UIEdgeInsets(top: 0, left: 72, bottom: 0, right: 0)
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
