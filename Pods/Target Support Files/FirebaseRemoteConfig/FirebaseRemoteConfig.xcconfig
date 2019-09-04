@@ -1,5 +1,5 @@
 CONFIGURATION_BUILD_DIR = ${PODS_CONFIGURATION_BUILD_DIR}/FirebaseRemoteConfig
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/FirebaseABTesting" "${PODS_ROOT}/FirebaseCore" "${PODS_ROOT}/FirebaseCoreDiagnostics" "${PODS_ROOT}/FirebaseInstanceID" "${PODS_ROOT}/FirebaseRemoteConfig/Frameworks" "${PODS_ROOT}/GoogleDataTransport" "${PODS_ROOT}/GoogleDataTransportCCTSupport" "${PODS_ROOT}/GoogleUtilities" "${PODS_ROOT}/Protobuf" "${PODS_ROOT}/nanopb"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/FirebaseABTesting" "${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore" "${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreDiagnostics" "${PODS_CONFIGURATION_BUILD_DIR}/FirebaseInstanceID" "${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransport" "${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransportCCTSupport" "${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities" "${PODS_CONFIGURATION_BUILD_DIR}/Protobuf" "${PODS_CONFIGURATION_BUILD_DIR}/nanopb" "${PODS_ROOT}/FirebaseRemoteConfig/Frameworks"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public"
 OTHER_LDFLAGS = $(inherited) -l"sqlite3" -l"z"
